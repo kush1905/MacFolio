@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio OS
 
-## Getting Started
+A macOS-style developer portfolio that boots, unlocks, and runs apps in the browser.
 
-First, run the development server:
+## Stack
+
+- Next.js + TypeScript + Tailwind CSS
+- Framer Motion
+- Zustand (+ localStorage persistence)
+
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Portfolio content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit placeholder JSON in `/content`:
 
-## Learn More
+- `about.json`
+- `projects.json`
+- `skills.json`
+- `experience.json`
+- `stats.json`
+- `photos.json`
 
-To learn more about Next.js, take a look at the following resources:
+## Shortcuts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Shortcut | Action |
+| --- | --- |
+| Enter / click | Unlock from lock screen |
+| ⌘K or ⌘Space | Spotlight |
+| Esc | Close Spotlight / Launchpad |
+| Double-click desktop icons | Open apps |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Phase roadmap
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. ✅ Boot, Lock, Desktop, Dock, Window Manager, Finder + core apps
+2. Polish Photos / Projects / Terminal / Safari / Messages
+3. Backend persistence (Express + Postgres) for settings, messages, analytics
+4. Sound, deeper animations, multi-window per app
