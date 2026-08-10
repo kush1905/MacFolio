@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="tubeA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3a3a3c"/>
+      <stop offset="18%" stop-color="#6e6e72"/>
+      <stop offset="42%" stop-color="#2c2c2e"/>
+      <stop offset="68%" stop-color="#1c1c1e"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="tubeB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a4a4e"/>
+      <stop offset="25%" stop-color="#8a8a90"/>
+      <stop offset="50%" stop-color="#3a3a3e"/>
+      <stop offset="75%" stop-color="#1a1a1c"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="tubeC" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a2c"/>
+      <stop offset="30%" stop-color="#5c5c62"/>
+      <stop offset="55%" stop-color="#242428"/>
+      <stop offset="100%" stop-color="#000"/>
+    </linearGradient>
+    <filter id="blur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="28" result="b"/>
+      <feOffset dy="18" result="o"/>
+      <feFlood flood-color="#000" flood-opacity="0.85"/>
+      <feComposite in2="o" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="hi" cx="35%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="2560" height="1440" fill="#000000"/>
+  <rect width="2560" height="1440" fill="#050506"/>
+
+  <!-- Far ribbons -->
+  <g filter="url(#softShadow)" opacity="0.75">
+    <path d="M-200 200 C400 80, 700 420, 1200 280 S1900 40, 2800 220" fill="none" stroke="url(#tubeC)" stroke-width="160" stroke-linecap="round"/>
+    <path d="M-200 1100 C500 980, 900 1280, 1500 1120 S2200 900, 2800 1080" fill="none" stroke="url(#tubeC)" stroke-width="140" stroke-linecap="round"/>
+  </g>
+
+  <!-- Mid ribbons -->
+  <g filter="url(#softShadow)">
+    <path d="M-150 480 C450 320, 800 700, 1350 520 S2050 280, 2750 460" fill="none" stroke="url(#tubeB)" stroke-width="200" stroke-linecap="round"/>
+    <path d="M-180 900 C380 760, 820 1080, 1400 880 S2100 640, 2780 860" fill="none" stroke="url(#tubeA)" stroke-width="220" stroke-linecap="round"/>
+  </g>
+
+  <!-- Front ribbon -->
+  <g filter="url(#softShadow)">
+    <path d="M-120 680 C500 520, 900 920, 1480 700 S2150 460, 2720 680" fill="none" stroke="url(#tubeB)" stroke-width="240" stroke-linecap="round"/>
+  </g>
+
+  <!-- Specular highlights along tubes -->
+  <g opacity="0.55" filter="url(#blur)">
+    <path d="M-150 455 C450 295, 800 675, 1350 495 S2050 255, 2750 435" fill="none" stroke="#c8c8d0" stroke-width="18" stroke-linecap="round"/>
+    <path d="M-180 875 C380 735, 820 1055, 1400 855 S2100 615, 2780 835" fill="none" stroke="#b8b8c0" stroke-width="16" stroke-linecap="round"/>
+    <path d="M-120 655 C500 495, 900 895, 1480 675 S2150 435, 2720 655" fill="none" stroke="#d0d0d8" stroke-width="20" stroke-linecap="round"/>
+  </g>
+
+  <rect width="2560" height="1440" fill="url(#hi)"/>
+  <rect width="2560" height="1440" fill="url(#hi)" opacity="0.4"/>
+</svg>

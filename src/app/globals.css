@@ -1,26 +1,663 @@
 @import "tailwindcss";
 
+/*
+ * Typography: prefer the real system SF Pro on Apple devices.
+ * Local /fonts/sf-pro/*.otf faces below are optional (you already downloaded them
+ * from Apple) — they only apply when a face is requested by name and system SF
+ * isn’t used. Do not redistribute SF Pro in a public repo without Apple’s license.
+ */
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:
+    "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --menu-bar-h: 25px;
+  --dock-h: 62px;
+  --font-mac:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mac-mono:
+    "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --window-radius: 10px;
+  --traffic-red: #ff5f57;
+  --traffic-yellow: #febc2e;
+  --traffic-green: #28c840;
+  --glass: rgba(36, 36, 38, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --mac-text: #f5f5f7;
+  --mac-muted: rgba(235, 235, 245, 0.55);
+  --finder-sidebar: rgba(42, 42, 44, 0.82);
+  --window-bg: #1e1e20;
+  --window-titlebar: #2c2c2e;
+  --settings-sidebar: rgba(48, 48, 50, 0.72);
+  --mac-blue: #0a84ff;
+  --mac-selection: rgba(10, 132, 255, 0.35);
+  --mac-chrome-highlight: rgba(255, 255, 255, 0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-mac);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+::selection {
+  background: var(--mac-selection);
+  color: #fff;
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select,
+option {
+  font-family: var(--font-mac);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  background: #000;
+  color: var(--mac-text);
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  letter-spacing: -0.022em;
+  font-feature-settings: "ss07" on, "cv01" on;
+  font-weight: 400;
+}
+
+/* Prefer dynamic viewport so mobile browser chrome doesn't clip the menu bar */
+#__next,
+main {
+  height: 100%;
+}
+
+/* Kill Tailwind / app mono stacks so the whole OS uses SF Pro */
+.font-mono,
+.font-sans,
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-mac) !important;
+  letter-spacing: -0.022em;
+}
+
+button {
+  color: inherit;
+}
+
+/* Overlay scrollbars — macOS overlay style */
+.mac-scroll {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+.mac-scroll::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+.mac-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mac-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 99px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.mac-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.36);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.mac-scroll:not(:hover)::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.select-text {
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.resize-n { cursor: n-resize; }
+.resize-s { cursor: s-resize; }
+.resize-e { cursor: e-resize; }
+.resize-w { cursor: w-resize; }
+.resize-ne { cursor: ne-resize; }
+.resize-nw { cursor: nw-resize; }
+.resize-se { cursor: se-resize; }
+.resize-sw { cursor: sw-resize; }
+
+/* Sequoia / Tahoe window chrome */
+.window-shadow {
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    0 28px 70px rgba(0, 0, 0, 0.38),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.12);
+}
+
+.window-shadow-focused {
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 14px 40px rgba(0, 0, 0, 0.38),
+    0 40px 100px rgba(0, 0, 0, 0.45),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.18);
+}
+
+.window-shadow-dragging {
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.55),
+    0 22px 55px rgba(0, 0, 0, 0.48),
+    0 55px 120px rgba(0, 0, 0, 0.4),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.2);
+}
+
+.window-drag {
+  cursor: default;
+}
+
+.window-dragging,
+.window-dragging * {
+  cursor: grabbing !important;
+}
+
+body.is-window-dragging,
+body.is-window-dragging * {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+
+body.is-window-resizing {
+  user-select: none !important;
+}
+
+.window-dragging {
+  opacity: 0.98;
+}
+
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(50px) saturate(190%);
+  -webkit-backdrop-filter: blur(50px) saturate(190%);
+  border: 0.5px solid var(--glass-border);
+}
+
+.menu-dropdown {
+  background: rgba(36, 36, 38, 0.78);
+  backdrop-filter: blur(80px) saturate(220%);
+  -webkit-backdrop-filter: blur(80px) saturate(220%);
+  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.42),
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.14);
+}
+
+.help-center {
+  background: rgba(36, 36, 38, 0.92);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 0.5px solid rgba(255, 255, 255, 0.14);
+}
+
+.dock-glass {
+  background: linear-gradient(
+    185deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.12) 38%,
+    rgba(40, 40, 42, 0.22) 100%
+  );
+  backdrop-filter: blur(48px) saturate(200%);
+  -webkit-backdrop-filter: blur(48px) saturate(200%);
+  border: 0.5px solid rgba(255, 255, 255, 0.36);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.48),
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dock-separator {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.42) 20%,
+    rgba(255, 255, 255, 0.42) 80%,
+    transparent 100%
+  );
+}
+
+.dock-tooltip {
+  background: rgba(38, 38, 40, 0.92);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 0.5px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+.dock-tooltip-caret {
+  background: rgba(38, 38, 40, 0.95);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.settings-sidebar {
+  background: rgba(50, 50, 52, 0.52);
+  backdrop-filter: blur(50px) saturate(190%);
+  -webkit-backdrop-filter: blur(50px) saturate(190%);
+}
+
+.finder-sidebar {
+  background: rgba(42, 42, 44, 0.72);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+}
+
+/* Finder SF Pro metrics — match system Finder dark mode */
+.finder-app {
+  font-family: var(--font-mac);
+  font-feature-settings: "ss07" on, "cv01" on;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.022em;
+}
+
+.finder-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+  color: rgba(235, 235, 245, 0.4);
+}
+
+.finder-side-label {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.016em;
+}
+
+.finder-side-item {
+  min-height: 24px;
+}
+
+.finder-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: -0.018em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.finder-group-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  letter-spacing: -0.012em;
+  color: rgba(235, 235, 245, 0.55);
+}
+
+.finder-icon-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.finder-path-seg,
+.finder-meta {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: -0.01em;
+}
+
+.finder-body {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.016em;
+}
+
+.finder-pathbar {
+  font-size: 11px;
+}
+
+.settings-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.traffic-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.traffic-btn svg {
+  opacity: 0;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  transition: opacity 0.08s ease;
+}
+
+.group\/traffic:hover .traffic-btn svg,
+.group\/traffic:focus-within .traffic-btn svg {
+  opacity: 1;
+}
+
+.wallpaper-layer {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Scale from center so zoom never pushes pixels above the menu bar clip edge */
+  transform: scale(1.03);
+  transform-origin: center center;
+  filter: saturate(1.06) contrast(1.015);
+}
+
+.mac-app-icon {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.spotlight-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(56, 56, 60, 0.78) 0%,
+    rgba(40, 40, 44, 0.74) 100%
+  );
+  backdrop-filter: blur(80px) saturate(210%);
+  -webkit-backdrop-filter: blur(80px) saturate(210%);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.25),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.2);
+}
+
+.spotlight-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(235, 235, 245, 0.42);
+  text-transform: none;
+}
+
+.spotlight-kbd {
+  display: inline-flex;
+  min-width: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  margin-right: 3px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@keyframes lock-breathe {
+  0%,
+  100% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1.045);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.lock-wallpaper {
+  animation: lock-breathe 14s ease-in-out infinite;
+}
+
+.control-center {
+  background: rgba(40, 40, 42, 0.55);
+  backdrop-filter: blur(50px) saturate(200%);
+  -webkit-backdrop-filter: blur(50px) saturate(200%);
+  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.16);
+}
+
+.cc-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.notification-center {
+  background: transparent;
+  font-family:
+    "SF Pro Text",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+.nc-widget {
+  background: rgba(44, 44, 46, 0.72);
+  backdrop-filter: blur(50px) saturate(190%);
+  -webkit-backdrop-filter: blur(50px) saturate(190%);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+
+.nc-pill {
+  background: rgba(60, 60, 64, 0.88);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.nc-pill:hover {
+  background: rgba(72, 72, 76, 0.95);
+}
+
+.notif-card {
+  background: rgba(44, 44, 46, 0.72);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+.app-switcher {
+  background: rgba(50, 50, 52, 0.55);
+  backdrop-filter: blur(60px) saturate(200%);
+  -webkit-backdrop-filter: blur(60px) saturate(200%);
+  border: 0.5px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.force-quit {
+  background: rgba(42, 42, 44, 0.92);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+.system-osd {
+  background: rgba(40, 40, 42, 0.72);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.screenshot-toast {
+  background: rgba(40, 40, 42, 0.85);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.mac-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+
+.mac-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  cursor: default;
+}
+
+.mac-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
