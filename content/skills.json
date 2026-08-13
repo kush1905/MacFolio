@@ -1,0 +1,29 @@
+{
+  "languages": ["JavaScript", "TypeScript", "Java"],
+  "frontend": ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
+  "mobile": ["React Native"],
+  "backend": ["Node.js", "Express.js", "REST APIs"],
+  "databases": ["MongoDB", "PostgreSQL", "SQL"],
+  "cloud": ["AWS (EC2, S3)", "Firebase", "Vercel"],
+  "ai": ["OpenAI APIs", "Prompt Engineering"],
+  "concepts": ["OOP", "DSA", "REST APIs"],
+  "tools": [
+    "Git",
+    "GitHub",
+    "Postman",
+    "Jira",
+    "Trello",
+    "Cursor",
+    "Vercel v0",
+    "Antigravity",
+    "PostHog",
+    "Mixpanel"
+  ],
+  "certifications": [
+    {
+      "name": "Full Stack Developer with AI",
+      "issuer": "HCL Tech (240-hour program)",
+      "year": "2025"
+    }
+  ]
+}

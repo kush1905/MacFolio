@@ -1,0 +1,50 @@
+[
+  {
+    "id": "hackathon-1",
+    "title": "Hackmivo Hackathon",
+    "album": "Events",
+    "caption": "4th place — shipping under pressure."
+  },
+  {
+    "id": "moonhack",
+    "title": "Moonhack Finalist",
+    "album": "Events",
+    "caption": "Hackathon finalist — late nights, working demos."
+  },
+  {
+    "id": "sk-groups",
+    "title": "SK Groups",
+    "album": "Work",
+    "caption": "Junior Software Developer — mobile, backend, and web delivery."
+  },
+  {
+    "id": "protonshub",
+    "title": "Protonshub Internship",
+    "album": "Work",
+    "caption": "Full Stack Intern (Jan–May 2025) — Tybee Go & Findanio."
+  },
+  {
+    "id": "potato-bazaar",
+    "title": "Potato Bazaar",
+    "album": "Projects",
+    "caption": "Agri marketplace live on web and Play Store."
+  },
+  {
+    "id": "tybee-go",
+    "title": "Tybee Go",
+    "album": "Projects",
+    "caption": "Tourism mobile app — React Native & TypeScript."
+  },
+  {
+    "id": "nexus",
+    "title": "Nexus",
+    "album": "Projects",
+    "caption": "Skill-swap platform — Auth0, React, Node, SQLite."
+  },
+  {
+    "id": "medicaps",
+    "title": "Medicaps University",
+    "album": "Life",
+    "caption": "B.Tech CST · 7.96 CGPA · Class of 2026."
+  }
+]

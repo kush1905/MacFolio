@@ -1,0 +1,44 @@
+{
+  "name": "Kush Gangwal",
+  "role": "Junior Software Developer",
+  "tagline": "Full Stack Developer · React, Node.js & React Native",
+  "location": "Indore, MP",
+  "phone": "8815960580",
+  "email": "gangwal.kush.19@gmail.com",
+  "bio": "Full Stack Developer skilled in React.js, Node.js, and React Native, with hands-on experience building scalable web and mobile applications. Proficient in Java, SQL, and REST APIs with strong foundations in OOP and DSA. Experienced in developing production-ready solutions, optimizing performance, and integrating dynamic backend systems.",
+  "links": {
+    "github": "https://github.com/kush1905",
+    "linkedin": "https://linkedin.com/in/kush-gangwal",
+    "resume": "/resume.pdf",
+    "portfolio": "https://potatobazaar.com"
+  },
+  "githubAccounts": [
+    { "login": "kush1905", "label": "Personal" },
+    { "login": "Kush-PB", "label": "Potato Bazaar" }
+  ],
+  "education": {
+    "school": "Medicaps University",
+    "degree": "Bachelor of Technology in Computer Science Technology",
+    "cgpa": "7.96",
+    "duration": "Aug 2022 – May 2026",
+    "location": "Indore, MP"
+  },
+  "educationHistory": [
+    {
+      "level": "B.Tech",
+      "school": "Medicaps University",
+      "detail": "Computer Science Technology",
+      "duration": "Aug 2022 – May 2026",
+      "score": "CGPA 7.96"
+    }
+  ],
+  "aboutThisMac": {
+    "osName": "macOS Tahoe",
+    "version": "26.6.1",
+    "displayVersion": "macOS Tahoe 26.6.1",
+    "buildSize": "16.43 GB",
+    "chip": "Apple M4 Pro",
+    "memory": "24 GB",
+    "model": "MacBook Pro"
+  }
+}

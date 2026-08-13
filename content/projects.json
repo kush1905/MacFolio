@@ -1,0 +1,47 @@
+[
+  {
+    "id": "potato-bazaar",
+    "name": "Potato Bazaar",
+    "tagline": "Digital marketplace for agricultural trading",
+    "description": "Full-stack digital marketplace for real-time agricultural trading across web and mobile. Built scalable features for KYC, secure transactions, payments, logistics, and AI-powered crop insights. Integrated REST APIs, analytics, maps, weather, and third-party services. Engineered with React.js, Next.js, Node.js, and React Native for web, Android, and iOS.",
+    "tech": ["React.js", "Next.js", "Node.js", "React Native"],
+    "github": "https://github.com/kush1905",
+    "demo": "https://potatobazaar.com",
+    "playStore": "https://play.google.com/store/apps/details?id=com.potatobazaar",
+    "period": "Feb 2026 – Present",
+    "featured": true
+  },
+  {
+    "id": "tybee-go",
+    "name": "Tybee Go",
+    "tagline": "Tourism mobile application",
+    "description": "Developed scalable features for a tourism mobile application using React Native and TypeScript. Integrated RESTful APIs, pagination, and dynamic content rendering. Optimized performance through efficient state management, navigation, and asynchronous data handling. Built reusable modular components with clean architecture.",
+    "tech": ["React Native", "TypeScript", "REST APIs"],
+    "github": "https://github.com/kush1905",
+    "demo": "https://github.com/kush1905",
+    "period": "Jan 2026 – Present",
+    "featured": true
+  },
+  {
+    "id": "findanio",
+    "name": "Findanio",
+    "tagline": "Mobile and web discovery platform",
+    "description": "Contributed to Findanio mobile and web apps at Protonshub Technologies, enhancing cross-platform UI and user experience for Android and iOS with Next.js, React.js, Node.js, MongoDB, and React Native.",
+    "tech": ["Next.js", "React.js", "Node.js", "MongoDB", "React Native"],
+    "github": "https://github.com/kush1905",
+    "demo": "https://github.com/kush1905",
+    "period": "2025",
+    "featured": true
+  },
+  {
+    "id": "nexus",
+    "name": "Nexus",
+    "tagline": "A skill-swap platform",
+    "description": "Peer-to-peer skill exchange platform enabling users to request and offer skills. Features include skill-based search, secure Auth0 authentication, collaboration sessions, and a user rating system — a scalable, community-driven learning product.",
+    "tech": ["React.js", "Node.js", "Auth0", "SQLite", "Vercel"],
+    "github": "https://github.com/kush1905",
+    "demo": "https://github.com/kush1905",
+    "period": "Personal project",
+    "featured": true
+  }
+]

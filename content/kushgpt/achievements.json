@@ -1,0 +1,24 @@
+{
+  "competitiveProgramming": {
+    "platforms": ["LeetCode", "GeeksforGeeks"],
+    "problemsSolved": "DSA practice across platforms",
+    "badges": 2
+  },
+  "hackathons": [
+    {
+      "name": "Moonhack Hackathon",
+      "achievement": "Finalist"
+    },
+    {
+      "name": "Hackmivo Hackathon",
+      "achievement": "4th Place"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Full Stack Developer with AI",
+      "issuer": "HCL Tech (240-hour program)",
+      "year": "2025"
+    }
+  ]
+}
