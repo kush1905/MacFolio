@@ -1,0 +1,63 @@
+{
+  "journey": [
+    {
+      "year": "2022",
+      "title": "Started B.Tech at Medicaps University",
+      "body": "Began Bachelor of Technology in Computer Science Technology in Indore, MP — building foundations in OOP, DSA, and full-stack development."
+    },
+    {
+      "year": "2025",
+      "title": "Full Stack Developer Intern — Protonshub",
+      "body": "Built AI-powered full-stack apps with Next.js, React.js, Node.js, MongoDB, and React Native. Contributed to Tybee Go and Findanio across Android and iOS."
+    },
+    {
+      "year": "2026",
+      "title": "Junior Software Developer — SK Groups",
+      "body": "Developing mobile apps, backend services, and web platforms. Managing Android/iOS builds and releases, integrating PostHog, Mixpanel, maps, weather, and AI APIs."
+    },
+    {
+      "year": "2026",
+      "title": "Shipping Potato Bazaar & Tybee Go",
+      "body": "Leading product work on Potato Bazaar (web + mobile marketplace) and Tybee Go tourism app — production features, analytics, and cross-platform delivery."
+    }
+  ],
+  "experience": [
+    {
+      "company": "SK Groups",
+      "role": "Junior Software Developer",
+      "type": "Onsite",
+      "duration": "June 2026 – Present",
+      "highlights": [
+        "Develop mobile apps, backend services, and web platforms across multiple products, handling development, debugging, and delivery.",
+        "Manage Android and iOS builds, debugging, and releases via Android Studio, Play Console, Xcode, and Apple Developer.",
+        "Integrate PostHog, Mixpanel, Sarvam AI, Google Maps, Weather AI, TTS, and STT APIs using Git/GitHub workflows.",
+        "Collaborate across teams, owning deliverables and using Claude and Cursor to accelerate development and debugging."
+      ]
+    },
+    {
+      "company": "Protonshub Technologies",
+      "role": "Full Stack Developer Intern",
+      "type": "Remote",
+      "duration": "Jan 2025 – May 2025",
+      "highlights": [
+        "Developed AI-powered full-stack applications using Next.js, React.js, Node.js, MongoDB, and React Native.",
+        "Built REST APIs, integrated databases, and optimized application performance with scalable architectures.",
+        "Contributed to the Tybee Go mobile app and Findanio mobile and web apps, enhancing cross-platform UI for Android and iOS.",
+        "Accelerated development using Cursor, Antigravity, Git, and GitHub to build clean, efficient, and maintainable solutions."
+      ]
+    }
+  ],
+  "achievements": [
+    "Completed HCL Tech’s 240-hour Full Stack Developer with AI program",
+    "Moonhack Hackathon Finalist",
+    "4th place at Hackmivo Hackathon",
+    "Earned 2 LeetCode badges for problem-solving and DSA"
+  ],
+  "education": {
+    "school": "Medicaps University",
+    "degree": "B.Tech in Computer Science Technology",
+    "cgpa": "7.96 CGPA",
+    "duration": "Aug 2022 – May 2026",
+    "location": "Indore, MP"
+  }
+}
