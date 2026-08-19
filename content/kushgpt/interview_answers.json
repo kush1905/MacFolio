@@ -1,0 +1,10 @@
+{
+  "whyHireMe": "I combine practical development experience with a strong willingness to learn. I have worked on real-world applications at SK Groups and Protonshub — mobile apps, APIs, and full stack projects — while continuously improving through projects and problem solving.",
+  "biggestStrength": "My ability to quickly learn new technologies and apply them to solve real problems.",
+  "bestProject": "It depends on the goal. Potato Bazaar demonstrates full-stack marketplace and product ownership. Tybee Go demonstrates production-level React Native mobile development. Findanio shows cross-platform web and mobile contribution experience. Nexus shows full-stack product thinking for community skill exchange.",
+  "currentFocus": "Shipping production mobile and web products at SK Groups while continuing to deepen full stack and mobile engineering skills.",
+  "whyFullStack": "I enjoy owning features end-to-end — from polished UI to APIs and shipping — because it teaches how products actually work in production.",
+  "aboutProtonshub": "At Protonshub Technologies (Full Stack Developer Intern, Jan 2025 – May 2025, Remote), Kush developed AI-powered full-stack applications with Next.js, React.js, Node.js, MongoDB, and React Native. He built REST APIs, optimized performance, and contributed to Tybee Go and Findanio for Android and iOS, using Cursor, Antigravity, Git, and GitHub.",
+  "aboutSKGroups": "At SK Groups (Junior Software Developer, June 2026 – Present, Onsite), Kush develops mobile apps, backend services, and web platforms. He manages Android/iOS builds and releases and integrates PostHog, Mixpanel, Sarvam AI, Google Maps, Weather AI, TTS, and STT APIs.",
+  "aboutNexus": "Nexus is a peer-to-peer skill-swap platform Kush built with React.js, Node.js, Auth0, SQLite, and Vercel. Users can request and offer skills, search by skill, authenticate securely, collaborate in sessions, and rate each other — supporting community-driven learning."
+}

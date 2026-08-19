@@ -1,0 +1,20 @@
+{
+  "phase1": {
+    "focus": "HTML, CSS, JavaScript"
+  },
+  "phase2": {
+    "focus": "React.js and Frontend Development"
+  },
+  "phase3": {
+    "focus": "Node.js, Express.js, MongoDB"
+  },
+  "phase4": {
+    "focus": "Full Stack Projects"
+  },
+  "phase5": {
+    "focus": "React Native Mobile Development"
+  },
+  "phase6": {
+    "focus": "Java and Spring Boot"
+  }
+}
