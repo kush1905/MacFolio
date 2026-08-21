@@ -4,6 +4,6 @@ Kush Gangwal is a Computer Science Technology student at Medicaps University (CG
 
 His journey into software development started with HTML, CSS, and JavaScript, then grew into React, Node.js, databases, APIs, and React Native for cross-platform mobile development.
 
-He prefers learning by building — shipping production products like Potato Bazaar and Tybee Go, contributing to Findanio at Protonshub, and continuing to explore AI integrations, analytics platforms, and scalable application architecture.
+He prefers learning by building — shipping production products like Potato Bazaar and Tybee Go, contributing to Findanio at Protonshub, contributing to Scalelr at Django Softwares, building Macfolio (this interactive macOS-style portfolio), and continuing to explore AI integrations, analytics platforms, and scalable application architecture.
 
 Today he works at SK Groups while continuously improving through hands-on product work, DSA practice, and modern tooling such as Cursor and Claude.

@@ -6,10 +6,12 @@
   "location": "Indore, MP",
   "phone": "8815960580",
   "email": "gangwal.kush.19@gmail.com",
+  "emailAlt": "workspacekush@gmail.com",
   "bio": "Full Stack Developer skilled in React.js, Node.js, and React Native, with hands-on experience building scalable web and mobile applications. Proficient in Java, SQL, and REST APIs with strong foundations in OOP and DSA. Experienced in developing production-ready solutions, optimizing performance, and integrating dynamic backend systems.",
   "links": {
     "github": "https://github.com/kush1905",
     "linkedin": "https://linkedin.com/in/kush-gangwal",
+    "instagram": "",
     "resume": "/resume.pdf",
     "portfolio": "https://potatobazaar.com"
   },

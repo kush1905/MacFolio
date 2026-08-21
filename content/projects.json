@@ -1,5 +1,15 @@
 [
   {
+    "id": "macfolio",
+    "name": "Macfolio",
+    "tagline": "Interactive macOS-style developer portfolio",
+    "description": "A browser-based macOS desktop (PortfolioOS) that lets recruiters explore Kush's work like a real Mac — menu bar, Dock, Finder, Spotlight, windows, and apps including KushGPT, Activity Monitor, Messages, Notes, Terminal, and Settings. Built with Next.js, React, TypeScript, and Tailwind CSS, with Framer Motion window chrome, Zustand state, live GitHub telemetry, and a Postgres-backed assistant, analytics, and contact flow.",
+    "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "PostgreSQL"],
+    "github": "https://github.com/kush1905",
+    "period": "2026 – Present",
+    "featured": true
+  },
+  {
     "id": "potato-bazaar",
     "name": "Potato Bazaar",
     "tagline": "Digital marketplace for agricultural trading",

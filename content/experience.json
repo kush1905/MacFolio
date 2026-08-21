@@ -11,6 +11,11 @@
       "body": "Built AI-powered full-stack apps with Next.js, React.js, Node.js, MongoDB, and React Native. Contributed to Tybee Go and Findanio across Android and iOS."
     },
     {
+      "year": "2025",
+      "title": "Full Stack Developer Intern — Django Softwares",
+      "body": "Completed a 1.5-month full-stack training program and contributed to Scalelr, a professional networking platform with AI-driven matching, event hosting, and interactive feeds."
+    },
+    {
       "year": "2026",
       "title": "Junior Software Developer — SK Groups",
       "body": "Developing mobile apps, backend services, and web platforms. Managing Android/iOS builds and releases, integrating PostHog, Mixpanel, maps, weather, and AI APIs."
@@ -27,6 +32,7 @@
       "role": "Junior Software Developer",
       "type": "Onsite",
       "duration": "June 2026 – Present",
+      "skillSet": [],
       "highlights": [
         "Develop mobile apps, backend services, and web platforms across multiple products, handling development, debugging, and delivery.",
         "Manage Android and iOS builds, debugging, and releases via Android Studio, Play Console, Xcode, and Apple Developer.",
@@ -35,10 +41,30 @@
       ]
     },
     {
+      "company": "Django Softwares",
+      "role": "Full Stack Developer Intern",
+      "type": "Internship",
+      "duration": "02 June 2025 – 17 July 2025",
+      "skillSet": [
+        "React.js",
+        "JavaScript",
+        "Tailwind CSS",
+        "MongoDB",
+        "Git",
+        "GitHub"
+      ],
+      "highlights": [
+        "Completed a 1.5-month full-stack training program, gaining hands-on experience across requirements analysis, module development, debugging, and deployment workflows.",
+        "Contributed to Scalelr, a professional networking platform for investors and project holders with AI-driven matching, event hosting, and interactive feeds.",
+        "Strengthened expertise in web development, REST API integration, testing, Git workflows, and collaborative teamwork, applying academic concepts to real-world industry scenarios."
+      ]
+    },
+    {
       "company": "Protonshub Technologies",
       "role": "Full Stack Developer Intern",
       "type": "Remote",
       "duration": "Jan 2025 – May 2025",
+      "skillSet": [],
       "highlights": [
         "Developed AI-powered full-stack applications using Next.js, React.js, Node.js, MongoDB, and React Native.",
         "Built REST APIs, integrated databases, and optimized application performance with scalable architectures.",
