@@ -6,6 +6,7 @@
     "description": "A browser-based macOS desktop (PortfolioOS) that lets recruiters explore Kush's work like a real Mac — menu bar, Dock, Finder, Spotlight, windows, and apps including KushGPT, Activity Monitor, Messages, Notes, Terminal, and Settings. Built with Next.js, React, TypeScript, and Tailwind CSS, with Framer Motion window chrome, Zustand state, live GitHub telemetry, and a Postgres-backed assistant, analytics, and contact flow.",
     "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "PostgreSQL"],
     "github": "https://github.com/kush1905",
+    "cover": "/assets/projects/macfolio.jpg",
     "period": "2026 – Present",
     "featured": true
   },
@@ -18,6 +19,7 @@
     "github": "https://github.com/kush1905",
     "demo": "https://potatobazaar.com",
     "playStore": "https://play.google.com/store/apps/details?id=com.potatobazaar",
+    "cover": "/assets/projects/potato-bazaar.jpg",
     "period": "Feb 2026 – Present",
     "featured": true
   },
@@ -29,6 +31,7 @@
     "tech": ["React Native", "TypeScript", "REST APIs"],
     "github": "https://github.com/kush1905",
     "demo": "https://github.com/kush1905",
+    "cover": "/assets/projects/tybee-go.jpg",
     "period": "Jan 2026 – Present",
     "featured": true
   },
@@ -40,7 +43,8 @@
     "tech": ["Next.js", "React.js", "Node.js", "MongoDB", "React Native"],
     "github": "https://github.com/kush1905",
     "demo": "https://github.com/kush1905",
-    "period": "2025",
+    "cover": "/assets/projects/findanio.jpg",
+    "period": "Jan 2026 – May 2026",
     "featured": true
   },
   {
@@ -51,6 +55,7 @@
     "tech": ["React.js", "Node.js", "Auth0", "SQLite", "Vercel"],
     "github": "https://github.com/kush1905",
     "demo": "https://github.com/kush1905",
+    "cover": "/assets/projects/nexus.jpg",
     "period": "Personal project",
     "featured": true
   }
