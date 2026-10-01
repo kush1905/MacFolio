@@ -8,105 +8,105 @@
  */
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Light.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Regular.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-RegularItalic.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Medium.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-MediumItalic.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Semibold.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Bold.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Text";
-  src: local("SF Pro Text"), url("/fonts/sf-pro/SF-Pro-Text-Heavy.otf") format("opentype");
+  src: local("SF Pro Text");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Display";
-  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Light.otf") format("opentype");
+  src: local("SF Pro Display");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Display";
-  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Regular.otf") format("opentype");
+  src: local("SF Pro Display");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Display";
-  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Medium.otf") format("opentype");
+  src: local("SF Pro Display");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Display";
-  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Semibold.otf") format("opentype");
+  src: local("SF Pro Display");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Display";
-  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Bold.otf") format("opentype");
+  src: local("SF Pro Display");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Display";
-  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Heavy.otf") format("opentype");
+  src: local("SF Pro Display");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "SF Pro Display";
-  src: local("SF Pro Display"), url("/fonts/sf-pro/SF-Pro-Display-Black.otf") format("opentype");
+  src: local("SF Pro Display");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -118,6 +118,7 @@
     "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono:
     "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-mac-accent: var(--mac-accent);
 }
 
 :root {
@@ -140,9 +141,19 @@
   --window-bg: #1e1e20;
   --window-titlebar: #2c2c2e;
   --settings-sidebar: rgba(48, 48, 50, 0.72);
-  --mac-blue: #0a84ff;
+  --mac-blue: var(--mac-accent);
   --mac-selection: rgba(10, 132, 255, 0.35);
   --mac-chrome-highlight: rgba(255, 255, 255, 0.18);
+  --mac-accent: #0a84ff;
+  --display-zoom: 1;
+  --text-scale: 1;
+  --mac-accent-rgb: 10, 132, 255;
+  --mac-folder: #f5c518;
+  --mac-folder-filter: none;
+  --sidebar-icon-size: 16px;
+  --settings-nav-icon: 26px;
+  --glass-blur: 50px;
+  --glass-sat: 190%;
 }
 
 * {
@@ -167,18 +178,42 @@ option {
   font-family: var(--font-mac);
 }
 
+/* Display → text size: scale type only, never the viewport */
+[data-os-stage] {
+  font-size: calc(13px * var(--text-scale, 1));
+}
+
+[data-os-stage] .text-\[8px\] { font-size: calc(8px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[9px\] { font-size: calc(9px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[10px\] { font-size: calc(10px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[11px\] { font-size: calc(11px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[12px\] { font-size: calc(12px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[12\.5px\] { font-size: calc(12.5px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[13px\] { font-size: calc(13px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[14px\] { font-size: calc(14px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[15px\] { font-size: calc(15px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[16px\] { font-size: calc(16px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[17px\] { font-size: calc(17px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[18px\] { font-size: calc(18px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[20px\] { font-size: calc(20px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[21px\] { font-size: calc(21px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[22px\] { font-size: calc(22px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[24px\] { font-size: calc(24px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[28px\] { font-size: calc(28px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[32px\] { font-size: calc(32px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[36px\] { font-size: calc(36px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[44px\] { font-size: calc(44px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[48px\] { font-size: calc(48px * var(--text-scale, 1)) !important; }
+[data-os-stage] .text-\[98px\] { font-size: calc(98px * var(--text-scale, 1)) !important; }
+
 html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  max-height: 100%;
-  overflow: hidden;
+  min-height: 100%;
   background: #000;
   color: var(--mac-text);
   cursor: default;
-  user-select: none;
-  -webkit-user-select: none;
   letter-spacing: -0.022em;
   font-feature-settings: "ss07" on, "cv01" on;
   font-weight: 400;
@@ -305,16 +340,16 @@ body.is-window-resizing {
 
 .glass-panel {
   background: var(--glass);
-  backdrop-filter: blur(50px) saturate(190%);
-  -webkit-backdrop-filter: blur(50px) saturate(190%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
   border: 0.5px solid var(--glass-border);
 }
 
 .menu-dropdown {
-  background: rgba(36, 36, 38, 0.78);
-  backdrop-filter: blur(80px) saturate(220%);
-  -webkit-backdrop-filter: blur(80px) saturate(220%);
-  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  background: var(--glass);
+  backdrop-filter: blur(calc(var(--glass-blur) + 30px)) saturate(calc(var(--glass-sat) + 30%));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 30px)) saturate(calc(var(--glass-sat) + 30%));
+  border: 0.5px solid var(--glass-border);
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.42),
     0 2px 6px rgba(0, 0, 0, 0.2),
@@ -335,8 +370,8 @@ body.is-window-resizing {
     rgba(255, 255, 255, 0.12) 38%,
     rgba(40, 40, 42, 0.22) 100%
   );
-  backdrop-filter: blur(48px) saturate(200%);
-  -webkit-backdrop-filter: blur(48px) saturate(200%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(calc(var(--glass-sat) + 10%));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(calc(var(--glass-sat) + 10%));
   border: 0.5px solid rgba(255, 255, 255, 0.36);
   box-shadow:
     0 22px 60px rgba(0, 0, 0, 0.48),
@@ -370,15 +405,15 @@ body.is-window-resizing {
 }
 
 .settings-sidebar {
-  background: rgba(50, 50, 52, 0.52);
-  backdrop-filter: blur(50px) saturate(190%);
-  -webkit-backdrop-filter: blur(50px) saturate(190%);
+  background: var(--glass);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
 }
 
 .finder-sidebar {
-  background: rgba(42, 42, 44, 0.72);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  background: var(--glass);
+  backdrop-filter: blur(calc(var(--glass-blur) - 8px)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) - 8px)) saturate(var(--glass-sat));
 }
 
 /* Finder SF Pro metrics — match system Finder dark mode */
@@ -451,6 +486,70 @@ body.is-window-resizing {
   font-size: 11px;
 }
 
+html[data-liquid="clear"] {
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.34);
+  --glass-blur: 72px;
+  --glass-sat: 240%;
+}
+
+html[data-liquid="tinted"] {
+  --glass: rgba(22, 22, 26, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: 44px;
+  --glass-sat: 165%;
+}
+
+html[data-liquid="tinted"] .dock-glass {
+  background: linear-gradient(
+    185deg,
+    rgba(var(--mac-accent-rgb), 0.28) 0%,
+    rgba(40, 40, 42, 0.48) 100%
+  );
+  border-color: rgba(var(--mac-accent-rgb), 0.28);
+}
+
+html[data-liquid="clear"] .dock-glass {
+  background: linear-gradient(
+    185deg,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.1) 42%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+}
+
+html[data-sidebar="small"] {
+  --sidebar-icon-size: 14px;
+  --settings-nav-icon: 22px;
+}
+html[data-sidebar="medium"] {
+  --sidebar-icon-size: 16px;
+  --settings-nav-icon: 26px;
+}
+html[data-sidebar="large"] {
+  --sidebar-icon-size: 20px;
+  --settings-nav-icon: 32px;
+}
+
+.mac-folder-icon {
+  filter: var(--mac-folder-filter);
+}
+
+.sidebar-glyph {
+  width: var(--sidebar-icon-size);
+  height: var(--sidebar-icon-size);
+}
+.sidebar-glyph img,
+.sidebar-glyph svg {
+  width: 100%;
+  height: 100%;
+}
+
+.settings-nav-icon {
+  width: var(--settings-nav-icon);
+  height: var(--settings-nav-icon);
+}
+
 .settings-card {
   background: rgba(255, 255, 255, 0.05);
   border: 0.5px solid rgba(255, 255, 255, 0.08);
@@ -458,9 +557,10 @@ body.is-window-resizing {
   overflow: hidden;
 }
 
+/* macOS traffic lights: 14×14pt circles, 8pt gap (matches Sequoia/Tahoe chrome) */
 .traffic-btn {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: none;
   padding: 0;
@@ -470,8 +570,8 @@ body.is-window-resizing {
 
 .traffic-btn svg {
   opacity: 0;
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   position: absolute;
   inset: 0;
   margin: auto;
@@ -487,7 +587,6 @@ body.is-window-resizing {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* Scale from center so zoom never pushes pixels above the menu bar clip edge */
   transform: scale(1.03);
   transform-origin: center center;
   filter: saturate(1.06) contrast(1.015);
@@ -498,15 +597,89 @@ body.is-window-resizing {
   image-rendering: -webkit-optimize-contrast;
 }
 
+/* macOS Terminal.app — Menlo / SF Mono (beat global * SF Pro reset) */
+.mac-terminal {
+  --term-bg: #161618;
+  --term-fg: #d8d8dc;
+  --term-dim: #8e8e93;
+  --term-green: #8fbf9a;
+  --term-cyan: #7eafc4;
+  --term-yellow: #c9b87a;
+  --term-red: #d98984;
+  --term-magenta: #b59bc4;
+  --term-prompt: #aeaeb2;
+  background: var(--term-bg);
+  color: var(--term-fg);
+  caret-color: var(--term-green);
+}
+
+.mac-terminal,
+.mac-terminal *,
+.mac-terminal-body,
+.mac-terminal-input {
+  font-family:
+    "SF Mono", Menlo, Monaco, "Courier New", ui-monospace, monospace !important;
+  font-feature-settings: "liga" 0, "calt" 0;
+  letter-spacing: 0 !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mac-terminal-prompt {
+  color: var(--term-prompt);
+}
+
+.mac-terminal-output {
+  color: var(--term-fg);
+}
+
+.mac-terminal-input::selection,
+.mac-terminal-body ::selection {
+  background: rgba(126, 175, 196, 0.28);
+  color: #f2f2f7;
+}
+
+.term-dim {
+  color: var(--term-dim);
+}
+.term-green {
+  color: var(--term-green);
+}
+.term-cyan {
+  color: var(--term-cyan);
+}
+.term-yellow {
+  color: var(--term-yellow);
+}
+.term-red {
+  color: var(--term-red);
+}
+.term-magenta {
+  color: var(--term-magenta);
+}
+
+/* Terminal window chrome — denser Sequoia Terminal look */
+.window-terminal {
+  border-radius: 16px !important;
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.7),
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 40px 100px rgba(0, 0, 0, 0.35),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.window-terminal.window-shadow-focused {
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.75),
+    0 22px 64px rgba(0, 0, 0, 0.5),
+    0 48px 110px rgba(0, 0, 0, 0.4),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
 .spotlight-glass {
-  background: linear-gradient(
-    180deg,
-    rgba(56, 56, 60, 0.78) 0%,
-    rgba(40, 40, 44, 0.74) 100%
-  );
-  backdrop-filter: blur(80px) saturate(210%);
-  -webkit-backdrop-filter: blur(80px) saturate(210%);
-  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  background: var(--glass);
+  backdrop-filter: blur(calc(var(--glass-blur) + 28px)) saturate(calc(var(--glass-sat) + 20%));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 28px)) saturate(calc(var(--glass-sat) + 20%));
+  border: 0.5px solid var(--glass-border);
   box-shadow:
     0 30px 90px rgba(0, 0, 0, 0.55),
     0 2px 8px rgba(0, 0, 0, 0.25),
@@ -549,10 +722,10 @@ body.is-window-resizing {
 }
 
 .control-center {
-  background: rgba(40, 40, 42, 0.55);
-  backdrop-filter: blur(50px) saturate(200%);
-  -webkit-backdrop-filter: blur(50px) saturate(200%);
-  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  background: var(--glass);
+  backdrop-filter: blur(var(--glass-blur)) saturate(calc(var(--glass-sat) + 10%));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(calc(var(--glass-sat) + 10%));
+  border: 0.5px solid var(--glass-border);
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.45),
     inset 0 0.5px 0 rgba(255, 255, 255, 0.16);
@@ -660,4 +833,559 @@ body.is-window-resizing {
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* KushGPT — aurora chat */
+.kushgpt-app {
+  background: #0c0c10;
+}
+
+.kushgpt-aurora {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(820px 380px at 8% -8%, rgba(var(--mac-accent-rgb), 0.32), transparent 58%),
+    radial-gradient(640px 360px at 108% 88%, rgba(191, 90, 242, 0.2), transparent 52%),
+    linear-gradient(180deg, #15151b 0%, #0b0b0f 100%);
+}
+
+.kushgpt-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at 50% 28%, #000 18%, transparent 72%);
+}
+
+.kushgpt-vignette {
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+.kushgpt-glass {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+.kushgpt-wordmark {
+  background: linear-gradient(180deg, #fff 20%, rgba(255, 255, 255, 0.72));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kushgpt-title {
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.78) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kushgpt-card,
+.kushgpt-prompt,
+.kushgpt-reply {
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+.kushgpt-prompt {
+  transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.kushgpt-prompt:hover {
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow:
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.16),
+    0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.kushgpt-reply {
+  background: rgba(22, 22, 28, 0.72);
+}
+
+.kushgpt-composer {
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.14),
+    0 14px 36px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(24px);
+}
+
+.kushgpt-composer-on {
+  box-shadow:
+    inset 0 0 0 0.5px rgba(var(--mac-accent-rgb), 0.7),
+    0 0 0 4px rgba(var(--mac-accent-rgb), 0.14),
+    0 14px 36px rgba(0, 0, 0, 0.38);
+}
+
+.kushgpt-ring {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(var(--mac-accent-rgb), 0.95) 18%,
+    transparent 38%,
+    rgba(191, 90, 242, 0.75) 62%,
+    transparent 84%
+  );
+  animation: kushgpt-spin 6.5s linear infinite;
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+}
+
+.kushgpt-orb-glow {
+  background: radial-gradient(circle, rgba(var(--mac-accent-rgb), 0.45), transparent 70%);
+  animation: kushgpt-glow 2.8s ease-in-out infinite;
+}
+
+.kushgpt-orbit {
+  animation: kushgpt-spin 8s linear infinite;
+}
+
+.kushgpt-orbit-rev {
+  animation: kushgpt-spin 11s linear infinite reverse;
+}
+
+.kushgpt-spark {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 6px;
+  width: 6px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(var(--mac-accent-rgb), 0.95);
+}
+
+.kushgpt-spark-soft {
+  top: auto;
+  bottom: 6px;
+  height: 4px;
+  width: 4px;
+  margin-left: -2px;
+  background: rgba(191, 90, 242, 0.95);
+  box-shadow: 0 0 10px rgba(191, 90, 242, 0.85);
+}
+
+.kushgpt-live {
+  animation: kushgpt-live 1s ease-in-out infinite;
+}
+
+.kushgpt-dot {
+  animation: kushgpt-bounce 0.95s ease-in-out infinite;
+}
+
+@keyframes kushgpt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kushgpt-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes kushgpt-live {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+}
+
+@keyframes kushgpt-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Activity Monitor */
+.activity-app {
+  background:
+    radial-gradient(900px 280px at 50% -20%, rgba(48, 209, 88, 0.08), transparent 55%),
+    linear-gradient(180deg, #2a2a2e 0%, #1c1c1e 28%, #161618 100%);
+}
+
+.activity-toolbar {
+  background: linear-gradient(180deg, rgba(58, 58, 62, 0.72), rgba(36, 36, 40, 0.55));
+  box-shadow: inset 0 -0.5px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(140%);
+}
+
+.activity-seg {
+  display: flex;
+  padding: 2px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0.5px 1px rgba(0, 0, 0, 0.35);
+}
+
+.activity-seg button {
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 11px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-weight: 500;
+  background: transparent;
+}
+
+.activity-seg button[data-on] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+.activity-card {
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+}
+
+.activity-row {
+  background: transparent;
+  padding: 8px 12px;
+}
+
+.activity-thead {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 6px 12px;
+}
+
+.activity-grid-cpu,
+.activity-grid-energy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 92px 88px 64px 140px;
+  column-gap: 8px;
+}
+
+.activity-grid-energy {
+  grid-template-columns: minmax(0, 1fr) 92px 140px 64px 140px;
+}
+
+.activity-grid-github {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px 56px 56px 110px;
+  column-gap: 8px;
+}
+
+.activity-row:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.activity-row-on {
+  background: rgba(var(--mac-accent-rgb), 0.22) !important;
+}
+
+.activity-graph {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.12)),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 23px,
+      rgba(255, 255, 255, 0.035) 23px,
+      rgba(255, 255, 255, 0.035) 24px
+    );
+}
+
+.activity-pill {
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.activity-pill-on {
+  color: #7dffb3;
+  background: rgba(48, 209, 88, 0.14);
+}
+
+.activity-live {
+  animation: activity-live 1.2s ease-in-out infinite;
+}
+
+.activity-skel {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  background-size: 140% 100%;
+  animation: activity-skel 1.2s ease-in-out infinite;
+}
+
+@keyframes activity-live {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes activity-skel {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -40% 0;
+  }
+}
+
+.contrib-scroll {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.contrib-months {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 4px;
+  min-height: 12px;
+}
+
+.contrib-dow-spacer {
+  width: 22px;
+  flex-shrink: 0;
+}
+
+.contrib-month {
+  width: 11px;
+  flex-shrink: 0;
+  overflow: visible;
+  font-size: 9px;
+  line-height: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+}
+
+.contrib-dows {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 22px;
+  flex-shrink: 0;
+  font-size: 9px;
+  line-height: 11px;
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.contrib-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.contrib-today {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+/* VS Code — Dark Modern */
+.vscode-app {
+  background: #1f1f1f;
+  color: #cccccc;
+  font-family:
+    "SF Pro Text",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+.vscode-activity {
+  background: #181818;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+.vscode-activity-on {
+  box-shadow: inset 2px 0 0 #0078d4;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.vscode-side {
+  background: #181818;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+.vscode-file-on {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.vscode-tabs {
+  background: #181818;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+.vscode-tab-on {
+  background: #1f1f1f;
+  color: #fff;
+  box-shadow: inset 0 1px 0 #0078d4;
+}
+
+.vscode-crumb {
+  background: #1f1f1f;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.04);
+}
+
+.vscode-status {
+  background: #181818;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+
+.vscode-preview {
+  background:
+    radial-gradient(900px 420px at 0% -10%, rgba(0, 120, 212, 0.12), transparent 55%),
+    radial-gradient(700px 380px at 100% 0%, rgba(125, 206, 138, 0.06), transparent 50%),
+    #1f1f1f;
+}
+
+.vscode-hero {
+  background:
+    linear-gradient(135deg, rgba(0, 120, 212, 0.22), rgba(255, 255, 255, 0.03) 55%),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+}
+
+.vscode-card {
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+}
+
+.vscode-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 11px;
+}
+
+.vscode-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(0, 120, 212, 0.16);
+  color: #9cdcfe;
+  font-size: 12px;
+}
+
+.vscode-link:hover {
+  background: rgba(0, 120, 212, 0.28);
+}
+
+.vscode-jump {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+}
+
+.vscode-jump:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Projects showcase */
+.projects-app {
+  font-family:
+    "SF Pro Display",
+    "SF Pro Text",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+.projects-hero {
+  box-shadow:
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.1),
+    0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.projects-card {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+  transform-style: preserve-3d;
+}
+
+.projects-cta {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: #fff;
+  color: #111;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.projects-ghost {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 500;
+  backdrop-filter: blur(12px);
+}
+
+.projects-chip {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.projects-sheet {
+  background: #121214;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+}
+
+.projects-grain {
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.55'/></svg>");
+}
+
+.projects-sweep {
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.16) 50%, transparent 60%);
+  background-size: 220% 100%;
+  animation: projects-sweep 4.8s ease-in-out infinite;
+}
+
+@keyframes projects-sweep {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -40% 0;
+  }
 }

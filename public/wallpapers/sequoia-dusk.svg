@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="a" cx="20%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#ff6b4a"/>
+      <stop offset="45%" stop-color="#c23a6b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#1a0a20" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="b" cx="75%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="#ff9f43"/>
+      <stop offset="40%" stop-color="#e85d75" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#120818" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="c" cx="55%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#7b2ff7"/>
+      <stop offset="50%" stop-color="#3a1060" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#050308" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="d" cx="85%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#ff5e62"/>
+      <stop offset="100%" stop-color="#0a0410" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="e" cx="10%" cy="75%" r="35%">
+      <stop offset="0%" stop-color="#4a1a6b"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="#0a0612"/>
+  <ellipse cx="400" cy="200" rx="700" ry="500" fill="url(#a)" filter="url(#soft)" opacity="0.95"/>
+  <ellipse cx="1400" cy="280" rx="650" ry="480" fill="url(#b)" filter="url(#soft)" opacity="0.9"/>
+  <ellipse cx="1000" cy="800" rx="800" ry="550" fill="url(#c)" filter="url(#soft)" opacity="0.95"/>
+  <ellipse cx="1600" cy="900" rx="500" ry="400" fill="url(#d)" filter="url(#soft)" opacity="0.85"/>
+  <ellipse cx="200" cy="850" rx="450" ry="350" fill="url(#e)" filter="url(#soft)" opacity="0.9"/>
+  <path d="M0 600 Q480 420 960 580 T1920 500 L1920 1080 L0 1080 Z" fill="#12061c" opacity="0.35"/>
+  <path d="M0 700 Q600 520 1100 680 T1920 620 L1920 1080 L0 1080 Z" fill="#1a0a28" opacity="0.3"/>
+</svg>
