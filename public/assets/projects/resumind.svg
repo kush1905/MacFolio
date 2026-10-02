@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Resumind AI Resume Analyzer by Kush Gangwal">
+  <rect width="1200" height="750" fill="#10141c"/>
+  <rect x="80" y="90" width="420" height="570" rx="18" fill="#1b2330"/>
+  <rect x="110" y="130" width="360" height="28" rx="6" fill="#3b82f6"/>
+  <rect x="110" y="180" width="300" height="14" rx="4" fill="#334155"/>
+  <rect x="110" y="210" width="260" height="14" rx="4" fill="#334155"/>
+  <rect x="110" y="260" width="360" height="120" rx="10" fill="#0f172a"/>
+  <text x="580" y="220" fill="#f8fafc" font-family="ui-sans-serif, system-ui" font-size="64" font-weight="700">Resumind</text>
+  <text x="580" y="280" fill="#93c5fd" font-family="ui-sans-serif, system-ui" font-size="28">AI Resume Analyzer</text>
+  <text x="580" y="340" fill="#94a3b8" font-family="ui-sans-serif, system-ui" font-size="22">Kush Gangwal · Full Stack Developer</text>
+</svg>

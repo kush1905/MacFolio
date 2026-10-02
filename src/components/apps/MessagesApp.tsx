@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { apiFetch } from "@/lib/api";
 import { content } from "@/lib/content";
+import { officialProfiles } from "@/lib/identity";
 import { useOSStore } from "@/store/osStore";
 import { UserAvatar } from "@/components/icons/UserAvatar";
 import type { ContactMessage } from "@/types";
@@ -39,7 +40,6 @@ function contactChannels(): Channel[] {
     }));
 
   const instagram = about.links.instagram?.trim();
-  const x = about.links.x?.trim();
   const peerlist = about.links.peerlist?.trim();
 
   return [
@@ -72,20 +72,13 @@ function contactChannels(): Channel[] {
       href: waHref,
       external: true,
     },
-    {
-      id: "linkedin",
-      label: "LinkedIn",
-      detail: "kush-gangwal",
-      href: about.links.linkedin,
+    ...officialProfiles.map((profile) => ({
+      id: profile.label.toLowerCase(),
+      label: profile.label,
+      detail: profile.handle.replace(/^https?:\/\/(www\.)?/, ""),
+      href: profile.href,
       external: true,
-    },
-    {
-      id: "github",
-      label: "GitHub",
-      detail: "kush1905",
-      href: about.links.github,
-      external: true,
-    },
+    })),
     ...extraGithub,
     ...(instagram
       ? [
@@ -94,17 +87,6 @@ function contactChannels(): Channel[] {
             label: "Instagram",
             detail: instagram.replace(/^https?:\/\/(www\.)?instagram\.com\//, "").replace(/\/$/, ""),
             href: instagram,
-            external: true,
-          },
-        ]
-      : []),
-    ...(x
-      ? [
-          {
-            id: "x",
-            label: "X",
-            detail: x.replace(/^https?:\/\/(www\.)?(x|twitter)\.com\//, "").replace(/\/$/, ""),
-            href: x,
             external: true,
           },
         ]

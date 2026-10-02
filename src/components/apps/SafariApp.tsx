@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 import { content } from "@/lib/content";
+import { officialProfiles } from "@/lib/identity";
 import { UserAvatar } from "@/components/icons/UserAvatar";
 
 const BOOKMARKS = [
+  { title: "About", url: "/about-kush-gangwal", hint: "Identity" },
   { title: "Resume", url: content.about.links.resume, hint: "PDF" },
-  { title: "GitHub", url: content.about.links.github, hint: "kush1905" },
-  {
-    title: "LinkedIn",
-    url: content.about.links.linkedin,
-    hint: "kush-gangwal",
-  },
+  ...officialProfiles.map((profile) => ({
+    title: profile.label,
+    url: profile.href,
+    hint: profile.handle.split("/").at(-1) ?? profile.label,
+  })),
   {
     title: "Potato Bazaar",
     url: "https://potatobazaar.com",

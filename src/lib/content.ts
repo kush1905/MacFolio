@@ -12,6 +12,7 @@ import learningJourney from "../../content/kushgpt/learning_journey.json";
 import interviewAnswers from "../../content/kushgpt/interview_answers.json";
 import funFacts from "../../content/kushgpt/fun_facts.json";
 import githubRepos from "../../content/github_repos.json";
+import now from "../../content/now.json";
 
 export const content = {
   about,
@@ -21,6 +22,7 @@ export const content = {
   stats,
   photos,
   githubRepos,
+  now,
   kushgpt: {
     careerGoals,
     workPhilosophy,

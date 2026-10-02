@@ -1,4 +1,19 @@
+import { blogPosts } from "@/lib/blogPosts";
+import { caseStudies } from "@/lib/caseStudies";
 import { content } from "@/lib/content";
+import { entityPages } from "@/lib/entityPages";
+import {
+  ABOUT_PATH,
+  NOW_PATH,
+  PERSON_HEADLINE,
+  PERSON_JOB_TITLE,
+  PERSON_NAME,
+  PERSON_TITLE_TAG,
+  officialProfiles,
+  personId,
+  personUrl,
+  sameAs,
+} from "@/lib/identity";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const { about, experience, projects, skills } = content;
@@ -40,11 +55,12 @@ function slugify(value: string) {
 const companyProducts: Record<string, string[]> = {
   "Protonshub Technologies": ["Tybee Go", "Findanio"],
   "Django Softwares": ["Scalelr"],
+  "SK Groups": ["Potato Bazaar"],
 };
 
 const companySummaries: Record<string, string> = {
   "SK Groups":
-    "Kush Gangwal is a Junior Software Developer at SK Groups in Indore, onsite since June 2026. He develops mobile apps, backend services, and web platforms, manages Android and iOS releases, and integrates analytics and AI APIs.",
+    "Kush Gangwal is a Full Stack Developer & React Native Developer at SK Groups in Indore, onsite since June 2026. He develops mobile apps, backend services, and web platforms, manages Android and iOS releases, and integrates analytics and AI APIs.",
   "Protonshub Technologies":
     "Kush Gangwal was a Full Stack Developer Intern at Protonshub Technologies from January 2026 to May 2026. He built AI-powered web and mobile apps and contributed to Tybee Go and Findanio on Android and iOS.",
   "Django Softwares":
@@ -112,33 +128,31 @@ const scalelr: ProductPage = {
 };
 
 export const products: ProductPage[] = [
-  ...projects.map((project): ProductPage => ({
-    slug: project.id,
-    name: project.name,
-    tagline: project.tagline,
-    description:
-      project.id === "potato-bazaar"
-        ? `${project.description} Kush Gangwal is a founding engineer of Potato Bazaar and is associated with SK Agri Exports Private Ltd.`
-        : project.id === "findanio"
-          ? "Findanio is a mobile and web product. Kush Gangwal is a founding engineer of Findanio. He also contributed to the Findanio Android, iOS, and web apps at Protonshub Technologies using Next.js, React.js, Node.js, MongoDB, and React Native."
-          : project.description,
-    period: project.period,
-    tech: project.tech,
-    company: companies.find((company) => company.products.includes(project.name))?.name,
-    credit:
-      project.id === "potato-bazaar" || project.id === "findanio"
-        ? "is founding engineer of"
-        : project.id === "tybee-go"
-          ? "contributed to"
-          : "built",
-    links: [
-      project.demo ? { label: "Website", href: project.demo } : null,
-      "playStore" in project && project.playStore
-        ? { label: "Google Play", href: project.playStore }
-        : null,
-      project.github ? { label: "GitHub", href: project.github } : null,
-    ].filter((link): link is { label: string; href: string } => Boolean(link)),
-  })),
+  ...projects.map((project): ProductPage => {
+    const study = caseStudies.find((item) => item.slug === project.id);
+    return {
+      slug: project.id,
+      name: project.name,
+      tagline: project.tagline,
+      description: study?.description ?? project.description,
+      period: project.period,
+      tech: project.tech,
+      company: companies.find((company) => company.products.includes(project.name))?.name,
+      credit:
+        project.id === "potato-bazaar" || project.id === "findanio"
+          ? "is founding engineer of"
+          : project.id === "tybee-go" || project.id === "scalelr"
+            ? "contributed to"
+            : "built",
+      links: [
+        project.demo ? { label: "Website", href: project.demo } : null,
+        "playStore" in project && project.playStore
+          ? { label: "Google Play", href: project.playStore }
+          : null,
+        project.github ? { label: "GitHub", href: project.github } : null,
+      ].filter((link): link is { label: string; href: string } => Boolean(link)),
+    };
+  }),
   scalelr,
 ];
 
@@ -151,30 +165,33 @@ export const education = {
   location: about.education.location,
 };
 
-export const profiles = [
-  { label: "LinkedIn", href: about.links.linkedin },
-  { label: "GitHub", href: about.links.github },
-  { label: "GitHub", href: "https://github.com/Kush-PB" },
-  { label: "Instagram", href: about.links.instagram },
-  { label: "X", href: about.links.x },
-  { label: "Peerlist", href: about.links.peerlist },
-  { label: "Potato Bazaar", href: about.links.portfolio },
-].filter((profile) => profile.href.trim());
-
-export const personId = `${SITE_URL}/#kush-gangwal`;
+export const profiles = officialProfiles.map((profile) => ({
+  label: profile.label,
+  href: profile.href,
+}));
 
 export function absolute(path: string) {
   return path.startsWith("http") ? path : `${SITE_URL}${path}`;
 }
 
-export const profilePath = "/profile";
+export const profilePath = ABOUT_PATH;
 export const faqPath = "/faq";
+export const nowPath = NOW_PATH;
+export const accountsPath = "/accounts";
+export const blogPath = "/blog";
+export const projectsPath = "/projects";
+export const resumePath = "/resume";
+export const mentionsPath = "/mentions";
 export const educationPath = `/education/${education.slug}`;
+
 export function companyPath(slug: string) {
   return `/work/${slug}`;
 }
 export function productPath(slug: string) {
   return `/projects/${slug}`;
+}
+export function blogPostPath(slug: string) {
+  return `/blog/${slug}`;
 }
 
 export function companyBySlug(slug: string) {
@@ -193,17 +210,29 @@ const skillNames = [
   ...skills.databases,
 ];
 
-export const homeDescription = `${about.name} is a ${about.role} at SK Groups in ${about.location} and founding engineer of Potato Bazaar and Findanio. He is associated with SK Agri Exports Private Ltd. He has worked with ${colleagueList}. He previously interned at Protonshub Technologies and Django Softwares, and studies Computer Science Technology at Medicaps University.`;
+export const homeDescription = `${PERSON_NAME} is a ${PERSON_HEADLINE} from India, currently at SK Groups in ${about.location}. Founding engineer of Potato Bazaar and Findanio. Projects include Nexus, Resumind, CodeMace, and Tybee Go. Alumni of Medicaps University.`;
+
+export const aboutDescription = `${PERSON_NAME} is a ${PERSON_HEADLINE} specializing in React Native, React.js, Next.js, Node.js and AI-powered applications. He has worked on Potato Bazaar, Tybee Go, Nexus, Resumind, and CodeMace.`;
 
 export const faqs: Faq[] = [
   {
     question: "Who is Kush Gangwal?",
-    answer: `Kush Gangwal is a Junior Software Developer at SK Groups, founding engineer of Potato Bazaar and Findanio, and a Computer Science Technology student at Medicaps University in Indore, Madhya Pradesh. He is associated with SK Agri Exports Private Ltd.`,
+    answer: about.whoIs,
+  },
+  {
+    question: "Is Kush Gangwal a Full Stack Developer?",
+    answer:
+      "Yes. Kush Gangwal is a Full Stack Developer & React Native Developer. He builds web and mobile products with React.js, Next.js, Node.js, and React Native.",
+  },
+  {
+    question: "Is Kush Gangwal a React Native Developer?",
+    answer:
+      "Yes. Kush Gangwal is a React Native Developer. He ships Android and iOS apps including Potato Bazaar and Tybee Go, and manages production releases at SK Groups.",
   },
   {
     question: "Where does Kush Gangwal work?",
     answer:
-      "Kush Gangwal works at SK Groups as a Junior Software Developer, onsite in Indore, from June 2026 to the present. He develops mobile apps, backend services, and web platforms.",
+      "Kush Gangwal works at SK Groups in Indore as a Junior Software Developer, onsite from June 2026 to the present. His public identity is Full Stack Developer & React Native Developer.",
   },
   {
     question: "Which companies has Kush Gangwal worked at?",
@@ -223,12 +252,27 @@ export const faqs: Faq[] = [
   {
     question: "What products and projects has Kush Gangwal built?",
     answer:
-      "Kush Gangwal is founding engineer of Potato Bazaar, a digital marketplace for agricultural trading, and of Findanio, a mobile and web product. His other products and projects include Tybee Go, Scalelr at Django Softwares, Nexus, and Macfolio.",
+      "Kush Gangwal is founding engineer of Potato Bazaar and Findanio. He also built Nexus, Resumind, CodeMace, and Macfolio, and contributed to Tybee Go and Scalelr.",
   },
   {
     question: "What is Potato Bazaar?",
     answer:
       "Potato Bazaar is a full-stack digital marketplace for agricultural trading. Kush Gangwal is a founding engineer of Potato Bazaar, associated with SK Agri Exports Private Ltd. It covers web, Android, and iOS, including KYC, payments, logistics, and AI-powered crop insights, and is available at potatobazaar.com and on Google Play.",
+  },
+  {
+    question: "What is Nexus?",
+    answer:
+      "Nexus is a skill swap platform built by Kush Gangwal with React.js, Node.js, Auth0, SQLite, and Vercel. Users request and offer skills, search by skill, collaborate in sessions, and rate each other.",
+  },
+  {
+    question: "What is Resumind?",
+    answer:
+      "Resumind is an AI resume analyzer built by Kush Gangwal. It scores a resume against a role and returns ATS-oriented feedback and rewrite tips.",
+  },
+  {
+    question: "What is CodeMace?",
+    answer:
+      "CodeMace is a developer practice and code review workspace built by Kush Gangwal. It keeps problems, attempts, and review comments in one product.",
   },
   {
     question: "What is Tybee Go?",
@@ -260,10 +304,110 @@ export const faqs: Faq[] = [
       "SK Agri Exports Private Ltd is a company Kush Gangwal is associated with. He is founding engineer of Potato Bazaar and Findanio.",
   },
   {
+    question: "Where is the Kush Gangwal Portfolio?",
+    answer: `The official Kush Gangwal Portfolio is ${SITE_URL}. The identity page is ${personUrl}.`,
+  },
+  {
     question: "How can I contact Kush Gangwal?",
-    answer: `You can email Kush Gangwal at ${about.email}. His GitHub is github.com/kush1905 and his LinkedIn is linkedin.com/in/kush-gangwal. He is based in Indore, Madhya Pradesh.`,
+    answer: `You can email Kush Gangwal at ${about.email}. Official profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. He is based in Indore, Madhya Pradesh.`,
   },
 ];
+
+export function personNode() {
+  return {
+    "@type": "Person",
+    "@id": personId,
+    name: PERSON_NAME,
+    givenName: "Kush",
+    familyName: "Gangwal",
+    alternateName: [
+      "Kush Gangwal Full Stack Developer",
+      "Kush Gangwal React Native Developer",
+      "Kush Gangwal Portfolio",
+    ],
+    jobTitle: [PERSON_HEADLINE, PERSON_JOB_TITLE, "React Native Developer"],
+    hasOccupation: [
+      {
+        "@type": "Occupation",
+        name: "Full Stack Developer",
+        occupationLocation: { "@type": "City", name: "Indore" },
+        skills: "React.js, Next.js, Node.js, React Native, TypeScript",
+      },
+      {
+        "@type": "Occupation",
+        name: "React Native Developer",
+        occupationLocation: { "@type": "City", name: "Indore" },
+        skills: "React Native, TypeScript, Android, iOS",
+      },
+    ],
+    description: about.whoIs,
+    email: `mailto:${about.email}`,
+    telephone: "+91-8815960580",
+    url: personUrl,
+    image: absolute(about.avatar),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Indore",
+      addressRegion: "Madhya Pradesh",
+      addressCountry: "IN",
+    },
+    worksFor: [
+      { "@id": `${SITE_URL}/work/sk-groups#org` },
+      { "@id": `${SITE_URL}/work/sk-agri-exports-private-ltd#org` },
+    ],
+    colleague: colleagues.map((person) => ({
+      "@type": "Person",
+      name: person.name,
+      url: absolute(colleaguePath(person.slug)),
+    })),
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: education.name,
+      "@id": `${absolute(educationPath)}#org`,
+    },
+    affiliation: companies.map((company) => ({
+      "@id": `${absolute(companyPath(company.slug))}#org`,
+    })),
+    knowsAbout: [
+      ...new Set([
+        PERSON_HEADLINE,
+        "Kush Gangwal React Native Developer",
+        "Kush Gangwal Full Stack Developer",
+        "Kush Gangwal Portfolio",
+        "Kush Gangwal Medicaps University",
+        "Kush Gangwal Potato Bazaar",
+        "Kush Gangwal Protonshub",
+        "Nexus Skill Swap Platform",
+        "Resumind AI Resume Analyzer",
+        "CodeMace",
+        "Agentic AI",
+        "GenAI",
+        ...skillNames,
+        ...products.map((product) => product.name),
+        ...companies.map((company) => company.name),
+      ]),
+    ],
+    sameAs,
+    identifier: [
+      { "@type": "PropertyValue", name: "GitHub", value: "kush1905" },
+      { "@type": "PropertyValue", name: "LinkedIn", value: "kush-gangwal" },
+    ],
+  };
+}
+
+export function websiteNode() {
+  return {
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: `${PERSON_NAME} Portfolio`,
+    alternateName: ["Kush Gangwal Portfolio", "Macfolio"],
+    description: homeDescription,
+    publisher: { "@id": personId },
+    about: { "@id": personId },
+    inLanguage: "en-IN",
+  };
+}
 
 export function homeGraph() {
   return {
@@ -274,33 +418,53 @@ export function homeGraph() {
         "@type": "ProfilePage",
         "@id": `${SITE_URL}/#profile`,
         url: SITE_URL,
-        name: `${SITE_NAME} — ${about.role}`,
+        name: PERSON_TITLE_TAG,
         description: homeDescription,
         mainEntity: { "@id": personId },
         isPartOf: { "@id": `${SITE_URL}/#website` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".who-is-kush-gangwal"],
+        },
       },
-      {
-        "@type": "WebSite",
-        "@id": `${SITE_URL}/#website`,
-        url: SITE_URL,
-        name: SITE_NAME,
-        description: homeDescription,
-        publisher: { "@id": personId },
-        about: { "@id": personId },
-      },
+      websiteNode(),
       ...companies.map(organizationNode),
       ...products.map(productNode),
       educationNode(),
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/#faq`,
-        url: SITE_URL,
+        url: absolute(faqPath),
         mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,
           acceptedAnswer: { "@type": "Answer", text: faq.answer },
         })),
       },
+    ],
+  };
+}
+
+export function aboutGraph() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      personNode(),
+      {
+        "@type": "ProfilePage",
+        "@id": `${personUrl}#page`,
+        url: personUrl,
+        name: PERSON_TITLE_TAG,
+        description: aboutDescription,
+        mainEntity: { "@id": personId },
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".who-is-kush-gangwal"],
+        },
+      },
+      websiteNode(),
+      breadcrumb(PERSON_NAME, ABOUT_PATH),
     ],
   };
 }
@@ -338,7 +502,34 @@ export function companyGraph(company: CompanyPage) {
 export function productGraph(product: ProductPage) {
   return {
     "@context": "https://schema.org",
-    "@graph": [personNode(), productNode(product), breadcrumb(product.name, productPath(product.slug))],
+    "@graph": [
+      personNode(),
+      productNode(product),
+      articleNode({
+        headline: caseStudies.find((study) => study.slug === product.slug)?.title ?? product.name,
+        description: product.description,
+        path: productPath(product.slug),
+        image: caseStudies.find((study) => study.slug === product.slug)?.cover,
+      }),
+      breadcrumb(product.name, productPath(product.slug)),
+    ],
+  };
+}
+
+export function articleGraph(input: {
+  headline: string;
+  description: string;
+  path: string;
+  date?: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      personNode(),
+      articleNode(input),
+      breadcrumb(input.headline, input.path),
+    ],
   };
 }
 
@@ -366,55 +557,36 @@ export function educationGraph() {
   };
 }
 
-function personNode() {
+export function nowGraph() {
   return {
-    "@type": "Person",
-    "@id": personId,
-    name: about.name,
-    givenName: "Kush",
-    familyName: "Gangwal",
-    jobTitle: [about.role, "Founding Engineer, Potato Bazaar", "Founding Engineer, Findanio"],
-    description: about.bio,
-    email: `mailto:${about.email}`,
-    telephone: "+91-8815960580",
-    url: SITE_URL,
-    image: absolute(about.avatar),
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Indore",
-      addressRegion: "Madhya Pradesh",
-      addressCountry: "IN",
-    },
-    worksFor: [
-      { "@id": `${SITE_URL}/#sk-groups` },
-      { "@id": `${SITE_URL}/#sk-agri-exports-private-ltd` },
+    "@context": "https://schema.org",
+    "@graph": [
+      personNode(),
+      {
+        "@type": "WebPage",
+        "@id": `${absolute(nowPath)}#page`,
+        url: absolute(nowPath),
+        name: `Now — ${PERSON_NAME}`,
+        dateModified: content.now.updated,
+        about: { "@id": personId },
+        author: { "@id": personId },
+      },
+      breadcrumb("Now", nowPath),
     ],
-    colleague: colleagues.map((person) => ({
-      "@type": "Person",
-      name: person.name,
-    })),
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: education.name,
-      "@id": `${SITE_URL}/#${education.slug}`,
-    },
-    affiliation: companies.map((company) => ({ "@id": `${SITE_URL}/#${company.slug}` })),
-    knowsAbout: [...new Set([...skillNames, ...products.map((product) => product.name), ...companies.map((company) => company.name)])],
-    sameAs: profiles.map((profile) => profile.href),
   };
 }
 
 function organizationNode(company: CompanyPage) {
   return {
     "@type": "Organization",
-    "@id": `${SITE_URL}/#${company.slug}`,
+    "@id": `${absolute(companyPath(company.slug))}#org`,
     name: company.name,
-    url: SITE_URL,
+    url: absolute(companyPath(company.slug)),
     description: company.summary,
     employee: {
       "@type": "Person",
       "@id": personId,
-      name: about.name,
+      name: PERSON_NAME,
       jobTitle: company.role,
     },
   };
@@ -424,29 +596,52 @@ function productNode(product: ProductPage) {
   const company = companies.find((item) => item.name === product.company);
   return {
     "@type": "SoftwareApplication",
-    "@id": `${SITE_URL}/#${product.slug}`,
+    "@id": `${absolute(productPath(product.slug))}#app`,
     name: product.name,
     applicationCategory: "DeveloperApplication",
     description: product.description,
-    url: SITE_URL,
+    url: absolute(productPath(product.slug)),
     author: { "@id": personId },
     creator: { "@id": personId },
-    ...(company ? { producer: { "@id": `${SITE_URL}/#${company.slug}` } } : {}),
+    ...(company ? { producer: { "@id": `${absolute(companyPath(company.slug))}#org` } } : {}),
   };
 }
 
 function educationNode() {
   return {
     "@type": "CollegeOrUniversity",
-    "@id": `${SITE_URL}/#${education.slug}`,
+    "@id": `${absolute(educationPath)}#org`,
     name: education.name,
-    url: SITE_URL,
+    url: absolute(educationPath),
     address: {
       "@type": "PostalAddress",
       addressLocality: "Indore",
       addressRegion: "Madhya Pradesh",
       addressCountry: "IN",
     },
+  };
+}
+
+function articleNode(input: {
+  headline: string;
+  description: string;
+  path: string;
+  date?: string;
+  image?: string;
+}) {
+  return {
+    "@type": "Article",
+    "@id": `${absolute(input.path)}#article`,
+    headline: input.headline,
+    description: input.description,
+    url: absolute(input.path),
+    mainEntityOfPage: absolute(input.path),
+    author: { "@id": personId },
+    publisher: { "@id": personId },
+    datePublished: input.date ?? "2026-10-01",
+    dateModified: input.date ?? "2026-10-02",
+    image: input.image ? absolute(input.image) : absolute(about.avatar),
+    about: { "@id": personId },
   };
 }
 
@@ -461,24 +656,63 @@ function breadcrumb(name: string, path: string) {
 }
 
 export function sitemapEntries() {
-  return [SITE_URL];
+  const paths = [
+    "/",
+    ABOUT_PATH,
+    NOW_PATH,
+    faqPath,
+    accountsPath,
+    blogPath,
+    projectsPath,
+    resumePath,
+    mentionsPath,
+    "/site-map",
+    educationPath,
+    ...companies.map((company) => companyPath(company.slug)),
+    ...products.map((product) => productPath(product.slug)),
+    ...colleagues.map((person) => colleaguePath(person.slug)),
+    ...blogPosts.map((post) => blogPostPath(post.slug)),
+    ...entityPages.map((page) => page.path),
+  ];
+  return [...new Set(paths)].map((path) => absolute(path));
 }
 
 export function llmsText() {
   const lines = [
-    `# ${about.name}`,
+    `# ${PERSON_NAME}`,
     "",
-    `> ${homeDescription}`,
+    `> ${about.whoIs}`,
     "",
     "This file is a factual summary for answer engines and generative search. It only states what Kush Gangwal publishes on his portfolio.",
     "",
-    "## Profile",
-    `- ${about.name}: ${about.role} in ${about.location}. ${about.bio}`,
+    "## Identity",
+    `- Name: ${PERSON_NAME}`,
+    `- Headline: ${PERSON_HEADLINE}`,
+    `- Title: ${PERSON_TITLE_TAG}`,
+    `- Location: ${about.location}, India`,
     `- Email: ${about.email}`,
+    `- Entity page: ${personUrl}`,
     `- Portfolio: ${SITE_URL}`,
+    `- Now page: ${absolute(nowPath)}`,
     "",
-    "## Accounts",
-    ...profiles.map((profile) => `- ${profile.label}: ${profile.href}`),
+    "## Who is Kush Gangwal?",
+    about.whoIs,
+    "",
+    "He has worked on:",
+    "- Potato Bazaar",
+    "- Tybee Go",
+    "- Nexus",
+    "- Resumind",
+    "- CodeMace",
+    "",
+    "## Official profiles (same identity everywhere)",
+    ...officialProfiles.map((profile) => `- ${profile.label}: ${profile.href}`),
+    "",
+    "## Current work (/now)",
+    `- Updated: ${content.now.updatedLabel}`,
+    `- Working at ${content.now.workingAt} as ${content.now.workingAs}`,
+    `- Building: ${content.now.building.join("; ")}`,
+    `- Interested in: ${content.now.interestedIn.join(", ")}`,
     "",
     "## Companies",
     ...companies.map((company) => `- ${company.name}: ${company.summary}`),
@@ -492,9 +726,46 @@ export function llmsText() {
     "## People Kush Gangwal has worked with",
     ...colleagues.map((person) => `- ${person.name}: Kush Gangwal has worked with ${person.name}.`),
     "",
+    "## Search phrases this site is the source for",
+    "- Kush Gangwal",
+    "- Kush Gangwal React Native Developer",
+    "- Kush Gangwal Full Stack Developer",
+    "- Kush Gangwal Portfolio",
+    "- Kush Gangwal Medicaps University",
+    "- Kush Gangwal Potato Bazaar",
+    "- Kush Gangwal Protonshub",
+    "- Nexus Skill Swap Platform",
+    "- Resumind AI Resume Analyzer",
+    "- Potato Bazaar Developer",
+    "",
     "## Answers",
     ...faqs.map((faq) => `- ${faq.question} ${faq.answer}`),
     "",
   ];
   return lines.join("\n");
 }
+
+export const defaultKeywords = [
+  "Kush Gangwal",
+  "Kush Gangwal Full Stack Developer",
+  "Kush Gangwal React Native Developer",
+  "Kush Gangwal Portfolio",
+  "Kush Gangwal Medicaps University",
+  "Kush Gangwal Potato Bazaar",
+  "Kush Gangwal Protonshub",
+  "Full Stack Developer & React Native Developer",
+  "Potato Bazaar",
+  "Potato Bazaar Developer",
+  "Nexus Skill Swap Platform",
+  "Resumind AI Resume Analyzer",
+  "CodeMace",
+  "Tybee Go",
+  "Findanio",
+  "SK Groups",
+  "Protonshub Technologies",
+  "Django Softwares",
+  "Medicaps University",
+  "React Native Developer",
+  "Full Stack Developer",
+  "Indore",
+];

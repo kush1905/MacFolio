@@ -70,7 +70,7 @@ export const HELP_TOPICS: HelpTopic[] = [
     id: "projects",
     name: "Projects",
     usedFor:
-      "Watch cinematic trailers and posters for Kush's shipped work — Macfolio, Potato Bazaar, Tybee Go, Findanio, and Nexus.",
+      "Watch cinematic trailers and posters for Kush's shipped work — Macfolio, Potato Bazaar, Tybee Go, Findanio, Nexus, Resumind, and CodeMace.",
     shows: [
       "Autoplaying trailer stage",
       "Hover cards with preview motion",

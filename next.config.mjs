@@ -4,14 +4,11 @@ const nextConfig = {
   serverExternalPackages: ["pg"],
   async redirects() {
     return [
-      "/profile",
-      "/faq",
-      "/accounts",
-      "/work/:slug",
-      "/projects/:slug",
-      "/people/:slug",
-      "/education/:slug",
-    ].map((source) => ({ source, destination: "/", permanent: true }));
+      { source: "/who-is-kush-gangwal", destination: "/about-kush-gangwal", permanent: true },
+      { source: "/kush-gangwal", destination: "/about-kush-gangwal", permanent: true },
+      { source: "/portfolio", destination: "/kush-gangwal-portfolio", permanent: true },
+      { source: "/writing", destination: "/blog", permanent: true },
+    ];
   },
 };
 

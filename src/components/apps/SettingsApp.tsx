@@ -758,6 +758,10 @@ export function SettingsApp() {
                 <InfoRow label="Role" value={content.about.role} />
                 <InfoRow label="Location" value={content.about.location} />
                 <InfoRow
+                  label="Headline"
+                  value={content.about.tagline}
+                />
+                <InfoRow
                   label="GitHub"
                   value="github.com/kush1905"
                 />
@@ -765,6 +769,11 @@ export function SettingsApp() {
                   label="LinkedIn"
                   value="linkedin.com/in/kush-gangwal"
                 />
+                <InfoRow label="LeetCode" value="leetcode.com/u/kushgangwal" />
+                <InfoRow label="Medium" value="medium.com/@kushgangwal" />
+                <InfoRow label="Dev.to" value="dev.to/kushgangwal" />
+                <InfoRow label="Hashnode" value="hashnode.com/@kushgangwal" />
+                <InfoRow label="X" value="x.com/kushgg19" />
               </div>
             </>
           )}

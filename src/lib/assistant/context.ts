@@ -65,11 +65,19 @@ ${personalStory()}
 - Email: ${about.email}${about.emailAlt ? `\n- Email (work): ${about.emailAlt}` : ""}
 - Phone: ${about.phone}
 - Bio: ${about.bio}
+- Headline: Full Stack Developer & React Native Developer
 - GitHub: ${about.links.github}
 - LinkedIn: ${about.links.linkedin}
+- LeetCode: ${about.links.leetcode}
+- Medium: ${about.links.medium}
+- Dev.to: ${about.links.devto}
+- Hashnode: ${about.links.hashnode}
+- X: ${about.links.x}
 ${about.links.instagram ? `- Instagram: ${about.links.instagram}` : ""}
 - Resume: ${about.links.resume}
 - Portfolio site: ${about.links.portfolio}
+- About: /about-kush-gangwal
+- Now: /now
 
 ## Education
 - ${about.education.degree} @ ${about.education.school}

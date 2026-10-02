@@ -17,6 +17,7 @@ import { APPS } from "@/lib/apps";
 import { applyAppearance } from "@/lib/appearance";
 import { applyDisplay } from "@/lib/display";
 import { startBackendSync } from "@/lib/backendSync";
+import { useDesktopAllowed } from "@/lib/desktop";
 import { DisplayOverlays } from "@/components/system/DisplayOverlays";
 import {
   captureDesktopScreenshot,
@@ -24,6 +25,7 @@ import {
 } from "@/lib/screenshot";
 
 export function OS() {
+  const desktopAllowed = useDesktopAllowed();
   const phase = useOSStore((s) => s.phase);
   const setPhase = useOSStore((s) => s.setPhase);
   const unlock = useOSStore((s) => s.unlock);
@@ -45,6 +47,7 @@ export function OS() {
   }, [phase]);
 
   useEffect(() => {
+    if (!desktopAllowed) return;
     const onKeyDown = (e: KeyboardEvent) => {
       const meta = e.metaKey || e.ctrlKey;
       const key = e.key.toLowerCase();
@@ -172,7 +175,7 @@ export function OS() {
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [lock]);
+  }, [lock, desktopAllowed]);
 
   // Quietly keep persisted windows, or open Finder if desktop is empty
   useEffect(() => {
@@ -222,6 +225,8 @@ export function OS() {
     const id = window.setInterval(apply, 60_000 * 15);
     return () => window.clearInterval(id);
   }, [phase]);
+
+  if (!desktopAllowed) return null;
 
   return (
     <div className="fixed inset-0 z-0 h-dvh w-screen select-none overflow-hidden bg-black">

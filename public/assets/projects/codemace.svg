@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="CodeMace by Kush Gangwal">
+  <rect width="1200" height="750" fill="#0b1220"/>
+  <rect x="70" y="80" width="1060" height="590" rx="20" fill="#111827"/>
+  <rect x="70" y="80" width="1060" height="64" rx="20" fill="#1f2937"/>
+  <text x="100" y="122" fill="#e5e7eb" font-family="ui-monospace, SFMono-Regular, Menlo" font-size="24">codemace  review workspace</text>
+  <text x="100" y="250" fill="#f8fafc" font-family="ui-sans-serif, system-ui" font-size="72" font-weight="700">CodeMace</text>
+  <text x="100" y="320" fill="#86efac" font-family="ui-sans-serif, system-ui" font-size="28">Practice, notes, and code review</text>
+  <text x="100" y="380" fill="#94a3b8" font-family="ui-sans-serif, system-ui" font-size="22">Built by Kush Gangwal</text>
+</svg>

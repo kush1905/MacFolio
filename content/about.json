@@ -1,22 +1,35 @@
 {
   "name": "Kush Gangwal",
   "avatar": "/assets/kush/avatar.png",
-  "role": "Junior Software Developer",
-  "tagline": "Full Stack Developer · React, Node.js & React Native",
+  "role": "Full Stack Developer & React Native Developer",
+  "tagline": "Full Stack Developer & React Native Developer",
+  "headline": "Full Stack Developer & React Native Developer",
+  "jobTitle": "Full Stack Developer",
+  "currentEmployer": "SK Groups",
+  "currentEmploymentTitle": "Junior Software Developer",
   "location": "Indore, MP",
   "phone": "8815960580",
   "email": "gangwal.kush.19@gmail.com",
   "emailAlt": "workspacekush@gmail.com",
-  "bio": "Full Stack Developer skilled in React.js, Node.js, and React Native, with hands-on experience building scalable web and mobile applications. Proficient in Java, SQL, and REST APIs with strong foundations in OOP and DSA. Experienced in developing production-ready solutions, optimizing performance, and integrating dynamic backend systems.",
+  "bio": "Kush Gangwal is a Full Stack Developer & React Native Developer from India. He builds scalable web and mobile applications with React.js, Next.js, Node.js, and React Native, including production work on Potato Bazaar, Tybee Go, Nexus, Resumind, and CodeMace.",
+  "whoIs": "Kush Gangwal is a Full Stack Developer from India specializing in React Native, React.js, Next.js, Node.js and AI-powered applications. He has worked on Potato Bazaar, Tybee Go, Nexus, Resumind, and CodeMace. He studies Computer Science Technology at Medicaps University and currently works at SK Groups in Indore.",
   "links": {
     "github": "https://github.com/kush1905",
-    "linkedin": "https://linkedin.com/in/kush-gangwal",
-    "instagram": "https://instagram.com/kush_gangwal_19",
+    "linkedin": "https://www.linkedin.com/in/kush-gangwal",
+    "leetcode": "https://leetcode.com/u/kushgangwal",
+    "medium": "https://medium.com/@kushgangwal",
+    "devto": "https://dev.to/kushgangwal",
+    "hashnode": "https://hashnode.com/@kushgangwal",
     "x": "https://x.com/kushgg19",
+    "instagram": "https://instagram.com/kush_gangwal_19",
     "peerlist": "",
     "resume": "/resume.pdf",
     "portfolio": "https://potatobazaar.com"
   },
+  "sameAsExtra": [
+    "https://www.linkedin.com/in/kush-gangwal-96ab38263",
+    "https://github.com/Kush-PB"
+  ],
   "githubAccounts": [
     { "login": "kush1905", "label": "Personal" },
     { "login": "Kush-PB", "label": "Potato Bazaar" }

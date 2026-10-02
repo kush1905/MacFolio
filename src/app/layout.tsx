@@ -1,42 +1,32 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { homeDescription } from "@/lib/seo";
+import { DesktopCanvas } from "@/components/system/DesktopCanvas";
+import { DesktopGate } from "@/components/system/DesktopGate";
+import { PERSON_NAME, PERSON_TITLE_TAG } from "@/lib/identity";
+import { DESKTOP_BOOT_SCRIPT } from "@/lib/desktopMode";
+import { defaultKeywords, homeDescription } from "@/lib/seo";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#000000",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Junior Software Developer`,
+    default: PERSON_TITLE_TAG,
     template: "%s · Kush Gangwal",
   },
   description: homeDescription,
   applicationName: "Macfolio",
-  authors: [{ name: SITE_NAME, url: SITE_URL }],
-  creator: SITE_NAME,
-  publisher: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: `${SITE_URL}/about-kush-gangwal` }],
+  creator: PERSON_NAME,
+  publisher: PERSON_NAME,
   category: "portfolio",
-  keywords: [
-    "Kush Gangwal",
-    "SK Groups",
-    "SK Agri Exports Private Ltd",
-    "AgniPratap Singh Chouhan",
-    "Yuvraj Singh",
-    "Ansh Kumar Rana",
-    "Akshat Agrawal",
-    "Gregory Dsouza",
-    "Founding Engineer",
-    "Protonshub Technologies",
-    "Django Softwares",
-    "Potato Bazaar",
-    "Tybee Go",
-    "Findanio",
-    "Scalelr",
-    "Nexus",
-    "Macfolio",
-    "Medicaps University",
-    "Junior Software Developer",
-    "Indore",
-  ],
+  keywords: defaultKeywords,
   robots: {
     index: true,
     follow: true,
@@ -53,14 +43,15 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Junior Software Developer`,
+    title: PERSON_TITLE_TAG,
     description: homeDescription,
-    images: [{ url: "/assets/kush/avatar.png", alt: "Kush Gangwal" }],
+    images: [{ url: "/assets/kush/avatar.png", alt: PERSON_NAME }],
   },
   twitter: {
-    card: "summary",
-    title: `${SITE_NAME} — Junior Software Developer`,
+    card: "summary_large_image",
+    title: PERSON_TITLE_TAG,
     description: homeDescription,
+    creator: "@kushgg19",
     images: ["/assets/kush/avatar.png"],
   },
   icons: {
@@ -77,14 +68,27 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-h-full">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: DESKTOP_BOOT_SCRIPT }} />
         <link
           rel="preload"
           as="image"
           href="/assets/macos/wallpapers/space-black.jpg"
           fetchPriority="high"
         />
+        <link rel="alternate" type="application/rss+xml" title="Kush Gangwal" href="/feed.xml" />
+        <link rel="author" href="/about-kush-gangwal" />
+        <link rel="me" href="https://github.com/kush1905" />
+        <link rel="me" href="https://www.linkedin.com/in/kush-gangwal" />
+        <link rel="me" href="https://leetcode.com/u/kushgangwal" />
+        <link rel="me" href="https://medium.com/@kushgangwal" />
+        <link rel="me" href="https://dev.to/kushgangwal" />
+        <link rel="me" href="https://hashnode.com/@kushgangwal" />
+        <link rel="me" href="https://x.com/kushgg19" />
       </head>
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        <DesktopGate />
+        <DesktopCanvas>{children}</DesktopCanvas>
+      </body>
     </html>
   );
 }

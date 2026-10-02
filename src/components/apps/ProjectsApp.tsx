@@ -436,6 +436,11 @@ function Preview({
         <Meta label="Phone" value={about.phone} />
         <Meta label="GitHub" value="kush1905" href={about.links.github} />
         <Meta label="LinkedIn" value="kush-gangwal" href={about.links.linkedin} />
+        <Meta label="LeetCode" value="kushgangwal" href={about.links.leetcode} />
+        <Meta label="Medium" value="@kushgangwal" href={about.links.medium} />
+        <Meta label="Dev.to" value="kushgangwal" href={about.links.devto} />
+        <Meta label="Hashnode" value="@kushgangwal" href={about.links.hashnode} />
+        <Meta label="X" value="kushgg19" href={about.links.x} />
         <Meta
           label="Education"
           value={`${about.education.degree} · ${about.education.cgpa}`}
