@@ -2,6 +2,8 @@ import { blogPosts } from "@/lib/blogPosts";
 import { caseStudies } from "@/lib/caseStudies";
 import { content } from "@/lib/content";
 import { entityPages } from "@/lib/entityPages";
+import { footprintPages } from "@/lib/footprint";
+import { techPages } from "@/lib/techPages";
 import {
   ABOUT_PATH,
   NOW_PATH,
@@ -309,7 +311,75 @@ export const faqs: Faq[] = [
   },
   {
     question: "How can I contact Kush Gangwal?",
-    answer: `You can email Kush Gangwal at ${about.email}. Official profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. He is based in Indore, Madhya Pradesh.`,
+    answer: `You can email Kush Gangwal at ${about.email}. Official profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. He is based in Indore, Madhya Pradesh. The portfolio is ${SITE_URL}.`,
+  },
+  {
+    question: "What is Kush Gangwal's portfolio URL?",
+    answer: `The official Kush Gangwal portfolio is ${SITE_URL}. The identity page is ${SITE_URL}/about-kush-gangwal. The domain kushgangwal.site is reserved for this same site.`,
+  },
+  {
+    question: "What technologies does Kush Gangwal use?",
+    answer:
+      "Kush Gangwal uses React Native, React.js, Next.js, Node.js, Express.js, JavaScript, TypeScript, Java, MongoDB, PostgreSQL, SQLite, REST APIs, Tailwind CSS, Auth0, Vercel, Git, GitHub, PostHog, Mixpanel, and OpenAI APIs. He is learning Spring Boot.",
+  },
+  {
+    question: "Is Kush Gangwal a software engineer?",
+    answer:
+      "Yes. Kush Gangwal is a software engineer and a Full Stack Developer & React Native Developer. At SK Groups his employment title is Junior Software Developer.",
+  },
+  {
+    question: "Where in India is Kush Gangwal based?",
+    answer: "Kush Gangwal is based in Indore, Madhya Pradesh, India. He studies at Medicaps University and works onsite at SK Groups.",
+  },
+  {
+    question: "What is Kush Gangwal's GitHub?",
+    answer: "Kush Gangwal's GitHub is https://github.com/kush1905. Potato Bazaar work also uses https://github.com/Kush-PB.",
+  },
+  {
+    question: "What is Kush Gangwal's LinkedIn?",
+    answer: "Kush Gangwal's LinkedIn is https://www.linkedin.com/in/kush-gangwal.",
+  },
+  {
+    question: "Does Kush Gangwal use LeetCode?",
+    answer: "Yes. Kush Gangwal practices DSA on LeetCode at https://leetcode.com/u/kushgangwal and has earned 2 LeetCode badges.",
+  },
+  {
+    question: "What is Macfolio?",
+    answer:
+      "Macfolio is Kush Gangwal's portfolio: a macOS-style desktop in the browser plus crawlable pages. The public site is ${SITE_URL}.",
+  },
+  {
+    question: "What is Kush Gangwal known for?",
+    answer:
+      "Kush Gangwal is known for Potato Bazaar, React Native and full stack engineering, and the products Nexus, Resumind, and CodeMace.",
+  },
+  {
+    question: "Did Kush Gangwal work at Protonshub?",
+    answer:
+      "Yes. Kush Gangwal was a Full Stack Developer Intern at Protonshub Technologies from January 2026 to May 2026 and contributed to Tybee Go and Findanio.",
+  },
+  {
+    question: "Did Kush Gangwal intern at Django Softwares?",
+    answer:
+      "Yes. Kush Gangwal interned at Django Softwares from 2 June 2025 to 17 July 2025 and contributed to Scalelr.",
+  },
+  {
+    question: "Is Kush Gangwal a Medicaps University student?",
+    answer:
+      "Yes. Kush Gangwal studies B.Tech Computer Science Technology at Medicaps University in Indore, August 2022 to May 2026, CGPA 7.96.",
+  },
+  {
+    question: "What is React Native in Kush Gangwal's work?",
+    answer:
+      "React Native is how Kush Gangwal ships Android and iOS apps, including Potato Bazaar and Tybee Go, with store releases through Play Console and Apple Developer.",
+  },
+  {
+    question: "What is PostHog in Kush Gangwal's work?",
+    answer: "PostHog is a product analytics tool Kush Gangwal integrates on SK Groups mobile and web apps.",
+  },
+  {
+    question: "What is Mixpanel in Kush Gangwal's work?",
+    answer: "Mixpanel is a product analytics tool Kush Gangwal integrates on SK Groups apps beside PostHog.",
   },
 ];
 
@@ -677,6 +747,10 @@ export function sitemapEntries() {
     ...colleagues.map((person) => colleaguePath(person.slug)),
     ...blogPosts.map((post) => blogPostPath(post.slug)),
     ...entityPages.map((page) => page.path),
+    ...footprintPages.map((page) => page.path),
+    "/topics",
+    "/stack",
+    ...techPages.map((page) => `/stack/${page.slug}`),
   ];
   return [...new Set(paths)].map((path) => absolute(path));
 }

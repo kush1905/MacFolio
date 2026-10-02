@@ -1,3 +1,5 @@
+import { blogCluster } from "@/lib/blogCluster";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -298,6 +300,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  ...blogCluster,
 ];
 
 export function blogPostBySlug(slug: string) {

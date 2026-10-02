@@ -22,6 +22,12 @@ export default function HtmlSitemapPage() {
             <Link href="/about-kush-gangwal">About Kush Gangwal</Link>
           </li>
           <li>
+            <Link href="/topics">Topics</Link>
+          </li>
+          <li>
+            <Link href="/stack">Stack</Link>
+          </li>
+          <li>
             <Link href="/now">Now</Link>
           </li>
           <li>
