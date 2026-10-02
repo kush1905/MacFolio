@@ -310,6 +310,10 @@ body {
   font-weight: 600;
 }
 
+.desktop-gate-copy a {
+  color: #7dd3fc;
+}
+
 .desktop-gate-links {
   display: flex;
   flex-wrap: wrap;

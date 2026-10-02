@@ -25,9 +25,9 @@ export function DesktopGate() {
         <h1 id="desktop-gate-title">{PERSON_NAME}</h1>
         <p className="desktop-gate-role">{PERSON_HEADLINE}</p>
         <p id="desktop-gate-copy" className="desktop-gate-copy">
-          This portfolio is a macOS desktop. Open it on a computer, or turn on{" "}
-          <strong>Desktop site</strong> / <strong>Request Desktop Website</strong> in your phone
-          browser to see the same desktop.
+          The interactive Mac desktop needs a computer, or <strong>Desktop site</strong> in your
+          phone browser. About, projects, and writing still open on this phone at{" "}
+          <a href="/about-kush-gangwal">/about-kush-gangwal</a>.
         </p>
         <ul className="desktop-gate-links">
           {officialProfiles.slice(0, 4).map((profile) => (

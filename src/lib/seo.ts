@@ -406,6 +406,10 @@ export function websiteNode() {
     publisher: { "@id": personId },
     about: { "@id": personId },
     inLanguage: "en-IN",
+    potentialAction: {
+      "@type": "ReadAction",
+      target: [`${SITE_URL}/about-kush-gangwal`, `${SITE_URL}/projects`, `${SITE_URL}/now`],
+    },
   };
 }
 

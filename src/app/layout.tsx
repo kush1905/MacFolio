@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { DesktopCanvas } from "@/components/system/DesktopCanvas";
 import { DesktopGate } from "@/components/system/DesktopGate";
+import { DesktopGateHost } from "@/components/system/DesktopGateHost";
 import { PERSON_NAME, PERSON_TITLE_TAG } from "@/lib/identity";
 import { DESKTOP_BOOT_SCRIPT } from "@/lib/desktopMode";
 import { defaultKeywords, homeDescription } from "@/lib/seo";
@@ -27,6 +28,9 @@ export const metadata: Metadata = {
   publisher: PERSON_NAME,
   category: "portfolio",
   keywords: defaultKeywords,
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   robots: {
     index: true,
     follow: true,
@@ -86,7 +90,9 @@ export default function RootLayout({
         <link rel="me" href="https://x.com/kushgg19" />
       </head>
       <body className="min-h-full antialiased">
-        <DesktopGate />
+        <DesktopGateHost>
+          <DesktopGate />
+        </DesktopGateHost>
         <DesktopCanvas>{children}</DesktopCanvas>
       </body>
     </html>
