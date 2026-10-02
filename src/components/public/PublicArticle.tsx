@@ -8,6 +8,7 @@ export function PublicArticle({
   subtitle,
   updated,
   crumbs,
+  portrait,
   children,
 }: {
   kicker?: string;
@@ -15,6 +16,7 @@ export function PublicArticle({
   subtitle?: string;
   updated?: string;
   crumbs?: { href: string; label: string }[];
+  portrait?: { src: string; alt: string };
   children: ReactNode;
 }) {
   return (
@@ -30,20 +32,33 @@ export function PublicArticle({
           ))}
         </nav>
       ) : null}
-      {kicker ? <p className="public-kicker">{kicker}</p> : null}
-      <h1>{title}</h1>
-      {subtitle ? <p className="public-lede">{subtitle}</p> : null}
-      <p className="public-byline">
-        {PERSON_NAME}
-        <span aria-hidden="true"> · </span>
-        {PERSON_HEADLINE}
-        {updated ? (
-          <>
-            <span aria-hidden="true"> · </span>
-            <time dateTime={updated}>{updated}</time>
-          </>
+      <div className={portrait ? "public-intro" : undefined}>
+        {portrait ? (
+          <img
+            className="public-portrait"
+            src={portrait.src}
+            alt={portrait.alt}
+            width={1024}
+            height={1024}
+          />
         ) : null}
-      </p>
+        <div>
+          {kicker ? <p className="public-kicker">{kicker}</p> : null}
+          <h1>{title}</h1>
+          {subtitle ? <p className="public-lede">{subtitle}</p> : null}
+          <p className="public-byline">
+            {PERSON_NAME}
+            <span aria-hidden="true"> · </span>
+            {PERSON_HEADLINE}
+            {updated ? (
+              <>
+                <span aria-hidden="true"> · </span>
+                <time dateTime={updated}>{updated}</time>
+              </>
+            ) : null}
+          </p>
+        </div>
+      </div>
       {children}
     </article>
   );

@@ -1642,6 +1642,23 @@ html[data-sidebar="large"] {
   max-width: 720px;
 }
 
+.public-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.public-portrait {
+  width: 148px;
+  height: 148px;
+  flex: 0 0 auto;
+  margin-top: 6px;
+  border-radius: 28px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
 .public-article h1 {
   margin: 8px 0 12px;
   font-size: clamp(36px, 6vw, 56px);
@@ -1757,5 +1774,16 @@ html[data-sidebar="large"] {
 
   .public-article h1 {
     font-size: 34px;
+  }
+
+  .public-intro {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .public-portrait {
+    width: 112px;
+    height: 112px;
+    border-radius: 22px;
   }
 }

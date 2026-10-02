@@ -24,6 +24,7 @@ export default function AboutKushGangwalPage() {
         kicker={PERSON_HEADLINE}
         title={PERSON_NAME}
         subtitle={aboutDescription}
+        portrait={{ src: content.about.avatar, alt: `${PERSON_NAME}, ${PERSON_HEADLINE}` }}
       >
         <WhoIs />
 
