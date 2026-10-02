@@ -10,7 +10,7 @@ const NAV = [
   { href: "/accounts", label: "Profiles" },
   { href: "/topics", label: "Topics" },
   { href: "/stack", label: "Stack" },
-  { href: "/", label: "Desktop" },
+  { href: "/desktop", label: "Desktop" },
 ];
 
 export function PublicHeader() {

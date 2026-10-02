@@ -65,7 +65,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Where he is",
         paragraphs: [
-          "Kush Gangwal India means Indore, Madhya Pradesh. He studies at Medicaps University there and works onsite at SK Groups there. The public portfolio is https://kushgangwal.vercel.app.",
+          "Kush Gangwal India means Indore, Madhya Pradesh. He studies at Medicaps University there and works onsite at SK Groups there. The public portfolio is https://kushgangwal.site.",
           "India is the country. Indore is the city. Pages that need a location should use Indore, not a different city.",
         ],
       },
@@ -98,7 +98,7 @@ export const footprintPages: EntityPage[] = [
         heading: "Accounts",
         paragraphs: [
           "Kush Gangwal GitHub is https://github.com/kush1905. Public repositories include Nexus and MacFolio. Potato Bazaar engineering also uses https://github.com/Kush-PB.",
-          "The GitHub profile should use the same name and headline as this site: Kush Gangwal, Full Stack Developer & React Native Developer, and should link to https://kushgangwal.vercel.app/about-kush-gangwal.",
+          "The GitHub profile should use the same name and headline as this site: Kush Gangwal, Full Stack Developer & React Native Developer, and should link to https://kushgangwal.site/about-kush-gangwal.",
         ],
       },
     ],
@@ -114,7 +114,7 @@ export const footprintPages: EntityPage[] = [
         heading: "The profile that should match this site",
         paragraphs: [
           "Kush Gangwal LinkedIn is https://www.linkedin.com/in/kush-gangwal. An older profile URL, linkedin.com/in/kush-gangwal-96ab38263, should point at the same person and the same headline.",
-          "The website field on LinkedIn should be https://kushgangwal.vercel.app/about-kush-gangwal so search engines connect the profile and the portfolio.",
+          "The website field on LinkedIn should be https://kushgangwal.site/about-kush-gangwal so search engines connect the profile and the portfolio.",
         ],
       },
     ],
@@ -145,7 +145,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Where to read it",
         paragraphs: [
-          "Kush Gangwal Resume lives at https://kushgangwal.vercel.app/resume and as a PDF at /resume.pdf. It lists the same identity: Full Stack Developer & React Native Developer.",
+          "Kush Gangwal Resume lives at https://kushgangwal.site/resume and as a PDF at /resume.pdf. It lists the same identity: Full Stack Developer & React Native Developer.",
           "Experience on the resume is SK Groups, Protonshub Technologies, and Django Softwares. Education is Medicaps University, CGPA 7.96.",
         ],
       },
@@ -211,7 +211,7 @@ export const footprintPages: EntityPage[] = [
         heading: "How to reach him",
         paragraphs: [
           "Kush Gangwal Contact email is gangwal.kush.19@gmail.com. A second email is workspacekush@gmail.com. Phone is +91 88159 60580. He is in Indore, Madhya Pradesh.",
-          "Profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. The canonical page to link is https://kushgangwal.vercel.app/about-kush-gangwal.",
+          "Profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. The canonical page to link is https://kushgangwal.site/about-kush-gangwal.",
         ],
       },
     ],
@@ -563,7 +563,7 @@ export const footprintPages: EntityPage[] = [
         heading: "Class of 2026",
         paragraphs: [
           "Medicaps University Alumni Kush Gangwal refers to the May 2026 completion of B.Tech Computer Science Technology. Until that month he is a student, CGPA 7.96.",
-          "Alumni pages and the university profile should use the name Kush Gangwal and link to https://kushgangwal.vercel.app/about-kush-gangwal.",
+          "Alumni pages and the university profile should use the name Kush Gangwal and link to https://kushgangwal.site/about-kush-gangwal.",
         ],
       },
     ],
@@ -834,7 +834,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "This site",
         paragraphs: [
-          "Macfolio Portfolio is the macOS desktop at https://kushgangwal.vercel.app and the article pages around it. Stack: Next.js, React, TypeScript, Tailwind CSS, Zustand, and PostgreSQL.",
+          "Macfolio Portfolio is the macOS desktop at https://kushgangwal.site/desktop and the article pages around it. The site root opens the about page. Stack: Next.js, React, TypeScript, Tailwind CSS, Zustand, and PostgreSQL.",
           "The case study is /projects/macfolio. The identity page is /about-kush-gangwal.",
         ],
       },

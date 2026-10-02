@@ -315,7 +315,7 @@ export const faqs: Faq[] = [
   },
   {
     question: "What is Kush Gangwal's portfolio URL?",
-    answer: `The official Kush Gangwal portfolio is ${SITE_URL}. The identity page is ${SITE_URL}/about-kush-gangwal. The domain kushgangwal.site is reserved for this same site.`,
+    answer: `The official Kush Gangwal portfolio is ${SITE_URL}. Opening the domain shows the about page at ${SITE_URL}/about-kush-gangwal. The macOS desktop is at ${SITE_URL}/desktop.`,
   },
   {
     question: "What technologies does Kush Gangwal use?",

@@ -30,7 +30,7 @@ function requestedDesktopSite() {
 }
 
 export function syncDisplayMode(pathname = window.location.pathname) {
-  const publicPage = pathname !== "/";
+  const publicPage = pathname !== "/desktop";
   const allowed =
     isCrawler() || publicPage || requestedDesktopSite() || window.innerWidth >= 1100;
   document.documentElement.setAttribute("data-display-mode", allowed ? "desktop" : "mobile");
@@ -65,5 +65,5 @@ export function useDesktopAllowed() {
 }
 
 export function useIsOsHome() {
-  return usePathname() === "/";
+  return usePathname() === "/desktop";
 }

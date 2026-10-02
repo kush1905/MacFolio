@@ -32,7 +32,7 @@ export const techPages: TechPage[] = [
     name: "Next.js",
     description: "Kush Gangwal uses Next.js for Macfolio, Potato Bazaar, Findanio, and Resumind.",
     use: "App Router pages, static case studies, and web product shells.",
-    proof: ["kushgangwal.vercel.app", "Potato Bazaar web", "Findanio", "Resumind"],
+    proof: ["kushgangwal.site", "Potato Bazaar web", "Findanio", "Resumind"],
     related: [{ href: "/kush-gangwal-nextjs-developer", label: "Next.js developer" }],
   },
   {
@@ -135,8 +135,8 @@ export const techPages: TechPage[] = [
     slug: "vercel",
     name: "Vercel",
     description: "Kush Gangwal deploys Next.js work on Vercel, including this portfolio and early Nexus.",
-    use: "Hosting for kushgangwal.vercel.app and static project pages.",
-    proof: ["kushgangwal.vercel.app", "Nexus"],
+    use: "Hosting for kushgangwal.site and static project pages.",
+    proof: ["kushgangwal.site", "Nexus"],
     related: [{ href: "/about-kush-gangwal", label: "About" }],
   },
   {

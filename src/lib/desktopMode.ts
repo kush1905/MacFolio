@@ -6,7 +6,7 @@ export const DESKTOP_BOOT_SCRIPT = `(function(){
   var ua=navigator.userAgent||"";
   var path=location.pathname||"/";
   var bot=/Googlebot|Google-InspectionTool|bingbot|BingPreview|Baiduspider|Yandex|DuckDuckBot|Slurp|GPTBot|ChatGPT|ClaudeBot|Perplexity|Applebot|Bytespider|facebookexternalhit|LinkedInBot|Twitterbot|Slackbot/i.test(ua);
-  var publicPage=path!=="/";
+  var publicPage=path!=="/desktop";
   function phone(){
     var min=Math.min(screen.width||0,screen.height||0);
     var touch=(navigator.maxTouchPoints||0)>0||"ontouchend" in document;

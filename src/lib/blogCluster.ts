@@ -144,7 +144,7 @@ export const blogCluster: BlogPost[] = [
         heading: "Two surfaces",
         paragraphs: [
           "Kush Gangwal's Next.js portfolio is Macfolio. The home route is a macOS desktop. /about-kush-gangwal, /projects, and /blog are normal HTML so search engines can read them.",
-          "The canonical origin is https://kushgangwal.vercel.app until kushgangwal.site points at the same deployment.",
+          "The canonical origin is https://kushgangwal.site. The macOS desktop is at /desktop. The identity page is /about-kush-gangwal.",
         ],
       },
     ],
@@ -297,7 +297,7 @@ export const blogCluster: BlogPost[] = [
         heading: "Do not hide the name",
         paragraphs: [
           "Kush Gangwal's portfolio puts the name in the title, the H1 on /about-kush-gangwal, and Person schema. The desktop on / is for people. The articles are for indexing.",
-          "One domain should be canonical. Today that is https://kushgangwal.vercel.app. kushgangwal.site becomes canonical after its DNS leaves the Hostinger parking page.",
+          "One domain should be canonical. That domain is https://kushgangwal.site.",
         ],
       },
     ],
@@ -517,7 +517,7 @@ export const blogCluster: BlogPost[] = [
       {
         heading: "One bio",
         paragraphs: [
-          "The GitHub README for kush1905 should say Kush Gangwal, Full Stack Developer & React Native Developer, and link to https://kushgangwal.vercel.app/about-kush-gangwal.",
+          "The GitHub README for kush1905 should say Kush Gangwal, Full Stack Developer & React Native Developer, and link to https://kushgangwal.site/about-kush-gangwal.",
           "A second account, Kush-PB, is the Potato Bazaar engineering account. Both should name the same person.",
         ],
       },
@@ -654,7 +654,7 @@ export const blogCluster: BlogPost[] = [
         heading: "Seven profiles, one headline",
         paragraphs: [
           "LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X should all say Kush Gangwal, Full Stack Developer & React Native Developer.",
-          "Each bio should link to https://kushgangwal.vercel.app/about-kush-gangwal. Email is gangwal.kush.19@gmail.com.",
+          "Each bio should link to https://kushgangwal.site/about-kush-gangwal. Email is gangwal.kush.19@gmail.com.",
         ],
       },
     ],

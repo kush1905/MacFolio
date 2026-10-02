@@ -89,7 +89,7 @@ export default function AboutKushGangwalPage() {
               </>
             ) : null}
             . Also see <Link href="/now">/now</Link>, <Link href="/faq">FAQ</Link>, and the{" "}
-            <Link href="/">interactive portfolio desktop</Link>.
+            <Link href="/desktop">interactive portfolio desktop</Link>.
           </p>
         </section>
       </PublicArticle>
