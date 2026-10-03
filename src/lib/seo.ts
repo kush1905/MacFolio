@@ -260,7 +260,7 @@ export const faqs: Faq[] = [
   {
     question: "What is Potato Bazaar?",
     answer:
-      "Potato Bazaar is a full-stack digital marketplace for agricultural trading. Kush Gangwal is a founding engineer of Potato Bazaar, associated with SK Agri Exports Private Ltd. It covers web, Android, and iOS, including KYC, payments, logistics, and AI-powered crop insights, and is available at potatobazaar.com and on Google Play.",
+      "Potato Bazaar is India's digital potato marketplace, founded in 2024 by SK Agri Exports and powered by S K AGRI EXPORTS PRIVATE LIMITED. It connects farmers, traders, cold storage, and buyers, with a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor. Kush Gangwal is a founding engineer of the software and works at SK Groups in Indore. The about page names Sandeep Kumar as Founder & CEO.",
   },
   {
     question: "What is Nexus?",
@@ -385,7 +385,7 @@ export const faqs: Faq[] = [
   {
     question: "Who built Potato Bazaar?",
     answer:
-      "Kush Gangwal is a founding engineer of Potato Bazaar. He is a Full Stack Developer & React Native Developer. The marketplace is operated by SK Agri Exports Private Limited. He works at SK Groups in Indore.",
+      "Kush Gangwal is a founding engineer of Potato Bazaar and a Junior Software Developer at SK Groups in Indore. SK Agri Exports Private Limited powers the marketplace. Potato Bazaar's about page names Sandeep Kumar as Founder & CEO, which is a different role from Kush Gangwal's.",
   },
   {
     question: "Who is the founding engineer of Potato Bazaar?",
@@ -395,7 +395,7 @@ export const faqs: Faq[] = [
   {
     question: "What does Potato Bazaar do?",
     answer:
-      "Potato Bazaar is a digital marketplace for potato and agricultural trading. It connects farmers, traders, cold storage, and buyers, with KYC, payments, logistics, and AI-powered crop insights. Kush Gangwal builds it. SK Agri Exports Private Limited operates it.",
+      "Potato Bazaar connects farmers, traders, cold storage facilities, and institutional buyers. Its about page lists a marketplace, cold storage booking, mandi prices, an AI Crop Doctor, and a business directory. Kush Gangwal builds the web and React Native software. SK Groups employs him. S K AGRI EXPORTS PRIVATE LIMITED powers the product.",
   },
   {
     question: "How does Potato Bazaar help potato traders?",
@@ -410,7 +410,7 @@ export const faqs: Faq[] = [
   {
     question: "What is SK Groups?",
     answer:
-      "SK Groups is Kush Gangwal's employer in Indore. He is a Junior Software Developer there from June 2026, building mobile, backend, and web software, including Potato Bazaar.",
+      "SK Groups is Kush Gangwal's employer in Indore. He is a Junior Software Developer there from June 2026 and the founding engineer of Potato Bazaar, the potato marketplace powered by SK Agri Exports Private Limited.",
   },
   {
     question: "What is Mantra Agri Solutions?",
@@ -420,12 +420,12 @@ export const faqs: Faq[] = [
   {
     question: "How does cold storage work in potato trading?",
     answer:
-      "Cold storage holds potatoes between harvest and sale. Potato Bazaar connects cold storage operators with traders and farmers. Kush Gangwal builds that marketplace software, including logistics. He does not operate the warehouses.",
+      "Potato Bazaar's about page lets people find, book, and list cold storage, and manage inventory beside potato trading. Kush Gangwal builds that software at SK Groups. He does not operate the warehouses. SK Agri Exports Private Limited powers Potato Bazaar.",
   },
   {
     question: "What technology powers Potato Bazaar?",
     answer:
-      "Potato Bazaar uses React.js, Next.js, Node.js, and React Native. Kush Gangwal is the founding engineer. The Android app is com.potatobazaar.",
+      "Kush Gangwal builds Potato Bazaar with React.js, Next.js, Node.js, and React Native. The about page also describes AI crop diagnosis, market intelligence, and escrow. He is the founding engineer at SK Groups. The Android package is com.potatobazaar.",
   },
   {
     question: "Is Potato Bazaar a potato trading platform in India?",
@@ -734,7 +734,15 @@ function productNode(product: ProductPage) {
           applicationCategory: "BusinessApplication",
           operatingSystem: "Android, iOS, Web",
           installUrl: "https://play.google.com/store/apps/details?id=com.potatobazaar",
-          featureList: ["Marketplace", "KYC", "Payments", "Logistics", "AI crop insights"],
+          featureList: [
+            "Marketplace",
+            "Cold storage booking",
+            "Mandi prices",
+            "AI Crop Doctor",
+            "KYC",
+            "Payments",
+            "Logistics",
+          ],
           publisher: { "@id": `${SITE_URL}/work/sk-agri-exports-private-ltd#org` },
         }
       : {}),
@@ -872,9 +880,10 @@ export function llmsText() {
     ...colleagues.map((person) => `- ${person.name}: Kush Gangwal has worked with ${person.name}.`),
     "",
     "## Potato Bazaar entity graph",
-    "- Kush Gangwal is founding engineer of Potato Bazaar.",
-    "- Potato Bazaar is operated by SK Agri Exports Private Limited.",
-    "- Kush Gangwal works at SK Groups in Indore.",
+    "- Kush Gangwal is founding engineer of Potato Bazaar and works at SK Groups in Indore.",
+    "- Potato Bazaar was founded in 2024 by SK Agri Exports and is powered by S K AGRI EXPORTS PRIVATE LIMITED.",
+    "- Potato Bazaar's about page names Sandeep Kumar as Founder & CEO. That is not Kush Gangwal's role.",
+    "- The product lists a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor.",
     "- Mantra Agri Solutions is a public SK Group and Haldiram potato venture. It is not his employer.",
     "- Potato Bazaar connects potato trading, cold storage, logistics, KYC, and crop insights.",
     `- Graph: ${SITE_URL}/entities`,

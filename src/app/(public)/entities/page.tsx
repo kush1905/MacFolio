@@ -41,7 +41,20 @@ export default function EntitiesPage() {
       "@id": `${SITE_URL}/work/sk-agri-exports-private-ltd#org`,
       name: "SK Agri Exports Private Limited",
       url: absolute("/companies/sk-agri-exports-private-limited"),
-      sameAs: ["http://skagriexports.com/", "https://potatobazaar.com"],
+      sameAs: ["http://skagriexports.com/", "https://potatobazaar.com", "https://potatobazaar.com/about"],
+      email: "Support@potatobazaar.com",
+      telephone: "+91-75670-81000",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Ahmedabad",
+        addressRegion: "Gujarat",
+        addressCountry: "IN",
+      },
+      founder: {
+        "@type": "Person",
+        name: "Sandeep Kumar",
+        jobTitle: "Founder & CEO",
+      },
     },
     {
       "@type": "Organization",
@@ -78,9 +91,10 @@ export default function EntitiesPage() {
           <h2>Read this as a sentence</h2>
           <p>
             {PERSON_NAME} is a Full Stack Developer & React Native Developer. He is founding engineer
-            of Potato Bazaar, a potato marketplace operated by SK Agri Exports Private Limited. He
-            works at SK Groups in Indore. Mantra Agri Solutions is a public procurement venture in
-            that potato ecosystem. He is not its employee.
+            of Potato Bazaar while employed at SK Groups in Indore. Potato Bazaar's about page says
+            SK Agri Exports founded the marketplace in 2024 and names Sandeep Kumar as Founder & CEO.
+            The product lists a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor.
+            The published office is Ahmedabad. Kush Gangwal works in Indore.
           </p>
           <p>
             Machine-readable copy: <Link href="/data/entities.json">/data/entities.json</Link> and{" "}
