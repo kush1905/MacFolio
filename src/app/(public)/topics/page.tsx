@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PublicArticle } from "@/components/public/PublicArticle";
+import { agriCompanies, agriIndustries, agriSearchPages } from "@/lib/agriGraph";
 import { entityPages } from "@/lib/entityPages";
 import { footprintPages } from "@/lib/footprint";
 import { PERSON_NAME } from "@/lib/identity";
@@ -29,6 +30,22 @@ export default function TopicsPage() {
               <Link href={page.path}>{page.h1}</Link>
             </li>
           ))}
+        </ul>
+      </section>
+      <section>
+        <h2>Potato Bazaar and agritech</h2>
+        <ul>
+          {[...agriCompanies, ...agriIndustries, ...agriSearchPages].map((page) => (
+            <li key={page.path}>
+              <Link href={page.path}>{page.h1}</Link>
+            </li>
+          ))}
+          <li>
+            <Link href="/entities">Entity graph</Link>
+          </li>
+          <li>
+            <Link href="/agritech">Agritech hub</Link>
+          </li>
         </ul>
       </section>
       <section>

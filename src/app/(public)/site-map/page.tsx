@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PublicArticle } from "@/components/public/PublicArticle";
+import { agriCompanies, agriIndustries } from "@/lib/agriGraph";
 import { blogPosts } from "@/lib/blogPosts";
 import { entityPages } from "@/lib/entityPages";
 import { PERSON_NAME } from "@/lib/identity";
@@ -42,6 +43,15 @@ export default function HtmlSitemapPage() {
           <li>
             <Link href="/mentions">How to mention</Link>
           </li>
+          <li>
+            <Link href="/entities">Entity graph</Link>
+          </li>
+          <li>
+            <Link href="/agritech">Agritech</Link>
+          </li>
+          <li>
+            <Link href="/knowledge-base">Knowledge base</Link>
+          </li>
         </ul>
       </section>
       <section>
@@ -70,6 +80,21 @@ export default function HtmlSitemapPage() {
           {entityPages.map((page) => (
             <li key={page.slug}>
               <Link href={page.path}>{page.h1}</Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h2>Companies and industries</h2>
+        <ul>
+          {agriCompanies.map((company) => (
+            <li key={company.path}>
+              <Link href={company.path}>{company.h1}</Link>
+            </li>
+          ))}
+          {agriIndustries.map((industry) => (
+            <li key={industry.path}>
+              <Link href={industry.path}>{industry.h1}</Link>
             </li>
           ))}
         </ul>

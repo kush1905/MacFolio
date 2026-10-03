@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { RelatedEntities } from "@/components/public/RelatedEntities";
 import { PERSON_HEADLINE, PERSON_NAME } from "@/lib/identity";
 
 export function PublicArticle({
@@ -60,6 +61,7 @@ export function PublicArticle({
         </div>
       </div>
       {children}
+      <RelatedEntities />
     </article>
   );
 }

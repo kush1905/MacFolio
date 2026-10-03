@@ -56,6 +56,12 @@ export function PublicFooter() {
           <Link href="/mentions">Cite</Link>
         </li>
         <li>
+          <Link href="/agritech">Agritech</Link>
+        </li>
+        <li>
+          <Link href="/entities">Entities</Link>
+        </li>
+        <li>
           <Link href="/llms.txt">llms.txt</Link>
         </li>
       </ul>

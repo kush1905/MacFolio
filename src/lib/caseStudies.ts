@@ -177,6 +177,8 @@ export const caseStudies: CaseStudy[] = [
       "Kush Gangwal Potato Bazaar",
       "Potato Bazaar Developer",
       "Scaling Potato Bazaar Mobile Application",
+      "Potato Bazaar India",
+      "Potato Trading Platform",
     ],
     sections: [
       {
@@ -204,6 +206,13 @@ export const caseStudies: CaseStudy[] = [
         paragraphs: [
           "Scaling Potato Bazaar Mobile Application meant treating React Native as a production client, not a prototype. Kush Gangwal works with Android Studio, Play Console, Xcode, and Apple Developer for builds and releases. Pagination, navigation, and async data handling keep lists usable as catalog size grows.",
           "The same person who writes the React Native screens also touches the Node.js and Next.js sides. That is why Kush Gangwal Full Stack Developer and Kush Gangwal React Native Developer are the same entity, not two different careers.",
+        ],
+      },
+      {
+        heading: "Companies around the product",
+        paragraphs: [
+          "SK Agri Exports Private Limited operates Potato Bazaar. The company's public site describes a potato exporter in an SK Group ecosystem that includes cold storage and a joint venture, Mantra Agri, with Haldiram. Kush Gangwal is associated with SK Agri Exports as founding engineer of the marketplace. He is employed at SK Groups in Indore. He does not list Mantra Agri Solutions as an employer.",
+          "The industry pages on this portfolio — potato trading, cold storage, agricultural marketplace, and agriculture logistics — all point back to this product and to Kush Gangwal.",
         ],
       },
     ],

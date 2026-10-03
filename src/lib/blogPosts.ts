@@ -1,3 +1,4 @@
+import { agriBlog } from "@/lib/agriBlog";
 import { blogCluster } from "@/lib/blogCluster";
 
 export type BlogPost = {
@@ -301,6 +302,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   ...blogCluster,
+  ...agriBlog,
 ];
 
 export function blogPostBySlug(slug: string) {
