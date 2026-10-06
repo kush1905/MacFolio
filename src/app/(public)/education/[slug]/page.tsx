@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   if (slug !== education.slug) return {};
   return publicMeta({
     title: `${PERSON_NAME} · ${education.name}`,
-    description: `${PERSON_NAME} studies ${education.degree} at ${education.name}, ${education.score}, ${education.duration}.`,
+    description: `${PERSON_NAME} graduated with ${education.degree} from ${education.name} in Indore, ${education.score}, ${education.duration}. He grew up in Bakaner and works in Ahmedabad.`,
     path: educationPath,
   });
 }
@@ -37,7 +37,7 @@ export default async function EducationPage({ params }: Props) {
         crumbs={[{ href: educationPath, label: education.name }]}
       >
         <p>
-          Kush Gangwal Medicaps University is a B.Tech in Computer Science Technology in Indore.
+          Kush Gangwal graduated from Medicaps University in Indore with a B.Tech in Computer Science Technology. He grew up in Bakaner and works in Ahmedabad.
           The dedicated search page is{" "}
           <Link href="/kush-gangwal-medicaps-university">/kush-gangwal-medicaps-university</Link>.
         </p>

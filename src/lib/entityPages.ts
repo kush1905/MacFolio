@@ -23,7 +23,7 @@ export const entityPages: EntityPage[] = [
       {
         heading: "Who this page is about",
         paragraphs: [
-          "Kush Gangwal is a Full Stack Developer & React Native Developer based in Indore, India. This page exists so the phrase Kush Gangwal React Native Developer has a dedicated, factual home.",
+          "Kush Gangwal is a Full Stack Developer & React Native Developer working in Ahmedabad. He grew up in Bakaner and graduated in Indore. This page exists so the phrase Kush Gangwal React Native Developer has a dedicated, factual home.",
           "He builds production mobile applications with React Native and TypeScript, manages Android and iOS releases, and connects those clients to Node.js APIs.",
         ],
       },
@@ -108,7 +108,7 @@ export const entityPages: EntityPage[] = [
     title: "Kush Gangwal Medicaps University",
     h1: "Kush Gangwal Medicaps University",
     description:
-      "Kush Gangwal studies B.Tech Computer Science Technology at Medicaps University, Indore, CGPA 7.96, class of 2026.",
+      "Kush Gangwal graduated with a B.Tech in Computer Science Technology from Medicaps University, Indore, CGPA 7.96, class of 2026.",
     kicker: "Education",
     searchPhrases: ["Kush Gangwal Medicaps University"],
     sections: [

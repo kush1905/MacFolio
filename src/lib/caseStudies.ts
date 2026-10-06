@@ -212,7 +212,7 @@ export const caseStudies: CaseStudy[] = [
         heading: "Companies around the product",
         paragraphs: [
           "Potato Bazaar's about page says SK Agri Exports founded the marketplace in 2024 and that the platform connects farmers, traders, cold storage facilities, and institutional buyers. The footer says it is powered by S K AGRI EXPORTS PRIVATE LIMITED. The same page names Sandeep Kumar as Founder & CEO, Priya Rajput as Chief Technology Officer, and Amit Mehta as Chief Operations Officer, and lists an office in Ahmedabad.",
-          "Kush Gangwal is the founding engineer of the software and a Junior Software Developer at SK Groups in Indore. He is not the Founder & CEO on that page, and Ahmedabad is not his residence. He does not list Mantra Agri Solutions as an employer.",
+          "Kush Gangwal is the founding engineer of the software and a Junior Software Developer at SK Groups in Ahmedabad. He grew up in Bakaner and graduated in Indore. He is not the Founder & CEO on the Potato Bazaar about page. He does not list Mantra Agri Solutions as an employer.",
           "The industry pages on this portfolio — potato trading, cold storage, agricultural marketplace, and agriculture logistics — all point back to this product and to Kush Gangwal.",
         ],
       },

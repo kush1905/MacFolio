@@ -9,7 +9,7 @@ He has worked on:
 - Resumind
 - CodeMace
 
-Kush Gangwal is a Computer Science Technology student at Medicaps University (CGPA 7.96) and a Full Stack Developer & React Native Developer based in Indore, MP. He currently works at SK Groups.
+Kush Gangwal grew up in Bakaner, graduated in Computer Science Technology from Medicaps University in Indore (CGPA 7.96), and is a Full Stack Developer & React Native Developer working at SK Groups in Ahmedabad.
 
 His journey into software development started with HTML, CSS, and JavaScript, then grew into React, Node.js, databases, APIs, and React Native for cross-platform mobile development.
 

@@ -31,7 +31,7 @@ export default function AboutKushGangwalPage() {
         <section>
           <h2>Work</h2>
           <p>
-            Kush Gangwal currently works at SK Groups in Indore. He previously interned at
+            Kush Gangwal currently works at SK Groups in Ahmedabad. He previously interned at
             Protonshub Technologies and Django Softwares, and is a founding engineer of Potato
             Bazaar and Findanio.
           </p>
@@ -64,9 +64,10 @@ export default function AboutKushGangwalPage() {
         <section>
           <h2>Education</h2>
           <p>
-            Kush Gangwal studies {content.about.education.degree} at{" "}
+            Kush Gangwal graduated with {content.about.education.degree} from{" "}
             <Link href="/education/medicaps-university">Medicaps University</Link> in Indore
-            ({content.about.education.duration}, CGPA {content.about.education.cgpa}).
+            ({content.about.education.duration}, CGPA {content.about.education.cgpa}). He grew up in
+            Bakaner and works in Ahmedabad.
           </p>
         </section>
 

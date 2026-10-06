@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Production is the job",
         paragraphs: [
-          "At SK Groups, Kush Gangwal is a Junior Software Developer onsite in Indore and a React Native Developer in practice. The work is mobile apps, backend services, and web platforms — including Android and iOS debugging and releases.",
+          "At SK Groups, Kush Gangwal is a Junior Software Developer in Ahmedabad and a React Native Developer in practice. The work is mobile apps, backend services, and web platforms — including Android and iOS debugging and releases.",
         ],
       },
       {
@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "The degree",
         paragraphs: [
-          "Kush Gangwal studies Bachelor of Technology in Computer Science Technology at Medicaps University in Indore, Madhya Pradesh, from August 2022 to May 2026, with a CGPA of 7.96.",
+          "Kush Gangwal graduated with a Bachelor of Technology in Computer Science Technology from Medicaps University in Indore, Madhya Pradesh, August 2022 to May 2026, CGPA 7.96. He grew up in Bakaner and works in Ahmedabad.",
         ],
       },
       {

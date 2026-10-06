@@ -1,4 +1,5 @@
 import { agriCompanies, agriIndustries, agriSearchPages } from "@/lib/agriGraph";
+import { spellingNames, spellingPages } from "@/lib/spellings";
 import { blogPosts } from "@/lib/blogPosts";
 import { caseStudies } from "@/lib/caseStudies";
 import { content } from "@/lib/content";
@@ -63,7 +64,7 @@ const companyProducts: Record<string, string[]> = {
 
 const companySummaries: Record<string, string> = {
   "SK Groups":
-    "Kush Gangwal is a Full Stack Developer & React Native Developer at SK Groups in Indore, onsite since June 2026. He develops mobile apps, backend services, and web platforms, manages Android and iOS releases, and integrates analytics and AI APIs.",
+    "Kush Gangwal is a Full Stack Developer & React Native Developer at SK Groups in Ahmedabad since June 2026. He grew up in Bakaner and graduated from Medicaps University in Indore. He develops mobile apps, backend services, and web platforms, manages Android and iOS releases, and integrates analytics and AI APIs.",
   "Protonshub Technologies":
     "Kush Gangwal was a Full Stack Developer Intern at Protonshub Technologies from January 2026 to May 2026. He built AI-powered web and mobile apps and contributed to Tybee Go and Findanio on Android and iOS.",
   "Django Softwares":
@@ -235,7 +236,7 @@ export const faqs: Faq[] = [
   {
     question: "Where does Kush Gangwal work?",
     answer:
-      "Kush Gangwal works at SK Groups in Indore as a Junior Software Developer, onsite from June 2026 to the present. His public identity is Full Stack Developer & React Native Developer.",
+      "Kush Gangwal works at SK Groups in Ahmedabad as a Junior Software Developer from June 2026 to the present. He grew up in Bakaner and graduated from Medicaps University in Indore. His public identity is Full Stack Developer & React Native Developer.",
   },
   {
     question: "Which companies has Kush Gangwal worked at?",
@@ -260,7 +261,7 @@ export const faqs: Faq[] = [
   {
     question: "What is Potato Bazaar?",
     answer:
-      "Potato Bazaar is India's digital potato marketplace, founded in 2024 by SK Agri Exports and powered by S K AGRI EXPORTS PRIVATE LIMITED. It connects farmers, traders, cold storage, and buyers, with a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor. Kush Gangwal is a founding engineer of the software and works at SK Groups in Indore. The about page names Sandeep Kumar as Founder & CEO.",
+      "Potato Bazaar is India's digital potato marketplace, founded in 2024 by SK Agri Exports and powered by S K AGRI EXPORTS PRIVATE LIMITED. It connects farmers, traders, cold storage, and buyers, with a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor. Kush Gangwal is a founding engineer of the software and works at SK Groups in Ahmedabad. The about page names Sandeep Kumar as Founder & CEO.",
   },
   {
     question: "What is Nexus?",
@@ -295,7 +296,7 @@ export const faqs: Faq[] = [
   {
     question: "Where did Kush Gangwal study?",
     answer:
-      "Kush Gangwal studies Bachelor of Technology in Computer Science Technology at Medicaps University in Indore, Madhya Pradesh, from August 2022 to May 2026, with a CGPA of 7.96.",
+      "Kush Gangwal graduated with a Bachelor of Technology in Computer Science Technology from Medicaps University in Indore, Madhya Pradesh, August 2022 to May 2026, with a CGPA of 7.96. He grew up in Bakaner and now works in Ahmedabad.",
   },
   {
     question: "Who has Kush Gangwal worked with?",
@@ -312,7 +313,7 @@ export const faqs: Faq[] = [
   },
   {
     question: "How can I contact Kush Gangwal?",
-    answer: `You can email Kush Gangwal at ${about.email}. Official profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. He is based in Indore, Madhya Pradesh. The portfolio is ${SITE_URL}.`,
+    answer: `You can email Kush Gangwal at ${about.email}. Official profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. He grew up in Bakaner, graduated in Indore, and works in Ahmedabad. The portfolio is ${SITE_URL}.`,
   },
   {
     question: "What is Kush Gangwal's portfolio URL?",
@@ -330,7 +331,8 @@ export const faqs: Faq[] = [
   },
   {
     question: "Where in India is Kush Gangwal based?",
-    answer: "Kush Gangwal is based in Indore, Madhya Pradesh, India. He studies at Medicaps University and works onsite at SK Groups.",
+    answer:
+      "Kush Gangwal grew up in Bakaner, also spelled Bikaner. He graduated from Medicaps University in Indore, Madhya Pradesh. He currently works at SK Groups in Ahmedabad, Gujarat.",
   },
   {
     question: "What is Kush Gangwal's GitHub?",
@@ -367,7 +369,7 @@ export const faqs: Faq[] = [
   {
     question: "Is Kush Gangwal a Medicaps University student?",
     answer:
-      "Yes. Kush Gangwal studies B.Tech Computer Science Technology at Medicaps University in Indore, August 2022 to May 2026, CGPA 7.96.",
+      "He has graduated. Kush Gangwal completed a B.Tech in Computer Science Technology at Medicaps University in Indore, August 2022 to May 2026, CGPA 7.96. He grew up in Bakaner and works in Ahmedabad.",
   },
   {
     question: "What is React Native in Kush Gangwal's work?",
@@ -385,7 +387,7 @@ export const faqs: Faq[] = [
   {
     question: "Who built Potato Bazaar?",
     answer:
-      "Kush Gangwal is a founding engineer of Potato Bazaar and a Junior Software Developer at SK Groups in Indore. SK Agri Exports Private Limited powers the marketplace. Potato Bazaar's about page names Sandeep Kumar as Founder & CEO, which is a different role from Kush Gangwal's.",
+      "Kush Gangwal is a founding engineer of Potato Bazaar and a Junior Software Developer at SK Groups in Ahmedabad. SK Agri Exports Private Limited powers the marketplace. Potato Bazaar's about page names Sandeep Kumar as Founder & CEO, which is a different role from Kush Gangwal's.",
   },
   {
     question: "Who is the founding engineer of Potato Bazaar?",
@@ -410,7 +412,7 @@ export const faqs: Faq[] = [
   {
     question: "What is SK Groups?",
     answer:
-      "SK Groups is Kush Gangwal's employer in Indore. He is a Junior Software Developer there from June 2026 and the founding engineer of Potato Bazaar, the potato marketplace powered by SK Agri Exports Private Limited.",
+      "SK Groups is Kush Gangwal's employer in Ahmedabad. He is a Junior Software Developer there from June 2026 and the founding engineer of Potato Bazaar, the potato marketplace powered by SK Agri Exports Private Limited. He grew up in Bakaner and graduated in Indore.",
   },
   {
     question: "What is Mantra Agri Solutions?",
@@ -432,6 +434,31 @@ export const faqs: Faq[] = [
     answer:
       "Yes. Potato Bazaar is a potato trading platform in India, operated by SK Agri Exports Private Limited and built by Kush Gangwal.",
   },
+  {
+    question: "Where did Kush Gangwal grow up?",
+    answer:
+      "Kush Gangwal grew up in Bakaner. People also search that place as Bikaner. He later graduated in Indore and now works in Ahmedabad.",
+  },
+  {
+    question: "Where did Kush Gangwal graduate?",
+    answer:
+      "Kush Gangwal graduated from Medicaps University in Indore, Madhya Pradesh, with a B.Tech in Computer Science Technology, August 2022 to May 2026, CGPA 7.96.",
+  },
+  {
+    question: "Where does Kush Gangwal work now?",
+    answer:
+      "Kush Gangwal currently works in Ahmedabad, Gujarat, at SK Groups, as a Junior Software Developer and founding engineer of Potato Bazaar.",
+  },
+  {
+    question: "Is Kush Gangawal the same person as Kush Gangwal?",
+    answer:
+      "Yes. Kush Gangawal, Kush Gangwall, Kush Gangval, Koosh Gangwal, and Kaush Gangwal are misspellings of Kush Gangwal, the Full Stack Developer and React Native Developer who grew up in Bakaner, graduated in Indore, and works in Ahmedabad.",
+  },
+  {
+    question: "Is Potato Bazar the same as Potato Bazaar?",
+    answer:
+      "Yes. Potato Bazar, Potato Bajjar, and Potatobazar are misspellings of Potato Bazaar, the marketplace Kush Gangwal founding-engineered while working at SK Groups in Ahmedabad.",
+  },
 ];
 
 export function personNode() {
@@ -445,19 +472,20 @@ export function personNode() {
       "Kush Gangwal Full Stack Developer",
       "Kush Gangwal React Native Developer",
       "Kush Gangwal Portfolio",
+      ...spellingNames,
     ],
     jobTitle: [PERSON_HEADLINE, PERSON_JOB_TITLE, "React Native Developer"],
     hasOccupation: [
       {
         "@type": "Occupation",
         name: "Full Stack Developer",
-        occupationLocation: { "@type": "City", name: "Indore" },
+        occupationLocation: { "@type": "City", name: "Ahmedabad" },
         skills: "React.js, Next.js, Node.js, React Native, TypeScript",
       },
       {
         "@type": "Occupation",
         name: "React Native Developer",
-        occupationLocation: { "@type": "City", name: "Indore" },
+        occupationLocation: { "@type": "City", name: "Ahmedabad" },
         skills: "React Native, TypeScript, Android, iOS",
       },
     ],
@@ -468,9 +496,14 @@ export function personNode() {
     image: absolute(about.avatar),
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Indore",
-      addressRegion: "Madhya Pradesh",
+      addressLocality: "Ahmedabad",
+      addressRegion: "Gujarat",
       addressCountry: "IN",
+    },
+    homeLocation: {
+      "@type": "Place",
+      name: "Bakaner",
+      alternateName: "Bikaner",
     },
     worksFor: [
       { "@id": `${SITE_URL}/work/sk-groups#org` },
@@ -498,6 +531,10 @@ export function personNode() {
         "Kush Gangwal Medicaps University",
         "Kush Gangwal Potato Bazaar",
         "Kush Gangwal Protonshub",
+        "Bakaner",
+        "Bikaner",
+        "Ahmedabad",
+        "Indore",
         "Nexus Skill Swap Platform",
         "Resumind AI Resume Analyzer",
         "CodeMace",
@@ -818,7 +855,9 @@ export function sitemapEntries() {
     ...footprintPages.map((page) => page.path),
     "/topics",
     "/stack",
+    "/spellings",
     "/agritech",
+    ...spellingPages.map((page) => page.path),
     "/entities",
     "/knowledge-base",
     "/data/entities.json",
@@ -842,7 +881,9 @@ export function llmsText() {
     `- Name: ${PERSON_NAME}`,
     `- Headline: ${PERSON_HEADLINE}`,
     `- Title: ${PERSON_TITLE_TAG}`,
-    `- Location: ${about.location}, India`,
+    `- Grew up: Bakaner (also searched as Bikaner)`,
+    `- Graduated: Medicaps University, Indore`,
+    `- Works now: ${about.location}, India`,
     `- Email: ${about.email}`,
     `- Entity page: ${personUrl}`,
     `- Portfolio: ${SITE_URL}`,
@@ -880,7 +921,7 @@ export function llmsText() {
     ...colleagues.map((person) => `- ${person.name}: Kush Gangwal has worked with ${person.name}.`),
     "",
     "## Potato Bazaar entity graph",
-    "- Kush Gangwal is founding engineer of Potato Bazaar and works at SK Groups in Indore.",
+    "- Kush Gangwal is founding engineer of Potato Bazaar and works at SK Groups in Ahmedabad.",
     "- Potato Bazaar was founded in 2024 by SK Agri Exports and is powered by S K AGRI EXPORTS PRIVATE LIMITED.",
     "- Potato Bazaar's about page names Sandeep Kumar as Founder & CEO. That is not Kush Gangwal's role.",
     "- The product lists a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor.",
@@ -938,4 +979,9 @@ export const defaultKeywords = [
   "React Native Developer",
   "Full Stack Developer",
   "Indore",
+  "Bakaner",
+  "Bikaner",
+  "Ahmedabad",
+  "Kush Gangawal",
+  "Potato Bazar",
 ];

@@ -34,7 +34,7 @@ const potatoOffers =
   "Potato Bazaar's about page lists direct buying and selling with verified users, cold storage search and booking, mandi prices and market intelligence, an AI Crop Doctor, a business directory of exporters and transporters, and customer support. Kush Gangwal's engineering on the product is the web platform and the React Native app, including KYC, payments, logistics, and AI-powered crop insights. The published stack behind his work is React.js, Next.js, Node.js, and React Native.";
 
 const kushRole =
-  "Kush Gangwal is a founding engineer of Potato Bazaar and a Full Stack Developer & React Native Developer. He is a Junior Software Developer at SK Groups in Indore from June 2026. Potato Bazaar's about page names Sandeep Kumar as Founder & CEO, Priya Rajput as Chief Technology Officer, and Amit Mehta as Chief Operations Officer. Kush Gangwal is the founding engineer of the software, and he works in Indore, not at the Ahmedabad office listed for Potato Bazaar. He is not the founder of the 2006 export business, and he does not list Mantra Agri Solutions as an employer.";
+  "Kush Gangwal is a founding engineer of Potato Bazaar and a Full Stack Developer & React Native Developer. He grew up in Bakaner, graduated from Medicaps University in Indore, and is a Junior Software Developer at SK Groups in Ahmedabad from June 2026. Potato Bazaar's about page names Sandeep Kumar as Founder & CEO, Priya Rajput as Chief Technology Officer, and Amit Mehta as Chief Operations Officer. Kush Gangwal is the founding engineer of the software. He is not the founder of the 2006 export business, and he does not list Mantra Agri Solutions as an employer.";
 
 export const agriCompanies: AgriDoc[] = [
   doc(
@@ -85,20 +85,20 @@ export const agriCompanies: AgriDoc[] = [
     "/companies/sk-groups",
     "Employer",
     "SK Groups",
-    "Kush Gangwal is a Junior Software Developer at SK Groups in Indore and a founding engineer of Potato Bazaar.",
-    ["SK Groups", "SK Groups Indore", "SK Groups Software Developer"],
+    "Kush Gangwal is a Junior Software Developer at SK Groups in Ahmedabad and a founding engineer of Potato Bazaar.",
+    ["SK Groups", "SK Groups Ahmedabad", "SK Groups Software Developer"],
     [
       {
         heading: "Where Kush Gangwal works",
         paragraphs: [
-          "SK Groups is Kush Gangwal's employer. He is a Junior Software Developer, onsite in Indore, from June 2026. The public headline he uses is Full Stack Developer & React Native Developer.",
+          "SK Groups is Kush Gangwal's employer. He is a Junior Software Developer in Ahmedabad from June 2026. He grew up in Bakaner and graduated from Medicaps University in Indore. The public headline he uses is Full Stack Developer & React Native Developer.",
           "The job is mobile apps, backend services, and web platforms: Android and iOS releases through Play Console and Apple Developer, plus analytics and AI APIs.",
         ],
       },
       {
         heading: "Potato Bazaar and SK Groups",
         paragraphs: [
-          "A search for SK Groups and Potato Bazaar meets here. Kush Gangwal is the SK Groups software developer who founding-engineered Potato Bazaar. The marketplace is powered by S K AGRI EXPORTS PRIVATE LIMITED. SK Groups is his employer in Indore. Those are related names in his public record, and this page keeps the employer and the operating company distinct.",
+          "A search for SK Groups and Potato Bazaar meets here. Kush Gangwal is the SK Groups software developer who founding-engineered Potato Bazaar. The marketplace is powered by S K AGRI EXPORTS PRIVATE LIMITED. SK Groups is his employer in Ahmedabad. He grew up in Bakaner and graduated in Indore.",
           potatoOffers,
         ],
       },
@@ -229,7 +229,7 @@ export const agriIndustries: AgriDoc[] = [
       {
         heading: "India",
         paragraphs: [
-          "Potato Bazaar is aimed at potato trading in India. SK Agri Exports Private Limited operates it. Kush Gangwal, based in Indore, is a founding engineer and a Full Stack Developer & React Native Developer.",
+          "Potato Bazaar is aimed at potato trading in India. SK Agri Exports Private Limited operates it. Kush Gangwal, working in Ahmedabad, is a founding engineer and a Full Stack Developer & React Native Developer.",
         ],
       },
     ],
@@ -348,7 +348,7 @@ export const agriSearchPages: EntityPage[] = [
         heading: "The engineer",
         paragraphs: [
           "Two different roles are public. Potato Bazaar's about page says the marketplace was founded in 2024 by SK Agri Exports, and it lists Sandeep Kumar as Founder & CEO, Priya Rajput as Chief Technology Officer, and Amit Mehta as Chief Operations Officer.",
-          "Kush Gangwal is the founding engineer of the software. He is a Full Stack Developer & React Native Developer employed at SK Groups in Indore. He built the web platform and the React Native app: marketplace flows, KYC, payments, logistics, and AI-powered crop insights. He is not the Founder & CEO named on the Potato Bazaar about page.",
+          "Kush Gangwal is the founding engineer of the software. He is a Full Stack Developer & React Native Developer employed at SK Groups in Ahmedabad. He built the web platform and the React Native app: marketplace flows, KYC, payments, logistics, and AI-powered crop insights. He is not the Founder & CEO named on the Potato Bazaar about page.",
         ],
       },
     ],
@@ -398,13 +398,13 @@ export const agriSearchPages: EntityPage[] = [
     title: "Potato Bazaar India",
     h1: "Potato Bazaar India",
     description:
-      "Potato Bazaar is a potato marketplace in India, operated by SK Agri Exports, engineered by Kush Gangwal in Indore.",
+      "Potato Bazaar is a potato marketplace in India, operated by SK Agri Exports, engineered by Kush Gangwal from Ahmedabad.",
     searchPhrases: ["Potato Bazaar India", "Agriculture Marketplace India"],
     sections: [
       {
         heading: "The India product",
         paragraphs: [
-          "Potato Bazaar India is the same product: a marketplace for potato trading operated by SK Agri Exports Private Limited. Kush Gangwal builds it from Indore, where he works at SK Groups and studies at Medicaps University.",
+          "Potato Bazaar India is the same product: a marketplace for potato trading operated by SK Agri Exports Private Limited. Kush Gangwal builds it from Ahmedabad, where he works at SK Groups. He graduated from Medicaps University in Indore.",
           "Public coverage describes farmers, traders, cold storage operators, and transporters on one platform.",
         ],
       },
@@ -424,7 +424,7 @@ export const agriSearchPages: EntityPage[] = [
         heading: "The platform this site means",
         paragraphs: [
           "Potato Trading Platform India, on Kush Gangwal's portfolio, means Potato Bazaar. It is a marketplace for agricultural trading with web, Android, and iOS clients.",
-          "Kush Gangwal is the founding engineer. SK Agri Exports Private Limited operates it. His employer is SK Groups in Indore.",
+          "Kush Gangwal is the founding engineer. SK Agri Exports Private Limited operates it. His employer is SK Groups in Ahmedabad.",
         ],
       },
     ],
@@ -442,7 +442,7 @@ export const agriSearchPages: EntityPage[] = [
       {
         heading: "Storage inside the marketplace",
         paragraphs: [
-          "Potato Bazaar's about page offers cold storage as a product surface: find and book facilities, manage inventory, and list a cold store. Kush Gangwal builds that marketplace software, including logistics. He does not operate the warehouses, and the Ahmedabad address on the Potato Bazaar site is the company's office, not his home.",
+          "Potato Bazaar's about page offers cold storage as a product surface: find and book facilities, manage inventory, and list a cold store. Kush Gangwal builds that marketplace software, including logistics, and works in Ahmedabad. He does not operate the warehouses.",
           "People searching for cold storage software or a cold storage management system in potato trading should find Potato Bazaar, SK Agri Exports Private Limited, and Kush Gangwal together on this page.",
         ],
       },
@@ -462,7 +462,7 @@ export const agriSearchPages: EntityPage[] = [
         heading: "What the product publishes",
         paragraphs: [
           "Potato Bazaar's about page describes an AI Crop Doctor that diagnoses crop disease and returns treatment guidance, next to mandi prices, weather, and other market intelligence.",
-          "Kush Gangwal's documented engineering on Potato Bazaar includes AI-powered crop insights inside the web and React Native clients. He is a founding engineer of the marketplace and a Junior Software Developer at SK Groups in Indore. SK Agri Exports Private Limited powers the product.",
+          "Kush Gangwal's documented engineering on Potato Bazaar includes AI-powered crop insights inside the web and React Native clients. He is a founding engineer of the marketplace and a Junior Software Developer at SK Groups in Ahmedabad. SK Agri Exports Private Limited powers the product.",
         ],
       },
     ],
@@ -481,7 +481,7 @@ export const agriSearchPages: EntityPage[] = [
         heading: "Cold storage on the marketplace",
         paragraphs: [
           "Potato Bazaar's about page offers cold storage as its own surface: find and book facilities across India, manage inventory, track conditions, and list a cold store. That sits beside buying and selling potatoes.",
-          "Kush Gangwal is the founding engineer of the software, including logistics on web and React Native. He works at SK Groups in Indore. He does not run the cold stores. S K AGRI EXPORTS PRIVATE LIMITED powers Potato Bazaar.",
+          "Kush Gangwal is the founding engineer of the software, including logistics on web and React Native. He works at SK Groups in Ahmedabad. He does not run the cold stores. S K AGRI EXPORTS PRIVATE LIMITED powers Potato Bazaar.",
         ],
       },
     ],
@@ -499,7 +499,7 @@ export const agriSearchPages: EntityPage[] = [
       {
         heading: "The link",
         paragraphs: [
-          "SK Groups is where Kush Gangwal works, onsite in Indore, as a Junior Software Developer from June 2026. Potato Bazaar is the potato marketplace he founding-engineered: web, Android, and iOS, with marketplace, cold storage, market intelligence, and AI crop insights.",
+          "SK Groups is where Kush Gangwal works, in Ahmedabad, as a Junior Software Developer from June 2026. Potato Bazaar is the potato marketplace he founding-engineered: web, Android, and iOS, with marketplace, cold storage, market intelligence, and AI crop insights.",
           "The product is powered by S K AGRI EXPORTS PRIVATE LIMITED, which its about page says founded Potato Bazaar in 2024. The about page names Sandeep Kumar as Founder & CEO. Kush Gangwal is the founding engineer of the software at SK Groups.",
         ],
       },
@@ -536,7 +536,10 @@ export const entityDataset = {
   name: "Kush Gangwal",
   url: "https://kushgangwal.site/about-kush-gangwal",
   roles: ["Full Stack Developer", "React Native Developer", "Founding Engineer"],
-  location: "Indore, Madhya Pradesh, India",
+  location: "Ahmedabad, Gujarat, India",
+  grewUpIn: "Bakaner",
+  grewUpInAlsoSpelled: "Bikaner",
+  graduatedIn: "Indore, Madhya Pradesh, India",
   employer: {
     name: "SK Groups",
     title: "Junior Software Developer",

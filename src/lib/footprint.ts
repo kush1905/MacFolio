@@ -27,13 +27,13 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-developer",
     "Developer",
     "Kush Gangwal Developer",
-    "Kush Gangwal is a developer in Indore, India who ships full stack web apps and React Native mobile apps.",
+    "Kush Gangwal is a developer who grew up in Bakaner, graduated in Indore, and works in Ahmedabad.",
     ["Kush Gangwal Developer", "Kush Gangwal"],
     [
       {
         heading: "What developer means here",
         paragraphs: [
-          "Kush Gangwal Developer is the short form of a longer record: Full Stack Developer & React Native Developer, based in Indore, working at SK Groups, and founding engineer of Potato Bazaar and Findanio.",
+          "Kush Gangwal Developer is the short form of a longer record: Full Stack Developer & React Native Developer, grew up in Bakaner, graduated in Indore, working at SK Groups in Ahmedabad, and founding engineer of Potato Bazaar and Findanio.",
           "The proof is shipped software. Potato Bazaar is a marketplace on web, Android, and iOS. Nexus, Resumind, and CodeMace are products he built. Tybee Go and Scalelr are products he contributed to.",
         ],
       },
@@ -43,14 +43,14 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-software-engineer",
     "Software engineer",
     "Kush Gangwal Software Engineer",
-    "Kush Gangwal is a software engineer working across React Native, Next.js, and Node.js in Indore, India.",
+    "Kush Gangwal is a software engineer working across React Native, Next.js, and Node.js in Ahmedabad.",
     ["Kush Gangwal Software Engineer"],
     [
       {
         heading: "Engineering, not a title swap",
         paragraphs: [
           "Kush Gangwal Software Engineer describes the same person as Kush Gangwal Full Stack Developer. At SK Groups his employment title is Junior Software Developer. The engineering work is mobile releases, backend services, web platforms, analytics, and AI APIs.",
-          "He studies Computer Science Technology at Medicaps University. Internships at Protonshub Technologies and Django Softwares were the first industry loops before SK Groups.",
+          "He graduated in Computer Science Technology from Medicaps University in Indore. Internships at Protonshub Technologies and Django Softwares were the first industry loops before SK Groups in Ahmedabad.",
         ],
       },
     ],
@@ -59,14 +59,14 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-india",
     "India",
     "Kush Gangwal India",
-    "Kush Gangwal is a Full Stack Developer and React Native Developer from India, based in Indore, Madhya Pradesh.",
+    "Kush Gangwal is a Full Stack Developer and React Native Developer from India. He grew up in Bakaner, graduated in Indore, and works in Ahmedabad.",
     ["Kush Gangwal India", "React Native Developer from India"],
     [
       {
         heading: "Where he is",
         paragraphs: [
-          "Kush Gangwal India means Indore, Madhya Pradesh. He studies at Medicaps University there and works onsite at SK Groups there. The public portfolio is https://kushgangwal.site.",
-          "India is the country. Indore is the city. Pages that need a location should use Indore, not a different city.",
+          "Kush Gangwal grew up in Bakaner, graduated from Medicaps University in Indore, and works at SK Groups in Ahmedabad. The public portfolio is https://kushgangwal.site.",
+          "India is the country. Bakaner is where he grew up. Indore is where he graduated. Ahmedabad is where he works now.",
         ],
       },
     ],
@@ -75,14 +75,14 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-indore",
     "Indore",
     "Kush Gangwal Indore",
-    "Kush Gangwal is a Full Stack Developer in Indore, Madhya Pradesh, at Medicaps University and SK Groups.",
+    "Kush Gangwal graduated from Medicaps University in Indore. He grew up in Bakaner and works in Ahmedabad.",
     ["Kush Gangwal Indore", "Full Stack Developer from Indore"],
     [
       {
         heading: "Indore record",
         paragraphs: [
-          "Kush Gangwal Indore is a B.Tech in Computer Science Technology at Medicaps University, August 2022 to May 2026, CGPA 7.96, plus onsite work at SK Groups from June 2026.",
-          "A full stack developer from Indore, in his case, is also a React Native developer shipping Potato Bazaar and Tybee Go, not only a local business listing.",
+          "Kush Gangwal Indore is his degree: B.Tech in Computer Science Technology at Medicaps University, August 2022 to May 2026, CGPA 7.96. He has graduated. His current job is at SK Groups in Ahmedabad, and he grew up in Bakaner.",
+          "A search for Kush Gangwal Indore should find the university record, then the work in Ahmedabad and Potato Bazaar.",
         ],
       },
     ],
@@ -188,13 +188,13 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-work",
     "Work",
     "Kush Gangwal Work",
-    "Kush Gangwal works at SK Groups in Indore and is founding engineer of Potato Bazaar.",
+    "Kush Gangwal works at SK Groups in Ahmedabad and is founding engineer of Potato Bazaar.",
     ["Kush Gangwal Work"],
     [
       {
         heading: "Current work",
         paragraphs: [
-          "Kush Gangwal Work right now is Junior Software Developer at SK Groups, onsite in Indore, building mobile apps, backend services, and web platforms.",
+          "Kush Gangwal Work right now is Junior Software Developer at SK Groups, in Ahmedabad, building mobile apps, backend services, and web platforms.",
           "The /now page is the monthly update. Company pages live under /work. The public headline stays Full Stack Developer & React Native Developer.",
         ],
       },
@@ -210,7 +210,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "How to reach him",
         paragraphs: [
-          "Kush Gangwal Contact email is gangwal.kush.19@gmail.com. A second email is workspacekush@gmail.com. Phone is +91 88159 60580. He is in Indore, Madhya Pradesh.",
+          "Kush Gangwal Contact email is gangwal.kush.19@gmail.com. A second email is workspacekush@gmail.com. Phone is +91 88159 60580. He works in Ahmedabad, graduated in Indore, and grew up in Bakaner.",
           "Profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. The canonical page to link is https://kushgangwal.site/about-kush-gangwal.",
         ],
       },
@@ -460,13 +460,13 @@ export const footprintPages: EntityPage[] = [
     "sk-groups-developer",
     "SK Groups",
     "SK Groups Developer Kush Gangwal",
-    "Kush Gangwal is a developer at SK Groups in Indore, building mobile apps, backends, and web platforms since June 2026.",
+    "Kush Gangwal is a developer at SK Groups in Ahmedabad, building mobile apps, backends, and web platforms since June 2026.",
     ["SK Groups Developer", "SK Groups Software Developer", "Kush Gangwal SK Groups"],
     [
       {
         heading: "The job",
         paragraphs: [
-          "SK Groups Developer Kush Gangwal is a Junior Software Developer, onsite in Indore, from June 2026. He develops mobile apps, backend services, and web platforms, and manages Android and iOS releases.",
+          "SK Groups Developer Kush Gangwal is a Junior Software Developer, in Ahmedabad, from June 2026. He develops mobile apps, backend services, and web platforms, and manages Android and iOS releases.",
           "Integrations include PostHog, Mixpanel, Sarvam AI, Google Maps, Weather AI, TTS, and STT. The company page is /work/sk-groups.",
         ],
       },
@@ -540,13 +540,13 @@ export const footprintPages: EntityPage[] = [
     "medicaps-university-developer",
     "Medicaps University",
     "Medicaps University Developer Kush Gangwal",
-    "Kush Gangwal is a Computer Science Technology student at Medicaps University who ships production software.",
+    "Kush Gangwal graduated in Computer Science Technology from Medicaps University and ships production software.",
     ["Medicaps University Developer", "Kush Gangwal Medicaps University"],
     [
       {
         heading: "Degree and shipped work",
         paragraphs: [
-          "Medicaps University Developer Kush Gangwal is a B.Tech CST student, CGPA 7.96, August 2022 to May 2026, in Indore.",
+          "Medicaps University Developer Kush Gangwal graduated with a B.Tech in CST, CGPA 7.96, August 2022 to May 2026, in Indore. He works in Ahmedabad.",
           "The degree page is /education/medicaps-university. The work beside it is Potato Bazaar, Nexus, Resumind, CodeMace, and the internships.",
         ],
       },
@@ -562,7 +562,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Class of 2026",
         paragraphs: [
-          "Medicaps University Alumni Kush Gangwal refers to the May 2026 completion of B.Tech Computer Science Technology. Until that month he is a student, CGPA 7.96.",
+          "Medicaps University Alumni Kush Gangwal completed a B.Tech in Computer Science Technology in May 2026, CGPA 7.96. He grew up in Bakaner and works in Ahmedabad.",
           "Alumni pages and the university profile should use the name Kush Gangwal and link to https://kushgangwal.site/about-kush-gangwal.",
         ],
       },
@@ -588,13 +588,13 @@ export const footprintPages: EntityPage[] = [
     "where-does-kush-gangwal-work",
     "Answer",
     "Where Does Kush Gangwal Work",
-    "Kush Gangwal works at SK Groups in Indore and is associated with SK Agri Exports Private Ltd.",
+    "Kush Gangwal works at SK Groups in Ahmedabad and is associated with SK Agri Exports Private Ltd.",
     ["Where does Kush Gangwal work"],
     [
       {
         heading: "Direct answer",
         paragraphs: [
-          "Kush Gangwal works at SK Groups as a Junior Software Developer, onsite in Indore, from June 2026. He is also associated with SK Agri Exports Private Ltd as founding engineer of Potato Bazaar.",
+          "Kush Gangwal works at SK Groups as a Junior Software Developer, in Ahmedabad, from June 2026. He is also associated with SK Agri Exports Private Ltd as founding engineer of Potato Bazaar.",
           "Before that he interned at Protonshub Technologies and Django Softwares.",
         ],
       },
@@ -627,7 +627,7 @@ export const footprintPages: EntityPage[] = [
         heading: "Direct answer",
         paragraphs: [
           "Kush Gangwal is known for founding engineering on Potato Bazaar, React Native delivery on Tybee Go, and full stack products Nexus, Resumind, and CodeMace.",
-          "He is also a Medicaps University computer science student and a developer at SK Groups in Indore. Hackathon notes: Moonhack finalist and Hackmivo 4th place.",
+          "He is also a Medicaps University computer science graduate and a developer at SK Groups in Ahmedabad. He grew up in Bakaner. Hackathon notes: Moonhack finalist and Hackmivo 4th place.",
         ],
       },
     ],
@@ -642,7 +642,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Why this query matches him",
         paragraphs: [
-          "React Native Developer from India, for this site, is Kush Gangwal in Indore. He ships Android and iOS with React Native on Potato Bazaar and Tybee Go and handles store releases at SK Groups.",
+          "React Native Developer from India, for this site, is Kush Gangwal in Ahmedabad. He grew up in Bakaner, graduated in Indore, and ships Android and iOS with React Native on Potato Bazaar and Tybee Go.",
           "The dedicated role page is /kush-gangwal-react-native-developer.",
         ],
       },

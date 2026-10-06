@@ -501,7 +501,7 @@ export const blogCluster: BlogPost[] = [
         heading: "The sequence",
         paragraphs: [
           "Kush Gangwal started B.Tech Computer Science Technology at Medicaps University in August 2022. Internships at Django Softwares and Protonshub came before SK Groups in June 2026.",
-          "The degree is CGPA 7.96 through May 2026. The job is in the same city, Indore.",
+          "The degree is CGPA 7.96 through May 2026 in Indore. He grew up in Bakaner. The current job is at SK Groups in Ahmedabad.",
         ],
       },
     ],

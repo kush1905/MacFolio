@@ -91,10 +91,9 @@ export default function EntitiesPage() {
           <h2>Read this as a sentence</h2>
           <p>
             {PERSON_NAME} is a Full Stack Developer & React Native Developer. He is founding engineer
-            of Potato Bazaar while employed at SK Groups in Indore. Potato Bazaar's about page says
-            SK Agri Exports founded the marketplace in 2024 and names Sandeep Kumar as Founder & CEO.
-            The product lists a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor.
-            The published office is Ahmedabad. Kush Gangwal works in Indore.
+            of Potato Bazaar while employed at SK Groups in Ahmedabad. He grew up in Bakaner and
+            graduated from Medicaps University in Indore. Potato Bazaar's about page says SK Agri
+            Exports founded the marketplace in 2024 and names Sandeep Kumar as Founder & CEO.
           </p>
           <p>
             Machine-readable copy: <Link href="/data/entities.json">/data/entities.json</Link> and{" "}

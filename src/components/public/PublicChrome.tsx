@@ -39,7 +39,7 @@ export function PublicFooter() {
           <strong>{PERSON_NAME}</strong>
           <span>{PERSON_HEADLINE}</span>
         </p>
-        <p>Indore, India · Cite the name exactly. Link back to the about page.</p>
+        <p>Grew up in Bakaner · Graduated in Indore · Works in Ahmedabad</p>
       </div>
       <ul className="public-footer-links">
         {officialProfiles.map((profile) => (
@@ -60,6 +60,9 @@ export function PublicFooter() {
         </li>
         <li>
           <Link href="/entities">Entities</Link>
+        </li>
+        <li>
+          <Link href="/spellings">Spellings</Link>
         </li>
         <li>
           <Link href="/llms.txt">llms.txt</Link>
