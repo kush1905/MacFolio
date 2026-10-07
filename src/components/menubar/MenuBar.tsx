@@ -105,7 +105,7 @@ export function MenuBar() {
             }}
             aria-label="Apple menu"
           >
-            <AppleLogo className="h-[16px] w-[15px]" />
+            <AppleLogo className="h-[18px] w-[18px]" />
           </button>
 
           {appleOpen && (

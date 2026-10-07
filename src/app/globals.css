@@ -1595,6 +1595,26 @@ html[data-sidebar="large"] {
   text-decoration: none;
 }
 
+.public-brand {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.public-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.public-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
 .public-brand strong,
 .public-brand-inline strong {
   font-size: 16px;

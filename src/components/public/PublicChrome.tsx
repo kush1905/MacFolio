@@ -17,8 +17,17 @@ export function PublicHeader() {
   return (
     <header className="public-header">
       <Link className="public-brand" href="/about-kush-gangwal">
-        <strong>{PERSON_NAME}</strong>
-        <span>{PERSON_HEADLINE}</span>
+        <img
+          className="public-logo"
+          src="/assets/kush/logo-icon.png"
+          alt=""
+          width={40}
+          height={40}
+        />
+        <span className="public-brand-text">
+          <strong>{PERSON_NAME}</strong>
+          <span>{PERSON_HEADLINE}</span>
+        </span>
       </Link>
       <nav aria-label="Primary">
         {NAV.map((item) => (

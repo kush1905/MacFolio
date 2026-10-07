@@ -6,20 +6,16 @@ type Props = {
   tone?: "white" | "black";
 };
 
-/** Macfolio KUSH apple mark. */
+/** Gold line portrait on black. */
 export function AppleLogo({ className = "h-14 w-14", tone = "white" }: Props) {
-  const src =
-    tone === "black"
-      ? "/assets/kush/logo.png"
-      : "/assets/kush/logo-white.png";
-
+  void tone;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={src}
+      src="/assets/kush/logo-icon.png"
       alt=""
       draggable={false}
-      className={`select-none object-contain ${className}`}
+      className={`select-none rounded-[4px] object-cover ${className}`}
       aria-hidden
     />
   );
