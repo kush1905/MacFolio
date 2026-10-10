@@ -9,13 +9,13 @@
   "currentEmploymentTitle": "Junior Software Developer",
   "location": "Ahmedabad, Gujarat",
   "hometown": "Bakaner",
-  "hometownAlsoSpelled": "Bikaner",
+  "hometownRegion": "Dhar district, Madhya Pradesh",
   "graduatedIn": "Indore, Madhya Pradesh",
   "phone": "8815960580",
   "email": "gangwal.kush.19@gmail.com",
   "emailAlt": "workspacekush@gmail.com",
-  "bio": "Kush Gangwal is a Full Stack Developer & React Native Developer from India. He grew up in Bakaner, graduated from Medicaps University in Indore, and works at SK Groups in Ahmedabad. He builds scalable web and mobile applications with React.js, Next.js, Node.js, and React Native, including production work on Potato Bazaar, Tybee Go, Nexus, Resumind, and CodeMace.",
-  "whoIs": "Kush Gangwal is a Full Stack Developer from India specializing in React Native, React.js, Next.js, Node.js and AI-powered applications. He grew up in Bakaner, graduated in Computer Science Technology from Medicaps University in Indore, and currently works at SK Groups in Ahmedabad. He has worked on Potato Bazaar, Tybee Go, Nexus, Resumind, and CodeMace.",
+  "bio": "Kush Gangwal is a Full Stack Developer & React Native Developer from India. He grew up in Bakaner, Dhar district, Madhya Pradesh, graduated from Medicaps University in Indore, and works as a Junior Software Developer at SK Groups in Ahmedabad. He develops Potato Bazaar's React Native mobile app, backend, and web platform, and has built or contributed to Tybee Go, Findanio, Nexus, Resumind, and CodeMace.",
+  "whoIs": "Kush Gangwal is a Full Stack Developer from India working with React Native, React.js, Next.js, and Node.js, including AI API integrations. He grew up in Bakaner, Dhar district, Madhya Pradesh, graduated in Computer Science Technology from Medicaps University in Indore, and works at SK Groups in Ahmedabad, where he develops Potato Bazaar's mobile app, backend, and web platform. He has also worked on Tybee Go, Nexus, Resumind, and CodeMace.",
   "links": {
     "github": "https://github.com/kush1905",
     "linkedin": "https://www.linkedin.com/in/kush-gangwal",
@@ -27,15 +27,22 @@
     "instagram": "https://instagram.com/kush_gangwal_19",
     "peerlist": "",
     "resume": "/resume.pdf",
-    "portfolio": "https://potatobazaar.com"
+    "portfolio": "https://kushgangwal.site",
+    "potatoBazaar": "https://potatobazaar.com"
   },
   "sameAsExtra": [
     "https://www.linkedin.com/in/kush-gangwal-96ab38263",
     "https://github.com/Kush-PB"
   ],
   "githubAccounts": [
-    { "login": "kush1905", "label": "Personal" },
-    { "login": "Kush-PB", "label": "Potato Bazaar" }
+    {
+      "login": "kush1905",
+      "label": "Personal"
+    },
+    {
+      "login": "Kush-PB",
+      "label": "Potato Bazaar"
+    }
   ],
   "education": {
     "school": "Medicaps University",

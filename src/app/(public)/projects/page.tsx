@@ -32,7 +32,7 @@ export default function ProjectsIndexPage() {
       <PublicArticle
         kicker="Case studies"
         title={`Projects by ${PERSON_NAME}`}
-        subtitle="Long-form pages so search engines can rank each product independently."
+        subtitle="Case studies of the products Kush Gangwal has built or worked on."
       >
         <div className="public-related">
           {products.map((product) => (

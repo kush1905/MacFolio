@@ -33,8 +33,8 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "What developer means here",
         paragraphs: [
-          "Kush Gangwal Developer is the short form of a longer record: Full Stack Developer & React Native Developer, grew up in Bakaner, graduated in Indore, working at SK Groups in Ahmedabad, and founding engineer of Potato Bazaar and Findanio.",
-          "The proof is shipped software. Potato Bazaar is a marketplace on web, Android, and iOS. Nexus, Resumind, and CodeMace are products he built. Tybee Go and Scalelr are products he contributed to.",
+          "Kush Gangwal is a Full Stack Developer & React Native Developer. He grew up in Bakaner (Dhar district, Madhya Pradesh), graduated from Medicaps University in Indore, and works at SK Groups in Ahmedabad, where he develops Potato Bazaar's mobile app, backend and web platform. At Protonshub Technologies he contributed to Findanio's Android, iOS and web apps.",
+          "The proof is shipped software. Potato Bazaar is a marketplace on web, Android, and iOS that he works on. Nexus, Resumind, and CodeMace are products he built. Tybee Go and Scalelr are products he contributed to.",
         ],
       },
     ],
@@ -49,7 +49,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Engineering, not a title swap",
         paragraphs: [
-          "Kush Gangwal Software Engineer describes the same person as Kush Gangwal Full Stack Developer. At SK Groups his employment title is Junior Software Developer. The engineering work is mobile releases, backend services, web platforms, analytics, and AI APIs.",
+          "Kush Gangwal works as a software engineer under the headline Full Stack Developer & React Native Developer. At SK Groups his employment title is Junior Software Developer. The engineering work is mobile releases, backend services, web platforms, analytics, and AI APIs.",
           "He graduated in Computer Science Technology from Medicaps University in Indore. Internships at Protonshub Technologies and Django Softwares were the first industry loops before SK Groups in Ahmedabad.",
         ],
       },
@@ -65,7 +65,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Where he is",
         paragraphs: [
-          "Kush Gangwal grew up in Bakaner, graduated from Medicaps University in Indore, and works at SK Groups in Ahmedabad. The public portfolio is https://kushgangwal.site.",
+          "Kush Gangwal grew up in Bakaner (Dhar district, Madhya Pradesh), graduated from Medicaps University in Indore, and works at SK Groups in Ahmedabad. The public portfolio is https://kushgangwal.site.",
           "India is the country. Bakaner is where he grew up. Indore is where he graduated. Ahmedabad is where he works now.",
         ],
       },
@@ -81,8 +81,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Indore record",
         paragraphs: [
-          "Kush Gangwal Indore is his degree: B.Tech in Computer Science Technology at Medicaps University, August 2022 to May 2026, CGPA 7.96. He has graduated. His current job is at SK Groups in Ahmedabad, and he grew up in Bakaner.",
-          "A search for Kush Gangwal Indore should find the university record, then the work in Ahmedabad and Potato Bazaar.",
+          "In Indore, Kush Gangwal earned his degree: B.Tech in Computer Science Technology at Medicaps University, August 2022 to May 2026, CGPA 7.96. He has graduated. His current job is at SK Groups in Ahmedabad, and he grew up in Bakaner (Dhar district, Madhya Pradesh).",
         ],
       },
     ],
@@ -97,8 +96,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Accounts",
         paragraphs: [
-          "Kush Gangwal GitHub is https://github.com/kush1905. Public repositories include Nexus and MacFolio. Potato Bazaar engineering also uses https://github.com/Kush-PB.",
-          "The GitHub profile should use the same name and headline as this site: Kush Gangwal, Full Stack Developer & React Native Developer, and should link to https://kushgangwal.site/about-kush-gangwal.",
+          "Kush Gangwal's GitHub profile is https://github.com/kush1905. Public repositories include Nexus and MacFolio. Potato Bazaar engineering also uses https://github.com/Kush-PB.",
         ],
       },
     ],
@@ -111,10 +109,9 @@ export const footprintPages: EntityPage[] = [
     ["Kush Gangwal LinkedIn"],
     [
       {
-        heading: "The profile that should match this site",
+        heading: "The profile",
         paragraphs: [
-          "Kush Gangwal LinkedIn is https://www.linkedin.com/in/kush-gangwal. An older profile URL, linkedin.com/in/kush-gangwal-96ab38263, should point at the same person and the same headline.",
-          "The website field on LinkedIn should be https://kushgangwal.site/about-kush-gangwal so search engines connect the profile and the portfolio.",
+          "Kush Gangwal's LinkedIn profile is https://www.linkedin.com/in/kush-gangwal. It is the best place for professional messages and connection requests.",
         ],
       },
     ],
@@ -129,7 +126,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Practice, not the whole career",
         paragraphs: [
-          "Kush Gangwal LeetCode is https://leetcode.com/u/kushgangwal. He also practices on GeeksforGeeks and has 2 LeetCode badges. The profile name should be Kush Gangwal.",
+          "Kush Gangwal's LeetCode profile is https://leetcode.com/u/kushgangwal, where he has earned 2 badges. He also practices on GeeksforGeeks.",
           "LeetCode sits beside shipped products. It does not replace Potato Bazaar, Nexus, or React Native releases.",
         ],
       },
@@ -145,8 +142,8 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Where to read it",
         paragraphs: [
-          "Kush Gangwal Resume lives at https://kushgangwal.site/resume and as a PDF at /resume.pdf. It lists the same identity: Full Stack Developer & React Native Developer.",
-          "Experience on the resume is SK Groups, Protonshub Technologies, and Django Softwares. Education is Medicaps University, CGPA 7.96.",
+          "Kush Gangwal's resume is at https://kushgangwal.site/resume and as a PDF at /resume.pdf. His headline is Full Stack Developer & React Native Developer.",
+          "Experience: SK Groups, Protonshub Technologies, and Django Softwares. Education: Medicaps University, B.Tech CST, CGPA 7.96.",
         ],
       },
     ],
@@ -161,8 +158,8 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "The set",
         paragraphs: [
-          "Kush Gangwal Projects are Potato Bazaar, Tybee Go, Nexus, Resumind, CodeMace, Findanio, Scalelr, and Macfolio. Each has a case study under /projects.",
-          "He built Nexus, Resumind, CodeMace, and Macfolio. He is founding engineer of Potato Bazaar and Findanio. He contributed to Tybee Go and Scalelr.",
+          "Kush Gangwal's projects are Potato Bazaar, Tybee Go, Nexus, Resumind, CodeMace, Findanio, Scalelr, and Macfolio. Each has a case study under /projects.",
+          "He built Nexus, Resumind, CodeMace, and Macfolio. He develops Potato Bazaar's mobile app, backend and web platform at SK Groups. He contributed to Findanio's Android, iOS and web apps and to Tybee Go at Protonshub Technologies, and to Scalelr at Django Softwares.",
         ],
         bullets: ["Potato Bazaar", "Tybee Go", "Nexus", "Resumind", "CodeMace", "Findanio", "Scalelr", "Macfolio"],
       },
@@ -172,14 +169,14 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-experience",
     "Experience",
     "Kush Gangwal Experience",
-    "Kush Gangwal's experience is SK Groups, Protonshub Technologies, Django Softwares, and founding engineering on Potato Bazaar.",
+    "Kush Gangwal's experience: SK Groups (Potato Bazaar developer), Protonshub Technologies, and Django Softwares.",
     ["Kush Gangwal Experience"],
     [
       {
         heading: "Timeline",
         paragraphs: [
-          "Kush Gangwal Experience starts with a full stack internship at Django Softwares from 2 June 2025 to 17 July 2025, then Protonshub Technologies from January 2026 to May 2026, then SK Groups from June 2026.",
-          "Alongside those jobs he is associated with SK Agri Exports Private Ltd as founding engineer of Potato Bazaar and Findanio.",
+          "Kush Gangwal's experience starts with a full stack internship at Django Softwares from 2 June 2025 to 17 July 2025, then Protonshub Technologies from January 2026 to May 2026, then SK Groups from June 2026.",
+          "At Protonshub he contributed to Findanio's Android, iOS and web apps. At SK Groups he develops Potato Bazaar's mobile app, backend and web platform; Potato Bazaar is operated by SK Agri Exports Private Limited.",
         ],
       },
     ],
@@ -188,13 +185,13 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-work",
     "Work",
     "Kush Gangwal Work",
-    "Kush Gangwal works at SK Groups in Ahmedabad and is founding engineer of Potato Bazaar.",
+    "Kush Gangwal works at SK Groups in Ahmedabad, developing Potato Bazaar's mobile app, backend and web platform.",
     ["Kush Gangwal Work"],
     [
       {
         heading: "Current work",
         paragraphs: [
-          "Kush Gangwal Work right now is Junior Software Developer at SK Groups, in Ahmedabad, building mobile apps, backend services, and web platforms.",
+          "Kush Gangwal is a Junior Software Developer at SK Groups in Ahmedabad, working on Potato Bazaar's mobile app, backend services, and web platform.",
           "The /now page is the monthly update. Company pages live under /work. The public headline stays Full Stack Developer & React Native Developer.",
         ],
       },
@@ -210,8 +207,8 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "How to reach him",
         paragraphs: [
-          "Kush Gangwal Contact email is gangwal.kush.19@gmail.com. A second email is workspacekush@gmail.com. Phone is +91 88159 60580. He works in Ahmedabad, graduated in Indore, and grew up in Bakaner.",
-          "Profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. The canonical page to link is https://kushgangwal.site/about-kush-gangwal.",
+          "Kush Gangwal's email is gangwal.kush.19@gmail.com. A second email is workspacekush@gmail.com. Phone is +91 88159 60580. He works in Ahmedabad, graduated in Indore, and grew up in Bakaner (Dhar district, Madhya Pradesh).",
+          "Profiles: LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X. His profile page is https://kushgangwal.site/about-kush-gangwal.",
         ],
       },
     ],
@@ -226,7 +223,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "React.js in his work",
         paragraphs: [
-          "Kush Gangwal React Developer work is React.js for product UI: Nexus skill search and sessions, Potato Bazaar web, Scalelr feeds at Django Softwares, and Findanio web at Protonshub.",
+          "His React.js work is product UI: Nexus skill search and sessions, Potato Bazaar web, Scalelr feeds at Django Softwares, and Findanio web at Protonshub.",
           "Macfolio is React plus Next.js. React Native is the separate mobile track. Both belong to the same person.",
         ],
       },
@@ -242,8 +239,8 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Next.js on real products",
         paragraphs: [
-          "Kush Gangwal Next.js Developer work includes this portfolio, Potato Bazaar's web app, Findanio's web app at Protonshub, and Resumind's report UI.",
-          "Next.js is how the crawlable pages and the macOS desktop share one codebase. The desktop is the home route. Articles are static routes beside it.",
+          "His Next.js work includes this portfolio, Potato Bazaar's web app, Findanio's web app at Protonshub, and Resumind's report UI.",
+          "Next.js lets this site's interactive 3D homepage, the macOS-style desktop at /desktop, and the article pages share one codebase.",
         ],
       },
     ],
@@ -258,7 +255,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "APIs he has actually shipped",
         paragraphs: [
-          "Kush Gangwal Node.js Developer work is the API side of Nexus, Potato Bazaar, CodeMace, and the full stack apps at Protonshub Technologies.",
+          "His Node.js work is the API side of Nexus, Potato Bazaar, CodeMace, and the full stack apps at Protonshub Technologies.",
           "The pattern is a React or React Native client, a Node API, and a database: SQLite on Nexus, PostgreSQL on CodeMace and Macfolio, MongoDB on Protonshub and Scalelr.",
         ],
       },
@@ -274,7 +271,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "The language under the frameworks",
         paragraphs: [
-          "Kush Gangwal JavaScript Developer is the base layer. React.js, Next.js, Node.js, and the earlier Scalelr work at Django Softwares are JavaScript. Newer apps are TypeScript.",
+          "JavaScript is the base layer of his work. React.js, Next.js, Node.js, and the earlier Scalelr work at Django Softwares are JavaScript. Newer apps are TypeScript.",
           "Django Softwares used JavaScript, React.js, Tailwind CSS, and MongoDB. Later jobs added TypeScript without dropping JavaScript.",
         ],
       },
@@ -290,7 +287,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Where the types are",
         paragraphs: [
-          "Kush Gangwal TypeScript Developer work shows up on Tybee Go, Macfolio, CodeMace, and Resumind. SK Groups mobile and web work also uses TypeScript.",
+          "His TypeScript work shows up on Tybee Go, Macfolio, CodeMace, and Resumind. SK Groups mobile and web work also uses TypeScript.",
           "TypeScript is how review payloads, resume reports, and navigation state stay explicit instead of becoming untyped objects.",
         ],
       },
@@ -306,7 +303,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Interface work",
         paragraphs: [
-          "Kush Gangwal Frontend Developer work is React.js and Next.js UI: Macfolio's desktop, Nexus search and sessions, Scalelr feeds, and Potato Bazaar web.",
+          "His frontend work is React.js and Next.js UI: Macfolio's desktop, Nexus search and sessions, Scalelr feeds, and Potato Bazaar web.",
           "Frontend is half the job. The same engineer writes the Node.js APIs and the React Native clients.",
         ],
       },
@@ -322,7 +319,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Server-side work",
         paragraphs: [
-          "Kush Gangwal Backend Developer work is REST APIs, database integration, and release-safe services for Potato Bazaar, Nexus, CodeMace, and Protonshub apps.",
+          "His backend work is REST APIs, database integration, and release-safe services for Potato Bazaar, Nexus, CodeMace, and Protonshub apps.",
           "At SK Groups the backend sits next to mobile releases and AI API integrations. He is not a backend-only engineer, and the APIs are not a side note.",
         ],
       },
@@ -338,7 +335,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Mobile products",
         paragraphs: [
-          "Kush Gangwal Mobile App Developer work is React Native for Potato Bazaar, Tybee Go, and Findanio, plus Play Console and Apple Developer releases at SK Groups.",
+          "His mobile work is React Native for Potato Bazaar, Tybee Go, and Findanio, plus Play Console and Apple Developer releases at SK Groups.",
           "Mobile app development here includes pagination, navigation, async data, analytics, and store submission, not a single demo screen.",
         ],
       },
@@ -354,7 +351,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Web products",
         paragraphs: [
-          "Kush Gangwal Web Developer work began with CodSoft and Octanet web tasks, then Django Softwares and Scalelr, then Protonshub web apps, Potato Bazaar web, and Macfolio.",
+          "His web work began with CodSoft and Octanet web tasks, then Django Softwares and Scalelr, then Protonshub web apps, Potato Bazaar web, and Macfolio.",
           "The current web stack is React.js, Next.js, TypeScript, and Tailwind CSS, deployed on Vercel when the product allows it.",
         ],
       },
@@ -364,14 +361,14 @@ export const footprintPages: EntityPage[] = [
     "kush-gangwal-product-engineer",
     "Product",
     "Kush Gangwal Product Engineer",
-    "Kush Gangwal is a product engineer on Potato Bazaar and the builder of Nexus, Resumind, and CodeMace.",
+    "Kush Gangwal works on Potato Bazaar as a developer and built Nexus, Resumind, and CodeMace as his own products.",
     ["Kush Gangwal Product Engineer", "Product Engineer"],
     [
       {
         heading: "Owning a loop, not a ticket",
         paragraphs: [
-          "Kush Gangwal Product Engineer means he owns flows end to end. Potato Bazaar needs KYC, payments, and logistics. Nexus needs search, sessions, and ratings. Resumind needs a score someone can act on.",
-          "Founding engineer of Potato Bazaar and Findanio is the strongest version of that claim. The other products are the personal ones he designed and built.",
+          "Product engineering, for him, means caring about whole user flows. Potato Bazaar needs KYC, payments, and logistics. Nexus needs search, sessions, and ratings. Resumind needs a score someone can act on.",
+          "On Potato Bazaar he is a developer on a company team. Nexus, Resumind, and CodeMace are personal products he designed and built himself.",
         ],
       },
     ],
@@ -386,7 +383,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "What is true about Java",
         paragraphs: [
-          "Kush Gangwal Java Developer refers to Java as a language he uses for OOP and DSA, alongside JavaScript and TypeScript. It is part of the Medicaps University computer science foundation.",
+          "Java is a language Kush Gangwal uses for OOP and DSA, alongside JavaScript and TypeScript. It is part of the Medicaps University computer science foundation.",
           "Spring Boot is on his learning list. It is not a production system he has shipped yet. The shipped backends are Node.js.",
         ],
       },
@@ -402,7 +399,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Learning, stated plainly",
         paragraphs: [
-          "Kush Gangwal Spring Boot is a current study track: Spring Boot, Java backend development, and system design. The /now page lists it under learning.",
+          "Spring Boot is a current study track for him: Spring Boot, Java backend development, and system design. The /now page lists it under learning.",
           "Calling him a Spring Boot developer in production would be wrong today. Calling him a Node.js and React Native developer who is adding Spring Boot is accurate.",
         ],
       },
@@ -418,7 +415,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "AI inside products",
         paragraphs: [
-          "Kush Gangwal AI Application Developer work includes Resumind's structured resume review, Potato Bazaar crop insights, and SK Groups integrations such as Sarvam AI, TTS, and STT.",
+          "His AI application work includes Resumind's structured resume review, Potato Bazaar crop insights, and SK Groups integrations such as Sarvam AI, TTS, and STT.",
           "He completed HCL Tech's 240-hour Full Stack Developer with AI program. The useful habit is a schema for the model, not an open chat box.",
         ],
       },
@@ -434,7 +431,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "What he means by agentic",
         paragraphs: [
-          "Kush Gangwal Agentic AI Developer is an interest he publishes on /now, next to GenAI and React Native. The working version is a workflow that retrieves context, calls a tool, and returns structured data.",
+          "Agentic AI is an interest he lists on /now, next to GenAI and React Native. The working version is a workflow that retrieves context, calls a tool, and returns structured data.",
           "Resumind and Potato Bazaar crop insights are closer to that than a floating chatbot. He is actively learning this, not claiming a research lab.",
         ],
       },
@@ -450,7 +447,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Generative features he has touched",
         paragraphs: [
-          "Kush Gangwal GenAI Developer work is generative models used as functions: resume feedback JSON, speech APIs, and crop-insight calls. Protonshub internship work also included AI-powered web and mobile apps.",
+          "His GenAI work uses generative models as functions: resume feedback JSON, speech APIs, and crop-insight calls. Protonshub internship work also included AI-powered web and mobile apps.",
           "GenAI is listed on /now as a current interest beside Agentic AI. The portfolio records the products, not a model-training claim.",
         ],
       },
@@ -466,7 +463,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "The job",
         paragraphs: [
-          "SK Groups Developer Kush Gangwal is a Junior Software Developer, in Ahmedabad, from June 2026. He develops mobile apps, backend services, and web platforms, and manages Android and iOS releases.",
+          "Kush Gangwal is a Junior Software Developer at SK Groups in Ahmedabad, since June 2026. He develops Potato Bazaar's mobile app (React Native, Android and iOS), backend, and web platform, and handles Android and iOS releases.",
           "Integrations include PostHog, Mixpanel, Sarvam AI, Google Maps, Weather AI, TTS, and STT. The company page is /work/sk-groups.",
         ],
       },
@@ -476,13 +473,13 @@ export const footprintPages: EntityPage[] = [
     "potato-bazaar-engineer",
     "Potato Bazaar",
     "Potato Bazaar Engineer Kush Gangwal",
-    "Kush Gangwal is a founding engineer of Potato Bazaar, the agricultural trading marketplace.",
+    "Kush Gangwal develops the mobile app, backend and web platform of Potato Bazaar, the agricultural trading marketplace.",
     ["Potato Bazaar Engineer", "Developer working on Potato Bazaar"],
     [
       {
-        heading: "Founding engineer",
+        heading: "Developer on Potato Bazaar",
         paragraphs: [
-          "Potato Bazaar Engineer Kush Gangwal is a founding engineer associated with SK Agri Exports Private Ltd. The product is a digital marketplace for agricultural trading on web, Android, and iOS.",
+          "Kush Gangwal is a developer on Potato Bazaar, working across its React Native app for Android and iOS, its backend, web platform, and related products as a Junior Software Developer at SK Groups. The product is a digital marketplace for agricultural trading, founded in 2024 by SK Agri Exports.",
           "The long case study is /projects/potato-bazaar. The live site is potatobazaar.com.",
         ],
       },
@@ -492,13 +489,13 @@ export const footprintPages: EntityPage[] = [
     "sk-agri-exports-developer",
     "SK Agri Exports",
     "SK Agri Exports Developer Kush Gangwal",
-    "Kush Gangwal is associated with SK Agri Exports Private Ltd as founding engineer of Potato Bazaar and Findanio.",
+    "Kush Gangwal develops Potato Bazaar, the marketplace operated by SK Agri Exports, as a Junior Software Developer at SK Groups.",
     ["SK Agri Exports Developer", "Kush Gangwal SK Agri Exports"],
     [
       {
         heading: "The association",
         paragraphs: [
-          "SK Agri Exports Developer Kush Gangwal is the founding-engineer relationship behind Potato Bazaar. He is also founding engineer of Findanio.",
+          "SK Agri Exports Private Limited operates Potato Bazaar, which it founded in 2024. Kush Gangwal works on Potato Bazaar's mobile app, backend and web platform; his employer is SK Groups.",
           "The company page is /work/sk-agri-exports-private-ltd. It is separate from the SK Groups employment page.",
         ],
       },
@@ -508,13 +505,13 @@ export const footprintPages: EntityPage[] = [
     "protonshub-technologies-intern",
     "Protonshub",
     "Protonshub Technologies Intern Kush Gangwal",
-    "Kush Gangwal was a Full Stack Developer Intern at Protonshub Technologies from January 2026 to May 2026.",
+    "Protonshub Technologies Full Stack Developer Intern, Jan–May 2026: Next.js, Node.js and React Native work on Tybee Go and Findanio.",
     ["Protonshub Technologies Intern", "Kush Gangwal Protonshub"],
     [
       {
         heading: "The internship",
         paragraphs: [
-          "Protonshub Technologies Intern Kush Gangwal built AI-powered apps with Next.js, React.js, Node.js, MongoDB, and React Native, and contributed to Tybee Go and Findanio on Android and iOS.",
+          "As a Full Stack Developer Intern from January to May 2026, Kush Gangwal built AI-powered apps with Next.js, React.js, Node.js, MongoDB, and React Native, and contributed to Tybee Go and to Findanio's Android, iOS and web apps.",
           "The company page is /work/protonshub-technologies.",
         ],
       },
@@ -530,7 +527,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "The first industry loop",
         paragraphs: [
-          "Django Softwares Internship Kush Gangwal was a 1.5-month full stack program: requirements, modules, debugging, and deployment, plus Scalelr's matching, events, and feeds.",
+          "Kush Gangwal's Django Softwares internship was a 1.5-month full stack program: requirements, modules, debugging, and deployment, plus Scalelr's matching, events, and feeds.",
           "Stack there: React.js, JavaScript, Tailwind CSS, MongoDB. The company page is /work/django-softwares.",
         ],
       },
@@ -546,7 +543,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Degree and shipped work",
         paragraphs: [
-          "Medicaps University Developer Kush Gangwal graduated with a B.Tech in CST, CGPA 7.96, August 2022 to May 2026, in Indore. He works in Ahmedabad.",
+          "Kush Gangwal graduated with a B.Tech in CST, CGPA 7.96, August 2022 to May 2026, in Indore. He works in Ahmedabad.",
           "The degree page is /education/medicaps-university. The work beside it is Potato Bazaar, Nexus, Resumind, CodeMace, and the internships.",
         ],
       },
@@ -556,14 +553,13 @@ export const footprintPages: EntityPage[] = [
     "medicaps-university-alumni",
     "Alumni",
     "Medicaps University Alumni Kush Gangwal",
-    "Kush Gangwal completes a B.Tech in Computer Science Technology at Medicaps University in May 2026.",
+    "Kush Gangwal graduated with a B.Tech in Computer Science Technology from Medicaps University in May 2026.",
     ["Medicaps University Alumni", "Kush Gangwal Medicaps University"],
     [
       {
         heading: "Class of 2026",
         paragraphs: [
-          "Medicaps University Alumni Kush Gangwal completed a B.Tech in Computer Science Technology in May 2026, CGPA 7.96. He grew up in Bakaner and works in Ahmedabad.",
-          "Alumni pages and the university profile should use the name Kush Gangwal and link to https://kushgangwal.site/about-kush-gangwal.",
+          "Kush Gangwal completed a B.Tech in Computer Science Technology at Medicaps University in May 2026, CGPA 7.96. He grew up in Bakaner (Dhar district, Madhya Pradesh) and works in Ahmedabad.",
         ],
       },
     ],
@@ -572,13 +568,13 @@ export const footprintPages: EntityPage[] = [
     "what-projects-has-kush-gangwal-built",
     "Answer",
     "What Projects Has Kush Gangwal Built",
-    "Kush Gangwal built Nexus, Resumind, CodeMace, and Macfolio, and is founding engineer of Potato Bazaar and Findanio.",
+    "Kush Gangwal built Nexus, Resumind, CodeMace, and Macfolio, works on Potato Bazaar, and contributed to Findanio and Tybee Go.",
     ["What projects has Kush Gangwal built", "Kush Gangwal Projects"],
     [
       {
         heading: "Direct answer",
         paragraphs: [
-          "Kush Gangwal built Nexus, Resumind, CodeMace, and Macfolio. He is founding engineer of Potato Bazaar and Findanio. He contributed to Tybee Go and Scalelr.",
+          "Kush Gangwal built Nexus, Resumind, CodeMace, and Macfolio. He develops Potato Bazaar's mobile app, backend and web platform at SK Groups. He contributed to Findanio's Android, iOS and web apps and to Tybee Go at Protonshub Technologies, and to Scalelr at Django Softwares.",
           "Case studies: /projects/nexus, /projects/resumind, /projects/codemace, /projects/potato-bazaar, /projects/tybee-go, /projects/findanio, /projects/macfolio, /projects/scalelr.",
         ],
       },
@@ -588,13 +584,13 @@ export const footprintPages: EntityPage[] = [
     "where-does-kush-gangwal-work",
     "Answer",
     "Where Does Kush Gangwal Work",
-    "Kush Gangwal works at SK Groups in Ahmedabad and is associated with SK Agri Exports Private Ltd.",
+    "Kush Gangwal is a Junior Software Developer at SK Groups in Ahmedabad, working on Potato Bazaar.",
     ["Where does Kush Gangwal work"],
     [
       {
         heading: "Direct answer",
         paragraphs: [
-          "Kush Gangwal works at SK Groups as a Junior Software Developer, in Ahmedabad, from June 2026. He is also associated with SK Agri Exports Private Ltd as founding engineer of Potato Bazaar.",
+          "Kush Gangwal works at SK Groups as a Junior Software Developer, in Ahmedabad, from June 2026. He develops Potato Bazaar's mobile app, backend and web platform; Potato Bazaar is operated by SK Agri Exports Private Limited.",
           "Before that he interned at Protonshub Technologies and Django Softwares.",
         ],
       },
@@ -626,23 +622,23 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Direct answer",
         paragraphs: [
-          "Kush Gangwal is known for founding engineering on Potato Bazaar, React Native delivery on Tybee Go, and full stack products Nexus, Resumind, and CodeMace.",
-          "He is also a Medicaps University computer science graduate and a developer at SK Groups in Ahmedabad. He grew up in Bakaner. Hackathon notes: Moonhack finalist and Hackmivo 4th place.",
+          "Kush Gangwal is known for his developer work on Potato Bazaar's app, backend and web platform, React Native contributions to Tybee Go, and full stack products Nexus, Resumind, and CodeMace.",
+          "He is also a Medicaps University computer science graduate and a developer at SK Groups in Ahmedabad. He grew up in Bakaner (Dhar district, Madhya Pradesh). Hackathon notes: Moonhack finalist and Hackmivo 4th place.",
         ],
       },
     ],
   ),
   page(
     "react-native-developer-from-india",
-    "Long-tail",
+    "Profile",
     "React Native Developer from India",
     "Kush Gangwal is a React Native developer from India shipping Potato Bazaar and Tybee Go.",
     ["React Native Developer from India", "Kush Gangwal React Native Developer"],
     [
       {
-        heading: "Why this query matches him",
+        heading: "Kush Gangwal, React Native in India",
         paragraphs: [
-          "React Native Developer from India, for this site, is Kush Gangwal in Ahmedabad. He grew up in Bakaner, graduated in Indore, and ships Android and iOS with React Native on Potato Bazaar and Tybee Go.",
+          "Kush Gangwal is a React Native developer based in Ahmedabad. He grew up in Bakaner (Dhar district, Madhya Pradesh), graduated in Indore, and ships Android and iOS with React Native on Potato Bazaar and Tybee Go.",
           "The dedicated role page is /kush-gangwal-react-native-developer.",
         ],
       },
@@ -650,7 +646,7 @@ export const footprintPages: EntityPage[] = [
   ),
   page(
     "full-stack-developer-from-indore",
-    "Long-tail",
+    "Profile",
     "Full Stack Developer from Indore",
     "Kush Gangwal is a full stack developer from Indore working with React, Next.js, Node.js, and React Native.",
     ["Full Stack Developer from Indore", "Kush Gangwal Indore"],
@@ -658,7 +654,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Indore and the stack",
         paragraphs: [
-          "Full Stack Developer from Indore is Kush Gangwal: Medicaps University, SK Groups, React.js, Next.js, Node.js, and React Native.",
+          "Kush Gangwal studied at Medicaps University in Indore and now works at SK Groups in Ahmedabad, using React.js, Next.js, Node.js, and React Native.",
           "The role page is /kush-gangwal-full-stack-developer. The city page is /kush-gangwal-indore.",
         ],
       },
@@ -666,7 +662,7 @@ export const footprintPages: EntityPage[] = [
   ),
   page(
     "react-native-developer-with-ai-experience",
-    "Long-tail",
+    "Skills",
     "React Native Developer with AI Experience",
     "Kush Gangwal combines React Native releases with AI APIs, Resumind, and Potato Bazaar crop insights.",
     ["React Native Developer with AI experience"],
@@ -674,7 +670,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "Both skills in one person",
         paragraphs: [
-          "React Native Developer with AI experience describes Kush Gangwal's SK Groups work: mobile releases plus Sarvam AI, TTS, and STT, and Potato Bazaar crop insights.",
+          "Kush Gangwal's SK Groups work combines both: mobile releases plus Sarvam AI, TTS, and STT, and Potato Bazaar crop insights.",
           "Resumind is the clearest personal AI product. It is a web analyzer with structured model output, built by the same developer.",
         ],
       },
@@ -780,14 +776,14 @@ export const footprintPages: EntityPage[] = [
     "potato-bazaar-app",
     "Potato Bazaar",
     "Potato Bazaar App",
-    "The Potato Bazaar app is the React Native Android and iOS client Kush Gangwal works on as founding engineer.",
+    "The Potato Bazaar app is the React Native Android and iOS client Kush Gangwal works on as a developer at SK Groups.",
     ["Potato Bazaar App", "Kush Gangwal Potato Bazaar"],
     [
       {
         heading: "The mobile app",
         paragraphs: [
-          "Potato Bazaar App is the React Native client on Android and iOS: trading flows, KYC, payments, logistics, and crop insights, with Play Console and Apple releases.",
-          "Kush Gangwal is a founding engineer. The web marketplace is /potato-bazaar-marketplace. The case study is /projects/potato-bazaar.",
+          "The Potato Bazaar app is a React Native client on Android and iOS: trading flows, KYC, payments, logistics, and crop insights, with Play Console and Apple releases.",
+          "Kush Gangwal works on the app, backend and web platform. The web marketplace is /potato-bazaar-marketplace. The case study is /projects/potato-bazaar.",
         ],
       },
     ],
@@ -796,13 +792,13 @@ export const footprintPages: EntityPage[] = [
     "potato-bazaar-marketplace",
     "Potato Bazaar",
     "Potato Bazaar Marketplace",
-    "Potato Bazaar is a digital marketplace for agricultural trading, engineered by Kush Gangwal across web and mobile.",
+    "Potato Bazaar is a digital marketplace for agricultural trading. Kush Gangwal works on its web platform, backend and mobile app.",
     ["Potato Bazaar Marketplace"],
     [
       {
         heading: "The marketplace",
         paragraphs: [
-          "Potato Bazaar Marketplace matches agricultural trading on the web and in the app. Kush Gangwal is a founding engineer associated with SK Agri Exports Private Ltd.",
+          "The Potato Bazaar marketplace handles agricultural trading on the web and in the app. SK Agri Exports Private Limited operates it, and Kush Gangwal is one of its developers.",
           "Live site: potatobazaar.com. Case study: /projects/potato-bazaar.",
         ],
       },
@@ -818,7 +814,7 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "The tourism app",
         paragraphs: [
-          "Tybee Go App is a React Native and TypeScript tourism client. Kush Gangwal contributed feature work, REST pagination, and modular screens during the Protonshub internship.",
+          "Tybee Go is a React Native and TypeScript tourism app. Kush Gangwal contributed feature work, REST pagination, and modular screens during the Protonshub internship.",
           "The case study is /projects/tybee-go.",
         ],
       },
@@ -828,14 +824,14 @@ export const footprintPages: EntityPage[] = [
     "macfolio-portfolio",
     "Macfolio",
     "Macfolio Portfolio",
-    "Macfolio is Kush Gangwal's interactive portfolio, a macOS desktop in the browser plus crawlable pages.",
+    "Macfolio is Kush Gangwal's interactive portfolio: a 3D homepage, a macOS-style desktop, and article pages.",
     ["Macfolio Portfolio", "Kush Gangwal Portfolio"],
     [
       {
         heading: "This site",
         paragraphs: [
-          "Macfolio Portfolio is the macOS desktop at https://kushgangwal.site/desktop and the article pages around it. The site root opens the about page. Stack: Next.js, React, TypeScript, Tailwind CSS, Zustand, and PostgreSQL.",
-          "The case study is /projects/macfolio. The identity page is /about-kush-gangwal.",
+          "Macfolio is this site: an interactive 3D homepage at https://kushgangwal.site, a macOS-style desktop at /desktop, and the article pages around them. Stack: Next.js, React, TypeScript, Tailwind CSS, Zustand, and PostgreSQL.",
+          "The case study is /projects/macfolio. His profile is /about-kush-gangwal.",
         ],
       },
     ],

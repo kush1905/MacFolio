@@ -10,13 +10,13 @@ const LINKS = [
   { href: "/industries/cold-storage", label: "Cold storage" },
   { href: "/industries/agri-marketplace", label: "Agri marketplace" },
   { href: "/stack/react-native", label: "React Native" },
-  { href: "/entities", label: "Entity graph" },
+  { href: "/entities", label: "How it connects" },
 ] as const;
 
 export function RelatedEntities() {
   return (
-    <aside className="public-entities" aria-label="Related entities">
-      <p className="public-kicker">Related entities</p>
+    <aside className="public-entities" aria-label="Related pages">
+      <p className="public-kicker">Related</p>
       <ul>
         {LINKS.map((item) => (
           <li key={item.href}>

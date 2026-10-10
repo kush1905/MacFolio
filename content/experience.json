@@ -3,7 +3,7 @@
     {
       "year": "2022",
       "title": "Started B.Tech at Medicaps University",
-      "body": "Began Bachelor of Technology in Computer Science Technology in Indore, MP — building foundations in OOP, DSA, and full-stack development."
+      "body": "Began a Bachelor of Technology in Computer Science Technology in Indore, MP — building foundations in OOP, DSA, and full-stack development."
     },
     {
       "year": "2025",
@@ -13,7 +13,7 @@
     {
       "year": "2026",
       "title": "Full Stack Developer Intern — Protonshub",
-      "body": "Built AI-powered full-stack apps with Next.js, React.js, Node.js, MongoDB, and React Native. Contributed to Tybee Go and Findanio across Android and iOS."
+      "body": "Built full-stack apps with Next.js, React.js, Node.js, MongoDB, and React Native, including AI API integrations. Contributed to Tybee Go and Findanio across Android and iOS."
     },
     {
       "year": "2026",
@@ -22,8 +22,8 @@
     },
     {
       "year": "2026",
-      "title": "Shipping Potato Bazaar & Tybee Go",
-      "body": "Leading product work on Potato Bazaar (web + mobile marketplace) and Tybee Go tourism app — production features, analytics, and cross-platform delivery."
+      "title": "Developing Potato Bazaar",
+      "body": "Developing Potato Bazaar's React Native mobile app, backend, and web platform at SK Groups. Earlier, contributed to Tybee Go, a tourism app, during the Protonshub internship."
     }
   ],
   "experience": [
@@ -48,7 +48,7 @@
         "AI Integration"
       ],
       "highlights": [
-        "Develop mobile apps, backend services, and web platforms across multiple products, handling development, debugging, and delivery.",
+        "Develop Potato Bazaar's React Native mobile app (Android and iOS), backend services, and web platform, plus related products, handling development, debugging, and delivery.",
         "Manage Android and iOS builds, debugging, and releases via Android Studio, Play Console, Xcode, and Apple Developer.",
         "Integrate PostHog, Mixpanel, Sarvam AI, Google Maps, Weather AI, TTS, and STT APIs using Git/GitHub workflows.",
         "Collaborate across teams, owning deliverables and using Claude and Cursor to accelerate development and debugging."
@@ -74,7 +74,7 @@
         "Mobile App Development"
       ],
       "highlights": [
-        "Developed AI-powered full-stack applications using Next.js, React.js, Node.js, MongoDB, and React Native.",
+        "Developed full-stack applications using Next.js, React.js, Node.js, MongoDB, and React Native, including AI API integrations.",
         "Built REST APIs, integrated databases, and optimized application performance with scalable architectures.",
         "Contributed to the Tybee Go mobile app and Findanio mobile and web apps, enhancing cross-platform UI for Android and iOS.",
         "Accelerated development using Cursor, Antigravity, Git, and GitHub to build clean, efficient, and maintainable solutions."

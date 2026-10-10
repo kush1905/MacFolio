@@ -18,7 +18,7 @@ export default function FaqPage() {
       <PublicArticle
         kicker="FAQ"
         title={`Questions about ${PERSON_NAME}`}
-        subtitle="Short factual answers for search and answer engines."
+        subtitle="Short answers about Kush Gangwal's work, projects, and background."
       >
         {faqs.map((faq) => (
           <section key={faq.question}>

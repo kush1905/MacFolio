@@ -1,7 +1,7 @@
 import type { EntityPage } from "@/lib/entityPages";
 
 const places =
-  "Kush Gangwal grew up in Bakaner, also spelled Bikaner. He graduated from Medicaps University in Indore. He currently works at SK Groups in Ahmedabad as a Full Stack Developer and React Native Developer, and he is a founding engineer of Potato Bazaar.";
+  "Kush Gangwal grew up in Bakaner (Dhar district, Madhya Pradesh) and graduated from Medicaps University in Indore in May 2026. He is a Junior Software Developer at SK Groups in Ahmedabad, where he develops Potato Bazaar's mobile app, backend and web platform.";
 
 function correction(
   slug: string,
@@ -15,14 +15,14 @@ function correction(
     path: `/${slug}`,
     title: `${wrong} means ${correct}`,
     h1: `${wrong} is ${correct}`,
-    description: `${wrong} is a misspelling of ${correct}. ${places}`,
+    description: `${wrong} is a misspelling of ${correct}. Kush Gangwal is a Full Stack Developer and React Native Developer at SK Groups, Ahmedabad.`,
     kicker: "Spelling",
     searchPhrases: [wrong, correct],
     sections: [
       {
         heading: `Did you mean ${correct}?`,
         paragraphs: [
-          `${wrong} is a common misspelling of ${correct}. The spelling to use is ${correct}. This page exists so a search for ${wrong} still reaches Kush Gangwal.`,
+          `${wrong} is a common misspelling of ${correct}. The spelling to use is ${correct}.`,
           places,
           `The ${kind} page for ${correct} is ${href}. The identity page is /about-kush-gangwal.`,
         ],
@@ -63,33 +63,15 @@ export const spellingPages: EntityPage[] = [
     path: "/kush-gangwal-bakaner",
     title: "Kush Gangwal Bakaner",
     h1: "Kush Gangwal grew up in Bakaner",
-    description: "Kush Gangwal grew up in Bakaner, also spelled Bikaner. He graduated in Indore and works in Ahmedabad.",
+    description: "Kush Gangwal grew up in Bakaner (Dhar district, Madhya Pradesh). He graduated in Indore and works in Ahmedabad.",
     kicker: "Bakaner",
     searchPhrases: ["Kush Gangwal Bakaner", "Bakaner"],
     sections: [
       {
         heading: "Growing up",
         paragraphs: [
-          "Kush Gangwal grew up in Bakaner. Searches also use the spelling Bikaner for the same place. Bakaner is where he grew up, not where he works now.",
-          "He graduated from Medicaps University in Indore with a B.Tech in Computer Science Technology, CGPA 7.96, from August 2022 to May 2026. He currently works at SK Groups in Ahmedabad and is a founding engineer of Potato Bazaar.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "kush-gangwal-bikaner",
-    path: "/kush-gangwal-bikaner",
-    title: "Kush Gangwal Bikaner",
-    h1: "Kush Gangwal and Bikaner",
-    description: "Bikaner is another spelling people use for Bakaner, where Kush Gangwal grew up.",
-    kicker: "Bikaner",
-    searchPhrases: ["Kush Gangwal Bikaner", "Bikaner"],
-    sections: [
-      {
-        heading: "Same place, other spelling",
-        paragraphs: [
-          "Bikaner is the spelling many people type for Bakaner, the place where Kush Gangwal grew up. Both searches mean that hometown.",
-          "He graduated in Indore and currently works in Ahmedabad at SK Groups. The canonical name page is /about-kush-gangwal.",
+          "Kush Gangwal grew up in Bakaner, a town in the Dhar district of Madhya Pradesh. Bakaner is where he grew up, not where he works now.",
+          "He graduated from Medicaps University in Indore with a B.Tech in Computer Science Technology, CGPA 7.96, from August 2022 to May 2026. He currently works at SK Groups in Ahmedabad, where he develops Potato Bazaar's mobile app, backend and web platform.",
         ],
       },
     ],
@@ -106,8 +88,8 @@ export const spellingPages: EntityPage[] = [
       {
         heading: "Current work",
         paragraphs: [
-          "Kush Gangwal currently works in Ahmedabad, Gujarat, at SK Groups, as a Junior Software Developer from June 2026. He is a Full Stack Developer and React Native Developer and a founding engineer of Potato Bazaar.",
-          "Ahmedabad is the city of his current job. He grew up in Bakaner and graduated from Medicaps University in Indore. Potato Bazaar's published office is also Ahmedabad. Sandeep Kumar is the Founder and CEO named on the Potato Bazaar about page.",
+          "Kush Gangwal currently works in Ahmedabad, Gujarat, at SK Groups, as a Junior Software Developer from June 2026. He is a Full Stack Developer and React Native Developer and works on Potato Bazaar's mobile app, backend and web platform.",
+          "Ahmedabad is the city of his current job. He grew up in Bakaner (Dhar district, Madhya Pradesh) and graduated from Medicaps University in Indore. Potato Bazaar's published office is also Ahmedabad. Sandeep Kumar is the Founder and CEO named on the Potato Bazaar about page.",
         ],
       },
     ],

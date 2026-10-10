@@ -16,6 +16,8 @@ export type CaseStudy = {
   cover?: string;
   links: { label: string; href: string }[];
   searchPhrases: string[];
+  /** Real product screenshots (portrait phone captures unless noted). */
+  screenshots?: { src: string; alt: string; width: number; height: number }[];
   sections: CaseStudySection[];
 };
 
@@ -67,7 +69,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Why Nexus matters",
         paragraphs: [
-          "Nexus is not a tutorial clone. It is a complete product loop: identity, search, collaboration, and reputation. For anyone searching Kush Gangwal Full Stack Developer or Nexus Skill Swap Platform, this project is the clearest example of product thinking plus implementation.",
+          "Nexus is not a tutorial clone. It is a complete product loop: identity, search, collaboration, and reputation, and it is the clearest example of Kush Gangwal taking a product idea from concept to a working full stack application.",
         ],
       },
     ],
@@ -111,8 +113,8 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "What Kush Gangwal learned",
         paragraphs: [
-          "AI-powered applications fail when the model is asked to 'be helpful' with no schema. Resumind treats the model as a structured reviewer. That is the same approach Kush Gangwal uses when integrating AI APIs in production work at SK Groups and on Potato Bazaar.",
-          "Building Resumind AI Resume Analyzer also forced clear UX: people need a score they can trust and a next edit they can make in ten minutes.",
+          "LLM features fail when the model is asked to 'be helpful' with no schema. Resumind treats the model as a structured reviewer. Kush Gangwal applies the same habit when integrating AI APIs in production work at SK Groups and on Potato Bazaar.",
+          "Building Resumind also forced clear UX: people need a score they can trust and a next edit they can make in ten minutes.",
         ],
       },
     ],
@@ -163,9 +165,29 @@ export const caseStudies: CaseStudy[] = [
     title: "Scaling Potato Bazaar Mobile Application | Kush Gangwal",
     h1: "Scaling Potato Bazaar Mobile Application",
     description:
-      "Kush Gangwal is a founding engineer of Potato Bazaar, a digital marketplace for agricultural trading on web, Android, and iOS.",
+      "Kush Gangwal develops Potato Bazaar's mobile app, backend, and web platform: a digital marketplace for agricultural trading on web, Android, and iOS.",
     period: "Feb 2026 – Present",
-    role: "Founding Engineer · Full Stack Developer & React Native Developer",
+    role: "Developer · mobile app, backend, and web platform",
+    screenshots: [
+      {
+        src: "/assets/projects/potato-bazaar/home.webp",
+        alt: "Potato Bazaar Android app home screen with the Top 10 Mandi Price list for AMC mandi, Ahmedabad",
+        width: 720,
+        height: 1424,
+      },
+      {
+        src: "/assets/projects/potato-bazaar/home-associates.webp",
+        alt: "Potato Bazaar home screen showing the Market Associate banner above live mandi prices",
+        width: 720,
+        height: 1424,
+      },
+      {
+        src: "/assets/projects/potato-bazaar/splash.webp",
+        alt: "Potato Bazaar app splash screen with the tagline The World of Potatoes",
+        width: 720,
+        height: 1497,
+      },
+    ],
     tech: ["React.js", "Next.js", "Node.js", "React Native"],
     cover: "/assets/projects/potato-bazaar.jpg",
     links: [
@@ -184,14 +206,14 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "What Potato Bazaar is",
         paragraphs: [
-          "Potato Bazaar is a full-stack digital marketplace for real-time agricultural trading. Kush Gangwal is a founding engineer of Potato Bazaar and is associated with SK Agri Exports Private Ltd. The product covers web, Android, and iOS.",
-          "Searches for Kush Gangwal Potato Bazaar should resolve here: this is the product he owns end to end, from marketplace flows to mobile releases.",
+          "Potato Bazaar is a full-stack digital marketplace for real-time agricultural trading, operated by SK Agri Exports Private Limited. The product covers web, Android, and iOS.",
+          "Kush Gangwal is a developer on Potato Bazaar, working across its React Native mobile app for Android and iOS, its backend, its web platform, and related products, from marketplace flows to mobile releases.",
         ],
       },
       {
-        heading: "What Kush Gangwal built",
+        heading: "What Kush Gangwal works on",
         paragraphs: [
-          "The marketplace is not a brochure. Traders need KYC, payments, logistics, and trust. Kush Gangwal built and shipped features across those surfaces, then connected analytics, maps, weather, and AI-powered crop insights so the app is useful after the first transaction.",
+          "The marketplace is not a brochure. Traders need KYC, payments, logistics, and trust. Kush Gangwal builds and ships features across those surfaces and connects analytics, maps, weather, and AI-powered crop insights so the app is useful after the first transaction.",
         ],
         bullets: [
           "KYC and secure transaction flows",
@@ -205,15 +227,14 @@ export const caseStudies: CaseStudy[] = [
         heading: "Scaling the mobile application",
         paragraphs: [
           "Scaling Potato Bazaar Mobile Application meant treating React Native as a production client, not a prototype. Kush Gangwal works with Android Studio, Play Console, Xcode, and Apple Developer for builds and releases. Pagination, navigation, and async data handling keep lists usable as catalog size grows.",
-          "The same person who writes the React Native screens also touches the Node.js and Next.js sides. That is why Kush Gangwal Full Stack Developer and Kush Gangwal React Native Developer are the same entity, not two different careers.",
+          "The same developer who writes the React Native screens also works on the Node.js and Next.js sides, so features can be designed once and shipped across mobile, backend, and web.",
         ],
       },
       {
         heading: "Companies around the product",
         paragraphs: [
           "Potato Bazaar's about page says SK Agri Exports founded the marketplace in 2024 and that the platform connects farmers, traders, cold storage facilities, and institutional buyers. The footer says it is powered by S K AGRI EXPORTS PRIVATE LIMITED. The same page names Sandeep Kumar as Founder & CEO, Priya Rajput as Chief Technology Officer, and Amit Mehta as Chief Operations Officer, and lists an office in Ahmedabad.",
-          "Kush Gangwal is the founding engineer of the software and a Junior Software Developer at SK Groups in Ahmedabad. He grew up in Bakaner and graduated in Indore. He is not the Founder & CEO on the Potato Bazaar about page. He does not list Mantra Agri Solutions as an employer.",
-          "The industry pages on this portfolio — potato trading, cold storage, agricultural marketplace, and agriculture logistics — all point back to this product and to Kush Gangwal.",
+          "Kush Gangwal is a Junior Software Developer at SK Groups in Ahmedabad and develops Potato Bazaar's mobile app, backend, and web platform. He does not list Mantra Agri Solutions as an employer.",
         ],
       },
     ],
@@ -251,9 +272,9 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
       {
-        heading: "Why it ranks with Kush Gangwal React Native Developer",
+        heading: "Why React Native",
         paragraphs: [
-          "Tybee Go is one of the clearest public examples that Kush Gangwal is a React Native Developer who has shipped tourism product features, not only personal experiments. It sits next to Potato Bazaar as evidence of cross-platform mobile delivery.",
+          "React Native let one TypeScript codebase serve Android and iOS, so feature work, API integration, and fixes landed on both platforms together. Tybee Go sits next to Potato Bazaar as an example of Kush Gangwal's cross-platform mobile work.",
         ],
       },
     ],
@@ -264,9 +285,9 @@ export const caseStudies: CaseStudy[] = [
     title: "Findanio Mobile and Web Apps | Kush Gangwal",
     h1: "Findanio Mobile and Web Apps",
     description:
-      "Kush Gangwal is a founding engineer of Findanio and contributed to its Android, iOS, and web apps at Protonshub Technologies.",
+      "Kush Gangwal contributed to Findanio's Android, iOS, and web apps at Protonshub Technologies.",
     period: "Jan 2026 – May 2026",
-    role: "Founding Engineer · Full Stack Developer",
+    role: "Full Stack Developer Intern",
     tech: ["Next.js", "React.js", "Node.js", "MongoDB", "React Native"],
     cover: "/assets/projects/findanio.jpg",
     links: [{ label: "GitHub", href: "https://github.com/kush1905" }],
@@ -275,7 +296,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Role",
         paragraphs: [
-          "Findanio is a mobile and web product. Kush Gangwal is a founding engineer of Findanio. He also contributed to the Findanio Android, iOS, and web apps at Protonshub Technologies using Next.js, React.js, Node.js, MongoDB, and React Native.",
+          "Findanio is a mobile and web product. Kush Gangwal contributed to Findanio's Android, iOS, and web apps at Protonshub Technologies during his internship, using Next.js, React.js, Node.js, MongoDB, and React Native.",
         ],
       },
       {
@@ -292,7 +313,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Kush Gangwal Portfolio — Macfolio",
     h1: "Kush Gangwal Portfolio",
     description:
-      "Macfolio is the interactive Kush Gangwal portfolio: a macOS-style desktop in the browser for exploring projects, experience, and contact.",
+      "Macfolio is Kush Gangwal's interactive portfolio, with a 3D home page and a macOS-style desktop in the browser for exploring projects, experience, and contact.",
     period: "2026 – Present",
     role: "Full Stack Developer",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "PostgreSQL"],
@@ -303,7 +324,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "What this site is",
         paragraphs: [
-          "The Kush Gangwal Portfolio is both an interactive macOS desktop and a set of crawlable pages. Recruiters can open Finder, Terminal, and KushGPT. Search engines can read this case study, the about page, and the project URLs.",
+          "Macfolio is Kush Gangwal's portfolio. The home page is an interactive 3D introduction, and the macOS-style desktop at /desktop lets visitors open Finder, Terminal, and KushGPT. Plain pages cover the about page, projects, and case studies like this one.",
         ],
       },
       {
@@ -330,7 +351,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Contribution",
         paragraphs: [
-          "Scalelr is a professional networking platform for investors and project holders. Kush Gangwal contributed to it at Django Softwares, including AI-driven matching, event hosting, and interactive feeds, during a 1.5-month full-stack program.",
+          "Scalelr is a professional networking platform for investors and project holders. Kush Gangwal contributed to it at Django Softwares during a 1.5-month full-stack program. The platform includes AI-driven matching, event hosting, and interactive feeds.",
         ],
       },
     ],

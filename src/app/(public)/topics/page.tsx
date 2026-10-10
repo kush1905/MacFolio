@@ -41,7 +41,7 @@ export default function TopicsPage() {
             </li>
           ))}
           <li>
-            <Link href="/entities">Entity graph</Link>
+            <Link href="/entities">How it connects</Link>
           </li>
           <li>
             <Link href="/agritech">Agritech hub</Link>

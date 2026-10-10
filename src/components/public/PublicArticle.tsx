@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { ViewTransition, type ReactNode } from "react";
 import Link from "next/link";
 import { RelatedEntities } from "@/components/public/RelatedEntities";
 import { PERSON_HEADLINE, PERSON_NAME } from "@/lib/identity";
@@ -10,6 +10,7 @@ export function PublicArticle({
   updated,
   crumbs,
   portrait,
+  transitionName,
   children,
 }: {
   kicker?: string;
@@ -18,6 +19,8 @@ export function PublicArticle({
   updated?: string;
   crumbs?: { href: string; label: string }[];
   portrait?: { src: string; alt: string };
+  /** Shared view-transition name, so the homepage title morphs into this one. */
+  transitionName?: string;
   children: ReactNode;
 }) {
   return (
@@ -45,7 +48,15 @@ export function PublicArticle({
         ) : null}
         <div>
           {kicker ? <p className="public-kicker">{kicker}</p> : null}
-          <h1>{title}</h1>
+          <h1>
+            {transitionName ? (
+              <ViewTransition name={transitionName}>
+                <span>{title}</span>
+              </ViewTransition>
+            ) : (
+              title
+            )}
+          </h1>
           {subtitle ? <p className="public-lede">{subtitle}</p> : null}
           <p className="public-byline">
             {PERSON_NAME}

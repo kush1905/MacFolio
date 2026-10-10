@@ -135,7 +135,7 @@ export const blogCluster: BlogPost[] = [
   post(
     "nextjs-portfolio-website",
     "Next.js Portfolio Website",
-    "Why Kush Gangwal's portfolio is a Next.js site with a desktop on / and articles everywhere else.",
+    "Why Kush Gangwal's portfolio is a Next.js site with a 3D homepage, a macOS-style desktop, and plain article pages.",
     "2026-04-22",
     ["Next.js", "Portfolio"],
     ["Next.js Portfolio Website", "How to Build a Portfolio Website"],
@@ -143,8 +143,8 @@ export const blogCluster: BlogPost[] = [
       {
         heading: "Two surfaces",
         paragraphs: [
-          "Kush Gangwal's Next.js portfolio is Macfolio. The home route is a macOS desktop. /about-kush-gangwal, /projects, and /blog are normal HTML so search engines can read them.",
-          "The canonical origin is https://kushgangwal.site. The macOS desktop is at /desktop. The identity page is /about-kush-gangwal.",
+          "Kush Gangwal's Next.js portfolio is Macfolio. The homepage is an interactive 3D portfolio, and the macOS-style desktop lives at /desktop. /about-kush-gangwal, /projects, and /blog are normal HTML pages that load fast and work without the desktop.",
+          "The site lives at https://kushgangwal.site. His profile page is /about-kush-gangwal.",
         ],
       },
     ],
@@ -288,7 +288,7 @@ export const blogCluster: BlogPost[] = [
   post(
     "how-to-build-a-portfolio-website",
     "How to Build a Portfolio Website",
-    "Kush Gangwal built Macfolio as a portfolio that humans can use and search engines can read.",
+    "How Kush Gangwal built Macfolio: an interactive portfolio with a fast, readable page for every project.",
     "2026-06-24",
     ["Portfolio", "Next.js"],
     ["How to Build a Portfolio Website", "Kush Gangwal Portfolio"],
@@ -296,8 +296,8 @@ export const blogCluster: BlogPost[] = [
       {
         heading: "Do not hide the name",
         paragraphs: [
-          "Kush Gangwal's portfolio puts the name in the title, the H1 on /about-kush-gangwal, and Person schema. The desktop on / is for people. The articles are for indexing.",
-          "One domain should be canonical. That domain is https://kushgangwal.site.",
+          "Put your name where people look first: the page title and the main heading. Kush Gangwal's portfolio does this on /about-kush-gangwal. The 3D homepage and the desktop at /desktop are the showpieces; the article pages are the readable record for anyone short on time.",
+          "Use one domain and send the others to it. For this site that domain is https://kushgangwal.site.",
         ],
       },
     ],
@@ -364,7 +364,7 @@ export const blogCluster: BlogPost[] = [
       {
         heading: "A marketplace is trust",
         paragraphs: [
-          "Potato Bazaar needs KYC, payments, and logistics or it is only a listing. Kush Gangwal works on those flows as founding engineer, on web and React Native.",
+          "Potato Bazaar needs KYC, payments, and logistics or it is only a listing. Kush Gangwal works on those flows as a developer, on web and React Native.",
           "Crop insights, maps, and weather sit on top of a transaction that already has to be safe.",
         ],
       },
@@ -373,7 +373,7 @@ export const blogCluster: BlogPost[] = [
   post(
     "findanio-android-ios-web",
     "Findanio on Android, iOS, and Web",
-    "Kush Gangwal is founding engineer of Findanio and contributed to its clients at Protonshub.",
+    "Kush Gangwal contributed to Findanio's Android, iOS and web apps at Protonshub Technologies.",
     "2026-07-29",
     ["Findanio"],
     ["Findanio", "Kush Gangwal Protonshub"],
@@ -381,7 +381,7 @@ export const blogCluster: BlogPost[] = [
       {
         heading: "Three surfaces",
         paragraphs: [
-          "Findanio ships on Android, iOS, and web. Kush Gangwal is a founding engineer and also contributed at Protonshub Technologies using Next.js, React, Node, MongoDB, and React Native.",
+          "Findanio ships on Android, iOS, and web. Kush Gangwal contributed to Findanio's Android, iOS and web apps at Protonshub Technologies, using Next.js, React, Node, MongoDB, and React Native.",
           "The case study is /projects/findanio.",
         ],
       },
@@ -501,7 +501,7 @@ export const blogCluster: BlogPost[] = [
         heading: "The sequence",
         paragraphs: [
           "Kush Gangwal started B.Tech Computer Science Technology at Medicaps University in August 2022. Internships at Django Softwares and Protonshub came before SK Groups in June 2026.",
-          "The degree is CGPA 7.96 through May 2026 in Indore. He grew up in Bakaner. The current job is at SK Groups in Ahmedabad.",
+          "The degree is CGPA 7.96 through May 2026 in Indore. He grew up in Bakaner (Dhar district, Madhya Pradesh). The current job is at SK Groups in Ahmedabad.",
         ],
       },
     ],
@@ -509,7 +509,7 @@ export const blogCluster: BlogPost[] = [
   post(
     "github-readme-for-kush-gangwal",
     "What the GitHub README Should Say",
-    "The exact identity Kush Gangwal should repeat on GitHub so it matches this site.",
+    "What a GitHub profile README should cover, using Kush Gangwal's own accounts as the example.",
     "2026-08-19",
     ["GitHub"],
     ["Kush Gangwal GitHub"],
@@ -517,8 +517,8 @@ export const blogCluster: BlogPost[] = [
       {
         heading: "One bio",
         paragraphs: [
-          "The GitHub README for kush1905 should say Kush Gangwal, Full Stack Developer & React Native Developer, and link to https://kushgangwal.site/about-kush-gangwal.",
-          "A second account, Kush-PB, is the Potato Bazaar engineering account. Both should name the same person.",
+          "A profile README only needs three things: who you are, what you build, and where to read more. For Kush Gangwal's main account, kush1905, that is Full Stack Developer & React Native Developer, with Nexus and MacFolio among the public repositories and a link to https://kushgangwal.site/about-kush-gangwal.",
+          "He uses a second account, Kush-PB, for Potato Bazaar work.",
         ],
       },
     ],
@@ -551,7 +551,7 @@ export const blogCluster: BlogPost[] = [
       {
         heading: "Named results",
         paragraphs: [
-          "Kush Gangwal was a Moonhack Hackathon finalist and placed 4th at Hackmivo Hackathon. Those are third-party events that use his name.",
+          "Kush Gangwal was a Moonhack Hackathon finalist and placed 4th at Hackmivo Hackathon. Both were outside events judged by people who did not know him.",
           "Hackathon demos trained the same habit as later releases: cut scope and ship something a stranger can open.",
         ],
       },
@@ -586,7 +586,7 @@ export const blogCluster: BlogPost[] = [
         heading: "Chrome is the design",
         paragraphs: [
           "Macfolio's menu bar, windows, and dock are Tailwind plus custom CSS. Kush Gangwal kept the type on SF Pro and the surfaces dark so it reads as a desktop, not a marketing page.",
-          "Article routes use the same tokens with a reading layout. The desktop lock applies only to the home route on phones.",
+          "Article routes use the same tokens with a reading layout. The desktop layout applies only to /desktop.",
         ],
       },
     ],
@@ -628,16 +628,16 @@ export const blogCluster: BlogPost[] = [
   post(
     "linking-entities-on-purpose",
     "Linking Kush Gangwal to Projects and Companies",
-    "How this site repeats one entity graph so search systems connect the name to the work.",
+    "How Kush Gangwal's projects map to the companies, internships, and university they came from.",
     "2026-09-30",
-    ["SEO"],
+    ["Portfolio"],
     ["Kush Gangwal", "Medicaps University", "Potato Bazaar"],
     [
       {
-        heading: "Say the names together",
+        heading: "Where each project came from",
         paragraphs: [
-          "Pages on this portfolio repeat a closed set: Kush Gangwal, Medicaps University, SK Groups, SK Agri Exports, Protonshub Technologies, Django Softwares, Potato Bazaar, Nexus, Resumind, CodeMace, Findanio, and Tybee Go.",
-          "The technologies stay inside that set: React Native, Next.js, and Node.js. Unrelated topics are left out so the entity does not get muddy.",
+          "Potato Bazaar is his current work at SK Groups; the marketplace is operated by SK Agri Exports. Tybee Go and Findanio were internship contributions at Protonshub Technologies. Scalelr came from the Django Softwares internship. Nexus, Resumind, and CodeMace are personal projects built while he studied at Medicaps University.",
+          "Each project page says which of those it is, so it is clear what was his own product and what was team work at an employer. The common stack across them is React Native, Next.js, and Node.js.",
         ],
       },
     ],
@@ -645,16 +645,16 @@ export const blogCluster: BlogPost[] = [
   post(
     "contact-and-same-name",
     "Use the Same Name on Every Profile",
-    "Kush Gangwal's contact page and the seven profiles that should match it.",
+    "How to reach Kush Gangwal, and the seven public profiles he keeps under one headline.",
     "2026-10-02",
-    ["Identity"],
+    ["Contact"],
     ["Kush Gangwal Contact", "Kush Gangwal LinkedIn"],
     [
       {
         heading: "Seven profiles, one headline",
         paragraphs: [
-          "LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X should all say Kush Gangwal, Full Stack Developer & React Native Developer.",
-          "Each bio should link to https://kushgangwal.site/about-kush-gangwal. Email is gangwal.kush.19@gmail.com.",
+          "Kush Gangwal is on LinkedIn, GitHub, LeetCode, Medium, Dev.to, Hashnode, and X, using the same name and the headline Full Stack Developer & React Native Developer, so recruiters can tell they are the same person.",
+          "The quickest way to reach him is email: gangwal.kush.19@gmail.com. His profile page, with links to every account, is https://kushgangwal.site/about-kush-gangwal.",
         ],
       },
     ],

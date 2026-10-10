@@ -10,16 +10,16 @@ import { SITE_URL } from "@/lib/site";
 export const metadata = publicMeta({
   title: "Entity graph — Kush Gangwal, Potato Bazaar, SK Agri Exports",
   description:
-    "Explicit relationships: Kush Gangwal is founding engineer of Potato Bazaar, operated by SK Agri Exports Private Limited, while employed at SK Groups.",
+    "How Kush Gangwal, Potato Bazaar, SK Agri Exports and SK Groups connect: he develops Potato Bazaar's mobile app, backend and web platform at SK Groups.",
   path: "/entities",
   absoluteTitle: true,
 });
 
 export default function EntitiesPage() {
   const graph = articleGraph({
-    headline: "Kush Gangwal entity graph",
+    headline: "How Kush Gangwal, Potato Bazaar and SK Groups connect",
     description:
-      "Explicit relationships: Kush Gangwal is founding engineer of Potato Bazaar, operated by SK Agri Exports Private Limited, while employed at SK Groups.",
+      "How Kush Gangwal, Potato Bazaar, SK Agri Exports and SK Groups connect: he develops Potato Bazaar's mobile app, backend and web platform at SK Groups.",
     path: "/entities",
   }) as { "@context": string; "@graph": object[] };
   graph["@graph"].push(
@@ -31,8 +31,7 @@ export default function EntitiesPage() {
       operatingSystem: "Android, iOS, Web",
       url: "https://potatobazaar.com",
       installUrl: "https://play.google.com/store/apps/details?id=com.potatobazaar",
-      creator: { "@id": `${SITE_URL}/about-kush-gangwal#person` },
-      author: { "@id": `${SITE_URL}/about-kush-gangwal#person` },
+      contributor: { "@id": `${SITE_URL}/about-kush-gangwal#person` },
       publisher: { "@id": `${SITE_URL}/work/sk-agri-exports-private-ltd#org` },
       featureList: entityDataset.potatoBazaar.features,
     },
@@ -72,7 +71,7 @@ export default function EntitiesPage() {
       <JsonLd data={graph} />
       <PublicArticle
         kicker="Knowledge graph"
-        title="How these entities connect"
+        title="How it connects"
         subtitle="Kush Gangwal, Potato Bazaar, SK Agri Exports, SK Groups, and the potato industry, stated as relationships."
       >
         <section>
@@ -88,15 +87,16 @@ export default function EntitiesPage() {
           </ul>
         </section>
         <section>
-          <h2>Read this as a sentence</h2>
+          <h2>In one paragraph</h2>
           <p>
-            {PERSON_NAME} is a Full Stack Developer & React Native Developer. He is founding engineer
-            of Potato Bazaar while employed at SK Groups in Ahmedabad. He grew up in Bakaner and
-            graduated from Medicaps University in Indore. Potato Bazaar's about page says SK Agri
+            {PERSON_NAME} is a Full Stack Developer & React Native Developer. He develops Potato
+            Bazaar&apos;s mobile app, backend, and web platform as a Junior Software Developer at SK
+            Groups in Ahmedabad. He grew up in Bakaner, Dhar district, Madhya Pradesh, and graduated
+            from Medicaps University in Indore. Potato Bazaar&apos;s about page says SK Agri
             Exports founded the marketplace in 2024 and names Sandeep Kumar as Founder & CEO.
           </p>
           <p>
-            Machine-readable copy: <Link href="/data/entities.json">/data/entities.json</Link> and{" "}
+            Also available as <Link href="/data/entities.json">/data/entities.json</Link> and{" "}
             <Link href="/knowledge-base">/knowledge-base</Link>.
           </p>
         </section>

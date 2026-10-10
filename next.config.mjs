@@ -10,9 +10,11 @@ const nextConfig = {
   serverExternalPackages: ["pg"],
   async redirects() {
     return [
-      { source: "/", destination: "/about-kush-gangwal", permanent: true },
+      // "/" was a 308 to /about-kush-gangwal until the 3D homepage launched (2026-10).
       { source: "/who-is-kush-gangwal", destination: "/about-kush-gangwal", permanent: true },
       { source: "/kush-gangwal", destination: "/about-kush-gangwal", permanent: true },
+      // Bakaner (Dhar, Madhya Pradesh) was wrongly merged with Bikaner (Rajasthan).
+      { source: "/kush-gangwal-bikaner", destination: "/kush-gangwal-bakaner", permanent: true },
       { source: "/portfolio", destination: "/kush-gangwal-portfolio", permanent: true },
       { source: "/writing", destination: "/blog", permanent: true },
       { source: "/for-ai", destination: "/knowledge-base", permanent: true },
@@ -35,7 +37,7 @@ const nextConfig = {
         {
           source: "/",
           has: [{ type: "host", value: host }],
-          destination: "https://kushgangwal.site/about-kush-gangwal",
+          destination: "https://kushgangwal.site/",
           permanent: true,
         },
         {

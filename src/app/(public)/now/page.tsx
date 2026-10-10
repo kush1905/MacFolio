@@ -11,7 +11,7 @@ const now = content.now;
 
 export const metadata = publicMeta({
   title: `Now — ${PERSON_NAME}`,
-  description: `${PERSON_NAME} is currently working at ${now.workingAt}. Building Potato Bazaar, mobile applications, and AI integrations. Interested in Agentic AI, GenAI, and React Native.`,
+  description: `${PERSON_NAME} is currently working at ${now.workingAt}. Developing Potato Bazaar's mobile app, backend, and web platform, and learning Agentic AI and GenAI.`,
   path: "/now",
 });
 
@@ -30,7 +30,7 @@ export default function NowPage() {
           <h2>Currently working at {now.workingAt}</h2>
           <p>
             {PERSON_NAME} works at {now.workingAt} as {now.workingAs}, onsite in {now.location}.
-            Public identity stays {now.identity}.
+            He works as a {now.identity}.
           </p>
         </section>
 

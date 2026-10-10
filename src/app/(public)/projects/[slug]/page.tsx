@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -41,14 +42,15 @@ export default async function ProjectPage({ params }: Props) {
         kicker={product.period}
         title={study?.h1 ?? product.name}
         subtitle={study?.description ?? product.description}
+        transitionName={`project-${slug}`}
         crumbs={[
           { href: "/projects", label: "Projects" },
           { href: `/projects/${slug}`, label: product.name },
         ]}
       >
         <p>
-          {product.credit === "is founding engineer of"
-            ? `Kush Gangwal is founding engineer of ${product.name}.`
+          {product.credit === "develops"
+            ? `Kush Gangwal develops ${product.name}'s mobile app, backend, and web platform.`
             : product.credit === "contributed to"
               ? `Kush Gangwal contributed to ${product.name}.`
               : `Kush Gangwal built ${product.name}.`}{" "}
@@ -59,6 +61,26 @@ export default async function ProjectPage({ params }: Props) {
         {study
           ? study.sections.map((section) => <ProseSection key={section.heading} {...section} />)
           : null}
+
+        {study?.screenshots?.length ? (
+          <section>
+            <h2>Screenshots</h2>
+            <p>From the {product.name} Android app.</p>
+            <div className="public-screens">
+              {study.screenshots.map((shot) => (
+                <figure key={shot.src}>
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    sizes="(max-width: 640px) 45vw, 240px"
+                  />
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {product.links.length > 0 ? (
           <section>

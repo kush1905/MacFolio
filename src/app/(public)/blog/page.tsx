@@ -33,7 +33,7 @@ export default function BlogIndexPage() {
       <PublicArticle
         kicker="Writing"
         title={`Writing by ${PERSON_NAME}`}
-        subtitle="Canonical articles. Syndicate to Medium, Dev.to, and Hashnode with this site as the source."
+        subtitle="Articles on the products Kush Gangwal builds, React Native, and his work and study. Some are also posted on Medium, Dev.to, and Hashnode."
       >
         <div className="public-related">
           {blogPosts.map((post) => (

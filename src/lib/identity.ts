@@ -37,14 +37,13 @@ export const extraProfiles = [
   { label: "GitHub", href: "https://github.com/Kush-PB", handle: "github.com/Kush-PB" },
   { label: "Instagram", href: about.links.instagram, handle: "instagram.com/kush_gangwal_19" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/kush-gangwal-96ab38263", handle: "linkedin.com/in/kush-gangwal-96ab38263" },
-  { label: "Potato Bazaar", href: about.links.portfolio, handle: "potatobazaar.com" },
+  { label: "Portfolio", href: about.links.portfolio, handle: "kushgangwal.site" },
 ].filter((profile) => profile.href.trim());
 
 export const sameAs = [
   ...officialProfiles.map((profile) => profile.href),
   ...about.sameAsExtra,
   about.links.instagram,
-  about.links.portfolio,
 ].filter((href, index, list) => href.trim() && list.indexOf(href) === index);
 
 export const identityLine = `${PERSON_NAME} · ${PERSON_HEADLINE}`;

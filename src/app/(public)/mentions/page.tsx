@@ -8,7 +8,7 @@ import { personNode } from "@/lib/seo";
 
 export const metadata = publicMeta({
   title: `How to mention ${PERSON_NAME}`,
-  description: `Citation and backlink guide for ${PERSON_NAME}. Use the exact name and link to the about page.`,
+  description: `How to cite ${PERSON_NAME}: the exact name, headline, and the page to link to.`,
   path: "/mentions",
 });
 
@@ -17,9 +17,9 @@ export default function MentionsPage() {
     <>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [personNode()] }} />
       <PublicArticle
-        kicker="Entity mentions"
+        kicker="Citations"
         title={`How to mention ${PERSON_NAME}`}
-        subtitle="Third-party mentions of the exact name are one of the strongest entity signals."
+        subtitle="If you write about Kush Gangwal or his work, this is how to name and link him."
       >
         <section>
           <h2>Write the name exactly</h2>
@@ -35,7 +35,7 @@ export default function MentionsPage() {
           </p>
         </section>
         <section>
-          <h2>Places the name should appear</h2>
+          <h2>Where he is credited</h2>
           <ul>
             <li>Hackathon profiles (Moonhack, Hackmivo)</li>
             <li>Dev.to, Medium, and Hashnode bylines</li>
@@ -46,7 +46,7 @@ export default function MentionsPage() {
           </ul>
         </section>
         <section>
-          <h2>Official profiles to connect</h2>
+          <h2>Official profiles</h2>
           <ProfileLinks />
         </section>
         <WhoIs />

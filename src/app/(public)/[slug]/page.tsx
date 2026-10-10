@@ -65,7 +65,7 @@ export default async function EntitySearchPage({ params }: Props) {
         ))}
         <WhoIs />
         <p>
-          Canonical identity: <Link href="/about-kush-gangwal">Kush Gangwal</Link>.
+          More about <Link href="/about-kush-gangwal">Kush Gangwal</Link>.
         </p>
       </PublicArticle>
     </>

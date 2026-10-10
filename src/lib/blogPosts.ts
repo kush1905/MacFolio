@@ -14,7 +14,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "how-i-built-nexus-skill-swap-platform",
-    title: "How I Built Nexus Skill Swap Platform",
+    title: "Nexus Skill Swap Platform: Designing Around Four Loops",
     description:
       "Kush Gangwal explains the product loop, Auth0 setup, and full stack architecture behind Nexus, a skill swap platform.",
     date: "2026-09-12",
@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "building-resumind-ai-resume-analyzer",
-    title: "Building Resumind AI Resume Analyzer",
+    title: "Resumind AI Resume Analyzer: Treating the Model as a Typed Function",
     description:
       "How Kush Gangwal designed Resumind as a structured AI resume analyzer instead of an open-ended chatbot.",
     date: "2026-09-18",
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "scaling-potato-bazaar-mobile-application",
-    title: "Scaling Potato Bazaar Mobile Application",
+    title: "Potato Bazaar Mobile Application: A Marketplace Is a Release Train",
     description:
       "Kush Gangwal on React Native releases, shared APIs, and marketplace features while scaling Potato Bazaar.",
     date: "2026-09-24",
@@ -80,14 +80,14 @@ export const blogPosts: BlogPost[] = [
         heading: "A marketplace is a release train",
         paragraphs: [
           "Scaling Potato Bazaar Mobile Application is less about a single screen and more about a train: Android builds, iOS builds, Play Console, Apple Developer, and a web client that cannot drift from the same APIs.",
-          "Kush Gangwal is a founding engineer of Potato Bazaar. That title only means something if KYC, payments, logistics, and crop insights stay available after the first demo.",
+          "Kush Gangwal develops Potato Bazaar's mobile app, backend and web platform as a Junior Software Developer at SK Groups. That work only counts if KYC, payments, logistics, and crop insights stay available after the first demo.",
         ],
       },
       {
         heading: "Shared APIs, native clients",
         paragraphs: [
           "React.js and Next.js cover the web. React Native covers Android and iOS. Node.js sits behind both. When a trader hits a list, pagination and async handling matter more than animation.",
-          "Anyone searching Potato Bazaar Developer or Kush Gangwal Potato Bazaar should find this record: the same engineer ships the mobile application and the backend that feeds it.",
+          "Working on both sides helps: the same developer who changes the mobile screens also works on the backend that feeds them, so a payload change and its client fix land together.",
         ],
       },
     ],
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     slug: "react-native-production-at-sk-groups",
     title: "React Native Production Work at SK Groups",
     description:
-      "What Kush Gangwal React Native Developer work looks like at SK Groups: builds, releases, analytics, and AI APIs.",
+      "What Kush Gangwal's React Native work looks like at SK Groups: builds, releases, analytics, and AI APIs.",
     date: "2026-08-20",
     tags: ["React Native", "SK Groups"],
     searchPhrases: ["Kush Gangwal React Native Developer", "Kush Gangwal SK Groups"],
@@ -104,13 +104,13 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Production is the job",
         paragraphs: [
-          "At SK Groups, Kush Gangwal is a Junior Software Developer in Ahmedabad and a React Native Developer in practice. The work is mobile apps, backend services, and web platforms — including Android and iOS debugging and releases.",
+          "At SK Groups, Kush Gangwal is a Junior Software Developer in Ahmedabad and a React Native Developer in practice. The work is Potato Bazaar's mobile app, backend services, and web platform, including Android and iOS debugging and releases.",
         ],
       },
       {
         heading: "Integrations that have to survive review",
         paragraphs: [
-          "PostHog, Mixpanel, Sarvam AI, Google Maps, Weather AI, TTS, and STT are not slide-deck logos. They are release blockers when a key is wrong or a permission is missing. Kush Gangwal React Native Developer searches should land on this kind of work, not a component gallery.",
+          "PostHog, Mixpanel, Sarvam AI, Google Maps, Weather AI, TTS, and STT are not slide-deck logos. They are release blockers when a key is wrong or a permission is missing. Most of the job is this kind of work, not building a component gallery.",
         ],
       },
     ],
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     slug: "full-stack-internship-at-protonshub",
     title: "Full Stack Internship at Protonshub Technologies",
     description:
-      "Kush Gangwal Protonshub internship notes: AI-powered apps, Tybee Go, Findanio, and a Next.js to React Native stack.",
+      "Kush Gangwal's Protonshub internship notes: AI-powered apps, Tybee Go, Findanio, and a Next.js to React Native stack.",
     date: "2026-06-02",
     tags: ["Protonshub", "Full Stack", "React Native"],
     searchPhrases: ["Kush Gangwal Protonshub", "Kush Gangwal Full Stack Developer"],
@@ -133,8 +133,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Tybee Go and Findanio",
         paragraphs: [
-          "The internship is public through two products. Tybee Go is a tourism mobile application. Findanio is a mobile and web product Kush Gangwal also founding-engineered. Both required Android and iOS UI work, not only a web preview.",
-          "That is the Kush Gangwal Protonshub story in one sentence: full stack delivery on real apps, with React Native in the same week as Node.js.",
+          "The internship is public through two products. Tybee Go is a tourism mobile application. Findanio is a mobile and web product; Kush Gangwal contributed to Findanio's Android, iOS and web apps at Protonshub Technologies. Both required Android and iOS UI work, not only a web preview.",
+          "That is the internship in one sentence: full stack delivery on real apps, with React Native in the same week as Node.js.",
         ],
       },
     ],
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
     slug: "medicaps-university-to-production",
     title: "From Medicaps University to Production Apps",
     description:
-      "Kush Gangwal Medicaps University path: B.Tech CST, 7.96 CGPA, and the products that turned coursework into shipped software.",
+      "Kush Gangwal's path from Medicaps University: B.Tech CST, 7.96 CGPA, and the products that turned coursework into shipped software.",
     date: "2026-05-10",
     tags: ["Medicaps University", "Career"],
     searchPhrases: ["Kush Gangwal Medicaps University"],
@@ -151,13 +151,13 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "The degree",
         paragraphs: [
-          "Kush Gangwal graduated with a Bachelor of Technology in Computer Science Technology from Medicaps University in Indore, Madhya Pradesh, August 2022 to May 2026, CGPA 7.96. He grew up in Bakaner and works in Ahmedabad.",
+          "Kush Gangwal graduated with a Bachelor of Technology in Computer Science Technology from Medicaps University in Indore, Madhya Pradesh, August 2022 to May 2026, CGPA 7.96. He grew up in Bakaner (Dhar district, Madhya Pradesh) and works in Ahmedabad.",
         ],
       },
       {
         heading: "The proof is not the transcript",
         paragraphs: [
-          "Kush Gangwal Medicaps University searches should also find the work that sat beside the degree: Django Softwares, Protonshub Technologies, SK Groups, Potato Bazaar, Nexus, Resumind, and CodeMace.",
+          "The work that sat beside the degree matters as much: internships at Django Softwares and Protonshub Technologies, personal projects Nexus, Resumind, and CodeMace, and then a job at SK Groups working on Potato Bazaar.",
           "The university gave OOP, DSA, and CS foundations. Production gave release trains, analytics, and users who do not care about coursework.",
         ],
       },
@@ -190,21 +190,21 @@ export const blogPosts: BlogPost[] = [
     slug: "building-macfolio-nextjs-macos-portfolio",
     title: "Building Macfolio, a Next.js macOS Portfolio",
     description:
-      "Why the Kush Gangwal Portfolio is an operating system in the browser and a set of crawlable pages at the same time.",
+      "Why the Kush Gangwal Portfolio pairs a macOS-style desktop in the browser with plain article pages.",
     date: "2026-10-01",
     tags: ["Macfolio", "Next.js", "Portfolio"],
     searchPhrases: ["Kush Gangwal Portfolio"],
     sections: [
       {
-        heading: "Two surfaces, one identity",
+        heading: "Two surfaces, one site",
         paragraphs: [
-          "The Kush Gangwal Portfolio has a desktop for humans and HTML pages for search. The desktop is Finder, Dock, and Terminal. The pages are /about-kush-gangwal, /projects/nexus, and the rest of the entity graph.",
+          "The Kush Gangwal Portfolio has an interactive 3D homepage, a macOS-style desktop at /desktop, and plain HTML pages. The desktop is Finder, Dock, and Terminal. The pages are /about-kush-gangwal, /projects/nexus, and the other project and article pages, which load fast and read well on any device.",
         ],
       },
       {
         heading: "Why Next.js",
         paragraphs: [
-          "Next.js lets Kush Gangwal keep a client OS on / and statically generate the articles that Google and AI search engines actually read. Person schema, sitemap, and llms.txt live next to the wallpaper.",
+          "Next.js lets Kush Gangwal run the interactive client-side desktop at /desktop and statically generate the articles in the same codebase, so the reading pages stay fast without the desktop's JavaScript.",
         ],
       },
     ],
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Practice is a gym, not a personality",
         paragraphs: [
-          "Kush Gangwal practices DSA on LeetCode and GeeksforGeeks and has earned 2 LeetCode badges. The profile is part of the same identity as LinkedIn, GitHub, Medium, Dev.to, Hashnode, and X.",
+          "Kush Gangwal practices DSA on LeetCode and GeeksforGeeks and has earned 2 LeetCode badges. His LinkedIn, GitHub, Medium, Dev.to, Hashnode, and X profiles are linked from this site.",
         ],
       },
       {
@@ -244,7 +244,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What the placements are",
         paragraphs: [
-          "Kush Gangwal was a Moonhack Hackathon finalist and placed 4th at Hackmivo Hackathon. Those are third-party events that mention the name, which is one of the stronger entity signals a student developer can earn.",
+          "Kush Gangwal was a Moonhack Hackathon finalist and placed 4th at Hackmivo Hackathon. Both were short, outside events with their own judges, which made them a useful check on his work as a student.",
         ],
       },
       {

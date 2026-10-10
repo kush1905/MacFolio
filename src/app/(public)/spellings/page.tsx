@@ -27,7 +27,7 @@ export default function SpellingsPage() {
       <PublicArticle
         kicker="Spellings"
         title="If the spelling is off, it is still Kush Gangwal"
-        subtitle="He grew up in Bakaner, also searched as Bikaner. He graduated in Indore. He works at SK Groups in Ahmedabad."
+        subtitle="He grew up in Bakaner, Dhar district, Madhya Pradesh. He graduated in Indore. He works at SK Groups in Ahmedabad."
       >
         <ul>
           {spellingPages.map((page) => (

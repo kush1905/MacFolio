@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { AskButton } from "@/components/command/AskButton";
 import { officialProfiles, PERSON_HEADLINE, PERSON_NAME } from "@/lib/identity";
 
 const NAV = [
+  { href: "/", label: "Home" },
   { href: "/about-kush-gangwal", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Writing" },
@@ -16,7 +18,7 @@ const NAV = [
 export function PublicHeader() {
   return (
     <header className="public-header">
-      <Link className="public-brand" href="/about-kush-gangwal">
+      <Link className="public-brand" href="/">
         <img
           className="public-logo"
           src="/assets/kush/logo-icon.png"
@@ -35,6 +37,7 @@ export function PublicHeader() {
             {item.label}
           </Link>
         ))}
+        <AskButton />
       </nav>
     </header>
   );
@@ -48,7 +51,7 @@ export function PublicFooter() {
           <strong>{PERSON_NAME}</strong>
           <span>{PERSON_HEADLINE}</span>
         </p>
-        <p>Grew up in Bakaner · Graduated in Indore · Works in Ahmedabad</p>
+        <p>Grew up in Bakaner, Madhya Pradesh · Graduated in Indore · Works in Ahmedabad</p>
       </div>
       <ul className="public-footer-links">
         {officialProfiles.map((profile) => (
@@ -68,13 +71,10 @@ export function PublicFooter() {
           <Link href="/agritech">Agritech</Link>
         </li>
         <li>
-          <Link href="/entities">Entities</Link>
+          <Link href="/entities">How it connects</Link>
         </li>
         <li>
-          <Link href="/spellings">Spellings</Link>
-        </li>
-        <li>
-          <Link href="/llms.txt">llms.txt</Link>
+          <Link href="/site-map">Site map</Link>
         </li>
       </ul>
     </footer>

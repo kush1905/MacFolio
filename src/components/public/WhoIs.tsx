@@ -8,8 +8,8 @@ export function WhoIs() {
     <section className="who-is-kush-gangwal public-who" id="who-is-kush-gangwal">
       <h2>Who is {PERSON_NAME}?</h2>
       <p>
-        Kush Gangwal is a Full Stack Developer from India specializing in React Native, React.js,
-        Next.js, Node.js and AI-powered applications.
+        Kush Gangwal is a Full Stack Developer from India working with React Native, React.js,
+        Next.js, and Node.js, including AI API integrations.
       </p>
       <p>He has worked on:</p>
       <ul>

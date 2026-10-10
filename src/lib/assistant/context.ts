@@ -76,6 +76,8 @@ ${personalStory()}
 ${about.links.instagram ? `- Instagram: ${about.links.instagram}` : ""}
 - Resume: ${about.links.resume}
 - Portfolio site: ${about.links.portfolio}
+- Hometown: Bakaner, Dhar district, Madhya Pradesh
+- Potato Bazaar role: developer on Potato Bazaar (mobile app in React Native for Android and iOS, backend, web platform, and related products) as a Junior Software Developer at SK Groups. Not a founder or founding engineer.
 - About: /about-kush-gangwal
 - Now: /now
 
@@ -152,7 +154,7 @@ ${experience.journey.map((j) => `- ${j.year}: ${j.title} — ${j.body}`).join("\
 - About Macfolio: ${kb.interviewAnswers.aboutMacfolio}
 
 ## Achievements (KushGPT + portfolio)
-- Competitive programming: ${kb.achievements.competitiveProgramming.problemsSolved} problems on ${kb.achievements.competitiveProgramming.platforms.join(", ")}; ${kb.achievements.competitiveProgramming.badges} badges
+- Competitive programming: ${kb.achievements.competitiveProgramming.problemsSolved} (${kb.achievements.competitiveProgramming.platforms.join(", ")}); ${kb.achievements.competitiveProgramming.badges} LeetCode badges
 - Hackathons: ${kb.achievements.hackathons.map((h) => `${h.name} (${h.achievement})`).join("; ")}
 - Portfolio list: ${experience.achievements.join("; ")}
 
@@ -168,7 +170,6 @@ ${experience.journey.map((j) => `- ${j.year}: ${j.title} — ${j.body}`).join("\
 - LeetCode badges: ${stats.leetcodeBadges}
 - Years coding: ${stats.yearsCoding}
 - CGPA: ${stats.cgpa}
-- Commits this year: ${stats.commitsThisYear}
 `.trim();
 }
 
@@ -315,7 +316,7 @@ function chunks(): Chunk[] {
       keys: ["education", "college", "university", "degree", "cgpa", "medicaps", "school", "12th", "10th"],
       title: "Education",
       body:
-        `**${about.name}** is pursuing **${about.education.degree}** at **${about.education.school}** (${about.education.duration}) with CGPA ${about.education.cgpa}.\n` +
+        `**${about.name}** graduated with a **${about.education.degree}** from **${about.education.school}** (${about.education.duration}) with CGPA ${about.education.cgpa}.\n` +
         (about.educationHistory ?? [])
           .map((e) => `• ${e.level} — ${e.school} (${e.duration}): ${e.score}`)
           .join("\n"),
@@ -333,7 +334,7 @@ function chunks(): Chunk[] {
     {
       keys: ["github", "git", "repo"],
       title: "GitHub",
-      body: `GitHub profile: ${about.links.github} (~${stats.commitsThisYear} commits this year in portfolio stats).`,
+      body: `GitHub profile: ${about.links.github}.`,
     },
     {
       keys: [
@@ -347,7 +348,7 @@ function chunks(): Chunk[] {
         "dsa",
       ],
       title: "Achievements",
-      body: `${kb.achievements.competitiveProgramming.problemsSolved} DSA problems on ${kb.achievements.competitiveProgramming.platforms.join(" & ")} · ${kb.achievements.competitiveProgramming.badges} badges · Hackathons: ${kb.achievements.hackathons
+      body: `${kb.achievements.competitiveProgramming.problemsSolved} (${kb.achievements.competitiveProgramming.platforms.join(" & ")}) · ${kb.achievements.competitiveProgramming.badges} LeetCode badges · Hackathons: ${kb.achievements.hackathons
         .map((h) => `${h.name} (${h.achievement})`)
         .join("; ")} · Also: ${experience.achievements.join(" · ")}`,
     },

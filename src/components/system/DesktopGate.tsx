@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { content } from "@/lib/content";
 import { officialProfiles, PERSON_HEADLINE, PERSON_NAME } from "@/lib/identity";
 
@@ -22,12 +23,12 @@ export function DesktopGate() {
           className="desktop-gate-avatar"
         />
         <p className="desktop-gate-kicker">Desktop only</p>
-        <h1 id="desktop-gate-title">{PERSON_NAME}</h1>
+        <h2 id="desktop-gate-title">{PERSON_NAME}</h2>
         <p className="desktop-gate-role">{PERSON_HEADLINE}</p>
         <p id="desktop-gate-copy" className="desktop-gate-copy">
           The interactive Mac desktop needs a computer, or <strong>Desktop site</strong> in your
-          phone browser. About, projects, and writing still open on this phone at{" "}
-          <a href="/about-kush-gangwal">/about-kush-gangwal</a>.
+          phone browser. The 3D portfolio, projects, and writing open on this phone at{" "}
+          <Link href="/">kushgangwal.site</Link>.
         </p>
         <ul className="desktop-gate-links">
           {officialProfiles.slice(0, 4).map((profile) => (

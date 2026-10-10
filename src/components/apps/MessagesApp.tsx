@@ -111,9 +111,9 @@ function contactChannels(): Channel[] {
     },
     {
       id: "web",
-      label: "Portfolio",
+      label: "Potato Bazaar",
       detail: "potatobazaar.com",
-      href: about.links.portfolio,
+      href: about.links.potatoBazaar,
       external: true,
     },
   ];
@@ -129,6 +129,7 @@ export function MessagesApp() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [source, setSource] = useState<"postgres" | "local" | null>(null);
+  const [failed, setFailed] = useState<string | null>(null);
   const [copied, setCopied] = useState<string | null>(null);
   const channels = useMemo(() => contactChannels(), []);
 
@@ -181,31 +182,31 @@ export function MessagesApp() {
         method: "POST",
         body: JSON.stringify(payload),
       });
-      const data = (await res.json()) as {
+      const data = (await res.json().catch(() => ({}))) as {
         source?: string;
         message?: ContactMessage;
+        delivered?: boolean;
         error?: string;
       };
-      if (data.message) {
-        addMessage(data.message);
-        setSource(data.source === "postgres" ? "postgres" : "local");
-      } else {
-        addMessage(payload);
-        setSource("local");
+      // Only claim delivery when the server actually emailed or stored the message.
+      if (!res.ok || !data.message) {
+        setFailed(
+          res.status === 429
+            ? "Too many messages. Please email instead."
+            : "Not sent — the message service is unavailable. Please email instead.",
+        );
+        return;
       }
+      addMessage(data.message);
+      setSource(data.source === "postgres" ? "postgres" : "local");
+      setFailed(null);
       setName("");
       setEmail("");
       setBody("");
       setSent(true);
       window.setTimeout(() => setSent(false), 2500);
     } catch {
-      addMessage(payload);
-      setSource("local");
-      setName("");
-      setEmail("");
-      setBody("");
-      setSent(true);
-      window.setTimeout(() => setSent(false), 2500);
+      setFailed("Not sent — network error. Please email instead.");
     } finally {
       setSending(false);
     }
@@ -235,7 +236,7 @@ export function MessagesApp() {
 
         <div className="mac-scroll flex-1 space-y-3 p-4">
           <Bubble from="them">
-            Hey! I&apos;m Kush — {about.role} at SK Groups. Tap a channel below
+            Hey! I&apos;m Kush — Junior Software Developer at SK Groups. Tap a channel below
             to reach me, or leave a note in this thread.
           </Bubble>
 
@@ -291,7 +292,12 @@ export function MessagesApp() {
 
           {sent && (
             <div className="text-center text-[11px] text-white/40">
-              {source === "postgres" ? "Delivered · saved" : "Delivered · saved locally"}
+              {source === "postgres" ? "Delivered · saved" : "Delivered"}
+            </div>
+          )}
+          {failed && (
+            <div role="alert" className="text-center text-[11px] text-[#ffb4a2]">
+              {failed}
             </div>
           )}
         </div>

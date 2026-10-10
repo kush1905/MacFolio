@@ -38,8 +38,8 @@ export default async function PersonPage({ params }: Props) {
         crumbs={[{ href: colleaguePath(slug), label: person.name }]}
       >
         <p>
-          This page exists so search engines can connect {person.name} and {PERSON_NAME} as
-          colleagues. It does not claim employment details for {person.name}.
+          {person.name} and {PERSON_NAME} have worked together. This page does not describe{" "}
+          {person.name}&apos;s own role or employer.
         </p>
         <WhoIs />
       </PublicArticle>

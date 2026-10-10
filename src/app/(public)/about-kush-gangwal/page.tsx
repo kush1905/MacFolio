@@ -31,9 +31,10 @@ export default function AboutKushGangwalPage() {
         <section>
           <h2>Work</h2>
           <p>
-            Kush Gangwal currently works at SK Groups in Ahmedabad. He previously interned at
-            Protonshub Technologies and Django Softwares, and is a founding engineer of Potato
-            Bazaar and Findanio.
+            Kush Gangwal is a Junior Software Developer at SK Groups in Ahmedabad, where he
+            develops Potato Bazaar&apos;s mobile app, backend, and web platform. He previously
+            interned at Protonshub Technologies, where he contributed to Tybee Go and Findanio, and
+            at Django Softwares.
           </p>
           <div className="public-related">
             {companies.map((company) => (
@@ -48,8 +49,8 @@ export default function AboutKushGangwalPage() {
         <section>
           <h2>Projects</h2>
           <p>
-            Independent case studies exist so Google can rank Potato Bazaar, Nexus, Resumind,
-            CodeMace, and Tybee Go on their own URLs.
+            Each project has its own case study covering the problem, what Kush Gangwal worked
+            on, and the stack.
           </p>
           <div className="public-card-grid">
             {products.map((product) => (
@@ -67,14 +68,14 @@ export default function AboutKushGangwalPage() {
             Kush Gangwal graduated with {content.about.education.degree} from{" "}
             <Link href="/education/medicaps-university">Medicaps University</Link> in Indore
             ({content.about.education.duration}, CGPA {content.about.education.cgpa}). He grew up in
-            Bakaner and works in Ahmedabad.
+            Bakaner, Dhar district, Madhya Pradesh, and works in Ahmedabad.
           </p>
         </section>
 
         <section>
           <h2>Official profiles</h2>
           <p>
-            Every profile uses the same name and headline: {PERSON_NAME}, {PERSON_HEADLINE}.
+            Find {PERSON_NAME} on these networks.
           </p>
           <ProfileLinks extras />
         </section>

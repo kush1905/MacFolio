@@ -57,8 +57,7 @@ export default async function BlogPostPage({ params }: Props) {
         ))}
         <WhoIs />
         <p>
-          More writing on the <Link href="/blog">Kush Gangwal blog</Link>. Cross-post with a
-          canonical link back here.
+          More writing on the <Link href="/blog">Kush Gangwal blog</Link>.
         </p>
       </PublicArticle>
     </>

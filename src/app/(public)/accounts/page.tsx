@@ -22,20 +22,15 @@ export default function AccountsPage() {
         }}
       />
       <PublicArticle
-        kicker="Same identity everywhere"
+        kicker="Profiles"
         title={`Official profiles of ${PERSON_NAME}`}
         subtitle={`${PERSON_NAME} · ${PERSON_HEADLINE}`}
       >
         <p>
-          Every profile should display the same name and headline. Inconsistent names weaken
-          entity recognition.
+          These are the {officialProfiles.length} main profiles {PERSON_NAME} uses for code,
+          writing, and work, plus a few secondary accounts.
         </p>
         <ProfileLinks extras />
-        <p>
-          When you mention this person on a hackathon page, company team page, or article, write{" "}
-          <strong>{PERSON_NAME}</strong> and link to the about page. These {officialProfiles.length}{" "}
-          networks are the official sameAs set.
-        </p>
         <WhoIs />
       </PublicArticle>
     </>

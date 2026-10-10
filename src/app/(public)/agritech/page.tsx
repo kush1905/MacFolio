@@ -9,7 +9,7 @@ import { articleGraph, blogPostPath } from "@/lib/seo";
 export const metadata = publicMeta({
   title: "Agritech — Potato Bazaar and Kush Gangwal",
   description:
-    "The agritech pages on this portfolio: Potato Bazaar, SK Agri Exports, SK Groups, Mantra Agri Solutions, cold storage, and potato trading.",
+    "Potato Bazaar and the companies and industries around it: SK Agri Exports, SK Groups, Mantra Agri Solutions, cold storage, and potato trading.",
   path: "/agritech",
   absoluteTitle: true,
 });
@@ -21,14 +21,14 @@ export default function AgritechPage() {
         data={articleGraph({
           headline: "Agritech hub",
           description:
-            "The agritech pages on this portfolio: Potato Bazaar, SK Agri Exports, SK Groups, Mantra Agri Solutions, cold storage, and potato trading.",
+            "Potato Bazaar and the companies and industries around it: SK Agri Exports, SK Groups, Mantra Agri Solutions, cold storage, and potato trading.",
           path: "/agritech",
         })}
       />
       <PublicArticle
         kicker="Agritech"
         title="Potato Bazaar and the companies around it"
-        subtitle="Every page below connects the same facts: Kush Gangwal builds Potato Bazaar, SK Agri Exports operates it, and SK Groups employs him."
+        subtitle="Kush Gangwal develops Potato Bazaar's mobile app, backend, and web platform. SK Agri Exports operates Potato Bazaar, and SK Groups employs him."
       >
         <section>
           <h2>Companies</h2>
@@ -59,7 +59,7 @@ export default function AgritechPage() {
               </li>
             ))}
             <li>
-              <Link href="/entities">Entity graph</Link>
+              <Link href="/entities">How it connects</Link>
             </li>
             <li>
               <Link href="/projects/potato-bazaar">Potato Bazaar case study</Link>

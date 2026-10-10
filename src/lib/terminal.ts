@@ -273,7 +273,7 @@ function buildFs(): DirNode {
     ),
     file(
       "stats.txt",
-      `${stats.yearsCoding} years coding · ${stats.projectsCompleted} projects · ${stats.hackathons} hackathons · ${stats.internships} internships · ~${stats.commitsThisYear}/yr commits`,
+      `${stats.yearsCoding} years coding · ${stats.projectsCompleted} projects · ${stats.hackathons} hackathons · ${stats.internships} internships`,
     ),
     file(
       "goals.txt",

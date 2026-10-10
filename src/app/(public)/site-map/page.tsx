@@ -44,13 +44,19 @@ export default function HtmlSitemapPage() {
             <Link href="/mentions">How to mention</Link>
           </li>
           <li>
-            <Link href="/entities">Entity graph</Link>
+            <Link href="/entities">How it connects</Link>
           </li>
           <li>
             <Link href="/agritech">Agritech</Link>
           </li>
           <li>
             <Link href="/knowledge-base">Knowledge base</Link>
+          </li>
+          <li>
+            <Link href="/spellings">Spellings</Link>
+          </li>
+          <li>
+            <a href="/llms.txt">llms.txt</a>
           </li>
         </ul>
       </section>
@@ -75,7 +81,7 @@ export default function HtmlSitemapPage() {
         </ul>
       </section>
       <section>
-        <h2>Search pages</h2>
+        <h2>Topics</h2>
         <ul>
           {entityPages.map((page) => (
             <li key={page.slug}>

@@ -464,15 +464,14 @@ function OverviewPane({
             </div>
           </div>
           <div className="grid grid-cols-4 gap-1">
-            <Gauge label="Projects" value={stats.projectsCompleted} max={6} color="#0a84ff" />
+            <Gauge label="Projects" value={stats.projectsCompleted} max={8} color="#0a84ff" />
             <Gauge label="Years" value={stats.yearsCoding} max={6} color="#30d158" />
             <Gauge label="CGPA" value={stats.cgpa} max={10} color="#bf5af2" digits={2} />
             <Gauge label="Interns" value={stats.internships} max={3} color="#ff9f0a" />
           </div>
-          <div className="mt-3 grid grid-cols-3 gap-1.5">
+          <div className="mt-3 grid grid-cols-2 gap-1.5">
             <ChipStat label="Hackathons" value={stats.hackathons} hint={kushgpt.achievements.hackathons.map((h) => h.name).join(" · ")} />
             <ChipStat label="Badges" value={stats.leetcodeBadges} hint={kushgpt.achievements.competitiveProgramming.platforms.join(" · ")} />
-            <ChipStat label="Commits/yr" value={`~${stats.commitsThisYear.toLocaleString()}`} />
           </div>
         </div>
 

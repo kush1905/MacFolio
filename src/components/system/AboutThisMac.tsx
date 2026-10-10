@@ -48,7 +48,7 @@ export function AboutThisMac() {
               <Row label="Memory" value="React + Node + Java" />
               <Row
                 label="Storage"
-                value="LeetCode & GFG · 2 badges"
+                value="LeetCode · 2 badges"
               />
               <Row label="Chip" value={mac.chip} />
               <Row label="System" value={mac.displayVersion} last />

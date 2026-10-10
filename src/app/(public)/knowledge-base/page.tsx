@@ -8,7 +8,7 @@ import { articleGraph } from "@/lib/seo";
 export const metadata = publicMeta({
   title: "Knowledge base — Kush Gangwal",
   description:
-    "Plain facts for answer engines: Kush Gangwal, Potato Bazaar, SK Groups, SK Agri Exports, and Mantra Agri Solutions.",
+    "Key facts about Kush Gangwal, Potato Bazaar, SK Groups, SK Agri Exports, and Mantra Agri Solutions.",
   path: "/knowledge-base",
   absoluteTitle: true,
 });
@@ -20,14 +20,14 @@ export default function KnowledgeBasePage() {
         data={articleGraph({
           headline: "Kush Gangwal knowledge base",
           description:
-            "Plain facts for answer engines: Kush Gangwal, Potato Bazaar, SK Groups, SK Agri Exports, and Mantra Agri Solutions.",
+            "Key facts about Kush Gangwal, Potato Bazaar, SK Groups, SK Agri Exports, and Mantra Agri Solutions.",
           path: "/knowledge-base",
         })}
       />
       <PublicArticle
         kicker="Facts"
         title="Knowledge base"
-        subtitle="Plain statements. The same facts are in /data/entities.json and /llms.txt."
+        subtitle="Key facts in one place, also available as JSON."
       >
         <dl className="fact-list">
           <dt>Name</dt>
@@ -49,8 +49,8 @@ export default function KnowledgeBasePage() {
           <dd>{entityDataset.projects.join(", ")}</dd>
           <dt>Potato Bazaar</dt>
           <dd>
-            {entityDataset.potatoBazaar.description} Operator: {entityDataset.potatoBazaar.operator}. Founding
-            engineer: {entityDataset.potatoBazaar.foundingEngineer}. Stack:{" "}
+            {entityDataset.potatoBazaar.description} Operator: {entityDataset.potatoBazaar.operator}.
+            Developer: {entityDataset.potatoBazaar.developer}. Stack:{" "}
             {entityDataset.potatoBazaar.stack.join(", ")}.
           </dd>
           <dt>Mantra Agri Solutions</dt>
@@ -59,7 +59,7 @@ export default function KnowledgeBasePage() {
         <p>
           <Link href="/data/entities.json">JSON dataset</Link>
           {" · "}
-          <Link href="/entities">Entity graph</Link>
+          <Link href="/entities">How it connects</Link>
           {" · "}
           <Link href="/llms.txt">llms.txt</Link>
         </p>
