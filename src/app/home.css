@@ -307,7 +307,7 @@
 
 .hero-statement {
   margin: 22px 0 0;
-  font-family: var(--font-display), Georgia, serif !important;
+  font-family: var(--font-display-italic), var(--font-display), Georgia, serif !important;
   font-style: italic;
   font-size: clamp(26px, 3vw, 40px);
   line-height: 1.1;

@@ -150,3 +150,27 @@ export const contact = {
   email: content.about.email,
   location: content.about.location,
 };
+
+const normaliseTech = (tech: string) => tech.toLowerCase().replace(/\.js$/, "").trim();
+
+/**
+ * Projects most related to `slug`: two points per shared technology, one for the same
+ * company or for both being personal projects. Ties keep the homepage order.
+ */
+export function relatedProjects(slug: string, count = 4) {
+  const base = homeProjects.find((project) => project.slug === slug);
+  if (!base) return homeProjects.slice(0, count);
+  const baseTech = new Set(base.tech.map(normaliseTech));
+  return homeProjects
+    .filter((project) => project.slug !== slug)
+    .map((project, order) => ({
+      project,
+      order,
+      score:
+        project.tech.filter((tech) => baseTech.has(normaliseTech(tech))).length * 2 +
+        (project.context === base.context ? 1 : 0),
+    }))
+    .sort((a, b) => b.score - a.score || a.order - b.order)
+    .slice(0, count)
+    .map(({ project }) => project);
+}

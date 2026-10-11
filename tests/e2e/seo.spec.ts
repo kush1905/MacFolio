@@ -35,4 +35,27 @@ test.describe("search infrastructure", () => {
     await page.goto("/desktop");
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
   });
+
+  test("sitemap lastmod is a stable content date, not the build time", async ({ request }) => {
+    const xml = await (await request.get("/sitemap.xml")).text();
+    const dates = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1].slice(0, 10));
+    expect(dates.length).toBeGreaterThan(200);
+    expect(new Set(dates).size).toBeLessThan(dates.length / 4);
+    const today = new Date().toISOString().slice(0, 10);
+    expect(dates.every((d) => d <= today)).toBe(true);
+  });
+
+  test("IndexNow trigger is not public", async ({ request }) => {
+    const res = await request.get("/api/indexnow");
+    expect([401, 404]).toContain(res.status());
+  });
+
+  test("homepage shares the branded preview image", async ({ page, request }) => {
+    await page.goto("/?static");
+    const og = await page.locator('meta[property="og:image"]').getAttribute("content");
+    expect(og).toContain("/og/home.png");
+    const image = await request.get("/og/home.png");
+    expect(image.status()).toBe(200);
+    expect(image.headers()["content-type"]).toContain("image/png");
+  });
 });

@@ -1,7 +1,19 @@
 import type { MetadataRoute } from "next";
 import { ABOUT_PATH, NOW_PATH } from "@/lib/identity";
+import { blogPosts } from "@/lib/blogPosts";
+import { content } from "@/lib/content";
 import { sitemapEntries } from "@/lib/seo";
-import { SITE_URL } from "@/lib/site";
+import { CONTENT_UPDATED, SITE_URL } from "@/lib/site";
+
+const latest = (...dates: string[]) => dates.sort().at(-1)!;
+
+/** Real content dates: the post date or /now update when newer than the site-wide revision. */
+function lastModified(path: string) {
+  if (path === NOW_PATH) return latest(CONTENT_UPDATED, content.now.updated);
+  const post = blogPosts.find((item) => path === `/blog/${item.slug}`);
+  if (post) return latest(CONTENT_UPDATED, post.date);
+  return CONTENT_UPDATED;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = SITE_URL.replace(/\/$/, "");
@@ -9,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const normalized = url.replace(/\/$/, "");
     return {
       url: normalized,
-      lastModified: new Date(),
+      lastModified: lastModified(new URL(normalized).pathname.replace(/\/$/, "") || "/"),
       changeFrequency: url.includes("/now") ? "weekly" : "monthly",
       priority:
         normalized === origin

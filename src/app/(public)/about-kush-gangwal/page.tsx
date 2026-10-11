@@ -16,6 +16,7 @@ export const metadata = publicMeta({
   path: "/about-kush-gangwal",
   absoluteTitle: true,
   type: "profile",
+  image: "/assets/kush/avatar.png",
 });
 
 export default function AboutKushGangwalPage() {

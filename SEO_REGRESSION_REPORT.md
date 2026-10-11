@@ -114,6 +114,23 @@ Other measurements:
 - **WebGL chunk:** 271 KB gzipped, loaded only on first interaction or after load plus idle (budget 260 KB). R3F imports all of three.js; this is a known limitation.
 - **3D frame rate:** 61 fps in every chapter on an Apple M4 (headless Chrome, Metal), measured by script. It has **not** been measured on a real mid-range Android phone.
 
+## 8b. Performance after the CSS split (2026-10-11, Lighthouse 12.8.2, mobile, local build)
+
+The macOS desktop's CSS and Tailwind utilities now load only on `/desktop`. Public pages
+went from ~23 KB to ~8 KB of gzipped CSS, inlined into the HTML (`experimental.inlineCss`).
+Only the two above-the-fold font faces are preloaded.
+
+| Page | Perf | FCP | LCP |
+|---|---|---|---|
+| `/` | 97 | 1.2 s | 2.6 s |
+| `/about-kush-gangwal` | 97 | 0.9 s | 2.7 s |
+| `/projects/potato-bazaar` | 95 | 0.9 s | 2.9 s |
+| `/faq` | 97 | 0.9 s | 2.6 s |
+
+Simulated LCP is still just over the 2.5 s budget. What remains is mostly font download on
+simulated slow 4G; `font-display: optional` would close it but drop the brand fonts for
+first-time visitors on slow connections, so it was not applied.
+
 ## 9. Known remaining problems (not fixed)
 
 1. ~~**`www.kushgangwal.site` TLS failure**~~ **Fixed** by Kush in Vercel. Verified on 2026-10-10: `https://www.kushgangwal.site/` returns a 308 to the apex.
@@ -123,8 +140,8 @@ Other measurements:
 5. **`resume.pdf` (replaced with Kush's new version on 2026-10-10) still says Protonshub was Jan–May 2025**, and its Play Store link is still the malformed `play.google.com/potatobazaar/`. Kush confirmed 2026, so the PDF needs correcting at its source. The site itself says 2026 everywhere.
 6. **Tybee Go is listed as "Jan 2026 – Present"**, although the Protonshub internship ended in May 2026. This is unconfirmed.
 7. **Project imagery.** Potato Bazaar now has 3 real Android screenshots: on the case study, on the homepage flagship card, and textured onto the 3D phone. The other projects still use AI-generated concept art as covers, and their 3D forms use schematic interfaces until real screenshots arrive.
-8. **Sitemap `lastmod` is still the build time on every URL.**
-9. **`/api/indexnow` is still an unauthenticated GET trigger.**
+8. ~~Sitemap `lastmod` was the build time on every URL~~ **Fixed:** stable content dates from `CONTENT_UPDATED` in `src/lib/site.ts` (bump it when copy changes), newer post or `/now` dates where they apply.
+9. ~~`/api/indexnow` was an unauthenticated GET trigger~~ **Fixed:** it requires `INDEXNOW_TRIGGER_TOKEN` (Bearer header or `?token=`) and returns 404 when the token isn't configured.
 
 ## 10. Not verified (needs Search Console)
 

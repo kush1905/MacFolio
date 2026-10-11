@@ -8,6 +8,11 @@ const legacyHosts = [
 const nextConfig = {
   devIndicators: false,
   serverExternalPackages: ["pg"],
+  experimental: {
+    // Public pages ship ~8 KB (gzip) of CSS; inlining it removes three render-blocking
+    // requests on first visit, which is most portfolio traffic.
+    inlineCss: true,
+  },
   async redirects() {
     return [
       // "/" was a 308 to /about-kush-gangwal until the 3D homepage launched (2026-10).

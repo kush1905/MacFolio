@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectCard } from "@/components/public/ProjectCard";
 import { FactsCard, ProseSection, PublicArticle } from "@/components/public/PublicArticle";
-import { homeProjects } from "@/lib/portfolio";
+import { relatedProjects } from "@/lib/portfolio";
 import { WhoIs } from "@/components/public/WhoIs";
 import { caseStudyBySlug } from "@/lib/caseStudies";
 import { publicMeta } from "@/lib/publicMeta";
@@ -137,14 +137,11 @@ export default async function ProjectPage({ params }: Props) {
         <WhoIs />
 
         <section>
-          <h2>More projects</h2>
+          <h2>Related projects</h2>
           <div className="project-grid">
-            {homeProjects
-              .filter((item) => item.slug !== slug)
-              .slice(0, 4)
-              .map((item) => (
-                <ProjectCard key={item.slug} project={item} description={false} />
-              ))}
+            {relatedProjects(slug).map((item) => (
+              <ProjectCard key={item.slug} project={item} description={false} />
+            ))}
           </div>
         </section>
       </PublicArticle>

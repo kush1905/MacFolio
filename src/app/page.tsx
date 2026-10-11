@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     description: homeDescription,
     siteName: PERSON_NAME,
     locale: "en_IN",
-    images: [{ url: "/assets/kush/avatar.png", alt: PERSON_NAME }],
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: `${PERSON_NAME}: I build products that ship.` }],
   },
   twitter: {
     card: "summary_large_image",
     title: HOME_TITLE,
     description: homeDescription,
     creator: "@kushgg19",
-    images: ["/assets/kush/avatar.png"],
+    images: ["/og/home.png"],
   },
 };
 

@@ -18,7 +18,7 @@ import {
   personUrl,
   sameAs,
 } from "@/lib/identity";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { CONTENT_UPDATED, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const { about, experience, projects, skills } = content;
 
@@ -800,7 +800,7 @@ function articleNode(input: {
     author: { "@id": personId },
     publisher: { "@id": personId },
     datePublished: input.date ?? "2026-10-01",
-    dateModified: input.date ?? "2026-10-02",
+    dateModified: input.date && input.date > CONTENT_UPDATED ? input.date : CONTENT_UPDATED,
     image: input.image ? absolute(input.image) : absolute(about.avatar),
     about: { "@id": personId },
   };

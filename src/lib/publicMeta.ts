@@ -26,14 +26,14 @@ export function publicMeta(input: {
       type: input.type === "article" ? "article" : "website",
       siteName: PERSON_NAME,
       locale: "en_IN",
-      images: [{ url: input.image ?? "/assets/kush/avatar.png", alt: PERSON_NAME }],
+      images: [{ url: input.image ?? "/og/home.png", alt: PERSON_NAME }],
     },
     twitter: {
       card: "summary_large_image",
       title: resolvedTitle,
       description: input.description,
       creator: "@kushgg19",
-      images: [input.image ?? "/assets/kush/avatar.png"],
+      images: [input.image ?? "/og/home.png"],
     },
   };
 }
