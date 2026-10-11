@@ -291,6 +291,24 @@ export const caseStudies: CaseStudy[] = [
     cover: "/assets/projects/tybee-go.jpg",
     screenshots: [
       {
+        src: "/assets/projects/tybee-go/ios-restaurants.webp",
+        alt: "Tybee Go on iOS: island map with the Restaurants filter on, showing restaurant pins across Tybee Island",
+        width: 720,
+        height: 1452,
+      },
+      {
+        src: "/assets/projects/tybee-go/android-dark-map.webp",
+        alt: "Tybee Go on Android: dark-mode map with location pins along 1st Street on Tybee Island",
+        width: 720,
+        height: 1445,
+      },
+      {
+        src: "/assets/projects/tybee-go/ios-map.webp",
+        alt: "Tybee Go on iOS: island map with search and the Cart Maps and Restaurants filters",
+        width: 720,
+        height: 1452,
+      },
+      {
         src: "/assets/projects/tybee-go/splash.webp",
         alt: "Tybee Go app splash screen with the Tybee Go logo and a watercolour beach scene",
         width: 720,
