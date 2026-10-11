@@ -24,8 +24,7 @@ const LAYER_COUNT = 5; // interface, API, services, data, integrations
  * camera passes between them; the layer being read glows.
  */
 export function SystemLayers({ mobile }: { mobile: boolean }) {
-  // Range 1.0: the dark slabs must not show through behind the hero.
-  const { ref, amount } = useChapter(1, 1.0);
+  const { ref, amount } = useChapter(1, 1.4);
   const layers = useRef<(Group | null)[]>([]);
   const pulses = useRef<Points>(null);
 
@@ -39,9 +38,7 @@ export function SystemLayers({ mobile }: { mobile: boolean }) {
     const moduleGeometry = new BoxGeometry(0.34, 0.07, 0.24);
     const modules = Array.from({ length: LAYER_COUNT }, (_, layer) => {
       const count = mobile ? 4 : 6 + layer;
-      const material = metal();
-      material.transparent = true;
-      const mesh = new InstancedMesh(moduleGeometry, material, count);
+      const mesh = new InstancedMesh(moduleGeometry, metal(), count);
       const m = new Matrix4();
       for (let i = 0; i < count; i++) {
         m.makeTranslation((random() - 0.5) * 3, 0.05, (random() - 0.5) * 1.7);
@@ -95,7 +92,6 @@ export function SystemLayers({ mobile }: { mobile: boolean }) {
       material.opacity = (0.2 + lit * 0.7) * p;
     });
     parts.glass.opacity = 0.5 * p;
-    parts.modules.forEach((mesh) => ((mesh.material as { opacity: number }).opacity = p));
     parts.connectorMaterial.opacity = 0.16 * p;
 
     // Pulses run top to bottom: a request travelling through the stack.

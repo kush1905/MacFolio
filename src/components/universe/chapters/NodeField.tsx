@@ -115,11 +115,12 @@ function fieldMaterial(kind: "points" | "lines") {
 }
 
 /**
- * Scene 00 — the signal arrives over a field of nodes: an ordered system, gently alive,
- * that answers the cursor and glows where the signal passes.
+ * A field of nodes receding to a horizon: an ordered system, gently alive, that answers the
+ * cursor with a ripple and glows where the signal passes. Used by the Ask Kush chapter.
  */
-export function NodeField({ mobile }: { mobile: boolean }) {
-  const { ref, amount } = useChapter(0, 1.15);
+export function NodeField({ mobile, chapter }: { mobile: boolean; chapter: number }) {
+  const { ref, amount } = useChapter(chapter, 1.15);
+  const revealed = useRef(0);
   const camera = useThree((state) => state.camera);
   const ndc = useRef(new Vector2(9, 9));
   const pointerOn = useRef(0);
@@ -197,7 +198,9 @@ export function NodeField({ mobile }: { mobile: boolean }) {
 
   useFrame((state, delta) => {
     const t = state.clock.elapsedTime;
-    const reveal = Math.min(1, Math.max(0, (t - 0.3) / 2.2));
+    // Reveal (near to far) the first time the chapter comes into view, then stay revealed.
+    if (amount.current > 0.15) revealed.current = Math.min(1, revealed.current + delta / 2.2);
+    const reveal = revealed.current;
 
     // Cursor → point on the field plane, in the field's local space.
     let on = 0;
@@ -226,7 +229,7 @@ export function NodeField({ mobile }: { mobile: boolean }) {
   });
 
   return (
-    <group ref={ref} position={ANCHORS[0]}>
+    <group ref={ref} position={ANCHORS[chapter]}>
       <lineSegments geometry={parts.lineGeometry} material={parts.lineMaterial} frustumCulled={false} />
       <points geometry={parts.pointGeometry} material={parts.pointMaterial} frustumCulled={false} />
       <primitive object={parts.pool} />

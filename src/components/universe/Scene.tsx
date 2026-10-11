@@ -7,9 +7,10 @@ import { useSceneStore } from "@/store/sceneStore";
 import { CameraRig } from "./CameraRig";
 import { Filament } from "./Filament";
 import { FpsGuard } from "./FpsGuard";
-import { Horizon, QuietNetwork } from "./chapters/Coda";
+import { Horizon } from "./chapters/Coda";
 import { Finale } from "./chapters/Finale";
 import { CoreGraph } from "./chapters/CoreGraph";
+import { Lattice } from "./chapters/Lattice";
 import { NodeField } from "./chapters/NodeField";
 import { Stations } from "./chapters/Stations";
 import { SystemLayers } from "./chapters/SystemLayers";
@@ -67,12 +68,12 @@ export default function Scene({ projects, techNodes, steps, mobile, onFail, onOp
 
       <CameraRig projects={projects} mobile={mobile} />
       <Filament curve={curve} anchors={anchors} mobile={mobile} />
-      <NodeField mobile={mobile} />
+      <Lattice mobile={mobile} />
       <SystemLayers mobile={mobile} />
       <Stations projects={projects} onOpen={onOpen} />
       <Timeline steps={steps} />
       <CoreGraph nodes={techNodes} projects={projects} />
-      <QuietNetwork />
+      <NodeField mobile={mobile} chapter={5} />
       <Horizon />
       <Finale mobile={mobile} />
     </Canvas>

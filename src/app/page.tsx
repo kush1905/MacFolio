@@ -5,6 +5,7 @@ import "./site.css";
 import "./home.css";
 import { AskPrompts } from "@/components/home/AskPrompts";
 import { ContactForm } from "@/components/home/ContactForm";
+import { HeroAsk } from "@/components/home/HeroAsk";
 import { ProjectIndex } from "@/components/home/ProjectIndex";
 import { TechCore } from "@/components/home/TechCore";
 import { CommandPalette } from "@/components/command/CommandPalette";
@@ -80,47 +81,59 @@ export default function HomePage() {
               <span aria-hidden="true" />
               Open to full-stack and React Native roles
             </p>
-            <p className="eyebrow rise" style={{ "--rise": 1 } as CSSProperties}>
-              Full stack · Mobile · AI integrations
-            </p>
             <h1 id="hero-title" className="hero-name">
               Kush Gangwal
             </h1>
-            <p className="hero-statement rise" style={{ "--rise": 2 } as CSSProperties}>
+            <p className="hero-statement rise" style={{ "--rise": 1 } as CSSProperties}>
               I build products that ship.
             </p>
             <p className="hero-intro">
               Software developer at SK Groups in Ahmedabad. I work across Potato Bazaar&apos;s React
               Native app, backend, and web platform, and build full-stack products of my own.
             </p>
-            <div className="hero-actions rise" style={{ "--rise": 3 } as CSSProperties}>
+            <div className="hero-actions rise" style={{ "--rise": 2 } as CSSProperties}>
               <a className="btn btn-primary" href="#work">
                 See the work
               </a>
               <a className="btn" href="#contact">
                 Get in touch
               </a>
+              <HeroAsk />
             </div>
-            <dl className="hero-meta rise" style={{ "--rise": 4 } as CSSProperties}>
-              <div>
-                <dt>Now</dt>
-                <dd>
-                  {now.workingAs}, {now.workingAt}
-                </dd>
-              </div>
-              <div>
-                <dt>Based in</dt>
-                <dd>{about.location}, India</dd>
-              </div>
-              <div>
-                <dt>Studied</dt>
-                <dd>B.Tech CST, Medicaps University</dd>
-              </div>
-            </dl>
+            <p className="hero-shipping rise" style={{ "--rise": 3 } as CSSProperties}>
+              <span>Currently shipping</span>
+              <Link href="/projects/potato-bazaar">
+                Potato Bazaar <em>web · Android · iOS</em> <b aria-hidden="true">→</b>
+              </Link>
+            </p>
           </div>
-          <a className="scroll-cue" href="#system" aria-label="Scroll to how I build">
-            <span aria-hidden="true" />
-          </a>
+
+          <div className="hero-foot rise" style={{ "--rise": 4 } as CSSProperties}>
+            <dl>
+            <div>
+              <dt>Focus</dt>
+              <dd>Full stack · Mobile · AI integrations</dd>
+            </div>
+            <div>
+              <dt>Now</dt>
+              <dd>
+                {now.workingAs}, {now.workingAt}
+              </dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>{about.location}, India</dd>
+            </div>
+            <div>
+              <dt>Studied</dt>
+              <dd>B.Tech CST, Medicaps University</dd>
+            </div>
+            </dl>
+            <a className="hero-scroll" href="#system">
+              Scroll
+              <span aria-hidden="true" />
+            </a>
+          </div>
         </section>
 
         <section id="system" className="chapter" data-chapter="1" aria-labelledby="system-title">

@@ -56,8 +56,7 @@ export function rng(seed: number) {
 
 /** The signal: one continuous curve from the darkness behind the hero to the contact beacon. */
 export function buildSignalCurve() {
-  // Enters from the lower right, out of frame, so it never crosses the hero copy.
-  const points: Vector3[] = [new Vector3(8.5, -4.2, 3.8), new Vector3(3.8, -2.1, 2.2)];
+  const points: Vector3[] = [new Vector3(-7, -2.2, 5), new Vector3(-3.4, -0.9, 2.2)];
   ANCHORS.forEach((anchor, i) => {
     points.push(anchor.clone());
     const next = ANCHORS[i + 1];

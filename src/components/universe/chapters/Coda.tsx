@@ -3,47 +3,9 @@
 import { useFrame } from "@react-three/fiber";
 import { useMemo } from "react";
 import { BufferGeometry, Line, LineDashedMaterial, Vector3 } from "three";
-import { ANCHORS, COLORS, rng } from "../layout";
-import { glowPointsMaterial, pointsGeometry, segmentsGeometry, wire } from "../materials";
+import { ANCHORS, COLORS } from "../layout";
+import { segmentsGeometry, wire } from "../materials";
 import { useChapter } from "../useChapter";
-
-/** Scene 07 — intelligence: the scene goes quiet; a sparse network breathes. */
-export function QuietNetwork() {
-  const { ref, amount } = useChapter(5, 1.3);
-  const geo = useMemo(() => {
-    const random = rng(23);
-    const nodes = Array.from(
-      { length: 34 },
-      () => new Vector3((random() - 0.5) * 5, (random() - 0.5) * 2.6, (random() - 0.5) * 2.4),
-    );
-    const pairs: [number[], number[]][] = [];
-    nodes.forEach((a, i) => {
-      nodes
-        .map((b, j) => ({ j, d: a.distanceTo(b) }))
-        .filter(({ j }) => j > i)
-        .sort((x, y) => x.d - y.d)
-        .slice(0, 2)
-        .forEach(({ j }) => pairs.push([a.toArray(), nodes[j].toArray()]));
-    });
-    return {
-      lines: segmentsGeometry(pairs),
-      points: pointsGeometry(nodes.flatMap((v) => v.toArray())),
-      lineMaterial: wire(0.12),
-      pointMaterial: glowPointsMaterial("#d9d3c7", 60),
-    };
-  }, []);
-  useFrame((state) => {
-    const breathe = 0.75 + Math.sin(state.clock.elapsedTime * 0.9) * 0.25;
-    geo.lineMaterial.opacity = 0.14 * amount.current * breathe;
-    geo.pointMaterial.uniforms.uOpacity.value = 0.6 * amount.current * breathe;
-  });
-  return (
-    <group ref={ref} position={ANCHORS[5]}>
-      <lineSegments geometry={geo.lines} material={geo.lineMaterial} />
-      <points geometry={geo.points} material={geo.pointMaterial} />
-    </group>
-  );
-}
 
 /** Scene 08 — next: the signal continues past what exists, dashed and unfinished. */
 export function Horizon() {
