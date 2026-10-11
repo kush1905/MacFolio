@@ -25,6 +25,9 @@ type SceneState = {
   paletteQuery: string;
   /** Increments on every open so the dialog remounts with fresh state. */
   paletteSession: number;
+  /** Contact form state, which the finale reacts to. */
+  contact: "idle" | "composing" | "sent";
+  setContact: (contact: "idle" | "composing" | "sent") => void;
   /** True once the WebGL scene is running (false for the static fallback). */
   sceneReady: boolean;
   setSceneReady: (ready: boolean) => void;
@@ -42,6 +45,8 @@ export const useSceneStore = create<SceneState>((set) => ({
   paletteOpen: false,
   paletteQuery: "",
   paletteSession: 0,
+  contact: "idle",
+  setContact: (contact) => set({ contact }),
   sceneReady: false,
   setSceneReady: (sceneReady) => set({ sceneReady }),
   setHoveredProject: (hoveredProject) => set({ hoveredProject }),
@@ -53,8 +58,9 @@ export const useSceneStore = create<SceneState>((set) => ({
 }));
 
 /**
- * Scroll position as a continuous chapter index (1.5 = halfway through "system").
+ * Scroll position as a continuous chapter index (1.5 = halfway through "system"), plus how
+ * many pixels of the footer are on screen (the finale re-centres above it).
  * Written by ScrollTrigger, read every frame by the camera rig — kept out of React
  * state so scrolling never re-renders the page.
  */
-export const scrollState = { chapter: 0, velocity: 0 };
+export const scrollState = { chapter: 0, velocity: 0, footer: 0 };

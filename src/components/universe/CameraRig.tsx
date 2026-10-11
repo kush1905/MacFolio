@@ -31,18 +31,26 @@ export function CameraRig({ projects, mobile }: { projects: HomeProject[]; mobil
     return () => window.removeEventListener("pointermove", onMove);
   }, [mobile]);
 
-  // Text sits in the left column on wide screens, so shift the frame's centre right.
-  useEffect(() => {
-    // Wide screens: scene to the right of the text. Phones: scene lifted above the text.
+  // Wide screens: scene to the right of the text. Phones: scene lifted above the text.
+  // When the footer scrolls in, the frame's centre rises with it so the finale stays centred
+  // in the space that is still visible.
+  const appliedFooter = useRef(-1);
+  const applyOffset = (footer: number) => {
     const shiftX = size.width >= 1024 ? -size.width * 0.2 : 0;
-    const shiftY = size.width < 760 ? size.height * 0.2 : 0;
+    const shiftY = (size.width < 760 ? size.height * 0.2 : 0) + footer / 2;
     camera.setViewOffset(size.width, size.height, shiftX, shiftY, size.width, size.height);
     camera.updateProjectionMatrix();
+    appliedFooter.current = footer;
+  };
+  useEffect(() => {
+    applyOffset(scrollState.footer);
     invalidate();
     return () => camera.clearViewOffset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- applyOffset reads size/camera
   }, [camera, size, invalidate]);
 
   useFrame((_, delta) => {
+    if (Math.abs(scrollState.footer - appliedFooter.current) > 0.5) applyOffset(scrollState.footer);
     const chapter = Math.min(Math.max(scrollState.chapter, 0), CHAPTER_COUNT - 1);
     const i = Math.floor(chapter);
     const f = smoothstep(chapter - i);

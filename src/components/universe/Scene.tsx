@@ -7,7 +7,8 @@ import { useSceneStore } from "@/store/sceneStore";
 import { CameraRig } from "./CameraRig";
 import { Filament } from "./Filament";
 import { FpsGuard } from "./FpsGuard";
-import { Beacon, Horizon, QuietNetwork } from "./chapters/Coda";
+import { Horizon, QuietNetwork } from "./chapters/Coda";
+import { Finale } from "./chapters/Finale";
 import { CoreGraph } from "./chapters/CoreGraph";
 import { Lattice } from "./chapters/Lattice";
 import { Stations } from "./chapters/Stations";
@@ -73,7 +74,7 @@ export default function Scene({ projects, techNodes, steps, mobile, onFail, onOp
       <CoreGraph nodes={techNodes} projects={projects} />
       <QuietNetwork />
       <Horizon />
-      <Beacon />
+      <Finale mobile={mobile} />
     </Canvas>
   );
 }

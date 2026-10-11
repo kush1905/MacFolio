@@ -1,19 +1,10 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
-import {
-  AdditiveBlending,
-  BufferGeometry,
-  type Group,
-  Line,
-  LineDashedMaterial,
-  Sprite,
-  SpriteMaterial,
-  Vector3,
-} from "three";
+import { useMemo } from "react";
+import { BufferGeometry, Line, LineDashedMaterial, Vector3 } from "three";
 import { ANCHORS, COLORS, rng } from "../layout";
-import { glowPointsMaterial, glowTexture, pointsGeometry, segmentsGeometry, wire } from "../materials";
+import { glowPointsMaterial, pointsGeometry, segmentsGeometry, wire } from "../materials";
 import { useChapter } from "../useChapter";
 
 /** Scene 07 — intelligence: the scene goes quiet; a sparse network breathes. */
@@ -93,55 +84,6 @@ export function Horizon() {
     <group ref={ref} position={ANCHORS[6]}>
       <primitive object={geo.line} />
       <lineSegments geometry={geo.rings} material={geo.ringMaterial} />
-    </group>
-  );
-}
-
-/** Scene 09 — contact: everything resolves into a single point. */
-export function Beacon() {
-  const { ref, amount } = useChapter(7, 1.2);
-  const rings = useRef<(Group | null)[]>([]);
-  const parts = useMemo(() => {
-    const make = (scale: number, color: string) => {
-      const sprite = new Sprite(
-        new SpriteMaterial({ map: glowTexture(), color, blending: AdditiveBlending, depthWrite: false, transparent: true }),
-      );
-      sprite.scale.setScalar(scale);
-      return sprite;
-    };
-    const circle = segmentsGeometry(
-      Array.from({ length: 64 }, (_, i) => {
-        const a = (i / 64) * Math.PI * 2;
-        const b = ((i + 1) / 64) * Math.PI * 2;
-        return [
-          [Math.cos(a), Math.sin(a), 0],
-          [Math.cos(b), Math.sin(b), 0],
-        ];
-      }),
-    );
-    return { halo: make(3.2, COLORS.amber), core: make(0.7, "#fff4e0"), circle, ringMaterials: [wire(0.3, COLORS.amber), wire(0.3, COLORS.amber)] };
-  }, []);
-  useFrame((state) => {
-    const p = amount.current;
-    const t = state.clock.elapsedTime;
-    parts.halo.material.opacity = 0.55 * p;
-    parts.core.material.opacity = p;
-    rings.current.forEach((ring, i) => {
-      if (!ring) return;
-      const phase = (t * 0.25 + i * 0.5) % 1;
-      ring.scale.setScalar(0.3 + phase * 2.2);
-      parts.ringMaterials[i].opacity = (1 - phase) * 0.45 * p;
-    });
-  });
-  return (
-    <group ref={ref} position={ANCHORS[7]}>
-      <primitive object={parts.halo} />
-      <primitive object={parts.core} />
-      {parts.ringMaterials.map((material, i) => (
-        <group key={i} ref={(node) => void (rings.current[i] = node)}>
-          <lineSegments geometry={parts.circle} material={material} />
-        </group>
-      ))}
     </group>
   );
 }

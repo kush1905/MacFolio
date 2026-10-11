@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FocusEvent, type FormEvent } from "react";
+import { useSceneStore } from "@/store/sceneStore";
 
 type Status =
   | { kind: "idle" }
@@ -10,6 +11,25 @@ type Status =
 
 export function ContactForm({ email }: { email: string }) {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
+  const setContact = useSceneStore((state) => state.setContact);
+
+  // The 3D finale brightens while someone writes and fires a shockwave when a message is sent.
+  useEffect(() => {
+    if (status.kind !== "sent") return;
+    setContact("sent");
+    const timer = window.setTimeout(() => setContact("idle"), 2400);
+    return () => window.clearTimeout(timer);
+  }, [status.kind, setContact]);
+
+  function onFocus() {
+    if (useSceneStore.getState().contact !== "sent") setContact("composing");
+  }
+
+  function onBlur(event: FocusEvent<HTMLFormElement>) {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null) && useSceneStore.getState().contact === "composing") {
+      setContact("idle");
+    }
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -55,7 +75,7 @@ export function ContactForm({ email }: { email: string }) {
   }
 
   return (
-    <form className="contact-form" onSubmit={submit} noValidate={false}>
+    <form className="contact-form" onSubmit={submit} onFocus={onFocus} onBlur={onBlur} noValidate={false}>
       <div className="field">
         <label htmlFor="contact-name">Name</label>
         <input id="contact-name" name="name" required maxLength={100} autoComplete="name" />

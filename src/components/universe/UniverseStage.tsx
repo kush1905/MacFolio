@@ -71,6 +71,10 @@ function useScrollChapters() {
       }
       const fraction = (centre - tops[index]) / heights[index];
       scrollState.chapter = Math.min(Math.max(index + fraction - 0.5, 0), sections.length - 1);
+      const footer = document.querySelector(".site-footer");
+      scrollState.footer = footer
+        ? Math.max(0, Math.min(window.innerHeight, window.innerHeight - footer.getBoundingClientRect().top))
+        : 0;
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
