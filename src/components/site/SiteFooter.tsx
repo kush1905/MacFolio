@@ -12,14 +12,11 @@ const EXPLORE = [
   { href: "/resume", label: "Resume" },
 ];
 
+// Reference pages (topics, agritech, entities, spellings, …) are reachable from the site map,
+// so the footer stays about what visitors actually want.
 const MORE = [
-  { href: "/accounts", label: "Profiles" },
-  { href: "/topics", label: "Topics" },
-  { href: "/agritech", label: "Agritech" },
-  { href: "/entities", label: "How it connects" },
-  { href: "/mentions", label: "Cite" },
-  { href: "/site-map", label: "Site map" },
   { href: "/desktop", label: "Macfolio desktop" },
+  { href: "/site-map", label: "Site map" },
 ];
 
 export function SiteFooter() {

@@ -237,37 +237,26 @@
   box-shadow: 0 0 8px rgba(233, 162, 59, 0.8);
 }
 
-/* Name: "Kush" in amber serif italic over "GANGWAL" in heavy condensed caps. */
+/* Name: extra-wide heavy grotesk, solid first line, outlined second line. */
 .hero-name {
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-size: clamp(64px, min(11.5vw, 17vh), 180px);
-  line-height: 0.86;
+  font-family: var(--font-wide), var(--font-sans), sans-serif !important;
+  font-weight: 800;
+  font-stretch: 125%;
+  font-size: clamp(50px, min(8.4vw, 14.5vh), 136px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 .hero-name span {
+  font-family: inherit !important;
   white-space: nowrap;
 }
+/* A light sweep crosses the solid line once, like the signal passing over it. */
 .hero-name-a {
-  margin-bottom: -0.02em;
-  padding-left: 0.02em;
-  font-family: var(--font-display-italic), var(--font-display), Georgia, serif !important;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 0.66em;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
-  color: var(--pu-amber-hot);
-  text-shadow: 0 0 40px rgba(233, 162, 59, 0.25);
-}
-/* A light sweep crosses GANGWAL once, like the signal passing over it. */
-.hero-name-b {
   width: max-content;
-  font-family: var(--font-wide), var(--font-sans), sans-serif !important;
-  font-weight: 900;
-  font-stretch: 62%;
-  letter-spacing: -0.012em;
-  text-transform: uppercase;
   background: linear-gradient(
       100deg,
       var(--pu-text) 0%,
@@ -282,12 +271,22 @@
   color: transparent;
   animation: pu-sweep 1.8s cubic-bezier(0.5, 0, 0.2, 1) 0.5s both;
 }
+.hero-name-b {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(242, 238, 230, 0.85);
+  animation: pu-outline 1.6s ease 0.9s both;
+}
 @keyframes pu-sweep {
   from {
     background-position: 100% 0;
   }
   to {
     background-position: 0% 0;
+  }
+}
+@keyframes pu-outline {
+  from {
+    -webkit-text-stroke-color: rgba(255, 196, 107, 0.95);
   }
 }
 @media (forced-colors: active) {
@@ -1154,9 +1153,6 @@
   .scroll-cue {
     display: none;
   }
-  .hero-name {
-    font-size: min(24vw, 108px);
-  }
   .ps-head button {
     grid-template-columns: 28px 1fr;
   }
@@ -1203,7 +1199,7 @@ html:has(.home) {
   .static-lattice circle {
     opacity: 0.55;
   }
-  .hero-name-b {
+  .hero-name-a {
     background-position: 0 0;
   }
   html:has(.home) {

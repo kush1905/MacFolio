@@ -534,47 +534,6 @@
   border-radius: 12px;
 }
 
-/* Related pages band at the end of every article. */
-.public-entities {
-  max-width: 1180px;
-  margin: 24px auto 72px;
-  padding: 0 var(--gutter);
-}
-.public-entities > div,
-.public-entities {
-  box-sizing: border-box;
-}
-.public-entities p {
-  margin: 0 0 12px;
-  font-family: var(--font-mono), ui-monospace, monospace !important;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pu-faint);
-}
-.public-entities ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
-  padding: 18px 0 0;
-  list-style: none;
-  border-top: 1px solid var(--pu-line);
-}
-.public-entities a {
-  display: inline-block;
-  padding: 6px 14px;
-  border: 1px solid var(--pu-line);
-  border-radius: 999px;
-  font-size: 13px;
-  color: var(--pu-muted);
-  text-decoration: none;
-}
-.public-entities a:hover {
-  border-color: var(--pu-amber);
-  color: var(--pu-text);
-}
-
 /* ── Project cards (projects index, case studies, about) ─ */
 
 .project-grid {
@@ -889,4 +848,9 @@
   .pa-signal-head {
     display: none;
   }
+}
+
+/* Breathing room before the footer now that the related-pages band is gone. */
+.pa-body {
+  padding-bottom: 72px;
 }

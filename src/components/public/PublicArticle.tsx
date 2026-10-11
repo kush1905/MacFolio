@@ -1,7 +1,6 @@
 import { ViewTransition, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { RelatedEntities } from "@/components/public/RelatedEntities";
 import { PERSON_HEADLINE, PERSON_NAME } from "@/lib/identity";
 
 /**
@@ -108,7 +107,6 @@ export function PublicArticle({
         </div>
       </header>
       <div className="pa-body">{children}</div>
-      <RelatedEntities />
     </article>
   );
 }
