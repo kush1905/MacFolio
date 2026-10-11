@@ -118,6 +118,16 @@ export const companies: CompanyPage[] = [
   },
 ];
 
+/**
+ * Drops placeholder links: the bare personal GitHub profile isn't a project link, and a
+ * "Website" that is really a GitHub repo duplicates the GitHub button.
+ */
+function isProjectLink(link: { label: string; href: string }) {
+  if (/^https:\/\/github\.com\/kush1905\/?$/i.test(link.href)) return false;
+  if (link.label === "Website" && /^https:\/\/github\.com\//i.test(link.href)) return false;
+  return true;
+}
+
 const scalelr: ProductPage = {
   slug: "scalelr",
   name: "Scalelr",
@@ -154,7 +164,10 @@ export const products: ProductPage[] = [
           ? { label: "Google Play", href: project.playStore }
           : null,
         project.github ? { label: "GitHub", href: project.github } : null,
-      ].filter((link): link is { label: string; href: string } => Boolean(link)),
+      ]
+        .filter((link): link is { label: string; href: string } => Boolean(link))
+        .filter(isProjectLink)
+        .filter((link, index, list) => list.findIndex((l) => l.href === link.href) === index),
     };
   }),
   scalelr,

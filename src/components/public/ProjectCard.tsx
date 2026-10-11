@@ -1,20 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { HomeProject } from "@/lib/portfolio";
-
-/** Picks the most honest visual: a real web capture, then a phone capture, then cover art. */
-function visualFor(project: HomeProject) {
-  const browser = project.screenshots.find((shot) => shot.frame === "browser");
-  if (browser) return { ...browser, kind: "browser" as const };
-  const phone = project.screenshots.find((shot) => shot.frame !== "browser");
-  if (phone) return { ...phone, kind: "phone" as const };
-  if (project.cover && !project.cover.endsWith(".svg"))
-    return { src: project.cover, alt: "", width: 1536, height: 1024, kind: "cover" as const };
-  return null;
-}
+import { projectVisual } from "@/lib/projectVisual";
 
 export function ProjectCard({ project, description = true }: { project: HomeProject; description?: boolean }) {
-  const visual = visualFor(project);
+  const visual = projectVisual(project);
   return (
     <Link className="project-card" href={`/projects/${project.slug}`}>
       <span className={`project-card-visual project-card-${visual?.kind ?? "none"}`}>

@@ -77,6 +77,22 @@ test.describe("homepage", () => {
     await expect(page).toHaveURL(/\/projects\/potato-bazaar$/);
   });
 
+  test("hovering a project row opens its preview card", async ({ page, isMobile }) => {
+    test.skip(isMobile, "previews need a hover-capable pointer");
+    await page.goto("/?static");
+    const rows = page.locator(".project-list > li");
+    for (const index of [0, 3]) {
+      const name = (await rows.nth(index).locator("strong").textContent())!;
+      await rows.nth(index).hover();
+      await expect(page.locator(".project-preview-name")).toHaveText(name);
+    }
+    // The card stays open while the pointer moves into it.
+    const card = page.locator(".project-preview");
+    const box = (await card.boundingBox())!;
+    await page.mouse.move(box.x + 30, box.y + box.height - 30, { steps: 10 });
+    await expect(card).toBeVisible();
+  });
+
   test("project deep links resolve", async ({ page }) => {
     for (const slug of PROJECTS) {
       const response = await page.goto(`/projects/${slug}`);
