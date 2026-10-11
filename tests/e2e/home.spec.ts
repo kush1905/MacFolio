@@ -77,20 +77,33 @@ test.describe("homepage", () => {
     await expect(page).toHaveURL(/\/projects\/potato-bazaar$/);
   });
 
-  test("hovering a project row opens its preview card", async ({ page, isMobile }) => {
-    test.skip(isMobile, "previews need a hover-capable pointer");
+  test("projects work as an accordion: one card open at a time", async ({ page, isMobile }) => {
     await page.goto("/?static");
-    const rows = page.locator(".project-list > li");
-    for (const index of [0, 3]) {
-      const name = (await rows.nth(index).locator("strong").textContent())!;
-      await rows.nth(index).hover();
-      await expect(page.locator(".project-preview-name")).toHaveText(name);
+    const rows = page.locator(".project-stack > li");
+    const openRows = page.locator(".project-stack > li[data-open]");
+    await expect(openRows).toHaveCount(1);
+    await expect(rows.first()).toHaveAttribute("data-open", "true");
+
+    for (const index of [2, 5]) {
+      const row = rows.nth(index);
+      if (isMobile) {
+        await row.locator(".ps-head button").tap();
+      } else {
+        await row.locator(".ps-head button").hover();
+        await page.mouse.move(10, 10, { steps: 1 });
+        await row.locator(".ps-head button").hover();
+      }
+      await expect(row).toHaveAttribute("data-open", "true");
+      await expect(openRows).toHaveCount(1);
+      await expect(row.locator(".ps-panel")).toBeVisible();
+      await expect(rows.first()).not.toHaveAttribute("data-open", "true");
     }
-    // The card stays open while the pointer moves into it.
-    const card = page.locator(".project-preview");
-    const box = (await card.boundingBox())!;
-    await page.mouse.move(box.x + 30, box.y + box.height - 30, { steps: 10 });
-    await expect(card).toBeVisible();
+  });
+
+  test("every project row links straight to its case study", async ({ page }) => {
+    await page.goto("/?static");
+    await page.locator('.project-stack > li').nth(3).locator(".ps-go").click();
+    await expect(page).toHaveURL(/\/projects\/[a-z-]+$/);
   });
 
   test("project deep links resolve", async ({ page }) => {
