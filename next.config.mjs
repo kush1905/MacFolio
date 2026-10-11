@@ -13,6 +13,19 @@ const nextConfig = {
     // requests on first visit, which is most portfolio traffic.
     inlineCss: true,
   },
+  async headers() {
+    return [
+      {
+        // Until 2026-10 "/" was a permanent (308) redirect to /about-kush-gangwal, and browsers
+        // keep serving that redirect from cache without asking the server. Visitors who still
+        // have it land here; this header clears the site's HTTP cache (including the stale
+        // redirect) so their next visit to "/" reaches the new homepage.
+        // Remove after 2027-01-31, once returning visitors have cycled through.
+        source: "/about-kush-gangwal",
+        headers: [{ key: "Clear-Site-Data", value: '"cache"' }],
+      },
+    ];
+  },
   async redirects() {
     return [
       // "/" was a 308 to /about-kush-gangwal until the 3D homepage launched (2026-10).
