@@ -13,6 +13,7 @@ const NAV = [
   { href: "/about-kush-gangwal", label: "About" },
   { href: "/now", label: "Now" },
   { href: "/stack", label: "Stack" },
+  { href: "/desktop", label: "Macfolio" },
 ];
 
 const subscribeNoop = () => () => {};
