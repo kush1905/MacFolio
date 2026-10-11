@@ -130,7 +130,9 @@ function Device({
 }
 
 /** Potato Bazaar — web and mobile clients over one marketplace, with flows to its services. */
-function Marketplace({ levels, image }: { levels: Levels; image?: string }) {
+type Screens = { phone?: string; browser?: string };
+
+function Marketplace({ levels, screens }: { levels: Levels; screens: Screens }) {
   const mats = useStationMaterials(levels);
   const services = useMemo(
     () =>
@@ -166,10 +168,10 @@ function Marketplace({ levels, image }: { levels: Levels; image?: string }) {
   return (
     <group>
       <group position={[-0.35, 0.35, 0]} rotation={[0, 0.22, 0]}>
-        <Device variant="dashboard" size={[1.6, 1]} levels={levels} />
+        <Device variant="dashboard" size={[1.6, 1]} image={screens.browser} levels={levels} />
       </group>
       <group position={[0.78, 0.15, 0.35]} rotation={[0, -0.32, 0]}>
-        <Device variant="phone" size={[0.4, 0.8]} image={image} levels={levels} />
+        <Device variant="phone" size={[0.4, 0.8]} image={screens.phone} levels={levels} />
       </group>
       <lineSegments geometry={geo.lines} material={mats.hot} />
       <points geometry={geo.nodes} material={mats.points} />
@@ -179,10 +181,10 @@ function Marketplace({ levels, image }: { levels: Levels; image?: string }) {
 }
 
 /** Tybee Go — a production mobile client; the list scrolls like paginated content. */
-function Mobile({ levels }: { levels: Levels }) {
+function Mobile({ levels, screens }: { levels: Levels; screens: Screens }) {
   return (
     <group rotation={[0, -0.2, 0]}>
-      <Device variant="list" size={[0.48, 0.96]} scroll levels={levels} />
+      <Device variant="list" size={[0.48, 0.96]} scroll={!screens.phone} image={screens.phone} levels={levels} />
     </group>
   );
 }
@@ -421,17 +423,17 @@ function Window({ levels }: { levels: Levels }) {
 export function Metaphor({
   kind,
   levels,
-  image,
+  screens,
 }: {
   kind: StationKind;
   levels: Levels;
-  image?: string;
+  screens: Screens;
 }) {
   switch (kind) {
     case "marketplace":
-      return <Marketplace levels={levels} image={image} />;
+      return <Marketplace levels={levels} screens={screens} />;
     case "mobile":
-      return <Mobile levels={levels} />;
+      return <Mobile levels={levels} screens={screens} />;
     case "exchange":
       return <Exchange levels={levels} />;
     case "document":

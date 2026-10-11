@@ -48,19 +48,22 @@ export function ProjectIndex({ projects }: { projects: HomeProject[] }) {
           </Link>
         </h3>
         <p className="flagship-tagline">{flagship.tagline}</p>
-        {flagship.screenshots.length > 0 ? (
+        {flagship.screenshots.some((shot) => shot.frame !== "browser") ? (
           <figure className="flagship-screens">
             <div>
-              {flagship.screenshots.slice(0, 3).map((shot) => (
-                <Image
-                  key={shot.src}
-                  src={shot.src}
-                  alt={shot.alt}
-                  width={shot.width}
-                  height={shot.height}
-                  sizes="120px"
-                />
-              ))}
+              {flagship.screenshots
+                .filter((shot) => shot.frame !== "browser")
+                .slice(0, 3)
+                .map((shot) => (
+                  <Image
+                    key={shot.src}
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    sizes="120px"
+                  />
+                ))}
             </div>
             <figcaption>From the Android app</figcaption>
           </figure>

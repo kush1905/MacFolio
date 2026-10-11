@@ -4,6 +4,15 @@ export type CaseStudySection = {
   bullets?: string[];
 };
 
+export type Screenshot = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** "browser" for desktop web captures; defaults to a phone capture. */
+  frame?: "phone" | "browser";
+};
+
 export type CaseStudy = {
   slug: string;
   name: string;
@@ -17,7 +26,7 @@ export type CaseStudy = {
   links: { label: string; href: string }[];
   searchPhrases: string[];
   /** Real product screenshots (portrait phone captures unless noted). */
-  screenshots?: { src: string; alt: string; width: number; height: number }[];
+  screenshots?: Screenshot[];
   sections: CaseStudySection[];
 };
 
@@ -32,7 +41,23 @@ export const caseStudies: CaseStudy[] = [
     period: "Personal project",
     role: "Full Stack Developer",
     tech: ["React.js", "Node.js", "Auth0", "SQLite", "Vercel"],
-    cover: "/assets/projects/nexus.jpg",
+    cover: "/assets/projects/nexus-og.jpg",
+    screenshots: [
+      {
+        src: "/assets/projects/nexus/web-hero.webp",
+        alt: "Nexus website hero: Trade craft. Amplify yours, with Start swapping and Why Nexus buttons",
+        width: 1600,
+        height: 1007,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/nexus/web-why.webp",
+        alt: "Nexus Why Nexus section: skill exchange, instant collab and trusted pairing, with the Instant Collab card open",
+        width: 1600,
+        height: 1032,
+        frame: "browser",
+      },
+    ],
     links: [{ label: "GitHub", href: "https://github.com/kush1905/nexus" }],
     searchPhrases: [
       "Nexus Skill Swap Platform",
@@ -170,6 +195,20 @@ export const caseStudies: CaseStudy[] = [
     role: "Developer · mobile app, backend, and web platform",
     screenshots: [
       {
+        src: "/assets/projects/potato-bazaar/web-hero.webp",
+        alt: "Potato Bazaar website hero: World's First Digital Platform for Potatoes, with cards for growers, traders and buyers",
+        width: 1600,
+        height: 1044,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/potato-bazaar/web-app.webp",
+        alt: "Potato Bazaar website section promoting the Android and iOS apps: live mandi prices, buy and sell posts, notifications",
+        width: 1600,
+        height: 1110,
+        frame: "browser",
+      },
+      {
         src: "/assets/projects/potato-bazaar/home.webp",
         alt: "Potato Bazaar Android app home screen with the Top 10 Mandi Price list for AMC mandi, Ahmedabad",
         width: 720,
@@ -189,7 +228,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     tech: ["React.js", "Next.js", "Node.js", "React Native"],
-    cover: "/assets/projects/potato-bazaar.jpg",
+    cover: "/assets/projects/potato-bazaar-og.jpg",
     links: [
       { label: "Website", href: "https://potatobazaar.com" },
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.potatobazaar" },
@@ -250,6 +289,14 @@ export const caseStudies: CaseStudy[] = [
     role: "React Native Developer",
     tech: ["React Native", "TypeScript", "REST APIs"],
     cover: "/assets/projects/tybee-go.jpg",
+    screenshots: [
+      {
+        src: "/assets/projects/tybee-go/splash.webp",
+        alt: "Tybee Go app splash screen with the Tybee Go logo and a watercolour beach scene",
+        width: 720,
+        height: 1431,
+      },
+    ],
     links: [{ label: "GitHub", href: "https://github.com/kush1905" }],
     searchPhrases: ["Kush Gangwal Tybee Go", "Kush Gangwal React Native Developer", "Kush Gangwal Protonshub"],
     sections: [

@@ -54,11 +54,18 @@ function Station({
   });
 
   const levels = useMemo(() => ({ hover, fade }), [fade]);
+  const screens = useMemo(
+    () => ({
+      phone: project.screenshots.find((shot) => shot.frame !== "browser")?.src,
+      browser: project.screenshots.find((shot) => shot.frame === "browser")?.src,
+    }),
+    [project.screenshots],
+  );
 
   return (
     <group ref={group} position={position}>
       <lineSegments geometry={base.geometry} material={base.material} position={[0, -0.75, 0]} />
-      <Metaphor kind={project.kind} levels={levels} image={project.screenshots[0]?.src} />
+      <Metaphor kind={project.kind} levels={levels} screens={screens} />
       {/* Invisible hit area so the whole station responds to pointer and tap. */}
       <mesh
         onPointerOver={(e: ThreeEvent<PointerEvent>) => {

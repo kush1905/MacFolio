@@ -65,20 +65,28 @@ export default async function ProjectPage({ params }: Props) {
         {study?.screenshots?.length ? (
           <section>
             <h2>Screenshots</h2>
-            <p>From the {product.name} Android app.</p>
-            <div className="public-screens">
-              {study.screenshots.map((shot) => (
-                <figure key={shot.src}>
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={shot.width}
-                    height={shot.height}
-                    sizes="(max-width: 640px) 45vw, 240px"
-                  />
-                </figure>
-              ))}
-            </div>
+            {(["browser", "phone"] as const).map((frame) => {
+              const shots = study.screenshots!.filter((shot) => (shot.frame ?? "phone") === frame);
+              if (shots.length === 0) return null;
+              return (
+                <div key={frame}>
+                  <h3>{frame === "browser" ? "Web" : "Mobile app"}</h3>
+                  <div className={frame === "browser" ? "public-screens public-screens-web" : "public-screens"}>
+                    {shots.map((shot) => (
+                      <figure key={shot.src}>
+                        <Image
+                          src={shot.src}
+                          alt={shot.alt}
+                          width={shot.width}
+                          height={shot.height}
+                          sizes={frame === "browser" ? "(max-width: 900px) 100vw, 860px" : "(max-width: 640px) 45vw, 240px"}
+                        />
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </section>
         ) : null}
 

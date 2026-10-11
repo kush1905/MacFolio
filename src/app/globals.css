@@ -2103,3 +2103,9 @@ html[data-sidebar="large"] {
   border-radius: 18px;
   border: 1px solid var(--pu-line-strong);
 }
+.public-screens-web figure {
+  width: 100%;
+}
+.public-screens-web img {
+  border-radius: 12px;
+}

@@ -19,7 +19,7 @@
     "github": "https://github.com/Kush-PB",
     "demo": "https://potatobazaar.com",
     "playStore": "https://play.google.com/store/apps/details?id=com.potatobazaar",
-    "cover": "/assets/projects/potato-bazaar.jpg",
+    "cover": "/assets/projects/potato-bazaar-og.jpg",
     "period": "Feb 2026 – Present",
     "featured": true
   },
@@ -55,7 +55,7 @@
     "tech": ["React.js", "Node.js", "Auth0", "SQLite", "Vercel"],
     "github": "https://github.com/kush1905/nexus",
     "demo": "https://github.com/kush1905/nexus",
-    "cover": "/assets/projects/nexus.jpg",
+    "cover": "/assets/projects/nexus-og.jpg",
     "period": "Personal project",
     "featured": true
   },

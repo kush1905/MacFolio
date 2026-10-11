@@ -2,7 +2,7 @@
  * Homepage view of the portfolio. Everything here is derived from content/*.json,
  * the case studies, and the tech evidence map — no facts are restated.
  */
-import { caseStudyBySlug } from "@/lib/caseStudies";
+import { caseStudyBySlug, type Screenshot } from "@/lib/caseStudies";
 import { content } from "@/lib/content";
 import { products } from "@/lib/seo";
 import { techPages } from "@/lib/techPages";
@@ -41,7 +41,7 @@ export type HomeProject = {
   kind: StationKind;
   ownership: "own" | "team";
   links: { label: string; href: string }[];
-  screenshots: { src: string; alt: string; width: number; height: number }[];
+  screenshots: Screenshot[];
 };
 
 export const homeProjects: HomeProject[] = STATIONS.flatMap(({ slug, kind, ownership }) => {
