@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import "./home.css";
 import { AskPrompts } from "@/components/home/AskPrompts";
@@ -72,17 +73,25 @@ export default function HomePage() {
 
       <main id="main" className="home-main">
         <section className="chapter chapter-hero" data-chapter="0" aria-labelledby="hero-title">
-          <div className="chapter-col">
-            <p className="eyebrow">Full stack · Mobile · AI integrations</p>
+          <div className="chapter-col hero-col">
+            <p className="hero-status rise" style={{ "--rise": 0 } as CSSProperties}>
+              <span aria-hidden="true" />
+              Open to full-stack and React Native roles
+            </p>
+            <p className="eyebrow rise" style={{ "--rise": 1 } as CSSProperties}>
+              Full stack · Mobile · AI integrations
+            </p>
             <h1 id="hero-title" className="hero-name">
               Kush Gangwal
             </h1>
-            <p className="hero-statement">I build products that ship.</p>
+            <p className="hero-statement rise" style={{ "--rise": 2 } as CSSProperties}>
+              I build products that ship.
+            </p>
             <p className="hero-intro">
               Software developer at SK Groups in Ahmedabad. I work across Potato Bazaar&apos;s React
               Native app, backend, and web platform, and build full-stack products of my own.
             </p>
-            <div className="hero-actions">
+            <div className="hero-actions rise" style={{ "--rise": 3 } as CSSProperties}>
               <a className="btn btn-primary" href="#work">
                 See the work
               </a>
@@ -90,7 +99,7 @@ export default function HomePage() {
                 Get in touch
               </a>
             </div>
-            <dl className="hero-meta">
+            <dl className="hero-meta rise" style={{ "--rise": 4 } as CSSProperties}>
               <div>
                 <dt>Now</dt>
                 <dd>

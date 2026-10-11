@@ -35,8 +35,8 @@ const fragment = /* glsl */ `
   void main() {
     float u = vUv.x;
     // Drawn behind the head, a faint ghost of the path ahead.
-    float drawn = smoothstep(uHead + 0.004, uHead - 0.01, u);
-    float ghost = 0.05 * smoothstep(uHead + 0.12, uHead, u);
+    float drawn = 1.0 - smoothstep(uHead - 0.01, uHead + 0.004, u);
+    float ghost = 0.05 * (1.0 - smoothstep(uHead, uHead + 0.12, u));
     // Pulses travel forward along the drawn signal.
     float pulse = pow(fract(u * 22.0 - uTime * uSpeed), 18.0) * drawn;
     // Bright tip at the head.

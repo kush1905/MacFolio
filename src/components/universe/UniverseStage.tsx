@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 import type { HomeProject, TechNode } from "@/lib/portfolio";
 import { scrollState, useSceneStore } from "@/store/sceneStore";
+import { StaticSignal } from "./StaticSignal";
 
 const Scene = dynamic(() => import("./Scene"), { ssr: false });
 
@@ -121,11 +122,18 @@ export function UniverseStage({
     const events = ["pointerdown", "pointermove", "wheel", "touchstart", "keydown", "scroll"] as const;
     events.forEach((e) => window.addEventListener(e, start, { passive: true, once: true }));
     let timer: number | undefined;
+    // Capable desktops (fine pointer, plenty of cores) start almost immediately after load;
+    // phones and low-power machines wait so WebGL never competes with first interaction.
+    const strong =
+      window.matchMedia("(pointer: fine)").matches && (navigator.hardwareConcurrency ?? 0) >= 6;
     const arm = () => {
-      timer = window.setTimeout(() => {
-        if (window.requestIdleCallback) window.requestIdleCallback(start, { timeout: 1500 });
-        else start();
-      }, 2500);
+      timer = window.setTimeout(
+        () => {
+          if (window.requestIdleCallback) window.requestIdleCallback(start, { timeout: 1500 });
+          else start();
+        },
+        strong ? 150 : 2500,
+      );
     };
     if (document.readyState === "complete") arm();
     else window.addEventListener("load", arm, { once: true });
@@ -161,15 +169,7 @@ export function UniverseStage({
   return (
     <div className="universe" aria-hidden="true" data-mode={mode} data-fallback={fallback ?? undefined}>
       <div className="universe-static">
-        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-          <path
-            d="M-40 690 C 220 610, 380 640, 560 470 S 860 300, 1000 330 S 1180 210, 1260 120"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.2"
-          />
-          <circle cx="1000" cy="330" r="3.5" fill="currentColor" />
-        </svg>
+        <StaticSignal />
       </div>
       {mode === "live" ? (
         <Scene

@@ -1,14 +1,18 @@
 "use client";
 
-import { useFrame } from "@react-three/fiber";
-import { useMemo } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useEffect, useMemo, useRef } from "react";
 import {
   AdditiveBlending,
   BufferAttribute,
   BufferGeometry,
   Color,
+  Plane,
   Points,
+  Raycaster,
   ShaderMaterial,
+  Vector2,
+  Vector3,
 } from "three";
 import { ANCHORS, COLORS, rng } from "../layout";
 import { glowTexture } from "../materials";
@@ -17,22 +21,34 @@ import { useChapter } from "../useChapter";
 const lineVertex = /* glsl */ `
   attribute float aBirth;
   varying float vBirth;
+  varying vec3 vPos;
   void main() {
     vBirth = aBirth;
+    vPos = position;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
 `;
 const lineFragment = /* glsl */ `
   uniform float uReveal;
   uniform float uFade;
+  uniform float uTime;
+  uniform vec3 uPointer;
   uniform vec3 uWire;
   uniform vec3 uAmber;
   varying float vBirth;
+  varying vec3 vPos;
   void main() {
-    float shown = smoothstep(vBirth, vBirth - 0.08, uReveal);
-    float fresh = smoothstep(0.25, 0.0, uReveal - vBirth) * shown;
-    vec3 color = mix(uWire, uAmber, fresh);
-    gl_FragColor = vec4(color, (0.42 + fresh * 0.55) * shown * uFade);
+    // Edge order matters: GLSL smoothstep is undefined when edge0 >= edge1.
+    float shown = smoothstep(vBirth - 0.08, vBirth, uReveal);
+    float fresh = (1.0 - smoothstep(0.0, 0.25, uReveal - vBirth)) * shown;
+    // A scan wave sweeps outward from where the signal enters, every ~7 s.
+    float front = fract(uTime / 7.0) * 1.6 - 0.3;
+    float wave = 1.0 - smoothstep(0.0, 0.09, abs(front - vBirth));
+    // Edges near the cursor light up.
+    float near = 1.0 - smoothstep(0.0, 1.7, distance(vPos, uPointer));
+    float heat = clamp(fresh + wave * 0.85 + near * 0.9, 0.0, 1.0);
+    vec3 color = mix(uWire, uAmber, heat);
+    gl_FragColor = vec4(color, (0.34 + heat * 0.6) * shown * uFade);
   }
 `;
 
@@ -50,7 +66,7 @@ export function Lattice({ mobile }: { mobile: boolean }) {
     for (let x = 0; x < nx; x++)
       for (let y = 0; y < 4; y++)
         for (let z = 0; z < 3; z++) {
-          if (random() < (mobile ? 0.55 : 0.42)) continue;
+          if (random() < (mobile ? 0.45 : 0.3)) continue;
           nodes.push([
             (x - nx / 2) * 1.05 + 1.2 + (random() - 0.5) * 0.25,
             (y - 1.5) * 0.95 + (random() - 0.5) * 0.2,
@@ -85,6 +101,8 @@ export function Lattice({ mobile }: { mobile: boolean }) {
       uniforms: {
         uReveal: { value: 0 },
         uFade: { value: 1 },
+        uTime: { value: 0 },
+        uPointer: { value: new Vector3(99, 99, 99) },
         uWire: { value: new Color(COLORS.wire) },
         uAmber: { value: new Color(COLORS.amber) },
       },
@@ -115,8 +133,30 @@ export function Lattice({ mobile }: { mobile: boolean }) {
     };
   }, [mobile]);
 
+  // Cursor position projected onto the lattice's plane, in the lattice's local space.
+  const camera = useThree((state) => state.camera);
+  const ndc = useRef(new Vector2(9, 9));
+  const tools = useMemo(
+    () => ({ ray: new Raycaster(), plane: new Plane(new Vector3(0, 0, 1), 1.4), hit: new Vector3() }),
+    [],
+  );
+  useEffect(() => {
+    if (mobile) return;
+    const onMove = (event: PointerEvent) =>
+      ndc.current.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => window.removeEventListener("pointermove", onMove);
+  }, [mobile]);
+
   useFrame((state) => {
     const t = state.clock.elapsedTime;
+    material.uniforms.uTime.value = t;
+    if (ref.current && ndc.current.x < 2) {
+      tools.ray.setFromCamera(ndc.current, camera);
+      if (tools.ray.ray.intersectPlane(tools.plane, tools.hit)) {
+        material.uniforms.uPointer.value.lerp(ref.current.worldToLocal(tools.hit.clone()), 0.2);
+      }
+    }
     material.uniforms.uReveal.value = Math.min(1.1, Math.max(0, (t - 0.5) / 1.6));
     material.uniforms.uFade.value = amount.current;
     pointMaterial.uniforms.uOpacity.value = 0.8 * amount.current * Math.min(1, Math.max(0, (t - 0.9) / 1.2));
