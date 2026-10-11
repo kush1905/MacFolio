@@ -48,3 +48,6 @@ next-env.d.ts
 
 # local design mockups
 /.design/
+
+# stray QA screenshots
+/*.png
