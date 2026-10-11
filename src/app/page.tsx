@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import { Archivo } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import { ArrowRight, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import "./site.css";
 import "./home.css";
@@ -22,8 +22,15 @@ import { homeDescription, homeGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 
 /** Extra-wide display face for the hero name; loaded only on the homepage. */
-// Not preloaded: Next would otherwise preload this 88 KB variable font on every route.
-const wide = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-wide", display: "swap", preload: false });
+/** Display face for the hero name; loaded only on the homepage. */
+const nameFont = Fraunces({
+  subsets: ["latin"],
+  weight: "variable",
+  axes: ["SOFT", "WONK", "opsz"],
+  variable: "--font-name",
+  display: "swap",
+  preload: false,
+});
 
 const HOME_TITLE = "Kush Gangwal — Full Stack & React Native Developer";
 
@@ -72,7 +79,7 @@ const LAYERS = [
 export default function HomePage() {
   const { about, now } = content;
   return (
-    <div className={`home pu ${wide.variable}`}>
+    <div className={`home pu ${nameFont.variable}`}>
       <JsonLd data={homeGraph()} />
       <a className="pu-skip" href="#main">
         Skip to content
@@ -91,7 +98,7 @@ export default function HomePage() {
               Full stack <i aria-hidden="true" /> React Native <i aria-hidden="true" /> AI integrations
             </p>
             <h1 id="hero-title" className="hero-name">
-              <span className="hero-name-a">Kush</span> <span className="hero-name-b">Gangwal</span>
+              Kush Gangwal<span className="hero-name-dot" aria-hidden="true">.</span>
             </h1>
             <p className="hero-statement rise" style={{ "--rise": 2 } as CSSProperties}>
               I build products that <em>ship.</em>
