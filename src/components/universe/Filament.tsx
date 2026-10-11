@@ -47,6 +47,9 @@ const fragment = /* glsl */ `
   }
 `;
 
+/** World position of the signal's head, read by the hero field to glow beneath it. */
+export const signalHead = new Vector3(0, 0, 0);
+
 /**
  * The signal: a single amber line that draws itself forward as the visitor scrolls.
  * Everything else in the scene is laid out along it.
@@ -82,18 +85,24 @@ export function Filament({
       }),
     [],
   );
+  // The head matches the finale's point: bright core, warm glow, faint anamorphic streak.
   const head = useMemo(() => {
-    const sprite = new Sprite(
-      new SpriteMaterial({
-        map: glowTexture(),
-        color: COLORS.amberHot,
-        blending: AdditiveBlending,
-        depthWrite: false,
-        transparent: true,
-      }),
-    );
-    sprite.scale.setScalar(0.9);
-    return sprite;
+    const make = (color: string, opacity: number) =>
+      new Sprite(
+        new SpriteMaterial({
+          map: glowTexture(),
+          color,
+          opacity,
+          blending: AdditiveBlending,
+          depthWrite: false,
+          transparent: true,
+        }),
+      );
+    const core = make("#fff6e6", 1);
+    const glow = make(COLORS.amberHot, 0.55);
+    const streak = make(COLORS.amberHot, 0.22);
+    streak.scale.set(3.6, 0.07, 1);
+    return { core, glow, streak };
   }, []);
 
   // Intro: the signal draws in from the darkness to the hero in ~1.2 s. Never blocks content.
@@ -121,15 +130,20 @@ export function Filament({
     material.uniforms.uTime.value = state.clock.elapsedTime;
     material.uniforms.uSpeed.value = 0.22 + Math.min(Math.abs(scrollState.velocity) / 4000, 0.6);
     curve.getPointAt(Math.min(current.current, 1), headPoint);
-    head.position.copy(headPoint);
-    head.scale.setScalar(0.75 + Math.sin(state.clock.elapsedTime * 2.2) * 0.08);
+    signalHead.copy(headPoint);
+    const pulse = 1 + Math.sin(state.clock.elapsedTime * 2.2) * 0.07;
+    for (const sprite of [head.core, head.glow, head.streak]) sprite.position.copy(headPoint);
+    head.core.scale.setScalar(0.26 * pulse);
+    head.glow.scale.setScalar(1.25 * pulse);
   });
 
   useEffect(
     () => () => {
       geometry.dispose();
       material.dispose();
-      head.material.dispose();
+      head.core.material.dispose();
+      head.glow.material.dispose();
+      head.streak.material.dispose();
     },
     [geometry, material, head],
   );
@@ -137,7 +151,9 @@ export function Filament({
   return (
     <group>
       <mesh geometry={geometry} material={material} frustumCulled={false} />
-      <primitive object={head} />
+      <primitive object={head.glow} />
+      <primitive object={head.streak} />
+      <primitive object={head.core} />
     </group>
   );
 }

@@ -10,7 +10,7 @@ import { FpsGuard } from "./FpsGuard";
 import { Horizon, QuietNetwork } from "./chapters/Coda";
 import { Finale } from "./chapters/Finale";
 import { CoreGraph } from "./chapters/CoreGraph";
-import { Lattice } from "./chapters/Lattice";
+import { NodeField } from "./chapters/NodeField";
 import { Stations } from "./chapters/Stations";
 import { SystemLayers } from "./chapters/SystemLayers";
 import { Timeline } from "./chapters/Timeline";
@@ -67,7 +67,7 @@ export default function Scene({ projects, techNodes, steps, mobile, onFail, onOp
 
       <CameraRig projects={projects} mobile={mobile} />
       <Filament curve={curve} anchors={anchors} mobile={mobile} />
-      <Lattice mobile={mobile} />
+      <NodeField mobile={mobile} />
       <SystemLayers mobile={mobile} />
       <Stations projects={projects} onOpen={onOpen} />
       <Timeline steps={steps} />
