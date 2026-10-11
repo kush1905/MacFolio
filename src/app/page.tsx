@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import { Archivo } from "next/font/google";
+import { ArrowRight, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import "./site.css";
 import "./home.css";
 import { AskPrompts } from "@/components/home/AskPrompts";
@@ -18,6 +20,9 @@ import { officialProfiles, PERSON_NAME } from "@/lib/identity";
 import { contact, homeProjects, journey, learning, techGroups, techNodes } from "@/lib/portfolio";
 import { homeDescription, homeGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
+
+/** Extra-wide display face for the hero name; loaded only on the homepage. */
+const wide = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-wide", display: "swap" });
 
 const HOME_TITLE = "Kush Gangwal — Full Stack & React Native Developer";
 
@@ -66,7 +71,7 @@ const LAYERS = [
 export default function HomePage() {
   const { about, now } = content;
   return (
-    <div className="home pu">
+    <div className={`home pu ${wide.variable}`}>
       <JsonLd data={homeGraph()} />
       <a className="pu-skip" href="#main">
         Skip to content
@@ -81,59 +86,55 @@ export default function HomePage() {
               <span aria-hidden="true" />
               Open to full-stack and React Native roles
             </p>
+            <p className="hero-role rise" style={{ "--rise": 1 } as CSSProperties}>
+              Full stack <i aria-hidden="true" /> React Native <i aria-hidden="true" /> AI integrations
+            </p>
             <h1 id="hero-title" className="hero-name">
-              Kush Gangwal
+              <span className="hero-name-a">Kush</span> <span className="hero-name-b">Gangwal</span>
             </h1>
-            <p className="hero-statement rise" style={{ "--rise": 1 } as CSSProperties}>
-              I build products that ship.
+            <p className="hero-statement rise" style={{ "--rise": 2 } as CSSProperties}>
+              I build products that <em>ship.</em>
             </p>
             <p className="hero-intro">
               Software developer at SK Groups in Ahmedabad. I work across Potato Bazaar&apos;s React
               Native app, backend, and web platform, and build full-stack products of my own.
             </p>
-            <div className="hero-actions rise" style={{ "--rise": 2 } as CSSProperties}>
-              <a className="btn btn-primary" href="#work">
+            <ul className="hero-facts rise" style={{ "--rise": 3 } as CSSProperties} aria-label="At a glance">
+              <li>
+                <Briefcase aria-hidden="true" />
+                {now.workingAs}, {now.workingAt}
+              </li>
+              <li>
+                <MapPin aria-hidden="true" />
+                Ahmedabad, India
+              </li>
+              <li>
+                <GraduationCap aria-hidden="true" />
+                B.Tech CST, Medicaps University
+              </li>
+            </ul>
+            <div className="hero-actions rise" style={{ "--rise": 4 } as CSSProperties}>
+              <a className="btn btn-primary btn-hero" href="#work">
                 See the work
+                <span className="btn-arrow" aria-hidden="true">
+                  <ArrowRight />
+                </span>
               </a>
-              <a className="btn" href="#contact">
+              <a className="btn btn-glass" href="#contact">
                 Get in touch
               </a>
               <HeroAsk />
             </div>
-            <p className="hero-shipping rise" style={{ "--rise": 3 } as CSSProperties}>
+            <p className="hero-shipping rise" style={{ "--rise": 5 } as CSSProperties}>
               <span>Currently shipping</span>
               <Link href="/projects/potato-bazaar">
                 Potato Bazaar <em>web · Android · iOS</em> <b aria-hidden="true">→</b>
               </Link>
             </p>
           </div>
-
-          <div className="hero-foot rise" style={{ "--rise": 4 } as CSSProperties}>
-            <dl>
-            <div>
-              <dt>Focus</dt>
-              <dd>Full stack · Mobile · AI integrations</dd>
-            </div>
-            <div>
-              <dt>Now</dt>
-              <dd>
-                {now.workingAs}, {now.workingAt}
-              </dd>
-            </div>
-            <div>
-              <dt>Based in</dt>
-              <dd>{about.location}, India</dd>
-            </div>
-            <div>
-              <dt>Studied</dt>
-              <dd>B.Tech CST, Medicaps University</dd>
-            </div>
-            </dl>
-            <a className="hero-scroll" href="#system">
-              Scroll
-              <span aria-hidden="true" />
-            </a>
-          </div>
+          <a className="scroll-cue" href="#system" aria-label="Scroll to how I build">
+            <span aria-hidden="true" />
+          </a>
         </section>
 
         <section id="system" className="chapter" data-chapter="1" aria-labelledby="system-title">

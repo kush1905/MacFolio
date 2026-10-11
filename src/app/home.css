@@ -210,23 +210,53 @@
 /* Hero */
 
 .chapter-hero {
-  padding-top: 120px;
-  padding-bottom: 150px;
+  padding-top: 110px;
+}
+.chapter-hero .hero-col {
+  max-width: 660px;
 }
 
+/* Role line above the name: small spaced caps with amber separators. */
+.hero-role {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin: 0 0 22px;
+  font-family: var(--font-mono), ui-monospace, monospace !important;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pu-muted);
+}
+.hero-role i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--pu-amber);
+  box-shadow: 0 0 8px rgba(233, 162, 59, 0.8);
+}
+
+/* Name: extra-wide heavy grotesk, solid first line, outlined second line. */
 .hero-name {
   margin: 0;
-  font-family: var(--font-display), Georgia, serif !important;
-  font-weight: 400;
-  font-size: clamp(60px, 11.5vw, 176px);
-  line-height: 0.86;
-  letter-spacing: -0.025em;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-wide), var(--font-sans), sans-serif !important;
+  font-weight: 800;
+  font-stretch: 125%;
+  font-size: clamp(50px, min(8.4vw, 14.5vh), 136px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.hero-name span {
+  font-family: inherit !important;
   white-space: nowrap;
 }
-
-/* A light sweep passes over the name once, like the signal crossing it. The name is
-   never hidden, so it still paints immediately. */
-.hero-name {
+/* A light sweep crosses the solid line once, like the signal passing over it. */
+.hero-name-a {
+  width: max-content;
   background: linear-gradient(
       100deg,
       var(--pu-text) 0%,
@@ -239,10 +269,12 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  /* The clip only paints inside the box, so the box must be as wide as the name. */
-  display: inline-block;
-  width: max-content;
   animation: pu-sweep 1.8s cubic-bezier(0.5, 0, 0.2, 1) 0.5s both;
+}
+.hero-name-b {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(242, 238, 230, 0.85);
+  animation: pu-outline 1.6s ease 0.9s both;
 }
 @keyframes pu-sweep {
   from {
@@ -252,10 +284,17 @@
     background-position: 0% 0;
   }
 }
+@keyframes pu-outline {
+  from {
+    -webkit-text-stroke-color: rgba(255, 196, 107, 0.95);
+  }
+}
 @media (forced-colors: active) {
-  .hero-name {
+  .hero-name-a,
+  .hero-name-b {
     background: none;
     color: CanvasText;
+    -webkit-text-stroke: 0;
   }
 }
 
@@ -275,7 +314,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 26px;
+  margin: 0 0 22px;
   padding: 7px 14px 7px 12px;
   border: 1px solid var(--pu-line-strong);
   border-radius: 999px;
@@ -306,28 +345,105 @@
   }
 }
 
+/* Tagline: clean sans with "ship." in amber serif italic. */
 .hero-statement {
-  margin: 22px 0 0;
+  margin: clamp(16px, 2.6vh, 26px) 0 0;
+  font-size: clamp(22px, 2.3vw, 32px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--pu-text);
+}
+.hero-statement em {
   font-family: var(--font-display-italic), var(--font-display), Georgia, serif !important;
   font-style: italic;
-  font-size: clamp(26px, 3vw, 40px);
-  line-height: 1.1;
+  font-weight: 400;
+  font-size: 1.22em;
   color: var(--pu-amber-hot);
 }
 
 .hero-intro {
-  margin: 26px 0 0;
+  margin: 16px 0 0;
   max-width: 46ch;
   font-size: 17px;
   line-height: 1.6;
   color: var(--pu-muted);
 }
 
+/* At-a-glance facts, inline with the content. */
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hero-facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--pu-text);
+}
+.hero-facts svg {
+  width: 14px;
+  height: 14px;
+  color: var(--pu-amber);
+  flex: 0 0 auto;
+}
+
+/* Buttons */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
-  margin-top: 34px;
+  margin-top: clamp(20px, 3.2vh, 30px);
+}
+.pu .btn-hero {
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 7px 0 24px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(233, 162, 59, 0.18);
+  transition:
+    background 0.2s,
+    box-shadow 0.25s,
+    transform 0.25s;
+}
+.pu .btn-hero:hover {
+  box-shadow: 0 14px 40px rgba(233, 162, 59, 0.32);
+  transform: translateY(-1px);
+}
+.btn-arrow {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #141109;
+  color: var(--pu-amber-hot);
+  transition: transform 0.25s;
+}
+.btn-arrow svg {
+  width: 17px;
+  height: 17px;
+}
+.pu .btn-hero:hover .btn-arrow {
+  transform: translateX(3px);
+}
+.pu .btn-glass {
+  min-height: 52px;
+  padding: 0 24px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-weight: 500;
+}
+.pu .btn-glass:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* "Ask me anything" next to the hero buttons. */
@@ -367,7 +483,7 @@
   flex-wrap: wrap;
   align-items: baseline;
   gap: 6px 14px;
-  margin: 30px 0 0;
+  margin: clamp(16px, 2.6vh, 26px) 0 0;
   font-size: 14px;
 }
 .hero-shipping > span {
@@ -397,66 +513,17 @@
   transform: translateX(4px);
 }
 
-/* Details strip pinned to the bottom of the hero. */
-.hero-foot {
+.scroll-cue {
   position: absolute;
   left: var(--gutter);
-  right: var(--gutter);
   bottom: 28px;
-  display: flex;
-  align-items: stretch;
-  border-top: 1px solid var(--pu-line);
-  pointer-events: auto;
-}
-.hero-foot dl {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, auto));
-  justify-content: start;
-  flex: 1;
-  margin: 0;
-}
-.hero-foot dl div {
-  padding: 16px 32px 0 0;
-  margin-right: 32px;
-  border-right: 1px solid var(--pu-line);
-}
-.hero-foot dl div:last-child {
-  border-right: 0;
-}
-.hero-foot dt {
-  font-family: var(--font-mono), ui-monospace, monospace !important;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pu-faint);
-}
-.hero-foot dd {
-  margin: 6px 0 0;
-  font-size: 14px;
-  color: var(--pu-text);
-  white-space: nowrap;
-}
-.hero-scroll {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 16px;
-  font-family: var(--font-mono), ui-monospace, monospace !important;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pu-muted);
-  text-decoration: none;
-}
-.hero-scroll span {
-  position: relative;
   width: 1px;
-  height: 34px;
-  overflow: hidden;
+  height: 56px;
   background: var(--pu-line);
+  pointer-events: auto;
+  overflow: hidden;
 }
-.hero-scroll span::after {
-  content: "";
+.scroll-cue span {
   position: absolute;
   inset: 0;
   background: linear-gradient(transparent, var(--pu-amber));
@@ -1054,31 +1121,6 @@
 /* ── Responsive ───────────────────────────────────────── */
 
 @media (max-width: 1023px) {
-  .chapter-hero {
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    padding-bottom: 72px;
-  }
-  .hero-foot {
-    position: static;
-    margin-top: 40px;
-  }
-  .hero-foot dl {
-    grid-template-columns: 1fr 1fr;
-    row-gap: 16px;
-  }
-  .hero-foot dl div {
-    padding-right: 12px;
-    margin-right: 0;
-    border-right: 0;
-  }
-  .hero-foot dd {
-    white-space: normal;
-  }
-  .hero-scroll {
-    display: none;
-  }
 
   .home::before {
     background: rgba(11, 11, 12, 0.6);
@@ -1108,9 +1150,8 @@
     );
   }
 
-  .hero-name {
-    white-space: normal;
-    width: auto;
+  .scroll-cue {
+    display: none;
   }
   .ps-head button {
     grid-template-columns: 28px 1fr;
@@ -1158,7 +1199,7 @@ html:has(.home) {
   .static-lattice circle {
     opacity: 0.55;
   }
-  .hero-name {
+  .hero-name-a {
     background-position: 0 0;
   }
   html:has(.home) {
