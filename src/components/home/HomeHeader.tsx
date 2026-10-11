@@ -23,8 +23,8 @@ export function HomeHeader() {
   return (
     <header className="home-header">
       <Link className="home-brand" href="/" aria-label="Kush Gangwal, home">
-        {/* eslint-disable-next-line @next/next/no-img-element -- 32px decorative mark */}
-        <img src="/assets/kush/logo-icon.png" alt="" width={32} height={32} />
+        {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark, no optimisation needed */}
+        <img src="/assets/kush/mark.svg" alt="" width={32} height={32} />
         <span>Kush Gangwal</span>
       </Link>
       <nav aria-label="Primary">

@@ -25,7 +25,7 @@ export function BootScreen({ onDone }: { onDone: () => void }) {
     <div className="fixed inset-0 z-[1000] flex flex-col items-center justify-center bg-black text-white">
       <style>{BOOT_CSS}</style>
       <img
-        src="/assets/kush/logo-icon.png"
+        src="/assets/kush/mark.svg"
         alt=""
         width={96}
         height={96}

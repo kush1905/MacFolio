@@ -21,7 +21,7 @@ export function PublicHeader() {
       <Link className="public-brand" href="/">
         <img
           className="public-logo"
-          src="/assets/kush/logo-icon.png"
+          src="/assets/kush/mark.svg"
           alt=""
           width={40}
           height={40}

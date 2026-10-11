@@ -66,10 +66,6 @@ export const metadata: Metadata = {
     creator: "@kushgg19",
     images: ["/assets/kush/avatar.png"],
   },
-  icons: {
-    icon: "/assets/kush/logo-icon.png",
-    apple: "/assets/kush/logo-icon.png",
-  },
 };
 
 export default function RootLayout({
