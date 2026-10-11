@@ -35,13 +35,16 @@ export default function BlogIndexPage() {
         title={`Writing by ${PERSON_NAME}`}
         subtitle="Articles on the products Kush Gangwal builds, React Native, and his work and study. Some are also posted on Medium, Dev.to, and Hashnode."
       >
-        <div className="public-related">
-          {blogPosts.map((post) => (
-            <Link key={post.slug} href={blogPostPath(post.slug)}>
-              <strong>{post.title}</strong>
-              {post.date} — {post.description}
-            </Link>
-          ))}
+        <div className="post-list">
+          {[...blogPosts]
+            .sort((a, b) => b.date.localeCompare(a.date))
+            .map((post) => (
+              <Link key={post.slug} href={blogPostPath(post.slug)}>
+                <time dateTime={post.date}>{post.date}</time>
+                <strong>{post.title}</strong>
+                <span>{post.description}</span>
+              </Link>
+            ))}
         </div>
       </PublicArticle>
     </>

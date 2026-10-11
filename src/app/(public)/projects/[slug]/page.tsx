@@ -1,10 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ProseSection, PublicArticle } from "@/components/public/PublicArticle";
+import { ProjectCard } from "@/components/public/ProjectCard";
+import { FactsCard, ProseSection, PublicArticle } from "@/components/public/PublicArticle";
+import { homeProjects } from "@/lib/portfolio";
 import { WhoIs } from "@/components/public/WhoIs";
-import { caseStudies, caseStudyBySlug } from "@/lib/caseStudies";
+import { caseStudyBySlug } from "@/lib/caseStudies";
 import { publicMeta } from "@/lib/publicMeta";
 import { productBySlug, productGraph, products } from "@/lib/seo";
 
@@ -47,6 +48,34 @@ export default async function ProjectPage({ params }: Props) {
           { href: "/projects", label: "Projects" },
           { href: `/projects/${slug}`, label: product.name },
         ]}
+        aside={
+          <FactsCard
+            title="Project"
+            facts={[
+              { label: "Role", value: study?.role ?? "Full Stack Developer & React Native Developer" },
+              { label: "Period", value: product.period },
+              { label: "Context", value: product.company ?? "Personal project" },
+              { label: "Stack", value: product.tech.join(", ") },
+            ]}
+          />
+        }
+        actions={
+          product.links.length > 0 ? (
+            <>
+              {product.links.map((link, i) => (
+                <a
+                  key={link.href}
+                  className={i === 0 ? "btn btn-primary btn-small" : "btn btn-small"}
+                  href={link.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {link.label} ↗
+                </a>
+              ))}
+            </>
+          ) : undefined
+        }
       >
         <p>
           {product.credit === "develops"
@@ -109,15 +138,12 @@ export default async function ProjectPage({ params }: Props) {
 
         <section>
           <h2>More projects</h2>
-          <div className="public-card-grid">
-            {caseStudies
+          <div className="project-grid">
+            {homeProjects
               .filter((item) => item.slug !== slug)
               .slice(0, 4)
               .map((item) => (
-                <Link className="public-card" key={item.slug} href={`/projects/${item.slug}`}>
-                  <strong>{item.name}</strong>
-                  {item.description}
-                </Link>
+                <ProjectCard key={item.slug} project={item} description={false} />
               ))}
           </div>
         </section>

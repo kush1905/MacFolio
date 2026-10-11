@@ -26,6 +26,7 @@ export default function NowPage() {
         updated={now.updated}
         crumbs={[{ href: "/now", label: "Now" }]}
       >
+        <div className="now-grid">
         <section>
           <h2>Currently working at {now.workingAt}</h2>
           <p>
@@ -60,6 +61,7 @@ export default function NowPage() {
             ))}
           </ul>
         </section>
+        </div>
 
         <WhoIs />
 

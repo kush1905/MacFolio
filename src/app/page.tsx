@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import "./site.css";
 import "./home.css";
 import { AskPrompts } from "@/components/home/AskPrompts";
 import { ContactForm } from "@/components/home/ContactForm";
-import { HomeHeader } from "@/components/home/HomeHeader";
 import { ProjectIndex } from "@/components/home/ProjectIndex";
 import { TechCore } from "@/components/home/TechCore";
 import { CommandPalette } from "@/components/command/CommandPalette";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
 import { UniverseStage } from "@/components/universe/UniverseStage";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { content } from "@/lib/content";
@@ -63,13 +65,13 @@ const LAYERS = [
 export default function HomePage() {
   const { about, now } = content;
   return (
-    <div className="home">
+    <div className="home pu">
       <JsonLd data={homeGraph()} />
-      <a className="home-skip" href="#main">
+      <a className="pu-skip" href="#main">
         Skip to content
       </a>
       <UniverseStage projects={homeProjects} techNodes={techNodes} steps={journey.length} />
-      <HomeHeader />
+      <SiteHeader />
 
       <main id="main" className="home-main">
         <section className="chapter chapter-hero" data-chapter="0" aria-labelledby="hero-title">
@@ -272,26 +274,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="home-footer">
-        <div>
-          <p className="home-footer-name">{PERSON_NAME}</p>
-          <p>
-            Full stack and React Native developer · {about.location}, India
-          </p>
-        </div>
-        <nav aria-label="Site">
-          <Link href="/about-kush-gangwal">About</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/blog">Writing</Link>
-          <Link href="/now">Now</Link>
-          <Link href="/stack">Stack</Link>
-          <Link href="/faq">FAQ</Link>
-          <Link href="/resume">Resume</Link>
-          <Link href="/topics">Topics</Link>
-          <Link href="/site-map">Site map</Link>
-          <Link href="/desktop">Macfolio desktop</Link>
-        </nav>
-      </footer>
+      <SiteFooter />
 
       <CommandPalette projects={homeProjects} techNodes={techNodes} />
     </div>

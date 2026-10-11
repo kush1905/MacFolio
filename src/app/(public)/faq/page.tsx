@@ -20,12 +20,14 @@ export default function FaqPage() {
         title={`Questions about ${PERSON_NAME}`}
         subtitle="Short answers about Kush Gangwal's work, projects, and background."
       >
-        {faqs.map((faq) => (
-          <section key={faq.question}>
-            <h2>{faq.question}</h2>
-            <p>{faq.answer}</p>
-          </section>
-        ))}
+        <div className="faq-list">
+          {faqs.map((faq) => (
+            <section key={faq.question}>
+              <h2>{faq.question}</h2>
+              <p>{faq.answer}</p>
+            </section>
+          ))}
+        </div>
         <WhoIs />
       </PublicArticle>
     </>

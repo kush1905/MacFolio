@@ -1,19 +1,22 @@
 import type { ReactNode } from "react";
+import "../site.css";
+import "./public.css";
 import { CommandPalette } from "@/components/command/CommandPalette";
-import { PublicFooter, PublicHeader } from "@/components/public/PublicChrome";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
 import { homeProjects, techNodes } from "@/lib/portfolio";
 
 export default function PublicLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="public-site">
-      <a className="public-skip" href="#content">
+    <div className="public-site pu">
+      <a className="pu-skip" href="#content">
         Skip to content
       </a>
-      <PublicHeader />
+      <SiteHeader />
       <main id="content" className="public-main">
         {children}
       </main>
-      <PublicFooter />
+      <SiteFooter />
       <CommandPalette projects={homeProjects} techNodes={techNodes} />
     </div>
   );

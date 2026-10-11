@@ -42,6 +42,7 @@ export type HomeProject = {
   ownership: "own" | "team";
   links: { label: string; href: string }[];
   screenshots: Screenshot[];
+  cover?: string;
 };
 
 export const homeProjects: HomeProject[] = STATIONS.flatMap(({ slug, kind, ownership }) => {
@@ -62,6 +63,7 @@ export const homeProjects: HomeProject[] = STATIONS.flatMap(({ slug, kind, owner
       ownership,
       links: product.links,
       screenshots: study?.screenshots ?? [],
+      cover: study?.cover,
     },
   ];
 });

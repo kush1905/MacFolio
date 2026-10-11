@@ -1,47 +1,5 @@
 /* Homepage — "Signal Lattice". Tokens and the ⌘K palette live in globals.css (.pu-*). */
 
-.home {
-  --gutter: clamp(16px, 4vw, 56px);
-  position: relative;
-  min-height: 100vh;
-  background: var(--pu-bg);
-  color: var(--pu-text);
-  letter-spacing: normal;
-  font-feature-settings: normal;
-  cursor: auto;
-}
-
-.home,
-.home * {
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-}
-
-.home a {
-  color: inherit;
-}
-
-.home :focus-visible {
-  outline: 2px solid var(--pu-amber);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-.home-skip {
-  position: fixed;
-  left: 16px;
-  top: -60px;
-  z-index: 60;
-  padding: 10px 14px;
-  border-radius: 8px;
-  background: var(--pu-amber);
-  color: #111 !important;
-  font-weight: 600;
-  text-decoration: none;
-}
-.home-skip:focus {
-  top: 16px;
-}
-
 /* ── 3D stage ─────────────────────────────────────────── */
 
 .universe {
@@ -180,141 +138,6 @@
   );
 }
 
-/* Fine film grain over the scene for depth; sits under the text. */
-.home::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.07;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ── Header ───────────────────────────────────────────── */
-
-.home-header {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding: 12px var(--gutter);
-  background: rgba(11, 11, 12, 0.72);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--pu-line);
-}
-
-.home-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: -0.01em;
-}
-.home-brand img {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-}
-
-.home-header nav {
-  display: flex;
-  gap: 22px;
-  margin-left: auto;
-}
-.home-header nav a {
-  font-size: 14px;
-  color: var(--pu-muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.home-header nav a:hover {
-  color: var(--pu-text);
-}
-
-.home-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.ask-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 36px;
-  padding: 0 12px;
-  border: 1px solid var(--pu-line);
-  border-radius: 999px;
-  background: rgba(20, 21, 24, 0.6);
-  color: var(--pu-text);
-  font-size: 13px;
-  cursor: pointer;
-}
-.ask-trigger kbd,
-.ask-open kbd {
-  font-family: var(--font-mono), ui-monospace, monospace !important;
-  font-size: 11px;
-  color: var(--pu-muted);
-  border: 1px solid var(--pu-line);
-  border-radius: 6px;
-  padding: 2px 6px;
-}
-
-@media (hover: none) {
-  .ask-trigger kbd {
-    display: none;
-  }
-}
-
-/* ── Buttons ──────────────────────────────────────────── */
-
-.home .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 46px;
-  padding: 0 22px;
-  border: 1px solid var(--pu-line-strong);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--pu-text);
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    border-color 0.2s,
-    background 0.2s,
-    color 0.2s;
-}
-.home .btn:hover {
-  border-color: var(--pu-amber);
-}
-.home .btn-primary {
-  border-color: var(--pu-amber);
-  background: var(--pu-amber);
-  color: #141109;
-}
-.home .btn-primary:hover {
-  background: var(--pu-amber-hot);
-}
-.home .btn-small {
-  min-height: 38px;
-  padding: 0 16px;
-  font-size: 14px;
-}
-.home .btn:disabled {
-  opacity: 0.6;
-  cursor: progress;
-}
-
 /* ── Chapters ─────────────────────────────────────────── */
 
 .home-main {
@@ -340,15 +163,6 @@
 }
 .chapter-col-wide {
   max-width: 640px;
-}
-
-.eyebrow {
-  margin: 0 0 18px;
-  font-family: var(--font-mono), ui-monospace, monospace !important;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--pu-amber);
 }
 
 .home h2 {
@@ -1057,53 +871,11 @@
   color: var(--pu-amber-hot);
 }
 
-/* Footer */
-
-.home-footer {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 36px var(--gutter) 48px;
-  border-top: 1px solid var(--pu-line);
-  background: var(--pu-bg);
-  font-size: 14px;
-  color: var(--pu-muted);
-}
-.home-footer p {
-  margin: 0;
-}
-.home-footer-name {
-  margin-bottom: 4px !important;
-  color: var(--pu-text);
-  font-weight: 600;
-}
-.home-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-}
-.home-footer a {
-  color: var(--pu-muted);
-  text-decoration: none;
-}
-.home-footer a:hover {
-  color: var(--pu-text);
-}
-
 /* ── Responsive ───────────────────────────────────────── */
 
 @media (max-width: 1023px) {
   .home::before {
     background: rgba(11, 11, 12, 0.6);
-  }
-  .home-header nav {
-    display: none;
-  }
-  .home-header-actions {
-    margin-left: auto;
   }
   .chapter-col,
   .chapter-col-wide {
@@ -1135,9 +907,6 @@
   .hero-name {
     white-space: normal;
     width: auto;
-  }
-  .home-brand span {
-    display: none;
   }
   .flagship {
     padding: 22px 18px;

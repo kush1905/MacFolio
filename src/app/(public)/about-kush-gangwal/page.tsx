@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProfileLinks } from "@/components/public/ProfileLinks";
+import { ProjectCard } from "@/components/public/ProjectCard";
 import { PublicArticle } from "@/components/public/PublicArticle";
+import { homeProjects } from "@/lib/portfolio";
 import { WhoIs } from "@/components/public/WhoIs";
 import { content } from "@/lib/content";
 import { PERSON_HEADLINE, PERSON_NAME, PERSON_TITLE_TAG } from "@/lib/identity";
 import { publicMeta } from "@/lib/publicMeta";
-import { aboutDescription, aboutGraph, companies, products } from "@/lib/seo";
+import { aboutDescription, aboutGraph, companies } from "@/lib/seo";
 
 export const metadata = publicMeta({
   title: PERSON_TITLE_TAG,
@@ -25,7 +27,27 @@ export default function AboutKushGangwalPage() {
         title={PERSON_NAME}
         subtitle={aboutDescription}
         portrait={{ src: content.about.avatar, alt: `${PERSON_NAME}, ${PERSON_HEADLINE}` }}
+        actions={
+          <>
+            <Link className="btn btn-primary" href="/#contact">
+              Get in touch
+            </Link>
+            <a className="btn" href="/resume.pdf">
+              Resume (PDF)
+            </a>
+            <Link className="btn" href="/projects">
+              See projects
+            </Link>
+          </>
+        }
       >
+        <ul className="pa-chips" aria-label="At a glance">
+          <li>{content.now.workingAs} · SK Groups</li>
+          <li>Based in {content.about.location}</li>
+          <li>From Bakaner, Madhya Pradesh</li>
+          <li>B.Tech CST · Medicaps University</li>
+        </ul>
+
         <WhoIs />
 
         <section>
@@ -36,14 +58,17 @@ export default function AboutKushGangwalPage() {
             interned at Protonshub Technologies, where he contributed to Tybee Go and Findanio, and
             at Django Softwares.
           </p>
-          <div className="public-related">
+          <ol className="pa-timeline">
             {companies.map((company) => (
-              <Link key={company.slug} href={`/work/${company.slug}`}>
-                <strong>{company.name}</strong>
-                {company.summary}
-              </Link>
+              <li key={company.slug}>
+                <span className="pa-timeline-meta">
+                  {[company.role, company.duration].filter(Boolean).join(" · ")}
+                </span>
+                <Link href={`/work/${company.slug}`}>{company.name}</Link>
+                <p>{company.summary}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </section>
 
         <section>
@@ -52,12 +77,9 @@ export default function AboutKushGangwalPage() {
             Each project has its own case study covering the problem, what Kush Gangwal worked
             on, and the stack.
           </p>
-          <div className="public-card-grid">
-            {products.map((product) => (
-              <Link className="public-card" key={product.slug} href={`/projects/${product.slug}`}>
-                <strong>{product.name}</strong>
-                {product.tagline}
-              </Link>
+          <div className="project-grid">
+            {homeProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} description={false} />
             ))}
           </div>
         </section>
