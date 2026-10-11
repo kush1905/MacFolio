@@ -22,7 +22,8 @@ import { homeDescription, homeGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
 
 /** Extra-wide display face for the hero name; loaded only on the homepage. */
-const wide = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-wide", display: "swap" });
+// Not preloaded: Next would otherwise preload this 88 KB variable font on every route.
+const wide = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-wide", display: "swap", preload: false });
 
 const HOME_TITLE = "Kush Gangwal — Full Stack & React Native Developer";
 
@@ -138,6 +139,7 @@ export default function HomePage() {
         </section>
 
         <section id="system" className="chapter" data-chapter="1" aria-labelledby="system-title">
+          <div className="chapter-stage" aria-hidden="true" />
           <div className="chapter-col">
             <p className="eyebrow">01 — System</p>
             <h2 id="system-title">How I build</h2>
@@ -158,6 +160,7 @@ export default function HomePage() {
         </section>
 
         <section id="work" className="chapter chapter-work" data-chapter="2" aria-labelledby="work-title">
+          <div className="chapter-stage" aria-hidden="true" />
           <div className="chapter-col chapter-col-wide">
             <p className="eyebrow">02 — Products</p>
             <h2 id="work-title">Selected work</h2>
@@ -178,6 +181,7 @@ export default function HomePage() {
           data-chapter="3"
           aria-labelledby="experience-title"
         >
+          <div className="chapter-stage" aria-hidden="true" />
           <div className="chapter-col">
             <p className="eyebrow">03 — Experience</p>
             <h2 id="experience-title">Where I&apos;ve worked</h2>
@@ -210,6 +214,7 @@ export default function HomePage() {
         </section>
 
         <section id="core" className="chapter" data-chapter="4" aria-labelledby="core-title">
+          <div className="chapter-stage" aria-hidden="true" />
           <div className="chapter-col chapter-col-wide">
             <p className="eyebrow">04 — Engineering</p>
             <h2 id="core-title">The stack, with receipts</h2>
@@ -222,6 +227,7 @@ export default function HomePage() {
         </section>
 
         <section id="ask" className="chapter" data-chapter="5" aria-labelledby="ask-title">
+          <div className="chapter-stage" aria-hidden="true" />
           <div className="chapter-col">
             <p className="eyebrow">05 — Intelligence</p>
             <h2 id="ask-title">Ask Kush</h2>
@@ -234,6 +240,7 @@ export default function HomePage() {
         </section>
 
         <section id="next" className="chapter" data-chapter="6" aria-labelledby="next-title">
+          <div className="chapter-stage" aria-hidden="true" />
           <div className="chapter-col">
             <p className="eyebrow">06 — Next</p>
             <h2 id="next-title">What I&apos;m learning</h2>
@@ -265,6 +272,7 @@ export default function HomePage() {
         </section>
 
         <section id="contact" className="chapter chapter-contact" data-chapter="7" aria-labelledby="contact-title">
+          <div className="chapter-stage" aria-hidden="true" />
           <div className="chapter-col">
             <p className="eyebrow">07 — Contact</p>
             <h2 id="contact-title" className="contact-title">

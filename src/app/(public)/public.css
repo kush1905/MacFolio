@@ -854,3 +854,60 @@
 .pa-body {
   padding-bottom: 72px;
 }
+
+/* Living hero on every page: the grid drifts slowly and the glow breathes. */
+.pa-hero::before {
+  animation: pa-grid-drift 40s linear infinite;
+}
+.pa-hero {
+  animation: pa-glow 9s ease-in-out infinite alternate;
+  background-size: 100% 100%;
+}
+@keyframes pa-grid-drift {
+  to {
+    background-position: 64px 64px;
+  }
+}
+@keyframes pa-glow {
+  from {
+    background:
+      radial-gradient(50% 70% at 88% 18%, rgba(233, 162, 59, 0.08), transparent 70%),
+      var(--pu-bg);
+  }
+  to {
+    background:
+      radial-gradient(56% 78% at 84% 22%, rgba(233, 162, 59, 0.15), transparent 70%),
+      var(--pu-bg);
+  }
+}
+
+@media (max-width: 900px) {
+  /* Profile pages lead with the face on phones: a compact portrait above the name. */
+  .pa-hero-split:has(.pa-portrait) .pa-hero-aside {
+    order: -1;
+    width: 120px;
+    margin-bottom: 4px;
+  }
+  .pa-hero-split:has(.pa-portrait) .pa-portrait img,
+  .pa-hero-split:has(.pa-portrait) .pa-portrait::after {
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Byline: name (and updated date) only; the headline repeats the kicker. */
+  .pa-byline > span:nth-of-type(2),
+  .pa-byline > span:nth-of-type(3) {
+    display: none;
+  }
+  .pa-hero {
+    padding-top: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pa-hero,
+  .pa-hero::before {
+    animation: none;
+  }
+}

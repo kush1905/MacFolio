@@ -176,13 +176,24 @@ export function NodeField({ mobile, chapter }: { mobile: boolean; chapter: numbe
     };
   }, [mobile]);
 
+  // Mouse: follow the cursor. Touch: a tap lights and ripples the field for a moment.
+  const touchAt = useRef(-10);
   useEffect(() => {
-    if (mobile) return;
-    const onMove = (event: PointerEvent) =>
+    const set = (event: PointerEvent) =>
       ndc.current.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
+    const onMove = (event: PointerEvent) => event.pointerType === "mouse" && set(event);
+    const onDown = (event: PointerEvent) => {
+      if (event.pointerType === "mouse") return;
+      set(event);
+      touchAt.current = performance.now() / 1000;
+    };
     window.addEventListener("pointermove", onMove, { passive: true });
-    return () => window.removeEventListener("pointermove", onMove);
-  }, [mobile]);
+    window.addEventListener("pointerdown", onDown, { passive: true });
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerdown", onDown);
+    };
+  }, []);
 
   useEffect(
     () => () => {
@@ -204,7 +215,8 @@ export function NodeField({ mobile, chapter }: { mobile: boolean; chapter: numbe
 
     // Cursor → point on the field plane, in the field's local space.
     let on = 0;
-    if (ref.current && ndc.current.x < 2) {
+    const touching = performance.now() / 1000 - touchAt.current < 1.8;
+    if (ref.current && ndc.current.x < 2 && (!mobile || touching)) {
       parts.ray.setFromCamera(ndc.current, camera);
       if (parts.ray.ray.intersectPlane(parts.plane, parts.hit)) {
         parts.local.copy(parts.hit);

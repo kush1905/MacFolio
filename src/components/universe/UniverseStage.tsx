@@ -45,14 +45,20 @@ function useScrollChapters() {
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-chapter]"));
     if (sections.length === 0) return;
-    let tops: number[] = [];
-    let heights: number[] = [];
+    // Each chapter's "anchor" is where its scene should be exactly in frame: the section's
+    // centre on wide screens, or its stage (the clear area above the text) on phones.
+    let anchors: number[] = [];
+    let focus = 0.5;
     let frame = 0;
     let lastY = window.scrollY;
     let lastT = performance.now();
     const measure = () => {
-      tops = sections.map((s) => s.getBoundingClientRect().top + window.scrollY);
-      heights = sections.map((s) => s.offsetHeight || 1);
+      focus = window.matchMedia("(max-width: 760px)").matches ? 0.38 : 0.5;
+      anchors = sections.map((section) => {
+        const stage = section.querySelector<HTMLElement>(".chapter-stage");
+        const rect = (stage && stage.offsetHeight > 0 ? stage : section).getBoundingClientRect();
+        return rect.top + window.scrollY + rect.height / 2;
+      });
     };
     const update = () => {
       frame = 0;
@@ -61,16 +67,18 @@ function useScrollChapters() {
       scrollState.velocity = ((scroll - lastY) / Math.max(now - lastT, 1)) * 1000;
       lastY = scroll;
       lastT = now;
-      const centre = scroll + window.innerHeight / 2;
-      let index = sections.length - 1;
-      for (let i = 0; i < sections.length; i++) {
-        if (centre < tops[i] + heights[i]) {
-          index = i;
-          break;
+      // Piecewise-linear between anchors: chapter i is exact when its anchor is at the focus line.
+      const y = scroll + window.innerHeight * focus;
+      let chapter = 0;
+      if (y >= anchors[anchors.length - 1]) chapter = anchors.length - 1;
+      else
+        for (let i = 0; i < anchors.length - 1; i++) {
+          if (y < anchors[i + 1]) {
+            chapter = i + Math.max(0, (y - anchors[i]) / (anchors[i + 1] - anchors[i]));
+            break;
+          }
         }
-      }
-      const fraction = (centre - tops[index]) / heights[index];
-      scrollState.chapter = Math.min(Math.max(index + fraction - 0.5, 0), sections.length - 1);
+      scrollState.chapter = chapter;
       const footer = document.querySelector(".site-footer");
       scrollState.footer = footer
         ? Math.max(0, Math.min(window.innerHeight, window.innerHeight - footer.getBoundingClientRect().top))

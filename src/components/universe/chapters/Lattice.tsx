@@ -141,12 +141,18 @@ export function Lattice({ mobile }: { mobile: boolean }) {
     [],
   );
   useEffect(() => {
-    if (mobile) return;
-    const onMove = (event: PointerEvent) =>
+    // Mouse: edges light up near the cursor. Touch: near where you tap.
+    const onPointer = (event: PointerEvent) => {
+      if (event.type === "pointermove" && event.pointerType !== "mouse") return;
       ndc.current.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
-    window.addEventListener("pointermove", onMove, { passive: true });
-    return () => window.removeEventListener("pointermove", onMove);
-  }, [mobile]);
+    };
+    window.addEventListener("pointermove", onPointer, { passive: true });
+    window.addEventListener("pointerdown", onPointer, { passive: true });
+    return () => {
+      window.removeEventListener("pointermove", onPointer);
+      window.removeEventListener("pointerdown", onPointer);
+    };
+  }, []);
 
   useFrame((state) => {
     const t = state.clock.elapsedTime;

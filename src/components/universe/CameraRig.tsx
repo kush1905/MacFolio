@@ -37,7 +37,8 @@ export function CameraRig({ projects, mobile }: { projects: HomeProject[]; mobil
   const appliedFooter = useRef(-1);
   const applyOffset = (footer: number) => {
     const shiftX = size.width >= 1024 ? -size.width * 0.2 : 0;
-    const shiftY = (size.width < 760 ? size.height * 0.2 : 0) + footer / 2;
+    // Phones: centre the scene on the stage band (focus line at 38% of the viewport).
+    const shiftY = (size.width < 760 ? size.height * 0.12 : 0) + footer / 2;
     camera.setViewOffset(size.width, size.height, shiftX, shiftY, size.width, size.height);
     camera.updateProjectionMatrix();
     appliedFooter.current = footer;
@@ -69,8 +70,17 @@ export function CameraRig({ projects, mobile }: { projects: HomeProject[]; mobil
       rate = 7;
     }
 
+    // Phones: frame each chapter a little tighter so it fills its stage.
+    if (mobile) targetPos.sub(targetLook).multiplyScalar(0.86).add(targetLook);
+
     targetPos.x += pointer.current.x * 0.35;
     targetPos.y -= pointer.current.y * 0.2;
+    // Phones have no cursor parallax, so give the camera a slow drift to keep scenes alive.
+    if (mobile) {
+      const t = performance.now() / 1000;
+      targetPos.x += Math.sin(t * 0.35) * 0.3;
+      targetPos.y += Math.cos(t * 0.27) * 0.16;
+    }
 
     const k = 1 - Math.exp(-delta * rate);
     camera.position.lerp(targetPos, k);
