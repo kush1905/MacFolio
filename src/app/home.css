@@ -262,9 +262,16 @@
   color: transparent;
   animation: pu-sweep 1.8s cubic-bezier(0.5, 0, 0.2, 1) 0.5s both;
 }
-.hero-name-dot {
-  color: var(--pu-amber);
-  -webkit-text-fill-color: var(--pu-amber);
+/* The amber full stop is decorative (CSS), so the H1's text stays exactly "Kush Gangwal". */
+.hero-name::after {
+  content: "";
+  display: inline-block;
+  width: 0.13em;
+  height: 0.13em;
+  margin-left: 0.04em;
+  border-radius: 50%;
+  background: var(--pu-amber);
+  box-shadow: 0 0 0.12em rgba(233, 162, 59, 0.6);
 }
 @keyframes pu-sweep {
   from {

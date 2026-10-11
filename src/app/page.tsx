@@ -98,7 +98,7 @@ export default function HomePage() {
               Full stack <i aria-hidden="true" /> React Native <i aria-hidden="true" /> AI integrations
             </p>
             <h1 id="hero-title" className="hero-name">
-              Kush Gangwal<span className="hero-name-dot" aria-hidden="true">.</span>
+              Kush Gangwal
             </h1>
             <p className="hero-statement rise" style={{ "--rise": 2 } as CSSProperties}>
               I build products that <em>ship.</em>
