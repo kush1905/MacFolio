@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import { BoxGeometry, EdgesGeometry, type Group, InstancedMesh, Matrix4, type Points } from "three";
 import { scrollState } from "@/store/sceneStore";
-import { ANCHORS, rng } from "../layout";
+import { activeSystemLayer, ANCHORS, rng } from "../layout";
 import {
   amber,
   glowPointsMaterial,
@@ -80,8 +80,7 @@ export function SystemLayers({ mobile }: { mobile: boolean }) {
   useFrame((state) => {
     const p = amount.current;
     // Read position within the chapter decides which layer is lit.
-    const local = scrollState.chapter - 1; // -1..1 around this chapter
-    const active = Math.round(Math.min(Math.max((local + 0.45) / 0.9, 0), 1) * (LAYER_COUNT - 1));
+    const active = activeSystemLayer(scrollState.chapter, LAYER_COUNT);
     const spacing = 0.42 + p * 0.5;
     layers.current.forEach((layer, i) => {
       if (!layer) return;

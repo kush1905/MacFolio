@@ -92,6 +92,7 @@ export function ProjectIndex({ projects }: { projects: HomeProject[] }) {
               else rows.current.delete(project.slug);
             }}
             data-open={isOpen || undefined}
+            data-tilt={isOpen || undefined}
             data-active={hovered === project.slug || undefined}
             onPointerMove={(event) => onPointerMove(event, project.slug)}
             onPointerEnter={() => setHovered(project.slug)}

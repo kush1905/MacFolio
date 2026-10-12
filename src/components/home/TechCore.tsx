@@ -23,7 +23,9 @@ export function TechCore({
 
   useEffect(() => () => setActiveTech(null), [setActiveTech]);
 
-  const usedIn = projects.filter((project) => active.projects.includes(project.slug));
+  const usedIn = projects.filter((project) =>
+    active.projects.includes(project.slug),
+  );
 
   return (
     <div className="core">
@@ -46,31 +48,36 @@ export function TechCore({
           </fieldset>
         ))}
       </div>
-      <div className="core-panel" aria-live="polite">
-        <p className="core-group">{active.group}</p>
-        <h3>{active.name}</h3>
-        <p>{active.use}</p>
-        <h4>Evidence</h4>
-        <ul>
-          {active.proof.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-        {usedIn.length > 0 ? (
-          <>
-            <h4>Used in</h4>
-            <ul className="core-projects">
-              {usedIn.map((project) => (
-                <li key={project.slug}>
-                  <Link href={`/projects/${project.slug}`}>{project.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : null}
-        <p className="section-more">
-          <Link href={`/stack/${active.slug}`}>More on {active.name} →</Link>
-        </p>
+      {/* Stable live region; the inner card remounts per technology so it can flip in. */}
+      <div aria-live="polite">
+        <div className="core-panel" data-tilt key={active.slug}>
+          <p className="core-group">{active.group}</p>
+          <h3>{active.name}</h3>
+          <p>{active.use}</p>
+          <h4>Evidence</h4>
+          <ul>
+            {active.proof.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          {usedIn.length > 0 ? (
+            <>
+              <h4>Used in</h4>
+              <ul className="core-projects">
+                {usedIn.map((project) => (
+                  <li key={project.slug}>
+                    <Link href={`/projects/${project.slug}`}>
+                      {project.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+          <p className="section-more">
+            <Link href={`/stack/${active.slug}`}>More on {active.name} →</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

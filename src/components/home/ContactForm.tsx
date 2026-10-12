@@ -75,7 +75,7 @@ export function ContactForm({ email }: { email: string }) {
   }
 
   return (
-    <form className="contact-form" onSubmit={submit} onFocus={onFocus} onBlur={onBlur} noValidate={false}>
+    <form className="contact-form" data-tilt onSubmit={submit} onFocus={onFocus} onBlur={onBlur} noValidate={false}>
       <div className="field">
         <label htmlFor="contact-name">Name</label>
         <input id="contact-name" name="name" required maxLength={100} autoComplete="name" />

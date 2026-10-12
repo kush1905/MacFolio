@@ -6,6 +6,7 @@ import { ArrowRight, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import "./site.css";
 import "./home.css";
 import { AskPrompts } from "@/components/home/AskPrompts";
+import { ContentMotion } from "@/components/home/ContentMotion";
 import { ContactForm } from "@/components/home/ContactForm";
 import { HeroAsk } from "@/components/home/HeroAsk";
 import { ProjectIndex } from "@/components/home/ProjectIndex";
@@ -86,6 +87,7 @@ export default function HomePage() {
       </a>
       <UniverseStage projects={homeProjects} techNodes={techNodes} steps={journey.length} />
       <SiteHeader />
+      <ContentMotion />
 
       <main id="main" className="home-main">
         <section className="chapter chapter-hero" data-chapter="0" aria-labelledby="hero-title">

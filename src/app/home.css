@@ -296,7 +296,7 @@
 @keyframes pu-rise {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    translate: 0 14px;
   }
 }
 
@@ -1363,4 +1363,138 @@ html:has(.home) {
     white-space: nowrap;
     font-size: clamp(64px, min(7.4vw, 14vh), 132px);
   }
+}
+
+
+/* ── Content in 3D, synced with the scene (values written by ContentMotion) ── */
+
+.home {
+  --amp: 1;
+}
+@media (max-width: 760px) {
+  .home {
+    --amp: 0.55;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Blocks fold up out of depth as they enter and recede as they leave; flat mid-screen. */
+  .home[data-motion] [data-depth] {
+    --fold: calc(var(--k, 0) * var(--amp));
+    transform: perspective(1100px)
+      translate3d(
+        0,
+        calc(var(--s, 0) * var(--fold) * 56px),
+        calc(var(--fold) * -280px + var(--lift, 0px))
+      )
+      rotateX(calc(var(--s, 0) * var(--fold) * 26deg + var(--rx, 0) * 1deg))
+      rotateY(calc(var(--ry, 0) * 1deg));
+    /* Leaving (s = -1) fades out faster so receding headings never ghost behind text. */
+    opacity: calc(1 - var(--fold) * (1.1 - var(--s, 0) * 0.3));
+    transition:
+      transform 0.22s cubic-bezier(0.2, 0.7, 0.1, 1),
+      opacity 0.22s linear;
+  }
+
+  /* Hero: a stack of depth layers that tilts with the cursor (same input as the camera
+     parallax) and recedes as the camera flies forward. */
+  .home[data-motion][data-hero-3d] .hero-col {
+    transform-style: preserve-3d;
+    transform: perspective(1600px)
+      translate3d(0, calc(var(--leave, 0) * -48px), calc(var(--leave, 0) * -340px))
+      rotateX(calc(var(--leave, 0) * 16deg + var(--my, 0) * -3.2deg))
+      rotateY(calc(var(--mx, 0) * 4.5deg));
+    opacity: calc(1 - var(--leave, 0) * 0.92);
+  }
+  .home[data-motion][data-hero-3d] .hero-col > * {
+    transform: translateZ(var(--z, 0px));
+  }
+  .home[data-motion][data-hero-3d] .hero-status {
+    --z: 36px;
+  }
+  .home[data-motion][data-hero-3d] .hero-role {
+    --z: 54px;
+  }
+  .home[data-motion][data-hero-3d] .hero-name {
+    --z: 72px;
+  }
+  .home[data-motion][data-hero-3d] .hero-statement {
+    --z: 58px;
+  }
+  .home[data-motion][data-hero-3d] .hero-intro {
+    --z: 28px;
+  }
+  .home[data-motion][data-hero-3d] .hero-facts {
+    --z: 22px;
+  }
+  .home[data-motion][data-hero-3d] .hero-actions {
+    --z: 48px;
+  }
+  .home[data-motion][data-hero-3d] .hero-shipping {
+    --z: 16px;
+  }
+
+  /* The list item for the layer the 3D stack is lighting lifts toward you. */
+  .home[data-motion] .layers > li[data-lit] {
+    --lift: 34px;
+  }
+
+  /* Picking a technology flips its evidence card in. */
+  .home[data-motion] .core-panel {
+    animation: pu-flip 0.55s cubic-bezier(0.2, 0.7, 0.1, 1);
+  }
+  @keyframes pu-flip {
+    from {
+      opacity: 0;
+      rotate: y 70deg;
+    }
+  }
+}
+
+/* Lit layer styling (also without motion, as a plain highlight). */
+.layers > li {
+  position: relative;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+.layers > li[data-lit] {
+  background: linear-gradient(90deg, rgba(233, 162, 59, 0.1), transparent 70%);
+}
+.layers > li[data-lit]::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--pu-amber);
+  box-shadow: 0 0 12px rgba(233, 162, 59, 0.8);
+}
+.layers > li[data-lit] .layer-index,
+.layers > li[data-lit] h3 {
+  color: var(--pu-amber-hot);
+}
+
+/* Cursor glare on tilting cards. */
+[data-tilt] {
+  position: relative;
+}
+[data-tilt]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 196, 107, 0.1),
+    transparent 60%
+  );
+  transition: opacity 0.3s;
+}
+[data-tilt][data-tilting]::after {
+  opacity: 1;
 }

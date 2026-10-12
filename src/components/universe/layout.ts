@@ -111,3 +111,5 @@ export function smoothstep(t: number) {
 export function presence(chapter: number, index: number, range = 1.1) {
   return Math.max(0, 1 - Math.abs(chapter - index) / range);
 }
+
+export { activeSystemLayer } from "./systemLayer";
