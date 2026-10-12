@@ -477,10 +477,10 @@ export const footprintPages: EntityPage[] = [
     ["Potato Bazaar Engineer", "Developer working on Potato Bazaar"],
     [
       {
-        heading: "Developer on Potato Bazaar",
+        heading: "Forward Deployed Engineer on Potato Bazaar",
         paragraphs: [
-          "Kush Gangwal is a developer on Potato Bazaar, working across its React Native app for Android and iOS, its backend, web platform, and related products as a Junior Software Developer at SK Groups. The product is a digital marketplace for agricultural trading, founded in 2024 by SK Agri Exports.",
-          "The long case study is /projects/potato-bazaar. The live site is potatobazaar.com.",
+          "Kush Gangwal works as a Forward Deployed Engineer on Potato Bazaar at SK Groups (S K Agri Exports Private Limited). He builds the production AI layer, with RAG over embeddings, LLM workflows and Indian-language voice, and works across the React Native app for Android and iOS, the backend, and the web platform. The product is a digital marketplace for agricultural trading, founded in 2024.",
+          "The role page is /potato-bazaar-forward-deployed-engineer. The long case study is /projects/potato-bazaar. The live site is potatobazaar.com.",
         ],
       },
     ],
@@ -495,8 +495,8 @@ export const footprintPages: EntityPage[] = [
       {
         heading: "The association",
         paragraphs: [
-          "SK Agri Exports Private Limited operates Potato Bazaar, which it founded in 2024. Kush Gangwal works on Potato Bazaar's mobile app, backend and web platform; his employer is SK Groups.",
-          "The company page is /work/sk-agri-exports-private-ltd. It is separate from the SK Groups employment page.",
+          "SK Agri Exports Private Limited operates Potato Bazaar, which it founded in 2024. SK Groups and S K Agri Exports Private Limited are the same company. Kush Gangwal works there as a Forward Deployed Engineer on Potato Bazaar, building its AI layer, mobile app, backend and web platform.",
+          "The role page is /potato-bazaar-forward-deployed-engineer. The company page is /work/sk-agri-exports-private-ltd.",
         ],
       },
     ],

@@ -3,6 +3,7 @@ import { PublicArticle } from "@/components/public/PublicArticle";
 import { agriCompanies, agriIndustries } from "@/lib/agriGraph";
 import { blogPosts } from "@/lib/blogPosts";
 import { entityPages } from "@/lib/entityPages";
+import { fdePage } from "@/lib/fdePage";
 import { PERSON_NAME } from "@/lib/identity";
 import { publicMeta } from "@/lib/publicMeta";
 import { companies, products } from "@/lib/seo";
@@ -68,6 +69,9 @@ export default function HtmlSitemapPage() {
               <Link href={`/projects/${product.slug}`}>{product.name}</Link>
             </li>
           ))}
+          <li>
+            <Link href={fdePage.path}>{fdePage.h1}</Link>
+          </li>
         </ul>
       </section>
       <section>

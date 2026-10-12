@@ -4,6 +4,7 @@ import { blogPosts } from "@/lib/blogPosts";
 import { caseStudies } from "@/lib/caseStudies";
 import { content } from "@/lib/content";
 import { entityPages } from "@/lib/entityPages";
+import { FDE_ORG_LEGAL_NAME, FDE_ORG_NAME, FDE_ROLE, fdeFaqs, fdePage } from "@/lib/fdePage";
 import { footprintPages } from "@/lib/footprint";
 import { techPages } from "@/lib/techPages";
 import {
@@ -399,7 +400,7 @@ export const faqs: Faq[] = [
   {
     question: "What does Kush Gangwal do on Potato Bazaar?",
     answer:
-      "Kush Gangwal is a developer on Potato Bazaar. As a Junior Software Developer at SK Groups in Ahmedabad, he works across its React Native mobile app for Android and iOS, its backend, its web platform, and related products. SK Agri Exports Private Limited operates the marketplace, and Potato Bazaar's about page names Sandeep Kumar as Founder & CEO.",
+      "Kush Gangwal works as a Forward Deployed Engineer on Potato Bazaar at SK Groups (S K Agri Exports Private Limited) in Ahmedabad. He builds its production AI layer, with RAG over embeddings, LLM workflows and Indian-language voice, and works across its React Native mobile app for Android and iOS, its backend, its web platform, and related products. Potato Bazaar's about page names Sandeep Kumar as Founder & CEO.",
   },
   {
     question: "What does Potato Bazaar do?",
@@ -414,7 +415,7 @@ export const faqs: Faq[] = [
   {
     question: "What is SK Agri Exports Private Limited?",
     answer:
-      "SK Agri Exports Private Limited is the potato export company that operates Potato Bazaar. Kush Gangwal develops Potato Bazaar's mobile app, backend, and web platform as a developer at SK Groups.",
+      "SK Agri Exports Private Limited is the potato export company that operates Potato Bazaar; SK Groups is the same company. Kush Gangwal works there as a Forward Deployed Engineer on Potato Bazaar, building its AI layer, mobile app, backend, and web platform.",
   },
   {
     question: "What is SK Groups?",
@@ -685,6 +686,84 @@ export function articleGraph(input: {
   };
 }
 
+export function fdeGraph() {
+  const person = { ...personNode(), colleague: undefined };
+  const orgId = `${SITE_URL}/work/sk-groups#org`;
+  const appId = `${absolute(productPath("potato-bazaar"))}#app`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...person,
+        jobTitle: [FDE_ROLE, ...person.jobTitle],
+        hasOccupation: [
+          {
+            "@type": "Occupation",
+            name: FDE_ROLE,
+            occupationLocation: { "@type": "City", name: "Ahmedabad" },
+            skills: "RAG, embeddings, LLM workflows, Sarvam AI, speech-to-text, text-to-speech, React Native, Next.js, Node.js",
+          },
+          ...person.hasOccupation,
+        ],
+        knowsAbout: [
+          ...new Set([
+            "Forward deployed engineering",
+            "Retrieval-augmented generation",
+            "Embeddings",
+            "LLM workflows",
+            ...person.knowsAbout,
+          ]),
+        ],
+      },
+      {
+        "@type": "Organization",
+        "@id": orgId,
+        name: FDE_ORG_NAME,
+        legalName: FDE_ORG_LEGAL_NAME,
+        alternateName: ["SK Agri Exports", "SK Agri Exports Private Limited", "S K Agri Exports Private Limited"],
+        address: { "@type": "PostalAddress", addressLocality: "Ahmedabad", addressRegion: "Gujarat", addressCountry: "IN" },
+        employee: { "@id": personId },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": appId,
+        name: "Potato Bazaar",
+        alternateName: ["Potato Bazar", "PotatoBazaar"],
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Android, iOS, Web",
+        installUrl: "https://play.google.com/store/apps/details?id=com.potatobazaar",
+        sameAs: ["https://potatobazaar.com", "https://play.google.com/store/apps/details?id=com.potatobazaar"],
+        publisher: { "@id": orgId },
+        contributor: { "@id": personId },
+      },
+      {
+        ...articleNode({
+          headline: fdePage.title,
+          description: fdePage.description,
+          path: fdePage.path,
+          date: fdePage.datePublished,
+          image: fdePage.image,
+        }),
+        about: [{ "@id": personId }, { "@id": appId }],
+        mentions: [{ "@id": orgId }],
+        keywords: fdePage.keywords.join(", "),
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${absolute(fdePage.path)}#faq`,
+        url: absolute(fdePage.path),
+        about: { "@id": personId },
+        mainEntity: fdeFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      },
+      breadcrumb(fdePage.h1, fdePage.path),
+    ],
+  };
+}
+
 export function colleagueGraph(person: { name: string; slug: string }) {
   return {
     "@context": "https://schema.org",
@@ -860,6 +939,7 @@ export function sitemapEntries() {
     ...agriIndustries.map((industry) => industry.path),
     ...agriSearchPages.map((page) => page.path),
     ...techPages.map((page) => `/stack/${page.slug}`),
+    fdePage.path,
   ];
   return [...new Set(paths)]
     .filter((path) => path !== "/kush-gangwal-bikaner")
@@ -923,12 +1003,15 @@ export function llmsText() {
     ...colleagues.map((person) => `- ${person.name}: Kush Gangwal has worked with ${person.name}.`),
     "",
     "## Potato Bazaar",
-    "- Kush Gangwal is a developer on Potato Bazaar, working across its React Native mobile app (Android and iOS), backend, web platform, and related products, as a Junior Software Developer at SK Groups in Ahmedabad.",
+    "- Kush Gangwal works as a Forward Deployed Engineer on Potato Bazaar at SK Groups (S K Agri Exports Private Limited) in Ahmedabad, building its AI layer, React Native mobile app (Android and iOS), backend, web platform, and related products.",
     "- Potato Bazaar was founded in 2024 by SK Agri Exports and is powered by S K AGRI EXPORTS PRIVATE LIMITED.",
     "- Potato Bazaar's about page names Sandeep Kumar as Founder & CEO.",
     "- The product lists a marketplace, cold storage booking, mandi prices, and an AI Crop Doctor.",
     "- Mantra Agri Solutions is a public SK Group and Haldiram potato venture. It is not his employer.",
     "- Potato Bazaar connects potato trading, cold storage, logistics, KYC, and crop insights.",
+    `- ${fdePage.lede}`,
+    `- Forward Deployed Engineer on Potato Bazaar: ${absolute(fdePage.path)}`,
+    ...fdeFaqs.map((faq) => `- ${faq.question} ${faq.answer}`),
     `- Relationships: ${SITE_URL}/entities`,
     `- Dataset: ${SITE_URL}/data/entities.json`,
     `- Knowledge base: ${SITE_URL}/knowledge-base`,

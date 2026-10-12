@@ -6,6 +6,7 @@ import { WhoIs } from "@/components/public/WhoIs";
 import { agriSearchPages } from "@/lib/agriGraph";
 import { spellingPages } from "@/lib/spellings";
 import { entityPageBySlug, entityPages } from "@/lib/entityPages";
+import { fdePage } from "@/lib/fdePage";
 import { footprintBySlug, footprintPages } from "@/lib/footprint";
 import { publicMeta } from "@/lib/publicMeta";
 import { articleGraph } from "@/lib/seo";
@@ -63,6 +64,11 @@ export default async function EntitySearchPage({ params }: Props) {
         {page.sections.map((section) => (
           <ProseSection key={section.heading} {...section} />
         ))}
+        {/potato|^sk-/.test(slug) ? (
+          <p>
+            Role details: <Link href={fdePage.path}>{fdePage.h1}</Link>.
+          </p>
+        ) : null}
         <WhoIs />
         <p>
           More about <Link href="/about-kush-gangwal">Kush Gangwal</Link>.

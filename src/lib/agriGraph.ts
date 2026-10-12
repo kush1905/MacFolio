@@ -340,7 +340,7 @@ export const agriSearchPages: EntityPage[] = [
         heading: "The company and the developer",
         paragraphs: [
           "Two different roles are public. Potato Bazaar's about page says the marketplace was founded in 2024 by SK Agri Exports, and it lists Sandeep Kumar as Founder & CEO, Priya Rajput as Chief Technology Officer, and Amit Mehta as Chief Operations Officer.",
-          "Kush Gangwal is a developer on Potato Bazaar. He is a Full Stack Developer & React Native Developer employed at SK Groups in Ahmedabad, and he works across the mobile app (React Native, Android and iOS), the backend, the web platform, and related products: marketplace flows, KYC, payments, logistics, and AI-powered crop insights. He is not one of the founders or executives named on the Potato Bazaar about page.",
+          "Kush Gangwal works as a Forward Deployed Engineer on Potato Bazaar at SK Groups (S K Agri Exports Private Limited) in Ahmedabad. He builds the production AI layer, with RAG over embeddings, LLM workflows, Sarvam AI, speech-to-text and text-to-speech, and works across the mobile app (React Native, Android and iOS), the backend, the web platform, and related products: marketplace flows, KYC, payments, logistics, and AI-powered crop insights. He is not one of the founders or executives named on the Potato Bazaar about page. Role details: /potato-bazaar-forward-deployed-engineer.",
         ],
       },
     ],

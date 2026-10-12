@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { ABOUT_PATH, NOW_PATH } from "@/lib/identity";
 import { blogPosts } from "@/lib/blogPosts";
 import { content } from "@/lib/content";
+import { fdePage } from "@/lib/fdePage";
 import { sitemapEntries } from "@/lib/seo";
 import { CONTENT_UPDATED, SITE_URL } from "@/lib/site";
 
@@ -10,6 +11,7 @@ const latest = (...dates: string[]) => dates.sort().at(-1)!;
 /** Real content dates: the post date or /now update when newer than the site-wide revision. */
 function lastModified(path: string) {
   if (path === NOW_PATH) return latest(CONTENT_UPDATED, content.now.updated);
+  if (path === fdePage.path) return latest(CONTENT_UPDATED, fdePage.datePublished);
   const post = blogPosts.find((item) => path === `/blog/${item.slug}`);
   if (post) return latest(CONTENT_UPDATED, post.date);
   return CONTENT_UPDATED;
@@ -28,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 1
           : url.endsWith(ABOUT_PATH)
             ? 0.95
-            : url.endsWith(NOW_PATH) || url.includes("/projects/")
+            : url.endsWith(NOW_PATH) || url.includes("/projects/") || url.endsWith(fdePage.path)
               ? 0.9
               : 0.75,
     };

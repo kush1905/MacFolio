@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectCard } from "@/components/public/ProjectCard";
@@ -6,6 +7,7 @@ import { FactsCard, ProseSection, PublicArticle } from "@/components/public/Publ
 import { relatedProjects } from "@/lib/portfolio";
 import { WhoIs } from "@/components/public/WhoIs";
 import { caseStudyBySlug } from "@/lib/caseStudies";
+import { fdePage } from "@/lib/fdePage";
 import { publicMeta } from "@/lib/publicMeta";
 import { productBySlug, productGraph, products } from "@/lib/seo";
 
@@ -90,6 +92,13 @@ export default async function ProjectPage({ params }: Props) {
         {study
           ? study.sections.map((section) => <ProseSection key={section.heading} {...section} />)
           : null}
+
+        {slug === "potato-bazaar" ? (
+          <p>
+            The AI layer and the forward deployed side of this work are covered in{" "}
+            <Link href={fdePage.path}>{fdePage.h1}</Link>.
+          </p>
+        ) : null}
 
         {study?.screenshots?.length ? (
           <section>
