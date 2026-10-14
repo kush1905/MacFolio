@@ -521,12 +521,13 @@
 /* Phone */
 .pm-phone {
   position: absolute;
-  aspect-ratio: 9 / 19;
-  padding: 2.4%;
-  border-radius: 14% / 6.6%;
-  background: #050506;
+  aspect-ratio: 1 / 2; /* overridden inline with the screenshot's own ratio */
+  border-radius: 11% / 5.5%;
+  background: #111;
+  /* Bezel and edge highlight drawn outside the screen, then the drop shadow. */
   box-shadow:
-    0 0 0 1.5px rgba(242, 238, 230, 0.18),
+    0 0 0 5px #050506,
+    0 0 0 6.5px rgba(242, 238, 230, 0.2),
     0 26px 48px rgba(0, 0, 0, 0.6);
   transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.1, 1);
 }
@@ -535,23 +536,10 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 12% / 5.6%;
-  background: #111;
-}
-.pm-phone .pm-screen::after {
-  /* dynamic-island style notch */
-  content: "";
-  position: absolute;
-  top: 2.2%;
-  left: 50%;
-  width: 30%;
-  height: 3.2%;
-  translate: -50% 0;
-  border-radius: 999px;
-  background: #050506;
+  border-radius: inherit;
 }
 .pm-phone img {
-  transition: object-position 1.2s cubic-bezier(0.3, 0.6, 0.2, 1);
+  object-fit: contain;
 }
 
 /* Layouts */
@@ -639,9 +627,6 @@
   }
   :is(.project-card, .project-stack > li):hover .pm-phones .pm-phone-right {
     transform: translate(8%, -2%) rotate(10deg);
-  }
-  :is(.project-card, .project-stack > li):hover .pm-phone img {
-    object-position: center 60%;
   }
   :is(.project-card, .project-stack > li):hover .pm-cover img,
   :is(.project-card, .project-stack > li):hover .pm-empty span {

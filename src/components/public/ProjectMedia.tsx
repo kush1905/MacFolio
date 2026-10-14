@@ -70,8 +70,10 @@ function Browser({ shot, address, priority }: { shot: Screenshot; address: strin
 }
 
 function Phone({ shot, className }: { shot: Screenshot; className: string }) {
+  // The phone is exactly the screenshot's shape; the bezel is drawn outside it in CSS,
+  // so the whole screen is visible with no cropping or letterboxing.
   return (
-    <div className={`pm-phone ${className}`}>
+    <div className={`pm-phone ${className}`} style={{ aspectRatio: `${shot.width} / ${shot.height}` }}>
       <div className="pm-screen">
         <Image src={shot.src} alt={shot.alt} fill sizes="160px" />
       </div>
