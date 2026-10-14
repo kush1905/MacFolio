@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-14",
   "updatedLabel": "October 2026",
   "location": "Ahmedabad, Gujarat, India",
   "workingAt": "SK Groups",
@@ -11,18 +11,21 @@
     "AI integrations across analytics, speech, maps, and crop insights"
   ],
   "interestedIn": [
-    "Agentic AI",
-    "GenAI",
-    "React Native",
-    "Full stack product engineering",
-    "AI-powered applications"
+    "Model Context Protocol (MCP) tools",
+    "Vector databases and embeddings",
+    "LLM evaluation and guardrails",
+    "Voice AI agents",
+    "On-device ML in mobile apps",
+    "3D on the web (three.js, WebGL)"
   ],
   "learning": [
-    "Spring Boot",
-    "Java backend development",
+    "AI agents",
+    "Agentic AI",
+    "RAG (retrieval-augmented generation)",
     "System design",
     "Advanced React Native",
-    "AI integrations"
+    "AI integrations",
+    "Generative AI"
   ],
   "availableFor": "Software engineering roles and collaborations in full stack and React Native development."
 }

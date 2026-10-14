@@ -8,7 +8,7 @@ import { homeProjects, techNodes } from "@/lib/portfolio";
 
 export default function PublicLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="public-site pu">
+    <div id="top" className="public-site pu">
       <a className="pu-skip" href="#content">
         Skip to content
       </a>

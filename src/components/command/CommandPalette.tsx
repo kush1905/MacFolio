@@ -126,7 +126,7 @@ function PaletteDialog({
         hint: t.projects.length
           ? `${t.group} · used in ${t.projects.length} ${t.projects.length === 1 ? "project" : "projects"}`
           : t.group,
-        href: `/stack/${t.slug}`,
+        href: t.page ? `/stack/${t.slug}` : "/#core",
         keywords: `${t.name} ${t.group} ${t.use}`.toLowerCase(),
       })),
       ...PAGES,

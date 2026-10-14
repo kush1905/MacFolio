@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 const LAYERS = [
   {
     name: "Interface",
-    body: "React and Next.js on the web. React Native on Android and iOS, through Play Console and Xcode releases.",
+    body: "React and Next.js on the web. React Native and Flutter on Android and iOS, through Play Console and Xcode releases.",
   },
   {
     name: "API",
@@ -68,7 +68,7 @@ const LAYERS = [
   },
   {
     name: "Services",
-    body: "Node.js and Express services that hold the product logic behind those clients.",
+    body: "Node.js and Express, or Python with Django and FastAPI: the services that hold the product logic behind those clients.",
   },
   { name: "Data", body: "PostgreSQL, MongoDB, or SQLite, chosen for what each product needs." },
   {
@@ -80,7 +80,7 @@ const LAYERS = [
 export default function HomePage() {
   const { about, now } = content;
   return (
-    <div className={`home pu ${nameFont.variable}`}>
+    <div id="top" className={`home pu ${nameFont.variable}`}>
       <JsonLd data={homeGraph()} />
       <a className="pu-skip" href="#main">
         Skip to content
@@ -120,7 +120,7 @@ export default function HomePage() {
               </li>
               <li>
                 <GraduationCap aria-hidden="true" />
-                B.Tech CST, Medicaps University
+                B.Tech CSE, Medicaps University
               </li>
             </ul>
             <div className="hero-actions rise" style={{ "--rise": 4 } as CSSProperties}>
@@ -293,6 +293,11 @@ export default function HomePage() {
               <li>
                 <a href={`mailto:${contact.email}`}>{contact.email}</a>
               </li>
+              {content.about.emailAlt ? (
+                <li>
+                  <a href={`mailto:${content.about.emailAlt}`}>{content.about.emailAlt}</a>
+                </li>
+              ) : null}
               {officialProfiles.map((profile) => (
                 <li key={profile.label}>
                   <a href={profile.href} rel="me noopener noreferrer" target="_blank">

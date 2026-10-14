@@ -109,7 +109,6 @@ export function ProjectIndex({ projects }: { projects: HomeProject[] }) {
                 >
                   <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
                   <span className="project-main">
-                    {index === 0 ? <span className="ps-flag">Flagship</span> : null}
                     <ViewTransition name={`project-${project.slug}`}>
                       <strong>{project.name}</strong>
                     </ViewTransition>
@@ -151,27 +150,38 @@ function ProjectPanel({
   const phones = project.screenshots.filter((shot) => shot.frame !== "browser").slice(0, 3);
   const visual = phones.length >= 2 ? null : projectVisual(project);
   const phoneCaption = phones.some((shot) => /\bon iOS\b/.test(shot.alt))
-    ? "From the iOS and Android apps"
-    : "From the Android app";
+    ? "iOS and Android app"
+    : "Android app";
+  const host = (href: string) => href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 
   return (
     <div className="ps-panel" id={id}>
       {phones.length >= 2 ? (
-        <figure className="ps-phones">
+        <figure className="ps-media ps-media-phones">
           <div>
             {phones.map((shot) => (
-              <Image key={shot.src} src={shot.src} alt={shot.alt} width={shot.width} height={shot.height} sizes="120px" />
+              <Image key={shot.src} src={shot.src} alt={shot.alt} width={shot.width} height={shot.height} sizes="130px" />
             ))}
           </div>
           <figcaption>{phoneCaption}</figcaption>
         </figure>
       ) : visual ? (
-        <figure className={`ps-visual ps-visual-${visual.kind}`}>
+        <figure className={`ps-media ps-media-${visual.kind}`}>
+          {visual.kind === "browser" ? (
+            <span className="ps-browser-bar" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <span>{host(project.links.find((link) => link.label === "Website")?.href ?? project.name)}</span>
+            </span>
+          ) : null}
           <Image src={visual.src} alt={visual.alt} width={visual.width} height={visual.height} sizes="(max-width: 700px) 92vw, 600px" />
           {visual.kind === "cover" ? <figcaption>Illustration</figcaption> : null}
         </figure>
       ) : null}
+
       <p className="ps-summary">{project.summary}</p>
+
       <dl className="ps-facts">
         <div>
           <dt>Role</dt>
@@ -182,21 +192,26 @@ function ProjectPanel({
           <dd>{project.period}</dd>
         </div>
         <div>
-          <dt>Stack</dt>
-          <dd>{project.tech.join(", ")}</dd>
+          <dt>Where</dt>
+          <dd>{project.context}</dd>
         </div>
       </dl>
+
+      <ul className="ps-tech" aria-label="Stack">
+        {project.tech.map((tech) => (
+          <li key={tech}>{tech}</li>
+        ))}
+      </ul>
+
       <p className="ps-links">
         <Link className="btn btn-primary btn-small" href={`/projects/${project.slug}`} onClick={onRead}>
           Read the case study
         </Link>
-        {project.links
-          .filter((link) => link.label !== "GitHub" || project.links.length === 1)
-          .map((link) => (
-            <a key={link.href} className="btn btn-small" href={link.href} target="_blank" rel="noopener noreferrer">
-              {link.label} ↗
-            </a>
-          ))}
+        {project.links.map((link) => (
+          <a key={link.href} className="ps-link" href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label} <span aria-hidden="true">↗</span>
+          </a>
+        ))}
       </p>
     </div>
   );

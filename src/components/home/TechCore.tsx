@@ -54,12 +54,16 @@ export function TechCore({
           <p className="core-group">{active.group}</p>
           <h3>{active.name}</h3>
           <p>{active.use}</p>
-          <h4>Evidence</h4>
-          <ul>
-            {active.proof.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          {active.proof.length > 0 ? (
+            <>
+              <h4>Evidence</h4>
+              <ul>
+                {active.proof.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </>
+          ) : null}
           {usedIn.length > 0 ? (
             <>
               <h4>Used in</h4>
@@ -74,9 +78,11 @@ export function TechCore({
               </ul>
             </>
           ) : null}
-          <p className="section-more">
-            <Link href={`/stack/${active.slug}`}>More on {active.name} →</Link>
-          </p>
+          {active.page ? (
+            <p className="section-more">
+              <Link href={`/stack/${active.slug}`}>More on {active.name} →</Link>
+            </p>
+          ) : null}
         </div>
       </div>
     </div>

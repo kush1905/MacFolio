@@ -104,13 +104,46 @@ export const journey = [
 
 const TECH_GROUPS: { label: string; slugs: string[] }[] = [
   { label: "Frontend", slugs: ["react", "nextjs", "typescript", "javascript", "tailwind-css"] },
-  { label: "Mobile", slugs: ["react-native", "android-development", "ios-development"] },
-  { label: "Backend", slugs: ["nodejs", "express", "rest-apis", "auth0"] },
-  { label: "Data", slugs: ["postgresql", "mongodb", "sqlite"] },
-  { label: "AI", slugs: ["ai-integrations", "openai-api"] },
-  { label: "Analytics", slugs: ["posthog", "mixpanel"] },
-  { label: "Ship", slugs: ["git", "github", "vercel"] },
+  { label: "Mobile", slugs: ["react-native", "flutter", "android-development", "ios-development"] },
+  { label: "Backend", slugs: ["nodejs", "express", "python", "django", "fastapi", "rest-apis", "auth0"] },
+  { label: "Data", slugs: ["postgresql", "mongodb", "sqlite", "sql", "supabase"] },
+  { label: "AI", slugs: ["ai-integrations", "openai-api", "llm-apis", "prompt-engineering", "speech-ai"] },
+  { label: "Analytics", slugs: ["posthog", "mixpanel", "firebase"] },
+  { label: "Ship", slugs: ["git", "github", "vercel", "render", "aws", "aws-amplify", "hostinger"] },
 ];
+
+/**
+ * Technologies shown in the homepage stack that have no /stack/ page of their own. Only
+ * claims we can stand behind: project evidence where it exists, a plain description otherwise.
+ */
+const EXTRA_TECH: Record<string, { name: string; use: string; proof: string[] }> = {
+  flutter: { name: "Flutter", use: "Cross-platform mobile UI with Flutter and Dart, alongside React Native.", proof: [] },
+  python: { name: "Python", use: "Backend services, scripting, and API work in Python.", proof: [] },
+  django: { name: "Django", use: "Python web backends with Django: models, admin, and REST endpoints.", proof: [] },
+  fastapi: { name: "FastAPI", use: "Typed, async Python APIs with FastAPI.", proof: [] },
+  sql: { name: "SQL", use: "Relational modelling and queries across PostgreSQL and SQLite.", proof: ["CodeMace and Macfolio on PostgreSQL", "Nexus on SQLite"] },
+  supabase: { name: "Supabase", use: "Postgres with built-in auth, storage, and row-level security.", proof: [] },
+  "llm-apis": {
+    name: "LLM APIs",
+    use: "Chat and reasoning models behind product features, with grounding and fallbacks.",
+    proof: ["Ask Kush on this site (Groq, with Gemini and a local fallback)", "KushGPT assistant in Macfolio"],
+  },
+  "prompt-engineering": {
+    name: "Prompt engineering",
+    use: "System prompts, structured JSON outputs, and answers grounded in source data.",
+    proof: ["Resumind's rubric-based JSON review", "Ask Kush answers only from published portfolio facts"],
+  },
+  "speech-ai": {
+    name: "Speech AI (TTS / STT)",
+    use: "Text-to-speech and speech-to-text in production mobile apps.",
+    proof: ["SK Groups apps: Sarvam AI, TTS, and STT APIs"],
+  },
+  firebase: { name: "Firebase", use: "Analytics and backend services for mobile apps.", proof: ["SK Groups production apps"] },
+  render: { name: "Render", use: "Hosting for backend services and APIs.", proof: [] },
+  aws: { name: "AWS", use: "Cloud infrastructure: EC2 compute and S3 storage.", proof: ["SK Groups (AWS EC2, S3)"] },
+  "aws-amplify": { name: "AWS Amplify", use: "Hosting and CI/CD for web front ends on AWS.", proof: [] },
+  hostinger: { name: "Hostinger", use: "Domains and web hosting.", proof: [] },
+};
 
 export type TechNode = {
   slug: string;
@@ -119,6 +152,8 @@ export type TechNode = {
   use: string;
   proof: string[];
   projects: string[];
+  /** Whether /stack/{slug} exists. */
+  page: boolean;
 };
 
 /** Projects whose names appear in a tech page's own evidence. */
@@ -130,17 +165,32 @@ function evidenceFor(text: string) {
 }
 
 export const techNodes: TechNode[] = TECH_GROUPS.flatMap((group) =>
-  group.slugs.flatMap((slug) => {
+  group.slugs.flatMap((slug): TechNode[] => {
     const page = techPages.find((item) => item.slug === slug);
-    if (!page) return [];
+    if (page) {
+      return [
+        {
+          slug,
+          name: page.name,
+          group: group.label,
+          use: page.use,
+          proof: page.proof,
+          projects: evidenceFor([page.description, ...page.proof].join(" ")),
+          page: true,
+        },
+      ];
+    }
+    const extra = EXTRA_TECH[slug];
+    if (!extra) return [];
     return [
       {
         slug,
-        name: page.name,
+        name: extra.name,
         group: group.label,
-        use: page.use,
-        proof: page.proof,
-        projects: evidenceFor([page.description, ...page.proof].join(" ")),
+        use: extra.use,
+        proof: extra.proof,
+        projects: evidenceFor(extra.proof.join(" ")),
+        page: false,
       },
     ];
   }),

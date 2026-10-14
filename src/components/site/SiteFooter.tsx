@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { content } from "@/lib/content";
 import { officialProfiles, PERSON_HEADLINE, PERSON_NAME } from "@/lib/identity";
 
 const EXPLORE = [
@@ -16,12 +17,34 @@ const EXPLORE = [
 // so the footer stays about what visitors actually want.
 const MORE = [
   { href: "/desktop", label: "Macfolio desktop" },
+  { href: "/projects/personal-portfolio", label: "How this site is built" },
   { href: "/site-map", label: "Site map" },
 ];
 
 export function SiteFooter() {
+  const { email, emailAlt, location } = content.about;
   return (
     <footer className="site-footer">
+      <div className="site-footer-cta">
+        <div>
+          <p className="site-footer-kicker">
+            <span aria-hidden="true" /> {content.now.availableFor}
+          </p>
+          <p className="site-footer-big">Let&apos;s build something.</p>
+        </div>
+        <div className="site-footer-reach">
+          <a className="site-footer-mail" href={`mailto:${email}`}>
+            {email} <span aria-hidden="true">↗</span>
+          </a>
+          {emailAlt ? (
+            <a className="site-footer-mail site-footer-mail-alt" href={`mailto:${emailAlt}`}>
+              {emailAlt}
+            </a>
+          ) : null}
+          <p>{location}, India · IST (UTC+5:30)</p>
+        </div>
+      </div>
+
       <div className="site-footer-grid">
         <div className="site-footer-brand">
           {/* eslint-disable-next-line @next/next/no-img-element -- SVG mark */}
@@ -63,9 +86,15 @@ export function SiteFooter() {
           </ul>
         </nav>
       </div>
-      <p className="site-footer-base">
-        © {new Date().getFullYear()} {PERSON_NAME}. Built with Next.js and three.js.
-      </p>
+
+      <div className="site-footer-base">
+        <p>
+          © {new Date().getFullYear()} {PERSON_NAME}. Built with Next.js and three.js.
+        </p>
+        <a href="#top" className="site-footer-top">
+          Back to top <span aria-hidden="true">↑</span>
+        </a>
+      </div>
     </footer>
   );
 }

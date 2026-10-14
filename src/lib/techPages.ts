@@ -12,8 +12,14 @@ export const techPages: TechPage[] = [
     slug: "react-native",
     name: "React Native",
     description: "Kush Gangwal uses React Native for Potato Bazaar, Tybee Go, and Findanio on Android and iOS.",
-    use: "Production mobile clients, navigation, pagination, and store releases.",
-    proof: ["Potato Bazaar Android and iOS", "Tybee Go", "Findanio", "SK Groups Play Console and Xcode releases"],
+    use: "Production Android and iOS apps from one TypeScript codebase: screens and navigation, REST data with pagination, and the full release cycle through the stores.",
+    proof: [
+      "Potato Bazaar app on Google Play: marketplace, live mandi prices, KYC, and payments",
+      "Tybee Go (Protonshub): map-based tourism app in TypeScript with REST pagination",
+      "Findanio (Protonshub): Android and iOS UI work alongside the web app",
+      "Builds and releases through Android Studio, Play Console, Xcode, and Apple Developer",
+      "PostHog and Mixpanel analytics, plus maps, weather, and speech APIs, wired into the apps",
+    ],
     related: [
       { href: "/kush-gangwal-react-native-developer", label: "React Native developer" },
       { href: "/projects/potato-bazaar", label: "Potato Bazaar" },

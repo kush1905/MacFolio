@@ -320,12 +320,88 @@
   color: var(--pu-text);
 }
 .site-footer-base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
   max-width: 1380px;
-  margin: 40px auto 0 !important;
+  margin: 40px auto 0;
   padding-top: 20px;
   border-top: 1px solid var(--pu-line);
   font-size: 13px;
   color: var(--pu-faint);
+}
+.site-footer-base p {
+  margin: 0;
+}
+.site-footer-top {
+  color: var(--pu-muted) !important;
+}
+.site-footer-top:hover {
+  color: var(--pu-text) !important;
+}
+
+/* Call to action band at the top of the footer. */
+.site-footer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px 48px;
+  max-width: 1380px;
+  margin: 0 auto 44px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--pu-line);
+}
+.site-footer-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px !important;
+  max-width: 48ch;
+  font-size: 14px;
+  color: var(--pu-muted);
+}
+.site-footer-kicker span {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pu-amber);
+  box-shadow: 0 0 10px rgba(233, 162, 59, 0.8);
+}
+.site-footer-big {
+  margin: 0 !important;
+  font-family: var(--font-display), Georgia, serif !important;
+  font-size: clamp(40px, 5.2vw, 76px);
+  line-height: 1 !important;
+  letter-spacing: -0.015em;
+  color: var(--pu-text);
+}
+.site-footer-reach {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.site-footer-reach p {
+  margin: 6px 0 0 !important;
+  font-size: 13px;
+  color: var(--pu-faint);
+}
+.site-footer .site-footer-mail {
+  font-size: clamp(17px, 1.6vw, 21px);
+  color: var(--pu-text);
+  border-bottom: 1px solid rgba(233, 162, 59, 0.5);
+  padding-bottom: 2px;
+}
+.site-footer .site-footer-mail span {
+  color: var(--pu-amber-hot);
+}
+.site-footer .site-footer-mail-alt {
+  font-size: 15px;
+  color: var(--pu-muted);
+  border-bottom-color: var(--pu-line-strong);
 }
 
 @media (max-width: 1023px) {
