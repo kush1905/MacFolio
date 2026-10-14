@@ -1,5 +1,6 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProfileLinks } from "@/components/public/ProfileLinks";
+import { GitHubLinks } from "@/components/site/GitHubLinks";
 import { PublicArticle } from "@/components/public/PublicArticle";
 import { WhoIs } from "@/components/public/WhoIs";
 import { PERSON_HEADLINE, PERSON_NAME, officialProfiles } from "@/lib/identity";
@@ -30,7 +31,8 @@ export default function AccountsPage() {
           These are the {officialProfiles.length} main profiles {PERSON_NAME} uses for code,
           writing, and work, plus a few secondary accounts.
         </p>
-        <ProfileLinks extras />
+        <GitHubLinks />
+        <ProfileLinks extras hideGitHub />
         <WhoIs />
       </PublicArticle>
     </>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { content } from "@/lib/content";
+import { GitHubLinks } from "@/components/site/GitHubLinks";
 import { officialProfiles, PERSON_HEADLINE, PERSON_NAME } from "@/lib/identity";
 
 const EXPLORE = [
@@ -42,6 +43,7 @@ export function SiteFooter() {
             </a>
           ) : null}
           <p>{location}, India · IST (UTC+5:30)</p>
+          <GitHubLinks compact />
         </div>
       </div>
 
@@ -69,10 +71,15 @@ export function SiteFooter() {
             {officialProfiles.map((profile) => (
               <li key={profile.label}>
                 <a href={profile.href} rel="me noopener noreferrer" target="_blank">
-                  {profile.label}
+                  {profile.label === "GitHub" ? "GitHub · kush1905" : profile.label}
                 </a>
               </li>
             ))}
+            <li>
+              <a href="https://github.com/Kush-PB" rel="me noopener noreferrer" target="_blank" className="site-footer-minor">
+                GitHub · Kush-PB
+              </a>
+            </li>
           </ul>
         </nav>
         <nav aria-label="More">

@@ -148,7 +148,7 @@ export const techPages: TechPage[] = [
   {
     slug: "github",
     name: "GitHub",
-    description: "Kush Gangwal's GitHub is github.com/kush1905, plus github.com/Kush-PB for Potato Bazaar.",
+    description: "Kush Gangwal's main GitHub is github.com/kush1905 (Nexus, Macfolio, this site); Potato Bazaar work is on github.com/Kush-PB.",
     use: "Source control, profile README, and repository history.",
     proof: ["kush1905", "Kush-PB", "Nexus", "MacFolio"],
     related: [{ href: "/kush-gangwal-github", label: "GitHub profile" }],

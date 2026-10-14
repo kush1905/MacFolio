@@ -633,3 +633,82 @@
     transform: scale(1.04);
   }
 }
+
+/* GitHub: kush1905 featured, Kush-PB secondary. */
+.gh-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.pu a.gh-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 14px;
+  border: 1px solid var(--pu-line-strong);
+  border-radius: 14px;
+  background: rgba(17, 18, 21, 0.75);
+  color: var(--pu-text);
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    transform 0.25s;
+}
+.pu a.gh-primary:hover {
+  border-color: rgba(242, 238, 230, 0.35);
+  background: rgba(24, 25, 29, 0.9);
+  transform: translateY(-1px);
+}
+.gh-primary svg {
+  flex: none;
+  width: 26px;
+  height: 26px;
+}
+.gh-primary span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.25;
+}
+.gh-primary strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.gh-primary em {
+  font-style: normal;
+  font-size: 12.5px;
+  color: var(--pu-muted);
+}
+.gh-primary b {
+  margin-left: 6px;
+  font-weight: 400;
+  color: var(--pu-amber-hot);
+}
+.pu a.gh-secondary {
+  padding-left: 4px;
+  font-size: 12.5px;
+  color: var(--pu-faint);
+  text-decoration: none;
+}
+.pu a.gh-secondary span {
+  color: var(--pu-muted);
+  border-bottom: 1px solid var(--pu-line-strong);
+}
+.pu a.gh-secondary:hover span {
+  color: var(--pu-text);
+}
+.gh-links-compact .gh-primary {
+  padding: 9px 13px 9px 11px;
+}
+.gh-links-compact .gh-primary svg {
+  width: 22px;
+  height: 22px;
+}
+.site-footer .site-footer-minor {
+  color: var(--pu-faint);
+}
+.site-footer-reach .gh-links {
+  margin-top: 10px;
+}

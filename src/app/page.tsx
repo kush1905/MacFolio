@@ -13,6 +13,7 @@ import { ProjectIndex } from "@/components/home/ProjectIndex";
 import { TechCore } from "@/components/home/TechCore";
 import { CommandPalette } from "@/components/command/CommandPalette";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { GitHubLinks } from "@/components/site/GitHubLinks";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { UniverseStage } from "@/components/universe/UniverseStage";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -78,7 +79,7 @@ const LAYERS = [
 ];
 
 export default function HomePage() {
-  const { about, now } = content;
+  const { now } = content;
   return (
     <div id="top" className={`home pu ${nameFont.variable}`}>
       <JsonLd data={homeGraph()} />
@@ -289,6 +290,7 @@ export default function HomePage() {
             </h2>
             <p className="lede">{now.availableFor}</p>
             <ContactForm email={contact.email} />
+            <GitHubLinks />
             <ul className="contact-links">
               <li>
                 <a href={`mailto:${contact.email}`}>{contact.email}</a>
@@ -298,7 +300,9 @@ export default function HomePage() {
                   <a href={`mailto:${content.about.emailAlt}`}>{content.about.emailAlt}</a>
                 </li>
               ) : null}
-              {officialProfiles.map((profile) => (
+              {officialProfiles
+                .filter((profile) => profile.label !== "GitHub")
+                .map((profile) => (
                 <li key={profile.label}>
                   <a href={profile.href} rel="me noopener noreferrer" target="_blank">
                     {profile.label}

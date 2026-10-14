@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProfileLinks } from "@/components/public/ProfileLinks";
+import { GitHubLinks } from "@/components/site/GitHubLinks";
 import { ProjectCard } from "@/components/public/ProjectCard";
 import { PublicArticle } from "@/components/public/PublicArticle";
 import { homeProjects } from "@/lib/portfolio";
@@ -98,9 +99,13 @@ export default function AboutKushGangwalPage() {
         <section>
           <h2>Official profiles</h2>
           <p>
-            Find {PERSON_NAME} on these networks.
+            Code lives mainly on <a href="https://github.com/kush1905">github.com/kush1905</a>:
+            Nexus, Macfolio, and this site. Potato Bazaar work is on a second account,{" "}
+            <a href="https://github.com/Kush-PB">Kush-PB</a>.
           </p>
-          <ProfileLinks extras />
+          <GitHubLinks />
+          <p>Other profiles:</p>
+          <ProfileLinks extras hideGitHub />
         </section>
 
         <section>

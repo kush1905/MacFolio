@@ -1,7 +1,10 @@
 import { extraProfiles, officialProfiles } from "@/lib/identity";
 
-export function ProfileLinks({ extras = false }: { extras?: boolean }) {
-  const profiles = extras ? [...officialProfiles, ...extraProfiles] : officialProfiles;
+export function ProfileLinks({ extras = false, hideGitHub = false }: { extras?: boolean; hideGitHub?: boolean }) {
+  const profiles = (extras ? [...officialProfiles, ...extraProfiles] : officialProfiles).filter(
+    // Pages that show the featured GitHub block pass hideGitHub so it isn't listed twice.
+    (profile) => !hideGitHub || profile.label !== "GitHub",
+  );
   return (
     <ul className="public-profile-list">
       {profiles.map((profile) => (
