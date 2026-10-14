@@ -378,24 +378,140 @@ export const caseStudies: CaseStudy[] = [
     title: "Kush Gangwal Portfolio — Macfolio",
     h1: "Kush Gangwal Portfolio",
     description:
-      "Macfolio is Kush Gangwal's interactive portfolio, with a 3D home page and a macOS-style desktop in the browser for exploring projects, experience, and contact.",
+      "Macfolio is Kush Gangwal's macOS-style portfolio desktop in the browser: Finder, Projects, Notes, Terminal, and the KushGPT assistant, at kushgangwal.site/desktop.",
     period: "2026 – Present",
     role: "Full Stack Developer",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "PostgreSQL"],
-    cover: "/assets/projects/macfolio.jpg",
-    links: [{ label: "GitHub", href: "https://github.com/kush1905/MacFolio" }],
+    cover: "/assets/projects/macfolio/desktop.webp",
+    links: [
+      { label: "Open Macfolio", href: "https://kushgangwal.site/desktop" },
+      { label: "GitHub", href: "https://github.com/kush1905/MacFolio" },
+    ],
     searchPhrases: ["Kush Gangwal Portfolio", "Macfolio"],
+    screenshots: [
+      {
+        src: "/assets/projects/macfolio/desktop.webp",
+        alt: "Macfolio desktop with a Finder window showing Resume.pdf and project folders, menu bar and Dock",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/macfolio/projects.webp",
+        alt: "Macfolio Projects app presenting projects as a streaming-style catalogue with trailers",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/macfolio/kushgpt.webp",
+        alt: "KushGPT assistant window in Macfolio with suggested questions about Kush Gangwal",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/macfolio/lock.webp",
+        alt: "Macfolio lock screen with the date, time, and Kush Gangwal's profile picture",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+    ],
     sections: [
       {
-        heading: "What this site is",
+        heading: "What Macfolio is",
         paragraphs: [
-          "Macfolio is Kush Gangwal's portfolio. The home page is an interactive 3D introduction, and the macOS-style desktop at /desktop lets visitors open Finder, Terminal, and KushGPT. Plain pages cover the about page, projects, and case studies like this one.",
+          "Macfolio is Kush Gangwal's portfolio as a macOS-style desktop in the browser, at kushgangwal.site/desktop. It boots to a lock screen, then opens a desktop with a menu bar, Dock, Spotlight, and draggable windows: Finder, Projects, Notes, Terminal, Activity Monitor, Messages, and the KushGPT assistant.",
+          "It sits alongside the 3D personal portfolio on the same site; both are built from the same content.",
         ],
       },
       {
         heading: "Stack",
         paragraphs: [
           "Macfolio is Next.js, React, TypeScript, and Tailwind CSS, with Framer Motion window chrome, Zustand state, live GitHub telemetry, and a Postgres-backed assistant, analytics, and contact flow.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "personal-portfolio",
+    name: "Personal Portfolio",
+    title: "Personal Portfolio (kushgangwal.site) | Kush Gangwal",
+    h1: "Personal Portfolio — kushgangwal.site",
+    description:
+      "Kush Gangwal's personal portfolio at kushgangwal.site: a scroll-driven 3D product universe built with Next.js, React Three Fiber, and three.js, with an AI assistant.",
+    period: "2026 – Present",
+    role: "Design and full-stack development",
+    tech: ["Next.js", "React", "TypeScript", "three.js", "React Three Fiber", "GSAP", "Groq", "Vercel"],
+    cover: "/assets/projects/personal-portfolio-og.jpg",
+    links: [
+      { label: "Website", href: "https://kushgangwal.site" },
+      { label: "GitHub", href: "https://github.com/kush1905/MacFolio" },
+    ],
+    searchPhrases: ["Kush Gangwal Portfolio", "kushgangwal.site"],
+    screenshots: [
+      {
+        src: "/assets/projects/personal-portfolio/hero.webp",
+        alt: "kushgangwal.site hero: Kush Gangwal, I build products that ship, over an amber signal and lattice in 3D",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/personal-portfolio/work.webp",
+        alt: "Selected work section with the Potato Bazaar card open and project stations in the 3D scene",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/personal-portfolio/stack.webp",
+        alt: "The stack with receipts: technology chips beside a 3D graph linking each technology to its projects",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/personal-portfolio/contact.webp",
+        alt: "Contact section, Let's build something, with the form beside the 3D finale where the signal converges",
+        width: 1600,
+        height: 1000,
+        frame: "browser",
+      },
+      {
+        src: "/assets/projects/personal-portfolio/mobile.webp",
+        alt: "kushgangwal.site hero on a phone",
+        width: 720,
+        height: 1226,
+      },
+    ],
+    sections: [
+      {
+        heading: "What it is",
+        paragraphs: [
+          "kushgangwal.site is Kush Gangwal's personal portfolio: a single amber signal travels through a 3D scene as you scroll, laying down the system he builds on, the products he has worked on, his career, and the stack behind them, and ending at a contact form.",
+          "Every word on the page is server-rendered HTML, so it reads without JavaScript, works with screen readers, and is indexed by search engines; the 3D scene is a progressive enhancement layered behind it.",
+        ],
+      },
+      {
+        heading: "How it is built",
+        paragraphs: [
+          "Next.js and React render the pages; three.js through React Three Fiber draws the scene, which loads after the page is interactive. One scroll position drives the camera, the signal, and the content's own 3D motion, so text and scene move together.",
+        ],
+        bullets: [
+          "Scroll-driven camera and chapter scenes in three.js / React Three Fiber",
+          "Content that folds through depth in sync with the scene (CSS 3D)",
+          "Ask Kush: a Cmd/Ctrl+K assistant answering from the portfolio's own facts (Groq, with fallbacks)",
+          "Contact form with email delivery, rate limiting, and honest failure states",
+          "Static fallback for reduced motion and devices without WebGL",
+          "Playwright end-to-end tests and an SEO regression check against the live site",
+        ],
+      },
+      {
+        heading: "Performance and accessibility",
+        paragraphs: [
+          "The 3D code is split out of the first load and starts only after first paint, so the page text appears immediately. The site keeps 60 fps in the scene on recent hardware and has a separate, lighter composition on phones.",
         ],
       },
     ],

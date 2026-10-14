@@ -45,7 +45,12 @@ export type HomeProject = {
   cover?: string;
 };
 
-export const homeProjects: HomeProject[] = STATIONS.flatMap(({ slug, kind, ownership }) => {
+/** Projects with case studies that are not stations in the homepage's 3D scene. */
+const EXTRA_PROJECTS: { slug: string; kind: StationKind; ownership: "own" | "team" }[] = [
+  { slug: "personal-portfolio", kind: "window", ownership: "own" },
+];
+
+function toHomeProject({ slug, kind, ownership }: { slug: string; kind: StationKind; ownership: "own" | "team" }): HomeProject[] {
   const product = products.find((item) => item.slug === slug);
   if (!product) return [];
   const study = caseStudyBySlug(slug);
@@ -66,7 +71,12 @@ export const homeProjects: HomeProject[] = STATIONS.flatMap(({ slug, kind, owner
       cover: study?.cover,
     },
   ];
-});
+}
+
+export const homeProjects: HomeProject[] = STATIONS.flatMap(toHomeProject);
+
+/** Every project with a case study: the homepage stations plus the extras. */
+export const allProjects: HomeProject[] = [...homeProjects, ...EXTRA_PROJECTS.flatMap(toHomeProject)];
 
 export const flagship = homeProjects[0];
 

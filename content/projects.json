@@ -4,18 +4,32 @@
     "name": "Macfolio",
     "tagline": "Interactive macOS-style developer portfolio",
     "description": "A browser-based macOS desktop (PortfolioOS) that lets recruiters explore Kush Gangwal's work like a real Mac — menu bar, Dock, Finder, Spotlight, windows, and apps including KushGPT, Activity Monitor, Messages, Notes, Terminal, and Settings. Built with Next.js, React, TypeScript, and Tailwind CSS, with Framer Motion window chrome, Zustand state, live GitHub telemetry, and a Postgres-backed assistant, analytics, and contact flow.",
-    "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "PostgreSQL"],
+    "tech": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Zustand",
+      "PostgreSQL"
+    ],
     "github": "https://github.com/kush1905/MacFolio",
-    "cover": "/assets/projects/macfolio.jpg",
+    "cover": "/assets/projects/macfolio/desktop.webp",
     "period": "2026 – Present",
-    "featured": true
+    "featured": true,
+    "demo": "https://kushgangwal.site/desktop"
   },
   {
     "id": "potato-bazaar",
     "name": "Potato Bazaar",
     "tagline": "Digital marketplace for agricultural trading",
     "description": "Full-stack digital marketplace for real-time agricultural trading across web and mobile. Built scalable features for KYC, secure transactions, payments, logistics, and AI-powered crop insights. Integrated REST APIs, analytics, maps, weather, and third-party services. Engineered with React.js, Next.js, Node.js, and React Native for web, Android, and iOS.",
-    "tech": ["React.js", "Next.js", "Node.js", "React Native"],
+    "tech": [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "React Native"
+    ],
     "github": "https://github.com/Kush-PB",
     "demo": "https://potatobazaar.com",
     "playStore": "https://play.google.com/store/apps/details?id=com.potatobazaar",
@@ -28,7 +42,11 @@
     "name": "Tybee Go",
     "tagline": "Tourism mobile application",
     "description": "Developed scalable features for a tourism mobile application using React Native and TypeScript. Integrated RESTful APIs, pagination, and dynamic content rendering. Optimized performance through efficient state management, navigation, and asynchronous data handling. Built reusable modular components with clean architecture.",
-    "tech": ["React Native", "TypeScript", "REST APIs"],
+    "tech": [
+      "React Native",
+      "TypeScript",
+      "REST APIs"
+    ],
     "github": "https://github.com/kush1905",
     "demo": "https://github.com/kush1905",
     "cover": "/assets/projects/tybee-go.jpg",
@@ -40,7 +58,13 @@
     "name": "Findanio",
     "tagline": "Mobile and web discovery platform",
     "description": "Contributed to Findanio mobile and web apps at Protonshub Technologies, enhancing cross-platform UI and user experience for Android and iOS with Next.js, React.js, Node.js, MongoDB, and React Native.",
-    "tech": ["Next.js", "React.js", "Node.js", "MongoDB", "React Native"],
+    "tech": [
+      "Next.js",
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "React Native"
+    ],
     "github": "https://github.com/kush1905",
     "demo": "https://github.com/kush1905",
     "cover": "/assets/projects/findanio.jpg",
@@ -52,7 +76,13 @@
     "name": "Nexus",
     "tagline": "Skill swap platform",
     "description": "Peer-to-peer skill exchange platform enabling users to request and offer skills. Features include skill-based search, secure Auth0 authentication, collaboration sessions, and a user rating system — a scalable, community-driven learning product built by Kush Gangwal.",
-    "tech": ["React.js", "Node.js", "Auth0", "SQLite", "Vercel"],
+    "tech": [
+      "React.js",
+      "Node.js",
+      "Auth0",
+      "SQLite",
+      "Vercel"
+    ],
     "github": "https://github.com/kush1905/nexus",
     "demo": "https://github.com/kush1905/nexus",
     "cover": "/assets/projects/nexus-og.jpg",
@@ -64,7 +94,13 @@
     "name": "Resumind",
     "tagline": "AI resume analyzer",
     "description": "Resumind is an AI resume analyzer built by Kush Gangwal. Candidates upload a resume, compare it against a role, and receive ATS-oriented scoring plus concrete rewrite guidance. The product combines document parsing, structured LLM feedback, and a clear report UI so job seekers can improve resumes before they apply.",
-    "tech": ["Next.js", "React.js", "Node.js", "TypeScript", "OpenAI APIs"],
+    "tech": [
+      "Next.js",
+      "React.js",
+      "Node.js",
+      "TypeScript",
+      "OpenAI APIs"
+    ],
     "github": "https://github.com/kush1905",
     "cover": "/assets/projects/resumind.svg",
     "period": "Personal project",
@@ -75,10 +111,37 @@
     "name": "CodeMace",
     "tagline": "Developer practice and code review workspace",
     "description": "CodeMace is a coding workspace built by Kush Gangwal for structured practice, reviews, and faster feedback loops. It brings problems, notes, and review comments into one interface so developers can improve implementation quality instead of only collecting solved-problem counts.",
-    "tech": ["React.js", "Next.js", "Node.js", "TypeScript", "PostgreSQL"],
+    "tech": [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL"
+    ],
     "github": "https://github.com/kush1905",
     "cover": "/assets/projects/codemace.svg",
     "period": "Personal project",
+    "featured": true
+  },
+  {
+    "id": "personal-portfolio",
+    "name": "Personal Portfolio",
+    "tagline": "3D portfolio at kushgangwal.site",
+    "description": "Kush Gangwal's personal portfolio: a scroll-driven 3D product universe built with Next.js, React Three Fiber, and three.js, with server-rendered pages and an AI assistant.",
+    "tech": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "three.js",
+      "React Three Fiber",
+      "GSAP",
+      "Groq",
+      "Vercel"
+    ],
+    "github": "https://github.com/kush1905/MacFolio",
+    "demo": "https://kushgangwal.site",
+    "cover": "/assets/projects/personal-portfolio-og.jpg",
+    "period": "2026 – Present",
     "featured": true
   }
 ]

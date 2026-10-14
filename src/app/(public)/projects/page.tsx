@@ -1,7 +1,7 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectCard } from "@/components/public/ProjectCard";
 import { PublicArticle } from "@/components/public/PublicArticle";
-import { homeProjects } from "@/lib/portfolio";
+import { allProjects } from "@/lib/portfolio";
 import { PERSON_NAME, personId } from "@/lib/identity";
 import { publicMeta } from "@/lib/publicMeta";
 import { personNode } from "@/lib/seo";
@@ -37,7 +37,7 @@ export default function ProjectsIndexPage() {
         width="wide"
       >
         <div className="project-grid">
-          {homeProjects.map((project) => (
+          {allProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
