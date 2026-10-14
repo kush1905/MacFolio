@@ -436,3 +436,215 @@
     transition: none !important;
   }
 }
+
+/* ── Project media: browser + phone frames (homepage cards, project cards) ── */
+
+.pm {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--pu-line);
+  border-radius: 14px;
+  background:
+    radial-gradient(80% 90% at 75% 0%, rgba(233, 162, 59, 0.13), transparent 62%),
+    linear-gradient(180deg, #15161a, #0c0d0f);
+}
+.pm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(217, 211, 199, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 211, 199, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(90% 90% at 60% 20%, #000 20%, transparent 80%);
+}
+.pm img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Browser window */
+.pm-browser {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(242, 238, 230, 0.16);
+  border-radius: 10px;
+  background: #0d0e10;
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+.pm-bar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(242, 238, 230, 0.08);
+  background: #17181c;
+}
+.pm-bar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(242, 238, 230, 0.2);
+}
+.pm-bar span {
+  flex: 1;
+  min-width: 0;
+  margin: 0 18% 0 10px;
+  padding: 2px 8px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: rgba(242, 238, 230, 0.06);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 9.5px;
+  color: var(--pu-faint);
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pm-browser .pm-screen {
+  position: relative;
+  flex: none;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+/* Phone */
+.pm-phone {
+  position: absolute;
+  aspect-ratio: 9 / 19;
+  padding: 2.4%;
+  border-radius: 14% / 6.6%;
+  background: #050506;
+  box-shadow:
+    0 0 0 1.5px rgba(242, 238, 230, 0.18),
+    0 26px 48px rgba(0, 0, 0, 0.6);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+.pm-phone .pm-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12% / 5.6%;
+  background: #111;
+}
+.pm-phone .pm-screen::after {
+  /* dynamic-island style notch */
+  content: "";
+  position: absolute;
+  top: 2.2%;
+  left: 50%;
+  width: 30%;
+  height: 3.2%;
+  translate: -50% 0;
+  border-radius: 999px;
+  background: #050506;
+}
+.pm-phone img {
+  transition: object-position 1.2s cubic-bezier(0.3, 0.6, 0.2, 1);
+}
+
+/* Layouts */
+.pm-combo .pm-browser {
+  left: 6%;
+  top: 9%;
+  width: 78%;
+}
+.pm-combo .pm-phone {
+  right: 6%;
+  bottom: -8%;
+  height: 84%;
+}
+.pm-web .pm-browser {
+  left: 8%;
+  right: 8%;
+  top: 11%;
+}
+.pm-phones .pm-phone {
+  bottom: -10%;
+}
+.pm-phones .pm-phone-center {
+  left: 50%;
+  height: 92%;
+  translate: -50% 0;
+  z-index: 2;
+}
+.pm-phones .pm-phone-left,
+.pm-phones .pm-phone-right {
+  height: 78%;
+  opacity: 0.85;
+}
+.pm-phones .pm-phone-left {
+  left: 18%;
+  transform: rotate(-7deg);
+}
+.pm-phones .pm-phone-right {
+  right: 18%;
+  transform: rotate(7deg);
+}
+.pm-cover img {
+  filter: saturate(0.85);
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+.pm-badge {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(11, 11, 12, 0.75);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pu-muted);
+}
+.pm-empty {
+  display: grid;
+  place-items: center;
+}
+.pm-empty span {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(72px, 9vw, 120px);
+  color: rgba(233, 162, 59, 0.5);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+/* Hover: devices lift and separate; phone screens pan down to show more of the app. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :is(.project-card, .project-stack > li):hover .pm-combo .pm-browser {
+    transform: translate(-2%, -3%);
+  }
+  :is(.project-card, .project-stack > li):hover .pm-combo .pm-phone {
+    transform: translate(2%, -7%) rotate(-2deg);
+  }
+  :is(.project-card, .project-stack > li):hover .pm-web .pm-browser {
+    transform: translateY(-5%);
+  }
+  :is(.project-card, .project-stack > li):hover .pm-phones .pm-phone-center {
+    transform: translateY(-6%);
+  }
+  :is(.project-card, .project-stack > li):hover .pm-phones .pm-phone-left {
+    transform: translate(-8%, -2%) rotate(-10deg);
+  }
+  :is(.project-card, .project-stack > li):hover .pm-phones .pm-phone-right {
+    transform: translate(8%, -2%) rotate(10deg);
+  }
+  :is(.project-card, .project-stack > li):hover .pm-phone img {
+    object-position: center 60%;
+  }
+  :is(.project-card, .project-stack > li):hover .pm-cover img,
+  :is(.project-card, .project-stack > li):hover .pm-empty span {
+    transform: scale(1.04);
+  }
+}

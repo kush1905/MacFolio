@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ViewTransition, useLayoutEffect, useRef, useState, type MouseEvent, type PointerEvent } from "react";
 import type { HomeProject } from "@/lib/portfolio";
-import { projectVisual } from "@/lib/projectVisual";
+import { ProjectMedia } from "@/components/public/ProjectMedia";
 import { useSceneStore } from "@/store/sceneStore";
 
 const APPROACH_MS = 320;
@@ -147,38 +146,9 @@ function ProjectPanel({
   project: HomeProject;
   onRead: (event: MouseEvent<HTMLAnchorElement>) => void;
 }) {
-  const phones = project.screenshots.filter((shot) => shot.frame !== "browser").slice(0, 3);
-  const visual = phones.length >= 2 ? null : projectVisual(project);
-  const phoneCaption = phones.some((shot) => /\bon iOS\b/.test(shot.alt))
-    ? "iOS and Android app"
-    : "Android app";
-  const host = (href: string) => href.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
-
   return (
     <div className="ps-panel" id={id}>
-      {phones.length >= 2 ? (
-        <figure className="ps-media ps-media-phones">
-          <div>
-            {phones.map((shot) => (
-              <Image key={shot.src} src={shot.src} alt={shot.alt} width={shot.width} height={shot.height} sizes="130px" />
-            ))}
-          </div>
-          <figcaption>{phoneCaption}</figcaption>
-        </figure>
-      ) : visual ? (
-        <figure className={`ps-media ps-media-${visual.kind}`}>
-          {visual.kind === "browser" ? (
-            <span className="ps-browser-bar" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <span>{host(project.links.find((link) => link.label === "Website")?.href ?? project.name)}</span>
-            </span>
-          ) : null}
-          <Image src={visual.src} alt={visual.alt} width={visual.width} height={visual.height} sizes="(max-width: 700px) 92vw, 600px" />
-          {visual.kind === "cover" ? <figcaption>Illustration</figcaption> : null}
-        </figure>
-      ) : null}
+      <ProjectMedia project={project} />
 
       <p className="ps-summary">{project.summary}</p>
 
