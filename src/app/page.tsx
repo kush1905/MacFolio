@@ -224,7 +224,7 @@ export default function HomePage() {
 
         <section id="core" className="chapter" data-chapter="4" aria-labelledby="core-title">
           <div className="chapter-stage" aria-hidden="true" />
-          <div className="chapter-col chapter-col-wide">
+          <div className="chapter-col chapter-col-wide chapter-col-core">
             <p className="eyebrow">04 — Engineering</p>
             <h2 id="core-title">The stack, with receipts</h2>
             <p className="lede">

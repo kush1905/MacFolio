@@ -33,18 +33,20 @@ export function TechCore({
         {groups.map((group) => (
           <fieldset key={group}>
             <legend>{group}</legend>
-            {nodes
-              .filter((node) => node.group === group)
-              .map((node) => (
-                <button
-                  key={node.slug}
-                  type="button"
-                  aria-pressed={node.slug === active.slug}
-                  onClick={() => setActiveTech(node.slug)}
-                >
-                  {node.name}
-                </button>
-              ))}
+            <div className="core-chips">
+              {nodes
+                .filter((node) => node.group === group)
+                .map((node) => (
+                  <button
+                    key={node.slug}
+                    type="button"
+                    aria-pressed={node.slug === active.slug}
+                    onClick={() => setActiveTech(node.slug)}
+                  >
+                    {node.name}
+                  </button>
+                ))}
+            </div>
           </fieldset>
         ))}
       </div>
